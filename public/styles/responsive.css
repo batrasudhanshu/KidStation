@@ -1,0 +1,52 @@
+@media only screen and (max-width: 1600px)
+{
+	.footer_about_text,
+	.footer_questions,
+	.footer_blog,
+	.footer_contact
+	{
+		padding-right: 0;
+	}
+	.footer_social_title
+	{
+		margin-left: 10px;
+	}
+}
+@media only screen and (max-width: 1500px)
+{
+	.footer_col:nth-last-child(n+3)
+	{
+		margin-bottom: 80px;
+	}
+	.footer_about_text,
+	.footer_questions,
+	.footer_blog,
+	.footer_contact
+	{
+		padding-right: 50px;
+	}
+}
+@media only screen and (max-width: 1380px)
+{
+	.footer_social_title
+	{
+		display: none !important;
+	}
+	
+}
+.footer_col:nth-last-child(n+3)
+	{
+		margin-bottom: 0px;
+	}
+	.footer_col:not(:last-child)
+	{
+		margin-bottom: 80px;
+	}
+	.footer_social_icon i
+	{
+		font-size: 70px;
+	}
+.footer_social_icon i
+	{
+		font-size: 16px;
+	}
