@@ -53,7 +53,7 @@ class Sidebar extends Component{
                 <NavLink to="">Shop</NavLink>
                 </li>
                 <li className="dropdown">
-                <NavLink to="">Categories</NavLink>
+                <a>Categories</a>
                 {/* <a className="has_sub dropdown-toggle" data-toggle="dropdown">Categories</a> */}
                     <ul className="categories_show">
                     <li>

@@ -1,5 +1,5 @@
 import React from 'react'
-// import '../styles/header_banner.css'
+import '../styles/header_banner.css'
 const Notebook = () => {
     return(
     <notebbok>

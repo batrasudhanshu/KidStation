@@ -1,6 +1,8 @@
 
 import React from "react";
-import '../styles/contact_page.css'
+import '../styles/contact_page.css';
+// import '../js_files/map.js';
+import MapComponent from './Map';
 // import './js/contact_page';
 // import './js/contact_map';
 
@@ -45,8 +47,9 @@ const Contact = () => {
                                     <div className="form-group">
                                         <label className="control-label required sr-only" for="select"></label>
                                         <select className="form-control">
-                                            <option value="">What Are You Getting In Touch?</option>
-                                            <option value="">Relationship</option>
+                                            <option value="">Who are you!!</option>
+                                            <option value="">Customer</option>
+                                            <option value="">Re-Seller</option>
             
                                         </select>
                                     </div>
@@ -77,7 +80,7 @@ const Contact = () => {
             <div className="row">
                 <div className="col-lg-5 col-md-5 col-sm-6 col-xs-12">
                     <div id="contact-map">
-                        {/* <MapContainer/> */}
+                        <MapComponent/>
                     </div>
                 </div>
                 <div className="col-lg-offset-1 col-lg-5 col-md-offset-1 col-md-5 col-sm-6 col-xs-12">
@@ -102,7 +105,7 @@ const Contact = () => {
                      <div className="contact-section">
                         <div className="contact-icon"><i className="fa fa-envelope"></i></div>
                         <div className="contact-info">
-                            <p>john@lifecoach.com</p>
+                            <p>kidstation2020@gmail.com</p>
                         </div>
                     </div>
                 </div>

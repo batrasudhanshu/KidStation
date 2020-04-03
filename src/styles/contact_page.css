@@ -401,3 +401,7 @@ contact_page .location-icon {
       background-clip: text;
       color: transparent;
       } 
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+}
