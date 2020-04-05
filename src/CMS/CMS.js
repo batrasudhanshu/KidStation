@@ -50,7 +50,7 @@ class CMS extends Component {
                         <textarea value={this.state.productdescription} name="productdescription" onChange={this.handleChange} ></textarea><br/>
                         <input type="file" onChange={this.handleChangeImage} /><br/>
 
-                        <input type="radio" id="Pen" name="collection" value="pen" onChange={this.handleChange}/>
+                        <input type="radio" id="Pen" name="collection" value="pens" onChange={this.handleChange}/>
                         <label for="Pen"> Pens</label><br/>
 
                         <input type="radio" id="water_bottles" name="collection" value="water_bottles" onChange={this.handleChange}/>
