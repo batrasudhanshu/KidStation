@@ -8,9 +8,7 @@ class CMS extends Component {
         productprice: '',
         productdescription: '',
         productid: '',
-        Notebook: 'off',
-        Lunch: 'off',
-        Pen: 'off',
+        collection: '',
         image:null
 
     }
@@ -31,6 +29,7 @@ class CMS extends Component {
     onSubmit = (e) =>{
         e.preventDefault();
         console.log(this.state);
+        alert('Wait for few seconds to upload. You will automatically be redirected to a new page.');
         this.props.uploadAction(this.state);
         
     }
@@ -51,14 +50,30 @@ class CMS extends Component {
                         <textarea value={this.state.productdescription} name="productdescription" onChange={this.handleChange} ></textarea><br/>
                         <input type="file" onChange={this.handleChangeImage} /><br/>
 
-                        <input type="checkbox" id="Pen" name="Pen" onChange={this.handleChange}/>
+                        <input type="radio" id="Pen" name="collection" value="pen" onChange={this.handleChange}/>
                         <label for="Pen"> Pens</label><br/>
 
-                        <input type="checkbox" id="Notebook" name="Notebook" onChange={this.handleChange}/>
-                        <label for="Notebook">Notebooks</label><br/>
+                        <input type="radio" id="water_bottles" name="collection" value="water_bottles" onChange={this.handleChange}/>
+                        <label for="water_bottles"> Water Bottle</label><br/>
 
-                        <input type="checkbox" id="Lunch" name="Lunch" onChange={this.handleChange}/>
-                        <label for="Lunch"> Lunch</label><br/><br/>
+                        <input type="radio" id="Rulers" name="collection" value="rulers" onChange={this.handleChange}/>
+                        <label for="Rulers"> Rulers</label><br/>
+                        
+                        <input type="radio" id="StationaryKits" name="collection" value="stationary_kits" onChange={this.handleChange}/>
+                        <label for="StationaryKits"> Stationary Kits</label><br/>
+
+                        <input type="radio" id="Notebooks" name="collection" value="notebooks" onChange={this.handleChange}/>
+                        <label for="Notebooks">Notebooks</label><br/>
+
+                        <input type="radio" id="Lunch" name="collection" value="lunch_boxes" onChange={this.handleChange}/>
+                        <label for="Lunch"> Lunch</label><br/>
+
+                        <input type="radio" id="Erasers" name="collection" value="erasers" onChange={this.handleChange}/>
+                        <label for="Erasers"> Erasers</label><br/>
+
+                        <input type="radio" id="Markers" name="collection" value="markers" onChange={this.handleChange}/>
+                        <label for="Markers"> Markers</label><br/>
+
 
                         <input type="submit" value="Submit"/>
                      </form>

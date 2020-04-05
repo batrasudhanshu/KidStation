@@ -3,26 +3,32 @@ export const uploadAction = (productData) => {
         const firestore = getFirestore();
         const firebase = getFirebase();
         const storage = firebase.storage();
-        const uploadtask = storage.ref('images/'+productData.image.name).put(productData.image);
+        const uploadtask = storage.ref(productData.collection+'/'+productData.image.name).put(productData.image);
         uploadtask.on(
             "state_changed",
-            snapshot => {},
+            snapshot => {
+                const progress = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+                console.log(progress);
+            },
             error => {
                 console.log(error, 'image error');
             },
             () => {
                 storage
-                    .ref("images")
+                    .ref(productData.collection)
                     .child(productData.image.name)
                     .getDownloadURL()
                     .then(url => {
                         console.log(url, 'image uploaded');
-                        firestore.collection('erasers').doc(productData.productid).set({
+                        firestore.collection(productData.collection).doc(productData.productid).set({
                             ...productData,
                             image: null,
                             image_url: url
                         }).then(()=>{
                             dispatch({type:'Add_Product', data: productData});
+                            window.location = '/cms/uploadsuccess';
                         }).catch(err=>{
                             console.log(err);
                         })
