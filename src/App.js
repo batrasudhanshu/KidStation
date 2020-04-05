@@ -17,7 +17,8 @@ import pen from '../src/ui_components/Pens'
 import EraserDetails from './collections/erasers/data/EraserDetails';
 import uploadSuccess from './CMS/uploadSuccess';
 import Crud from './CMS/Crud';
-// import EraserCrud from './CMS/EraserCrud/EraserCrud';
+import EraserCrud from './CMS/EraserCrud/EraserCrud';
+import EraserCrudDetails from './CMS/EraserCrud/EraserCrudDetails';
 //styles
 import './styles/main.css'
 
@@ -40,7 +41,10 @@ function App() {
         <Route exact path ='/pens_pencils' component={pen}/>
         <Route exact path ='/cms/uploadsuccess' component={uploadSuccess}/>
         <Route exact path ='/cms/crud' component={Crud}/>
-        {/* <Route exact path ='/cms/erasercrud' component={EraserCrud}/> */}
+        <Route exact path ='/cms/erasercrud' component={EraserCrud}/>
+        <Route path ='/cms/eraser/update/:id' component={EraserCrudDetails}/>
+        {/* <Route path ='/cms/eraser/:id' component={EraserCrudDetails}/> */}
+        
       </Switch>
     <Footer/>
      
