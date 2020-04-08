@@ -9,7 +9,8 @@ class CMS extends Component {
         productdescription: '',
         productid: '',
         collection: '',
-        image:null
+        image:null,
+        bestselling:'off'
 
     }
     handleChange=(e)=>{
@@ -73,6 +74,9 @@ class CMS extends Component {
 
                         <input type="radio" id="Markers" name="collection" value="markers" onChange={this.handleChange}/>
                         <label for="Markers"> Markers</label><br/>
+
+                        <input type="checkbox" id="bestselling" name="bestselling" onChange={this.handleChange}/>
+                        <label for="bestselling"> Best Selling</label><br/>
 
 
                         <input type="submit" value="Submit"/>

@@ -7,7 +7,9 @@ import { firestoreConnect } from 'react-redux-firebase'
 class Crud extends Component {
     render() {
         return (
-            
+            <div>
+                dsfjska
+            </div>
         )
     }
 }

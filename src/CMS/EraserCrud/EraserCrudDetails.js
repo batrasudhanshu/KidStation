@@ -29,6 +29,14 @@ class EraserCrudDetails extends React.Component {
             })
         )
     }
+    componentDidMount = () => {
+        const desc= this.props.eraser.productdescription;
+        const name = this.props.eraser.productname;
+        const price = this.props.eraser.productprice;
+        return(
+            this.setState({productdescription: desc, productname: name, productprice: price })
+        )
+    }
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
@@ -47,15 +55,15 @@ class EraserCrudDetails extends React.Component {
                         <div style={{margin:'50px'}} className="col-md-3">
                             <div style={{margin:'20px'}}>
                                 Name: <br/>
-                                <input type="text" name="productname" placeholder={eraser.productname} onChange={this.handleChange} />
+                                <input type="text" name="productname" value={this.state.productname} onChange={this.handleChange} />
                             </div>
                             <div style={{margin:'20px'}}>
                                 Price:<br/>
-                                <input type="text" name="productprice" placeholder={eraser.productprice} onChange={this.handleChange} />
+                                <input type="text" name="productprice" value={this.state.productprice} onChange={this.handleChange} />
                             </div>
                             <div style={{margin:'20px'}}>
                                 Description:<br/>
-                                <textarea name="productdescription" placeholder={eraser.productdescription} onChange={this.handleChange} ></textarea>
+                                <textarea name="productdescription" value={this.state.productdescription} onChange={this.handleChange} ></textarea>
                             </div>
                             <div style={{margin:'20px'}}>
                                 <input className="btn-primary" value="Update Product" type="submit" />

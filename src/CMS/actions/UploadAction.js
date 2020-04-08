@@ -22,6 +22,17 @@ export const uploadAction = (productData) => {
                     .getDownloadURL()
                     .then(url => {
                         console.log(url, 'image uploaded');
+                        if(productData.bestselling=='on'){
+                            firestore.collection('bestselling').doc(productData.productid).set({
+                                ...productData,
+                                image: null,
+                                image_url: url
+                            }).then(()=>{
+                                console.log('Best Selling added');
+                            }).catch(error=>{
+                                console.log(error);
+                            });
+                        }
                         firestore.collection(productData.collection).doc(productData.productid).set({
                             ...productData,
                             image: null,
@@ -31,8 +42,10 @@ export const uploadAction = (productData) => {
                             window.location = '/cms/uploadsuccess';
                         }).catch(err=>{
                             console.log(err);
-                        })
+                        });
+                        
                     });
+
             }
         );
         
