@@ -22,7 +22,7 @@ export const uploadAction = (productData) => {
                     .getDownloadURL()
                     .then(url => {
                         console.log(url, 'image uploaded');
-                        if(productData.bestselling=='on'){
+                        if(productData.bestselling =='on'){
                             firestore.collection('bestselling').doc(productData.productid).set({
                                 ...productData,
                                 image: null,
