@@ -19,6 +19,8 @@ import uploadSuccess from './CMS/uploadSuccess';
 import Crud from './CMS/Crud';
 import EraserCrud from './CMS/EraserCrud/EraserCrud';
 import EraserCrudDetails from './CMS/EraserCrud/EraserCrudDetails';
+import Shop from '../src/ui_components/Shop';
+import Test from './CMS/Test';
 //styles
 import './styles/main.css'
 
@@ -27,10 +29,11 @@ function App() {
     <BrowserRouter>
     
     
-    <div className="App">
+    <div className="App" style={{position:'relative', minHeight:'100vh'}}>
     <Sidebar/>
       <Switch>
         <Route exact path ='/cms' component={CMS}/>
+        <Route exact path ='/cms/test' component={Test}/>
         <Route exact path ='/' component={Home}/>
         <Route exact path ='/Contact' component={Contact}/>
         <Route exact path ='/return' component={Return}/>
@@ -43,6 +46,7 @@ function App() {
         <Route exact path ='/cms/crud' component={Crud}/>
         <Route exact path ='/cms/erasercrud' component={EraserCrud}/>
         <Route path ='/cms/eraser/update/:id' component={EraserCrudDetails}/>
+        <Route exact path ='/shop' component={Shop}/>
         {/* <Route path ='/cms/eraser/:id' component={EraserCrudDetails}/> */}
         
       </Switch>

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {uploadAction} from './actions/UploadAction'
+import {connect, useSelector} from 'react-redux';
+import {uploadAction} from './actions/UploadAction';
+import Test from './Test';
 
 class CMS extends Component {
+
     state={
         productname: '',
         productprice: '',
@@ -30,6 +32,7 @@ class CMS extends Component {
     onSubmit = (e) =>{
         e.preventDefault();
         console.log(this.state);
+        console.log(this.props.files);
         alert('Wait for few seconds to upload. You will automatically be redirected to a new page.');
         this.props.uploadAction(this.state);
         
@@ -50,7 +53,7 @@ class CMS extends Component {
                         <label for="productdescription">Product-Description</label>
                         <textarea value={this.state.productdescription} name="productdescription" onChange={this.handleChange} ></textarea><br/>
                         <input type="file" onChange={this.handleChangeImage} /><br/>
-
+                        <Test />
                         <input type="radio" id="Pen" name="collection" value="pens" onChange={this.handleChange}/>
                         <label for="Pen"> Pens</label><br/>
 
@@ -89,6 +92,12 @@ class CMS extends Component {
         )
     }
 }
+const mapStateToProps = (state, ownProps) => {
+    console.log(state);
+    return {
+        files: state.files
+    }
+}
 const mapDispatchToProps = (dispatch) => {
     return {
         uploadAction: (productData) => {
@@ -96,4 +105,4 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-export default connect(null,mapDispatchToProps)(CMS);
+export default connect(mapStateToProps,mapDispatchToProps)(CMS);

@@ -6,7 +6,7 @@ const EraserList = (props) => {
     const {erasers} = props;
     console.log(erasers);
     return (
-        <div className="product-list section">
+        <div className="row product-list section" style={{textAlign:'center'}}>
 
             { erasers && erasers.map((eraser) => {
                 // console.log(eraser.id);

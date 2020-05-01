@@ -9,10 +9,11 @@
   const projectReducer = (state = [], action) => {
     switch (action.type) {
         case 'Add_Product':
-            console.log('Product Added');
-            return state;
+          console.log('Product Added');
+          return state;
+        
         default:
-            return state;
+          return state;
         
     }
   };

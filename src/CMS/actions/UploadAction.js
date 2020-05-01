@@ -3,6 +3,12 @@ export const uploadAction = (productData) => {
         const firestore = getFirestore();
         const firebase = getFirebase();
         const storage = firebase.storage();
+        const data = getState();
+
+        let imageArray = data.files;
+        imageArray.map(img=>{
+            
+        })
         const uploadtask = storage.ref(productData.collection+'/'+productData.image.name).put(productData.image);
         uploadtask.on(
             "state_changed",
@@ -22,7 +28,7 @@ export const uploadAction = (productData) => {
                     .getDownloadURL()
                     .then(url => {
                         console.log(url, 'image uploaded');
-                        if(productData.bestselling=='on'){
+                        if(productData.bestselling =='on'){
                             firestore.collection('bestselling').doc(productData.productid).set({
                                 ...productData,
                                 image: null,
@@ -33,7 +39,7 @@ export const uploadAction = (productData) => {
                                 console.log(error);
                             });
                         }
-                        firestore.collection(productData.collection).doc(productData.productid).set({
+                        firestore.collection(productData.collection+'/'+'root'+'/'+'Product').doc(productData.productid).set({
                             ...productData,
                             image: null,
                             image_url: url
@@ -51,3 +57,32 @@ export const uploadAction = (productData) => {
         
     }
 }
+
+export const fetchProduct = () => {
+    return (dispatch, getState,{getFirebase, getFirestore} ) => {
+        const firestore = getFirestore();
+        const firebase = getFirebase();
+        const storage = firebase.storage();
+        let allcollection = ['rulers','markers','lunch_boxes','water_bottles','stationary_kits','pens','notebooks', 'erasers'];
+        var data=[];
+        allcollection.map(item=>{
+            const itemref = firestore.collection(item);
+            let allProduct = itemref.get()
+            .then(snapshot => {
+                snapshot.forEach(doc => {
+
+                    data.push(doc._document.proto.fields);
+                    // console.log(doc);
+                    // console.log(doc._document.proto.fields);
+                });
+              })
+              .catch(err => {
+                console.log('Error getting documents', err);
+              })
+              console.log(data);
+              dispatch({type: 'ALL_PRODUCT' ,data:data });
+        });
+        
+    }
+}
+
