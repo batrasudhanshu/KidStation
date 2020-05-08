@@ -5,7 +5,7 @@
     /* background: rgb(0,0,0); */
     /* background:cyan; */
     background-image: url(../images/sidebar_bg.jpg);
-    position: absolute;
+    position: fixed;
     height: 100%;
     overflow-y: auto;
     overflow-x:visible;

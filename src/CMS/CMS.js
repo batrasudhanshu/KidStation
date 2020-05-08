@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {uploadAction} from './actions/UploadAction'
+import {connect, useSelector} from 'react-redux';
+import {uploadAction} from './actions/UploadAction';
+import Test from './Test';
+import {ProgressBar} from 'react-bootstrap';
 
 class CMS extends Component {
-    state={
-        productname: '',
-        productprice: '',
-        productdescription: '',
-        productid: '',
-        collection: '',
-        image:null,
-        bestselling:'off'
-
+    constructor(props){
+        super(props);
+        this.state={
+            productname: '',
+            productprice: '',
+            productdescription: '',
+            productid: '',
+            collection: '',
+            bestselling:'off',
+    
+        }
     }
     handleChange=(e)=>{
         return(
@@ -30,13 +34,18 @@ class CMS extends Component {
     onSubmit = (e) =>{
         e.preventDefault();
         console.log(this.state);
+        // console.log(this.props.files);
         alert('Wait for few seconds to upload. You will automatically be redirected to a new page.');
         this.props.uploadAction(this.state);
         
     }
-    render() {
+    render() {  
+        {console.log(this.state)}      
         return (
             <div className="container" style={{textAlign:'center'}}>
+                <div className="progress">
+                    <ProgressBar id="cms_progressbar" now={this.props.progress} />
+                </div>
                 <div className="product-info">
                     {/* name,price,description,image,productid, checkbox */}
                     <h3>Product Info</h3>
@@ -49,8 +58,8 @@ class CMS extends Component {
                         <input type="text" value={this.state.productprice} name="productprice" onChange={this.handleChange} /><br/>
                         <label for="productdescription">Product-Description</label>
                         <textarea value={this.state.productdescription} name="productdescription" onChange={this.handleChange} ></textarea><br/>
-                        <input type="file" onChange={this.handleChangeImage} /><br/>
-
+                        {/* <input type="file" onChange={this.handleChangeImage} /><br/> */}
+                        <Test />
                         <input type="radio" id="Pen" name="collection" value="pens" onChange={this.handleChange}/>
                         <label for="Pen"> Pens</label><br/>
 
@@ -89,6 +98,12 @@ class CMS extends Component {
         )
     }
 }
+const mapStateToProps = (state, ownProps) => {
+    console.log(state);
+    return {
+        progress: state.progress
+    }
+}
 const mapDispatchToProps = (dispatch) => {
     return {
         uploadAction: (productData) => {
@@ -96,4 +111,4 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-export default connect(null,mapDispatchToProps)(CMS);
+export default connect(mapStateToProps,mapDispatchToProps)(CMS);

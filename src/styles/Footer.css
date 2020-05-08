@@ -1,8 +1,10 @@
 .footer
 {
 	width: 100%;
+	position: absolute;
     bottom:0;
 	background: #1e5791;
+	height: 2.5rem;
 }
 .footer_content
 {
