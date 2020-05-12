@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect, useSelector} from 'react-redux';
 import {uploadAction} from './actions/UploadAction';
 import Test from './Test';
-import {ProgressBar} from 'react-bootstrap';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 class CMS extends Component {
     constructor(props){
@@ -14,7 +14,6 @@ class CMS extends Component {
             productid: '',
             collection: '',
             bestselling:'off',
-    
         }
     }
     handleChange=(e)=>{
@@ -33,33 +32,35 @@ class CMS extends Component {
     }
     onSubmit = (e) =>{
         e.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
         // console.log(this.props.files);
-        alert('Wait for few seconds to upload. You will automatically be redirected to a new page.');
+        // alert('Wait for few seconds to upload. You will automatically be redirected to a new page.');
         this.props.uploadAction(this.state);
         
     }
-    render() {  
-        {console.log(this.state)}      
+    render() {     
         return (
             <div className="container" style={{textAlign:'center'}}>
-                <div className="progress">
-                    <ProgressBar id="cms_progressbar" now={this.props.progress} />
-                </div>
+                
                 <div className="product-info">
                     {/* name,price,description,image,productid, checkbox */}
                     <h3>Product Info</h3>
                     <form onSubmit={this.onSubmit}>
                         <label for="productid">Product-Id</label>
-                        <input type="text" value={this.state.productid} name="productid" onChange={this.handleChange} /><br/><br/>
+                        <input type="text" value={this.state.productid} required name="productid" onChange={this.handleChange} /><br/><br/>
                         <label for="productname">Product-Name</label>
-                        <input type="text" value={this.state.productname} name="productname" onChange={this.handleChange} /><br/>
+                        <input type="text" value={this.state.productname} required name="productname" onChange={this.handleChange} /><br/>
                         <label for="productprice">Product-Price</label>
                         <input type="text" value={this.state.productprice} name="productprice" onChange={this.handleChange} /><br/>
                         <label for="productdescription">Product-Description</label>
                         <textarea value={this.state.productdescription} name="productdescription" onChange={this.handleChange} ></textarea><br/>
                         {/* <input type="file" onChange={this.handleChangeImage} /><br/> */}
                         <Test />
+
+                        <div className="progress">
+                            <LinearProgress variant="determinate" value={this.props.progress || 0} />
+                            {/* <ProgressBar id="cms_progressbar" now={this.props.progress} /> */}
+                        </div>
                         <input type="radio" id="Pen" name="collection" value="pens" onChange={this.handleChange}/>
                         <label for="Pen"> Pens</label><br/>
 
@@ -99,9 +100,11 @@ class CMS extends Component {
     }
 }
 const mapStateToProps = (state, ownProps) => {
-    console.log(state);
+    // console.log(state);
+    // debugger
+    // console.log(ownProps);
     return {
-        progress: state.progress
+        progress: state.progress.value.progress
     }
 }
 const mapDispatchToProps = (dispatch) => {

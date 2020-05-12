@@ -43,7 +43,7 @@ function Test() {
   const [files, setFiles] = useState([]);
   const dispatch = useDispatch();
   const data = useSelector(state=>state.files);
-  // console.log("files",files);
+  console.log("files",files);
   // console.log(data);
   // console.log(files);
   const {getRootProps, getInputProps} = useDropzone({
