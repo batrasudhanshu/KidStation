@@ -8,7 +8,7 @@ import firebase from 'firebase/app'
 
 class EraserCrud extends React.Component {
     componentWillMount = () =>{
-        this.props.fetchProduct()
+        this.props.fetchProduct();
     }
     render(){
             
