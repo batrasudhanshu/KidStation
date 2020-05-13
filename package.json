@@ -1,0 +1,54 @@
+{
+  "name": "kid-station",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.9.13",
+    "@material-ui/lab": "^4.0.0-alpha.53",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "filepond": "^4.13.4",
+    "filepond-plugin-image-exif-orientation": "^1.0.8",
+    "filepond-plugin-image-preview": "^4.6.1",
+    "firebase": "^7.8.2",
+    "jquery": "^3.4.1",
+    "leaflet": "^1.6.0",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.1",
+    "react-circular-progressbar": "^2.0.3",
+    "react-dom": "^16.12.0",
+    "react-dropzone": "^11.0.1",
+    "react-filepond": "^7.0.1",
+    "react-leaflet": "^2.6.1",
+    "react-redux": "^7.1.1",
+    "react-redux-firebase": "^2.1.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.4.0",
+    "redux": "^4.0.5",
+    "redux-firestore": "^0.5.7",
+    "redux-thunk": "^2.3.0",
+    "save": "^2.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

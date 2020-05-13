@@ -1,0 +1,5 @@
+Route gaurding of CMS
+Crud folders + update action files
+Sidebanner banner GIF speed -> slow down
+Search
+
