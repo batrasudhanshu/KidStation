@@ -4,4 +4,3 @@ export const fileAction = (files) => {
         payload: files
     }
 }
-
