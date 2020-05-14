@@ -2,28 +2,33 @@ import React, {useEffect, useState, useCallback} from 'react';
 import {useDropzone} from 'react-dropzone';
 import { useDispatch, useSelector } from 'react-redux';
 import {fileAction } from './fileAction';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 const thumbsContainer = {
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
-  marginTop: 18
+  width:'80%',
+  margin:'auto',
+  marginTop: '1.5rem',
 };
 
 const thumb = {
   display: 'inline-flex',
+  margin:'0.3rem 1rem',
   borderRadius: 2,
   border: '1px solid #eaeaea',
-  marginBottom: 8,
-  marginRight: 8,
   width: 100,
   height: 100,
-  padding: 4,
   boxSizing: 'border-box'
 };
 const box = {
   height:'150px',
-  border:'1px solid black'
+  borderRadius:'1.5rem',
+  border:'1px solid black',
+  margin:'auto',
+  lineHeight:'150px',
+  cursor:'pointer'
 }
 const thumbInner = {
   display: 'flex',
@@ -36,6 +41,10 @@ const img = {
   width: 'auto',
   height: '100%'
 };
+const dropzoneinput = {
+  width:'80%',
+  margin:'auto'
+}
 
 
 function Test() {
@@ -74,14 +83,14 @@ function Test() {
           />
         </div>
       </div>
-      <a onClick={removeFile(file)}><i class="fa fa-window-close"></i></a>
+      <CancelIcon fontSize="large" style={{marginBottom:'7.5rem', marginLeft:'-0.8rem'}} onClick={removeFile(file)} />
     </div>
   ));
 
   return (
     
     <section className="" style={{textAlign:'center', margin:'auto'}}>
-      <div {...getRootProps({className: 'dropzone'})}>
+      <div style={dropzoneinput} {...getRootProps({className: 'dropzone-input'})}>
         <input {...getInputProps()} />
         <p style={box} >Drag 'n' drop some files here, or click to select files</p>
       </div>

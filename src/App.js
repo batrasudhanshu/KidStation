@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import './App.css';
 
 //cms 
 import CMS from './CMS/CMS';
@@ -24,6 +25,7 @@ import Test from './CMS/Test';
 import './styles/main.css'
 import ProductCrud from './CMS/ProductCrud/ProductCrud';
 import TestCrud from './CMS/ProductCrud/TestCrud';
+import ProductCrudDetails from './CMS/ProductCrud/ProductCrudDetails';
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
         <Route exact path ='/pens_pencils' component={pen}/>
         <Route exact path ='/cms/uploadsuccess' component={uploadSuccess}/>
         <Route exact path ='/cms/productcrud' component={ProductCrud}/>
+        <Route exact path ='/cms/productcrud/:id' component={ProductCrudDetails}/>
         <Route exact path ='/cms/testcrud' component={TestCrud}/>
         <Route exact path ='/cms/erasercrud' component={EraserCrud}/>
         <Route path ='/cms/eraser/update/:id' component={EraserCrudDetails}/>

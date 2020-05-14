@@ -1,6 +1,9 @@
 import React from 'react'
 import {Card, CardActionArea, CardMedia, Typography, CardContent, CardActions, Button} from '@material-ui/core'
 import { getFirestore } from 'redux-firestore';
+import { Link } from 'react-router-dom';
+import {passSelectedProductAction} from '../actions/passSelectedProductAction';
+import {connect} from 'react-redux';
 
 class ProductCrudSummary extends React.Component {
     delete(id){
@@ -12,11 +15,16 @@ class ProductCrudSummary extends React.Component {
             console.error("Error removing document: ", error);
         });
     }
+    selectedProduct = () =>{
+        console.log(this.props.product);
+        this.props.passSelectedProductAction(this.props.product);
+
+    }
     render(){
         const {product} = this.props;
         return (
             <>
-                <Card className="">
+                {product && <Card className="">
                     <CardActionArea>
                         <CardMedia
                         component="img"
@@ -32,17 +40,26 @@ class ProductCrudSummary extends React.Component {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="large" color="primary">
-                            <i class="fa fa-edit fa-2x"/>Edit
-                        </Button>
+                        <Link to={'/cms/productcrud/'+product.productid.stringValue}>
+                            <Button onClick={this.selectedProduct} size="large" color="primary">
+                                <i class="fa fa-edit fa-2x"/>Edit
+                            </Button>
+                        </Link>
                         <Button onClick={()=>this.delete(product.productid.stringValue)} size="large" color="primary">
                             <i class="fa fa-trash fa-2x"/>Delete
                         </Button>
                     </CardActions>
-                </Card> 
+                </Card> }
             </>
         )
     }
 }
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        passSelectedProductAction: (product) => {
+            dispatch(passSelectedProductAction(product))
+        }
+    }
+}
 
-export default ProductCrudSummary
+export default connect(null, mapDispatchToProps)(ProductCrudSummary)
