@@ -2,7 +2,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 104px 0 110px;
+    padding: 6.5rem 0 6.875rem;
     position: relative;
     width:100%;
 }
@@ -18,15 +18,15 @@
 }
 .breadcrumb-image h1 {
     color: #ffffff;
-    font-size: 33px;
+    font-size: 2.063rem;
     font-weight: 600;
-    line-height: 40px;
+    line-height: 2.5rem;
     position: relative;
     text-transform: uppercase;
 }
 .breadcrumbs_path {
     color: #fff;
-    margin-top: 8px;
+    margin-top: 0.5rem;
     position: relative;
     z-index: 9;
 }
@@ -55,28 +55,28 @@
 }
 .refund{
     width:90%;
-    margin-left:35px;
+    margin-left:2.188rem;
 }
 .refund p{
-    margin-top:15px;
+    margin-top:0.938rem;
 }
 .return_section{
-    margin-top:20px;
+    margin-top:1.25rem;
 }
 .return_section strong{
-    font-size:20px;
+    font-size:1.25rem;
 }
 .return_section ul{
     list-style-type:circle;
-    margin-left:30px;
+    margin-left:1.875rem;
 }
 .contact_section{
-    margin-top:20px;
-    margin-bottom:10px;
+    margin-top:1.25rem;
+    margin-bottom:0.625rem;
 }
 .contact_section strong{
-    font-size:15px;
+    font-size:0.938rem;
 }
 .contact_section p{
-    margin-left:10px;
+    margin-left:0.625rem;
 }

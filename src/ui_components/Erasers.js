@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/header_banner.css';
-import EraserRoot from '../collections/erasers/data/EraserRoot'
+// import EraserRoot from '../collections/erasers/data/EraserRoot'
 const Eraser = () => {
     return(
     <eraser>
@@ -43,7 +43,7 @@ const Eraser = () => {
         </div>
     </header_banner>
 
-    <EraserRoot />
+    {/* <EraserRoot /> */}
     </eraser>
     )
 }
