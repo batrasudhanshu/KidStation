@@ -351,7 +351,6 @@ contact_page .contact-section .contact-info {
     font-weight: 700;
 }
 
-
 contact_page .contact-social ul li {
     float: left;
 }
@@ -373,8 +372,6 @@ contact_page .location-block {
     margin-bottom: 1.25rem;
     background-color: #fff;
 }
-
-
 
 contact_page .location-block ul li {
     line-height: 2.2;
