@@ -3,3 +3,13 @@ Crud folders + update action files
 Sidebanner banner GIF speed -> slow down
 Search
 
+//undefined last product
+state.products && state.products.map(product=>{
+        if(product==undefined){
+            currentProduct = [];
+        }
+        else if(product.productid && product.productid.stringValue==id){
+            currentProduct = product;
+        }
+    })
+

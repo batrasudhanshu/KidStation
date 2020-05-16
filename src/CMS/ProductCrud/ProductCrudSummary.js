@@ -20,11 +20,16 @@ class ProductCrudSummary extends React.Component {
         this.props.passSelectedProductAction(this.props.product);
 
     }
+    redirectToProduct = (id) =>{
+        console.log("function redirect");
+        window.location.href = '/cms/productcrud/'+id;
+    }
     render(){
         const {product} = this.props;
         return (
             <>
                 {product && <Card className="">
+                    <Link to={`/cms/productcrud/${product.productid.stringValue}`}>
                     <CardActionArea>
                         <CardMedia
                         component="img"
@@ -39,9 +44,10 @@ class ProductCrudSummary extends React.Component {
                         </Typography>
                         </CardContent>
                     </CardActionArea>
+                    </Link>
                     <CardActions>
                         <Link to={'/cms/productcrud/'+product.productid.stringValue}>
-                            <Button onClick={this.selectedProduct} size="large" color="primary">
+                            <Button size="large" color="primary">
                                 <i class="fa fa-edit fa-2x"/>Edit
                             </Button>
                         </Link>

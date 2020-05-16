@@ -32,16 +32,6 @@ export const uploadAction = (productData) => {
                         // debugger
                         imgurl.push(url);
                         if(imgurl.length==imageArray.length){
-                            if(productData.bestselling =='on'){
-                                firestore.collection('bestselling').doc(productData.productid).set({
-                                    ...productData,
-                                    image_url: imgurl
-                                }).then(()=>{
-                                    console.log('Best Selling added');
-                                }).catch(error=>{
-                                    console.log(error);
-                                });
-                            }
                             firestore.collection(productData.collection).doc(productData.productid).set({
                                 ...productData,
                                 image_url: imgurl
@@ -65,17 +55,19 @@ export const fetchProduct = () => {
         const firestore = getFirestore();
         const firebase = getFirebase();
         const storage = firebase.storage();
-        let allcollection = ['rulers','markers','lunch_boxes','water_bottles','stationary_kits','pens','notebooks','bestselling','erasers','end'];
+        let allcollection = ['rulers','markers','lunch_boxes','water_bottles','stationary_kits','pens','notebooks','erasers','end'];
         var data=[];
         allcollection.map(item=>{
             const itemref = firestore.collection(item);
             let allProduct = itemref.get()
             .then(snapshot => {
-                if(item == allcollection[9]){
+                if(item == allcollection[8]){
                     dispatch({type: 'ALL_PRODUCT' ,data:data });
                 }
                 snapshot.forEach(doc => {
-
+                    if(item == allcollection[8]){
+                    }
+                    else
                     data.push(doc._document.proto.fields);
                     // console.log(doc);
                     // console.log(doc._document.proto.fields);

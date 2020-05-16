@@ -6,11 +6,8 @@ import ProductCrudList from './ProductCrudList'
 class ProductCrud extends React.Component {
     constructor(props){
         super(props);
-        this.state={
-            products:[]
-        }
     }
-    componentWillMount = () =>{
+    componentDidMount = () =>{
         this.props.fetchProduct();
     }
     render(){

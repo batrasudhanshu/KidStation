@@ -13,14 +13,22 @@ class CMS extends Component {
             productdescription: '',
             productid: '',
             collection: '',
-            bestselling:'off',
+            bestselling:false
         }
+        
     }
     handleChange=(e)=>{
         return(
             this.setState({
                 [e.target.name]: e.target.value
             })
+        );
+    }
+    handleChangeBestSelling=(e)=>{
+        return(
+            this.setState((state)=>({
+                bestselling: !state.bestselling
+            }))
         );
     }
     handleChangeImage = (e) => {
@@ -38,7 +46,7 @@ class CMS extends Component {
         this.props.uploadAction(this.state);
         
     }
-    render() {     
+    render() {   
         return (
             <div className="container" style={{textAlign:'center'}}>
                 
@@ -85,7 +93,7 @@ class CMS extends Component {
                         <input type="radio" id="Markers" name="collection" value="markers" onChange={this.handleChange}/>
                         <label for="Markers"> Markers</label><br/>
 
-                        <input type="checkbox" id="bestselling" name="bestselling" onChange={this.handleChange}/>
+                        <input type="checkbox" id="bestselling" name="bestselling" onChange={this.handleChangeBestSelling}/>
                         <label for="bestselling"> Best Selling</label><br/>
 
 
