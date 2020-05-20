@@ -30,14 +30,14 @@ class Sidebar extends Component{
     return(
         <sidebar>
             <a id="menu-toggle" href="#" className="btn btn-primary btn-lg toggle left"><i className="fa fa-arrow-left left_icon"></i></a>
-                <div class="col-md-12 social_icons">
+                {/* <div class="col-md-12 social_icons">
                     <ul class="social-network social-circle">
                         <li><a href="https://www.facebook.com/Kidstation-Step_beyond_Ordinary-2223183277758185/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://www.instagram.com/step_beyond_ordinary/?igshid=1gk7m954ylauf" class="icoTwitter" title="Instagram"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="#" class="icoGoogle" title="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
                         
                     </ul>				
-				</div>
+				</div> */}
             <div id="sidebar-wrapper">
             <ul className="sidebar-nav">
                 

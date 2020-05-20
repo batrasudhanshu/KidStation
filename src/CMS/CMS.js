@@ -3,6 +3,9 @@ import {connect, useSelector} from 'react-redux';
 import {uploadAction} from './actions/UploadAction';
 import Test from './Test';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { Grid, TextField, FormControlLabel, Checkbox, Button, InputAdornment, FormControl, Select, MenuItem, InputLabel } from '@material-ui/core';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
 class CMS extends Component {
     constructor(props){
@@ -13,7 +16,8 @@ class CMS extends Component {
             productdescription: '',
             productid: '',
             collection: '',
-            bestselling:false
+            bestselling:false,
+            soldout:false
         }
         
     }
@@ -47,63 +51,72 @@ class CMS extends Component {
         
     }
     render() {   
+        const {productid, productname, productprice, productdescription, bestselling, collection} = this.state;
+        console.log(bestselling);
         return (
-            <div className="container" style={{textAlign:'center'}}>
-                
-                <div className="product-info">
-                    {/* name,price,description,image,productid, checkbox */}
-                    <h3>Product Info</h3>
-                    <form onSubmit={this.onSubmit}>
-                        <label for="productid">Product-Id</label>
-                        <input type="text" value={this.state.productid} required name="productid" onChange={this.handleChange} /><br/><br/>
-                        <label for="productname">Product-Name</label>
-                        <input type="text" value={this.state.productname} required name="productname" onChange={this.handleChange} /><br/>
-                        <label for="productprice">Product-Price</label>
-                        <input type="text" value={this.state.productprice} name="productprice" onChange={this.handleChange} /><br/>
-                        <label for="productdescription">Product-Description</label>
-                        <textarea value={this.state.productdescription} name="productdescription" onChange={this.handleChange} ></textarea><br/>
-                        {/* <input type="file" onChange={this.handleChangeImage} /><br/> */}
-                        <Test />
-
-                        <div className="progress">
-                            <LinearProgress variant="determinate" value={this.props.progress || 0} />
-                            {/* <ProgressBar id="cms_progressbar" now={this.props.progress} /> */}
+            <>
+                <Grid container spacing={3}>
+                    <Grid xs={12}>
+                        <div className="backendpage-title">
+                            <h3>Product Info</h3>
                         </div>
-                        <input type="radio" id="Pen" name="collection" value="pens" onChange={this.handleChange}/>
-                        <label for="Pen"> Pens</label><br/>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <div className="cms-progress-bar">
+                            <LinearProgress color={"primary"} variant="buffer" valueBuffer={this.props.progress+10 || 0} value={this.props.progress || 0} />
+                        </div>
+                        <Test />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <form className="cms-form">
+                            <TextField className="cms-field" autoComplete="off" value={productid} name="productid" onChange={this.handleChange} label="Product ID" variant="outlined" />
+                            <TextField className="cms-field" autoComplete="off" value={productname} name="productname" onChange={this.handleChange} label="Product Name" variant="outlined" />
+                            <TextField className="cms-field" autoComplete="off" InputProps={{startAdornment: <InputAdornment style={{marginRight:'0.5rem'}}>&#8377;</InputAdornment>}} value={productprice} name="productprice" onChange={this.handleChange} startAdornment={<InputAdornment position="start">$</InputAdornment>} label="Product Price" variant="outlined" />
+                            <TextField className="cms-field" autoComplete="off" multiline value={productdescription} name="productdescription" onChange={this.handleChange} label="Product Description" variant="outlined" />
+                            <FormControl variant="outlined" className="cms-field">
+                                <InputLabel id="demo-simple-select-outlined-label">Collection</InputLabel>
+                                <Select
+                                name="collection"
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                value={collection}
+                                onChange={this.handleChange}
+                                label="Collection"
+                                >
+                                <MenuItem value={'pens'}>Pen & Pencil</MenuItem>
+                                <MenuItem value={'water_bottles'}>Water Bottle</MenuItem>
+                                <MenuItem value={'rulers'}>Rulers</MenuItem>
+                                <MenuItem value={'stationary_kits'}>Stationery Kits</MenuItem>
+                                <MenuItem value={'notebooks'}>Notebook & Register</MenuItem>
+                                <MenuItem value={'lunch_boxes'}>Lunch Box</MenuItem>
+                                <MenuItem value={'erasers'}>Eraser & Sharpner</MenuItem>
+                                <MenuItem value={'markers'}>Marker</MenuItem>
+                                </Select>
+                            </FormControl>
 
-                        <input type="radio" id="water_bottles" name="collection" value="water_bottles" onChange={this.handleChange}/>
-                        <label for="water_bottles"> Water Bottle</label><br/>
-
-                        <input type="radio" id="Rulers" name="collection" value="rulers" onChange={this.handleChange}/>
-                        <label for="Rulers"> Rulers</label><br/>
-                        
-                        <input type="radio" id="StationaryKits" name="collection" value="stationary_kits" onChange={this.handleChange}/>
-                        <label for="StationaryKits"> Stationary Kits</label><br/>
-
-                        <input type="radio" id="Notebooks" name="collection" value="notebooks" onChange={this.handleChange}/>
-                        <label for="Notebooks">Notebooks</label><br/>
-
-                        <input type="radio" id="Lunch" name="collection" value="lunch_boxes" onChange={this.handleChange}/>
-                        <label for="Lunch"> Lunch</label><br/>
-
-                        <input type="radio" id="Erasers" name="collection" value="erasers" onChange={this.handleChange}/>
-                        <label for="Erasers"> Erasers</label><br/>
-
-                        <input type="radio" id="Markers" name="collection" value="markers" onChange={this.handleChange}/>
-                        <label for="Markers"> Markers</label><br/>
-
-                        <input type="checkbox" id="bestselling" name="bestselling" onChange={this.handleChangeBestSelling}/>
-                        <label for="bestselling"> Best Selling</label><br/>
-
-
-                        <input type="submit" value="Submit"/>
-                     </form>
-
-
-
-                </div>
-            </div>
+                            <div className="crud-details-checkbox-outer crud-details-field">
+                                <FormControlLabel
+                                    className="crud-details-checkbox"
+                                    name="bestselling"
+                                    checked={bestselling}
+                                    onChange={this.handleChangeBestSelling}
+                                    control={<Checkbox 
+                                        color="primary"
+                                        icon={<CheckBoxOutlineBlankIcon style={{width:25, height:25}}/>}
+                                        checkedIcon={<CheckBoxIcon style={{width:25, height:25}}/>}
+                                        />
+                                    }
+                                    label="Best Selling"
+                                    labelPlacement="End"
+                                />
+                            </div>
+                            <div style={{clear:'both'}}></div>
+                            <Button className="cms-crudfield-submit-btn" onClick={this.onSubmit} size="large" variant="contained" color="primary">SUBMIT</Button>
+                        </form>
+                    </Grid>
+                </Grid>
+                
+            </>
         )
     }
 }

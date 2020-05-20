@@ -51,7 +51,7 @@
     border-radius: 1rem;
 }
 
-.crud-details-title{
+.backendpage-title{
     text-align: center;
     margin: 2rem auto 1rem auto;
 }
@@ -66,3 +66,44 @@
 
 /* Product Crud Details  */
 
+/* CMS.js */
+.cms-form{
+    text-align: center;
+    margin: auto;
+}
+.cms-field{
+    width: 60%;
+    margin: 2rem 2rem !important;
+}
+.cms-crudfield-submit-btn{
+    margin: auto !important;
+    font-size: 1.3rem !important;
+}
+.cms-progress-bar{
+    width: 80%;
+    height: 1rem;
+    border-radius: 0.2rem;
+    margin: 2rem auto;
+
+}
+.MuiInputBase-root, .MuiFormLabel-root{
+    font-size: 1.5rem !important;
+}
+
+/* CMS.js */
+
+
+
+input[type="checkbox"] {
+    margin: 0px 0 ;
+}
+
+.soldout-btn > span > label > span{
+    font-size: 1rem !important;
+    color: orangered;
+}
+
+.hideIcon{
+    visibility: hidden;
+    display: none;
+}

@@ -14,7 +14,6 @@ import rootReducer from './CMS/reducers/rootReducer';
 
 
 
-
 const store = createStore(rootReducer,
   compose(
   applyMiddleware(thunk.withExtraArgument({getFirestore,getFirebase})),

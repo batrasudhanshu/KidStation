@@ -63,6 +63,7 @@ export const fetchProduct = () => {
             .then(snapshot => {
                 if(item == allcollection[8]){
                     dispatch({type: 'ALL_PRODUCT' ,data:data });
+                    dispatch({type:'SEARCH',data:data});
                 }
                 snapshot.forEach(doc => {
                     if(item == allcollection[8]){

@@ -1,5 +1,7 @@
 import React from 'react'
-import {Card, CardActionArea, CardMedia, Typography, CardContent, CardActions, Button} from '@material-ui/core'
+import {Card, CardActionArea, CardMedia, Typography, CardContent, CardActions, Button, Checkbox, FormControlLabel} from '@material-ui/core';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { getFirestore } from 'redux-firestore';
 import { Link } from 'react-router-dom';
 import {passSelectedProductAction} from '../actions/passSelectedProductAction';
@@ -24,8 +26,20 @@ class ProductCrudSummary extends React.Component {
         console.log("function redirect");
         window.location.href = '/cms/productcrud/'+id;
     }
+    handleChangeSoldOut = () =>{
+        const firestore = getFirestore();
+        firestore.collection(this.props.product.collection.stringValue).doc(this.props.product.productid.stringValue).update({
+            soldout: !this.props.product.soldout.booleanValue
+        }).then(function() {
+            console.log("Soldout value changed!");
+            window.location.reload(true);
+        }).catch(function(error) {
+            console.error("Error: ", error);
+        });
+    }
     render(){
         const {product} = this.props;
+        console.log(product);
         return (
             <>
                 {product && <Card className="">
@@ -53,6 +67,21 @@ class ProductCrudSummary extends React.Component {
                         </Link>
                         <Button onClick={()=>this.delete(product.productid.stringValue)} size="large" color="primary">
                             <i class="fa fa-trash fa-2x"/>Delete
+                        </Button>
+                        <Button className="soldout-btn" color="primary">
+                            <FormControlLabel
+                                name="soldout"
+                                checked={product.soldout.booleanValue}
+                                onChange={this.handleChangeSoldOut}
+                                control={<Checkbox 
+                                    color="primary"
+                                    icon={<CheckBoxOutlineBlankIcon />}
+                                    checkedIcon={<CheckBoxIcon />}
+                                    />
+                                }
+                                label="Sold Out"
+                                labelPlacement="end"
+                            />
                         </Button>
                     </CardActions>
                 </Card> }

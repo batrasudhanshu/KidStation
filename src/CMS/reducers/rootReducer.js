@@ -4,6 +4,7 @@ import productsReducer from './productsReducer'
 import progressReducer from './progressReducer';
 import fileReducer from './fileReducer';
 import SelectedProductReducer from './SelectedProductReducer';
+import searchReducer from './searchReducer';
 
 import { combineReducers } from 'redux'
 import {firestoreReducer} from 'redux-firestore'
@@ -11,6 +12,7 @@ import {firebaseReducer} from 'react-redux-firebase'
 
 
 const rootReducer = combineReducers({
+  filterProduct: searchReducer,
   SelectedProduct: SelectedProductReducer,
   files:fileReducer,
   products:productsReducer,

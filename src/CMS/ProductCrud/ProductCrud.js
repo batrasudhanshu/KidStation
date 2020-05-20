@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchProduct} from '../actions/UploadAction';
 import ProductCrudList from './ProductCrudList'
+import SearchFilter from './SearchFilter';
 
 class ProductCrud extends React.Component {
     constructor(props){
@@ -11,23 +12,23 @@ class ProductCrud extends React.Component {
         this.props.fetchProduct();
     }
     render(){
-        const {products} = this.props;
-        console.log(products);
+        const {filterProduct} = this.props;
         
         return (
             <div>
                 <div className="">
                     <h2 style={{textAlign:'center', margin:'20px'}}>PRODUCTS</h2>
-                    <ProductCrudList products={products} />
+                    <SearchFilter />
+                    <ProductCrudList products={filterProduct} />
                 </div>
             </div>
         )
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state);
     return { 
-        products: state.products
+        products: state.products,
+        filterProduct: state.filterProduct
     }
 }
 
