@@ -32,6 +32,9 @@
     line-height: 50px;
     text-indent: 30px;
   }
+  .sidebar-nav-items{
+    font-weight: bolder;
+  }
 
   .sidebar-nav li a {
     color: #999999;
@@ -129,9 +132,12 @@ ul.social-network li {
 } */
 .categories_show{
   left:0;
+  font-weight: 400;
+  /* display: block !important; */
 }
 .categories_show li {
   text-decoration:none;
+  
 }
 
 

@@ -32,9 +32,9 @@
     display: inline-flex;
     margin-top: 0 !important;
 }
-.MuiTypography-body1{
-    font-size: 1.3rem !important;
-}
+/* .MuiTypography-body1{
+    font-size: 2rem !important;
+} */
 
 .crud-details-dropzone{
     margin-top: 3rem;
@@ -107,3 +107,78 @@ input[type="checkbox"] {
     visibility: hidden;
     display: none;
 }
+/* CMS.js */
+
+/* MaterialNavbar.js */
+.sidenavbar .MuiPaper-root{
+    width: 30rem !important;
+    background-image: url('../src/images/sidebar_bg.jpg');
+}
+
+.category-list .MuiTypography-body1{
+    padding-left: 3rem;
+    font-size: 1.6rem !important;
+    text-decoration: none;
+    font-weight: 300;
+}
+.sidedrawer .MuiTypography-body1{
+    padding: 0.3rem 2rem;
+    font-size: 1.7rem !important;
+    text-decoration: none;
+}
+.category-list, .sidedrawer{
+    color: #f2f2eb;
+}
+.side-drawer-outer{
+    background-color: whitesmoke;
+    color: black !important;
+    text-decoration: none;
+    padding: 0.3rem 1rem;
+}
+
+.side-drawer-outer .MuiTypography-body1{
+    font-size: 1.7rem !important;
+}
+.category-list-outer{
+    background-color: whitesmoke;
+    color: black !important;
+    text-decoration: none;
+    padding-left: 3rem;
+}
+.category-list-outer .MuiTypography-body1{
+    font-size: 1.6rem !important;
+}
+/* MaterialNavbar.js */
+
+/* Home.js */
+
+.fulllogo {
+    width: 22rem;
+    float: left;
+    /* top: -0.7rem;
+    position: absolute; */
+    padding-left: 3rem;
+}
+.navigation{
+    /* height: 12.7rem; */
+    display: block;
+}
+.RightNavItems{
+    line-height: 6.5rem;
+}
+.RightNavItems div{
+    float: right;
+}
+.RightNavItems div span{
+    padding: 0 3rem;
+}
+.RightNavItems div span a{
+    color: black;
+    cursor: pointer;
+}
+.RightNavItems div span:first-child{
+    border-right: 2px solid black;
+}
+
+
+/* Home.js */

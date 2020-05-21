@@ -21,11 +21,11 @@ import EraserCrud from './CMS/EraserCrud/EraserCrud';
 import EraserCrudDetails from './CMS/EraserCrud/EraserCrudDetails';
 import Shop from '../src/ui_components/Shop';
 import Test from './CMS/Test';
-//styles
-import './styles/main.css'
 import ProductCrud from './CMS/ProductCrud/ProductCrud';
 import TestCrud from './CMS/ProductCrud/TestCrud';
 import ProductCrudDetails from './CMS/ProductCrud/ProductCrudDetails';
+import MaterialNavbar from './ui_components/MaterialNavbar';
+import { Container, Grid } from '@material-ui/core';
 
 function App() {
   return (
@@ -33,7 +33,9 @@ function App() {
     
     
     <div className="App" style={{position:'relative', minHeight:'100vh'}}>
-    <Sidebar/>
+      <Container maxWidth={"lg"}>
+      <MaterialNavbar />
+    {/* <Sidebar/> */}
       <Switch>
         <Route exact path ='/cms' component={CMS}/>
         <Route exact path ='/cms/test' component={Test}/>
@@ -55,6 +57,7 @@ function App() {
         {/* <Route path ='/cms/eraser/:id' component={EraserCrudDetails}/> */}
         
       </Switch>
+      </Container>
     
      
     </div>

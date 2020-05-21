@@ -15,21 +15,30 @@ class Sidebar extends Component{
         $("#menu-close").click(function(e) {
             e.preventDefault();
             $("#sidebar-wrapper").toggleClass("active");
-          });
-          $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-          });
-          $('li.dropdown').click(function() {
-            $('li.dropdown').not(this).find('ul').hide();
-            $(this).find('ul').toggle();
-});
+            });
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#sidebar-wrapper").toggleClass("active");
+            });
+            $('li.dropdown').click(function() {
+                $('li.dropdown').not(this).find('ul').hide();
+                $(this).find('ul').toggle();
+            });
+    }
+    toggleCategoryList(){
+        let categoryList = document.getElementById('categories_show_list');
+        if(categoryList.style.display === 'block !important'){
+            categoryList.style.display = 'none'
+        }
+        else{
+            categoryList.style.display = 'block'
+        }
     }
 
     render(){
     return(
         <sidebar>
-            <a id="menu-toggle" href="#" className="btn btn-primary btn-lg toggle left"><i className="fa fa-arrow-left left_icon"></i></a>
+            <a id="menu-toggle" href="#" className="btn btn-primary btn-md toggle left"><i className="fa fa-bars left_icon"></i></a>
                 {/* <div class="col-md-12 social_icons">
                     <ul class="social-network social-circle">
                         <li><a href="https://www.facebook.com/Kidstation-Step_beyond_Ordinary-2223183277758185/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -41,19 +50,19 @@ class Sidebar extends Component{
             <div id="sidebar-wrapper">
             <ul className="sidebar-nav">
                 
-                <a id="menu-close" href="#" className="btn btn-default btn-lg pull-right toggle left"><i className="glyphicon glyphicon-remove left"></i></a>
+                <a id="menu-close" href="#" className="btn btn-default btn-md pull-right toggle left"><i className="glyphicon glyphicon-remove left"></i></a>
                 <li className="sidebar-brand">
                 
                     <img src={logo_img} className="logo_img"/>
                 </li>
-                <li>
+                <li className="sidebar-nav-items">
                 <NavLink to="/">Home</NavLink>
                 </li>
-                <li className="has_sub">
+                <li className="sidebar-nav-items has_sub">
                 <NavLink to="">Shop</NavLink>
                 </li>
-                <li className="dropdown">
-                <a>Categories</a>
+                <li className="dropdown has_sub sidebar-nav-items">
+                <NavLink to="">Categories</NavLink>
                 {/* <a className="has_sub dropdown-toggle" data-toggle="dropdown">Categories</a> */}
                     <ul className="categories_show">
                     <li>
@@ -72,13 +81,13 @@ class Sidebar extends Component{
                     
                     </ul>
                 </li>
-                <li className="has_sub">
+                <li  className="has_sub sidebar-nav-items">
                 <NavLink to="">Best Selling</NavLink>
                 </li>
-                <li>
+                <li className="sidebar-nav-items">
                 <NavLink to="/contact">Contact</NavLink>
                 </li>
-                <li>
+                <li className="sidebar-nav-items">
                 <NavLink to="">Track your Order</NavLink>
                 </li>
             </ul>
