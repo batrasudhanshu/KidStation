@@ -182,3 +182,31 @@ input[type="checkbox"] {
 
 
 /* Home.js */
+/* FooterNew.js */
+.footer-social-icons {
+    /* width: 4rem !important;
+    height: 4rem !important; */
+    font-size: 2rem !important;
+    margin-right:2rem;
+    width: 100%;
+    right:0;
+    /* padding: 0rem; */
+}
+.MuiBreadcrumbs-separator{
+    margin: 0 0.4rem !important;
+}
+.footer-nav{
+    margin:'auto';
+    display:'inline-block';
+     width:'100%';
+     text-align:'center';
+}
+.footer-nav a{
+    font-size: 0.9rem;
+    color:whitesmoke;
+}
+.footer-nav .MuiTypography-body1{
+    text-decoration: none;
+    
+}
+/* FooterNew.js */

@@ -128,7 +128,7 @@ class ProductCrudDetails extends React.Component {
                                         currentProduct && currentProduct.image_url.arrayValue.values.map((img,index)=>{
                                             return(
                                                 <div className="remove-image-block" key={index}>
-                                                    <img src={img.stringValue} width="50px" height="50px" />
+                                                    <img src={img.stringValue} width="50px" height="50px" alt=""/>
                                                     <CancelIcon className={disabled?'hideIcon':''} onClick={()=>this.deleteImage(img.stringValue, index)} />
                                                 </div>
                                             )

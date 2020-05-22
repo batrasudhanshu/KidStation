@@ -6,7 +6,7 @@ import './App.css';
 import CMS from './CMS/CMS';
 
 //ui components
-import Sidebar from '../src/ui_components/Sidebar'
+// import Sidebar from '../src/ui_components/Sidebar'
 import Home from '../src/ui_components/Home'
 import Contact from '../src/ui_components/Contact'
 
@@ -25,7 +25,9 @@ import ProductCrud from './CMS/ProductCrud/ProductCrud';
 import TestCrud from './CMS/ProductCrud/TestCrud';
 import ProductCrudDetails from './CMS/ProductCrud/ProductCrudDetails';
 import MaterialNavbar from './ui_components/MaterialNavbar';
-import { Container, Grid } from '@material-ui/core';
+import { Container, } from '@material-ui/core';
+// import Footer from './ui_components/Footer';
+import Footer from './ui_components/FooterNew';
 
 function App() {
   return (
@@ -54,6 +56,7 @@ function App() {
         <Route exact path ='/cms/erasercrud' component={EraserCrud}/>
         <Route path ='/cms/eraser/update/:id' component={EraserCrudDetails}/>
         <Route exact path ='/shop' component={Shop}/>
+        <Route exact path ='/footer' component={Footer}/>
         {/* <Route path ='/cms/eraser/:id' component={EraserCrudDetails}/> */}
         
       </Switch>
