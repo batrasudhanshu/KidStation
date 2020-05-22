@@ -110,6 +110,7 @@ input[type="checkbox"] {
 /* CMS.js */
 
 /* MaterialNavbar.js */
+
 .sidenavbar .MuiPaper-root{
     width: 30rem !important;
     background-image: url('../src/images/sidebar_bg.jpg');
@@ -135,7 +136,10 @@ input[type="checkbox"] {
     text-decoration: none;
     padding: 0.3rem 1rem;
 }
-
+.sidedrawerdiv div a, .categorylistdiv div a{
+    text-decoration: none;
+    width: 100%;
+}
 .side-drawer-outer .MuiTypography-body1{
     font-size: 1.7rem !important;
 }
@@ -143,31 +147,42 @@ input[type="checkbox"] {
     background-color: whitesmoke;
     color: black !important;
     text-decoration: none;
-    padding-left: 3rem;
+    padding-left: 1.5rem;
 }
+
 .category-list-outer .MuiTypography-body1{
     font-size: 1.6rem !important;
 }
 /* MaterialNavbar.js */
 
-/* Home.js */
+.NavMenuIcon{
+    /* background-color: #eee; */
+    cursor: pointer;
+    line-height: 8.5rem;
+    float: left;
+    width: 70px;
+    height: 70px;
+}
+.NavMenuIcon:hover{
+    background-color: #eeeeee;
+}
 
 .fulllogo {
-    width: 22rem;
     float: left;
-    /* top: -0.7rem;
-    position: absolute; */
-    padding-left: 3rem;
+}
+.fulllogo img{
+    max-width: 225px;
 }
 .navigation{
     /* height: 12.7rem; */
     display: block;
 }
 .RightNavItems{
-    line-height: 6.5rem;
+    line-height: 8.5rem;
 }
 .RightNavItems div{
     float: right;
+    /* width: 100%; */
 }
 .RightNavItems div span{
     padding: 0 3rem;
@@ -179,6 +194,17 @@ input[type="checkbox"] {
 .RightNavItems div span:first-child{
     border-right: 2px solid black;
 }
+@media only screen and (max-width:600px){
+    .RightNavItems div{
+        float: none;
+        line-height: 5rem;
+    }
+    .fulllogo img{
+        float: right;
+        padding-left: 0;
+    }
+}
+
 
 
 /* Home.js */
@@ -186,27 +212,38 @@ input[type="checkbox"] {
 .footer-social-icons {
     /* width: 4rem !important;
     height: 4rem !important; */
-    font-size: 2rem !important;
-    margin-right:2rem;
-    width: 100%;
-    right:0;
-    /* padding: 0rem; */
+    font-size: 3.5rem !important;
+    line-height: 5.5rem !important;
+    margin: 1rem;
 }
+.footer-social-icons-outer span{
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+}
+
 .MuiBreadcrumbs-separator{
     margin: 0 0.4rem !important;
 }
 .footer-nav{
-    margin:'auto';
-    display:'inline-block';
-     width:'100%';
-     text-align:'center';
+    margin:auto;
+    display:inline-block;
+    width:100%;
+    text-align:center;
+}
+.footer-nav nav{
+    display: inline-block;
 }
 .footer-nav a{
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color:whitesmoke;
 }
 .footer-nav .MuiTypography-body1{
     text-decoration: none;
-    
+}
+@media only screen and (min-width:400px){
+    .footer-nav a{
+        font-size: 0.94rem !important;
+    }
 }
 /* FooterNew.js */

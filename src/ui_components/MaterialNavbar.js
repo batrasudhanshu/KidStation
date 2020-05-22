@@ -29,6 +29,7 @@ class MaterialNavbar extends Component {
             this.handletoggle()
         }
         this.setState({activeNavIndex:index});
+        this.setState({activeCategoriesIndex:-1})
         // (item.name=='Categories')? this.handletoggle: null;
     }
     handleSideCategoryClick = (itemname,i) =>{
@@ -58,9 +59,9 @@ class MaterialNavbar extends Component {
             return(
                 <>
                     <Collapse in={this.state.categorytoggle} timeout="auto">
-                        <div className={i==this.state.activeCategoriesIndex ? 'category-list-outer':''} onClick={()=>{this.handleSideCategoryClick(itemname,i)}}>
+                        <div className={i==this.state.activeCategoriesIndex ? 'category-list-outer categorylistdiv':'categorylistdiv'} onClick={()=>{this.handleSideCategoryClick(itemname,i)}}>
                         <ListItem button>
-                            <NavLink style={{textDecoration:'none'}} to={itemname.link}>
+                            <NavLink to={itemname.link}>
                                 <ListItemText className={i==this.state.activeCategoriesIndex ? 'category-list-outer':'category-list'} primary={itemname.name} />
                             </NavLink>
                         </ListItem>
@@ -72,16 +73,15 @@ class MaterialNavbar extends Component {
         return (
             <div>
                 {/* <MenuIcon onClick={this.toggleDrawer(true)} style={{fontSize:'3.5rem', backgroundColor:'#aaa', float:'left'}} /> */}
-                <Grid container xs={12} className="navigation">
-                    <Grid item xs={1}>
-                        <MenuIcon onClick={this.toggleDrawer(true)} style={{fontSize:'3.5rem', backgroundColor:'#aaa', float:'left'}} />
+                <Grid container alignItems="center" xs={12} className="navigation">
+                    <Grid item xs={4} sm={2}>
+                        <MenuIcon className="NavMenuIcon" onClick={this.toggleDrawer(true)} style={{fontSize:'4rem'}} />
                     </Grid>
-                    <Grid item xs={4} className="fulllogo">
-                        <img src={fulllogo} width="225px" />
+                    <Grid item xs={8} sm={4} className="fulllogo">
+                        <img src={fulllogo} width="100%" max-width="225px" />
                     </Grid>
-                    <Grid xs={2}></Grid>
-                    <Grid item xs={5} md={5} className="RightNavItems">
-                        <div >
+                    <Grid align="center" item xs={12} sm={6} className="RightNavItems">
+                        <div>
                             <span>
                                 <Link style={{textDecoration:'none'}} to="">
                                     Support 
@@ -102,9 +102,9 @@ class MaterialNavbar extends Component {
                     {list.map((item,index)=>{
                         return (
                             <div>
-                                <div className={index==this.state.activeNavIndex ? 'side-drawer-outer':''} onClick={()=>{this.handleSideNavClick(item,index)}}>
+                                <div className={index==this.state.activeNavIndex ? 'side-drawer-outer sidedrawerdiv':'sidedrawerdiv'} onClick={()=>{this.handleSideNavClick(item,index)}}>
                                     <ListItem button >
-                                        <NavLink style={{textDecoration:'none'}} to={item.link}>
+                                        <NavLink to={item.link}>
                                             <ListItemText className={index==this.state.activeNavIndex ? 'side-drawer-outer':'sidedrawer'} primary={item.name}/>                           
                                         </NavLink>
                                         {item.name=='Categories' ? (this.state.categorytoggle ?<ExpandLessIcon />: <ExpandMoreIcon />) : null}

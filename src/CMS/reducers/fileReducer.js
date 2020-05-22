@@ -9,4 +9,3 @@ const fileReducer = (state=[], action) =>{
     }
 }
 export default fileReducer;
-
