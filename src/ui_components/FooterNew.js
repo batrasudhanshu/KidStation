@@ -13,7 +13,7 @@ class FooterNew extends Component {
                     <Grid container spacing={1}>
                         <Grid item xs={4}>
                             <div>
-                            <img src={fulllogo} width="150px" />
+                            <img alt="" src={fulllogo} width="150px" />
                             </div>
                         </Grid>
                         <Grid item xs={4}>
