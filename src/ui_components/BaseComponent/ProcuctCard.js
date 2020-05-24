@@ -1,7 +1,5 @@
 import React from 'react';
-import { Card, CardActionArea, CardContent, Button, Typography,CardMedia, CardActions, Grid } from '@material-ui/core';
-import {Link } from 'react-router-dom';
-import eraser_banner from '../../images/eraser_banner.jpg';
+import { Grid } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import ShareIcon from '@material-ui/icons/Share';
 
@@ -14,7 +12,7 @@ const ProcuctCard = (props) => {
                     <Grid item xs={12} sm={4} md={4} lg={3} >
                         <div className="card-layout">
                             <div className="card-image">
-                                <img src={product.image_url.arrayValue.values[0].stringValue} />
+                                <img alt=""src={product.image_url.arrayValue.values[0].stringValue} />
                             </div>
                             <div className="card-overlay"></div>
                             <div className="card-bottom">

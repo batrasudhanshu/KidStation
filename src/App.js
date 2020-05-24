@@ -11,10 +11,14 @@ import Home from '../src/ui_components/Home'
 import Contact from '../src/ui_components/Contact'
 
 import Return from '../src/ui_components/Refund'
-import notebook from '../src/ui_components/CategoryComponents/Notebook'
+import notebook from '../src/ui_components/CategoryComponents/Notebooks'
 import eraser from '../src/ui_components/CategoryComponents/Erasers'
 import ruler from '../src/ui_components/CategoryComponents/Rulers'
 import pen from '../src/ui_components/CategoryComponents/Pens'
+import water from '../src/ui_components/CategoryComponents/WaterBottles'
+import lunch from '../src/ui_components/CategoryComponents/LunchBoxes'
+import marker from '../src/ui_components/CategoryComponents/Markers'
+import kits from '../src/ui_components/CategoryComponents/StationeryKits'
 import EraserDetails from './collections/erasers/data/EraserDetails';
 import uploadSuccess from './CMS/uploadSuccess';
 import EraserCrud from './CMS/EraserCrud/EraserCrud';
@@ -26,7 +30,6 @@ import TestCrud from './CMS/ProductCrud/TestCrud';
 import ProductCrudDetails from './CMS/ProductCrud/ProductCrudDetails';
 import MaterialNavbar from './ui_components/MaterialNavbar';
 import { Container, } from '@material-ui/core';
-// import Footer from './ui_components/Footer';
 import Footer from './ui_components/FooterNew';
 
 function App() {
@@ -46,9 +49,13 @@ function App() {
         <Route exact path ='/return' component={Return}/>
         <Route exact path ='/notebook_registers' component={notebook}/>
         <Route exact path ='/erasers' component={eraser}/>
+        <Route exact path ='/lunch_boxes' component={lunch}/>
+        <Route exact path ='/water_bottles' component={water}/>
         <Route path ='/erasers/:id' component={EraserDetails}/>
         <Route exact path ='/rulers' component={ruler}/>
         <Route exact path ='/pens_pencils' component={pen}/>
+        <Route exact path ='/sketch_pens' component={marker}/>
+        <Route exact path ='/stationery_kits' component={kits}/>
         <Route exact path ='/cms/uploadsuccess' component={uploadSuccess}/>
         <Route exact path ='/cms/productcrud' component={ProductCrud}/>
         <Route exact path ='/cms/productcrud/:id' component={ProductCrudDetails}/>
@@ -56,10 +63,11 @@ function App() {
         <Route exact path ='/cms/erasercrud' component={EraserCrud}/>
         <Route path ='/cms/eraser/update/:id' component={EraserCrudDetails}/>
         <Route exact path ='/shop' component={Shop}/>
-        <Route exact path ='/footer' component={Footer}/>
+        {/* <Route exact path ='/footer' component={Footer}/> */}
         {/* <Route path ='/cms/eraser/:id' component={EraserCrudDetails}/> */}
         
       </Switch>
+      <Footer/>
       </Container>
     
      

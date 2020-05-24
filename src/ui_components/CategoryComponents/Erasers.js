@@ -13,7 +13,7 @@ class Eraser extends React.Component {
     }
     render(){
         const {erasers} = this.props;
-        console.log(erasers);
+        // console.log(erasers);
         return(
         <>
             <HeaderBanner tag="Erasers & Sharpners" bannerImg={`url(${eraser_banner})`} />
@@ -24,10 +24,10 @@ class Eraser extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    // console.log(state);
     let eraserData = [];
-    state.products.length!=0 && state.products.map((product,index)=>{
-        product.collection.stringValue == 'erasers' && eraserData.push(product);
+    state.products.length!==0 && state.products.map((product,index)=>{
+        product.collection.stringValue === 'erasers' && eraserData.push(product);
     })
     return { 
         erasers: eraserData

@@ -211,16 +211,22 @@ input[type="checkbox"] {
 /* MaterialNavbar.js */
 
 /* FooterNew.js */
+.footer .MuiContainer-root{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
 .footer-social-icons {
     /* width: 4rem !important;
     height: 4rem !important; */
-    font-size: 3.5rem !important;
+    font-size: 2.6rem !important;
     line-height: 5.5rem !important;
-    margin: 1rem;
+    
+    
 }
 .footer-social-icons-outer span{
     display: inline-block;
-    margin: auto;
+    margin: 1.5rem 1rem;
+    
     text-align: center;
 }
 
@@ -232,13 +238,15 @@ input[type="checkbox"] {
     display:inline-block;
     width:100%;
     text-align:center;
+    top: 0;
+    padding: 0;
 }
 .footer-nav nav{
     display: inline-block;
 }
 .footer-nav a{
     font-size: 0.7rem;
-    color:whitesmoke;
+    color:black;
 }
 .footer-nav .MuiTypography-body1{
     text-decoration: none;
@@ -373,3 +381,19 @@ input[type="checkbox"] {
 
 
 /* Productcard.js */
+.footer-contact ul{
+    text-align: center;
+    padding: 0;
+}
+.footer-contact ul li{
+    display:inline;
+    padding: 0 1rem;
+    
+}
+.footer-contact ul li a{
+    font-size: 0.9rem;
+    color:black;
+    text-decoration: none;
+}
+
+/* FooterNew.js */

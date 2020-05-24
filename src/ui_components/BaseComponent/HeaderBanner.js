@@ -6,7 +6,7 @@ const HeaderBanner = (props) => {
             <header_banner>
                 <div className="header" style={{ backgroundImage:props.bannerImg }}>
                     <div className="inner-header flex">
-                        <h1>{props.tag}</h1>
+                        <h1 className="tag-content">{props.tag}</h1>
                     </div>
                     <div>
                         <svg className="waves" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"

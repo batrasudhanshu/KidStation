@@ -3,21 +3,21 @@ import '../../styles/header_banner.css';
 import HeaderBanner from '../BaseComponent/HeaderBanner';
 import {fetchProduct} from '../../CMS/actions/UploadAction';
 import {connect} from 'react-redux';
-import ruler_banner from '../../images/ruler_banner.png';
+import marker_banner from '../../images/marker_banner.jpg';
 import ProductCard from '../BaseComponent/ProcuctCard';
 
 
-class Ruler extends React.Component {
+class StationeryKits extends React.Component {
     componentWillMount = () =>{
         this.props.fetchProduct();
     }
     render(){
-        const {rulers} = this.props;
+        const {stationary_kits} = this.props;
         // console.log(rulers);
         return(
         <>
-            <HeaderBanner tag="Rulers" bannerImg={`url(${ruler_banner})`} />
-            <ProductCard data={rulers}/>
+            <HeaderBanner tag="Sketch Pen & Marker" bannerImg={`url(${marker_banner})`} />
+            <ProductCard data={stationary_kits}/>
         </>
         )
     }
@@ -25,12 +25,12 @@ class Ruler extends React.Component {
 
 const mapStateToProps = (state) => {
     console.log(state);
-    let rulerData = [];
+    let kitData = [];
     state.products.length!==0 && state.products.map((product,index)=>{
-        product.collection.stringValue === 'rulers' && rulerData.push(product);
-    },)
+        product.collection.stringValue === 'stationary_kits' && kitData.push(product);
+    })
     return { 
-        rulers: rulerData
+        stationary_kits: kitData
     }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -41,4 +41,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Ruler);
+export default connect(mapStateToProps,mapDispatchToProps)(StationeryKits);

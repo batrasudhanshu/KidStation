@@ -4,7 +4,6 @@ import { NavLink, Link} from 'react-router-dom'
 import { ListItemText, ListItem, Drawer, Collapse, Grid } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import logo from '../../src/images/logo.png';
 import fulllogo from '../../src/images/Fulllogo_animated.svg';
 
 class MaterialNavbar extends Component {
@@ -29,7 +28,7 @@ class MaterialNavbar extends Component {
         this.setState({activeNavIndex:index});
         this.setState({activeCategoriesIndex:-1});
         this.setState({sidebar:false});
-        if(item.name=='Categories'){
+        if(item.name==='Categories'){
             this.handletoggle();
         }
         
@@ -51,22 +50,22 @@ class MaterialNavbar extends Component {
         ];
         const CategoriesList = [
             {name:"Eraser & Sharpner",link:'/erasers'},
-            {name:"Lunch Box",link:'#'},
-            {name:"Water Bottle",link:'#'},
-            {name:"Pen & Pencil",link:'#'},
-            {name:"Sketch - Pen & Marker",link:'#'},
-            {name:"Notebook & Register",link:'#'},
-            {name:"Stationery Kit",link:'#'},
-            {name:"Ruler",link:'#'},
+            {name:"Lunch Box",link:'/lunch_boxes'},
+            {name:"Water Bottle",link:'/water_bottles'},
+            {name:"Pen & Pencil",link:'/pens'},
+            {name:"Sketch - Pen & Marker",link:'/sketch_pens'},
+            {name:"Notebook & Register",link:'/notebooks'},
+            {name:"Stationery Kit",link:'/stationery_kits'},
+            {name:"Ruler",link:'/rulers'},
         ];
         const categoriesNav = CategoriesList.map((itemname,i)=>{
             return(
                 <>
                     <Collapse in={this.state.categorytoggle} timeout="auto">
-                        <div className={i==this.state.activeCategoriesIndex ? 'category-list-outer categorylistdiv':'categorylistdiv'} onClick={()=>{this.handleSideCategoryClick(itemname,i)}}>
+                        <div className={i===this.state.activeCategoriesIndex ? 'category-list-outer categorylistdiv':'categorylistdiv'} onClick={()=>{this.handleSideCategoryClick(itemname,i)}}>
                         <ListItem button>
                             <NavLink to={itemname.link}>
-                                <ListItemText className={i==this.state.activeCategoriesIndex ? 'category-list-outer':'category-list'} primary={itemname.name} />
+                                <ListItemText className={i===this.state.activeCategoriesIndex ? 'category-list-outer':'category-list'} primary={itemname.name} />
                             </NavLink>
                         </ListItem>
                         </div>
@@ -83,7 +82,7 @@ class MaterialNavbar extends Component {
                     </Grid>
                     <Grid item xs={8} sm={4} className="fulllogo">
                         <Link to="/">
-                            <img src={fulllogo} width="100%" max-width="225px" />
+                            <img alt="" src={fulllogo} width="100%" max-width="225px" />
                         </Link>
                     </Grid>
                     <Grid align="center" item xs={12} sm={6} className="RightNavItems">
@@ -104,21 +103,21 @@ class MaterialNavbar extends Component {
                 <Drawer className="sidenavbar" anchor="left" open={this.state.sidebar} onClose={this.toggleDrawer(false)}>
                     <div style={{padding:'2rem 2rem 2rem 0', float:'left'}}>
                         <Link to="/">
-                            <img src={fulllogo} width="100%" />
+                            <img alt="" src={fulllogo} width="100%" />
                         </Link>
                     </div>
                     {list.map((item,index)=>{
                         return (
                             <div>
-                                <div className={index==this.state.activeNavIndex ? 'side-drawer-outer sidedrawerdiv':'sidedrawerdiv'} onClick={()=>{this.handleSideNavClick(item,index)}}>
+                                <div className={index===this.state.activeNavIndex ? 'side-drawer-outer sidedrawerdiv':'sidedrawerdiv'} onClick={()=>{this.handleSideNavClick(item,index)}}>
                                     <ListItem button >
                                         <NavLink to={item.link}>
-                                            <ListItemText className={index==this.state.activeNavIndex ? 'side-drawer-outer':'sidedrawer'} primary={item.name}/>                           
+                                            <ListItemText className={index===this.state.activeNavIndex ? 'side-drawer-outer':'sidedrawer'} primary={item.name}/>                           
                                         </NavLink>
-                                        {item.name=='Categories' ? (this.state.categorytoggle ?<ExpandLessIcon fontSize="large" className={index==this.state.activeNavIndex ? '':'sidedrawer'}  />: <ExpandMoreIcon fontSize="large" className={index==this.state.activeNavIndex ? '':'sidedrawer'} />) : null}
+                                        {item.name==='Categories' ? (this.state.categorytoggle ?<ExpandLessIcon fontSize="large" className={index===this.state.activeNavIndex ? '':'sidedrawer'}  />: <ExpandMoreIcon fontSize="large" className={index===this.state.activeNavIndex ? '':'sidedrawer'} />) : null}
                                     </ListItem>
                                 </div>
-                                {item.name=='Categories' && categoriesNav}
+                                {item.name==='Categories' && categoriesNav}
                             </div>
                         )
                     })}

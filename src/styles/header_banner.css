@@ -16,7 +16,7 @@ header_banner .header {
   text-align:center;
   /* background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%); */
   /* background-image:url('https://st2.depositphotos.com/4382933/12349/i/950/depositphotos_123490940-stock-photo-school-stationery-on-a-white.jpg'); */
-  color:black;
+  
   background-size:cover;
 }
 header_banner .logo {
@@ -61,6 +61,22 @@ header_banner .content {
   text-align:center;
   background-color: white;
 }
+.tag-content
+{font-family: 'Pacifico';
+text-shadow: 0.140rem 0.140rem 0.3rem #000000;
+font-size:6rem;
+font-weight: 1000;
+
+
+ /* Chrome, Safari, Opera */
+-webkit-animation: tag-content 5s infinite; 
+
+/* Internet Explorer */
+-ms-animation: tag-content 5s infinite;
+
+/* Standar Syntax */
+animation: tag-content 5s infinite; 
+}
 
 /* Animation */
 
@@ -103,4 +119,47 @@ header_banner .parallax > use:nth-child(4) {
   header_banner h1 {
     font-size:24px;
   }
+}
+@-webkit-keyframes tag-content{
+  0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes tag-content{
+   0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+/* Standar Syntax */
+@keyframes tag-content{
+    0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
 }

@@ -3,21 +3,21 @@ import '../../styles/header_banner.css';
 import HeaderBanner from '../BaseComponent/HeaderBanner';
 import {fetchProduct} from '../../CMS/actions/UploadAction';
 import {connect} from 'react-redux';
-import ruler_banner from '../../images/ruler_banner.png';
+import lunch_banner from '../../images/lunch_banner.jpg';
 import ProductCard from '../BaseComponent/ProcuctCard';
 
 
-class Ruler extends React.Component {
+class LunchBoxes extends React.Component {
     componentWillMount = () =>{
         this.props.fetchProduct();
     }
     render(){
-        const {rulers} = this.props;
+        const {lunch_boxes} = this.props;
         // console.log(rulers);
         return(
         <>
-            <HeaderBanner tag="Rulers" bannerImg={`url(${ruler_banner})`} />
-            <ProductCard data={rulers}/>
+            <HeaderBanner tag="Lunch Boxes" bannerImg={`url(${lunch_banner})`} />
+            <ProductCard data={lunch_boxes}/>
         </>
         )
     }
@@ -25,12 +25,16 @@ class Ruler extends React.Component {
 
 const mapStateToProps = (state) => {
     console.log(state);
-    let rulerData = [];
+    let lunchData = [];
     state.products.length!==0 && state.products.map((product,index)=>{
-        product.collection.stringValue === 'rulers' && rulerData.push(product);
-    },)
+        product.collection.stringValue === 'rulers' && lunchData.push(product);
+        return(
+            <>
+            </>
+        )
+    });
     return { 
-        rulers: rulerData
+        lunch_boxes: lunchData
     }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -41,4 +45,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Ruler);
+export default connect(mapStateToProps,mapDispatchToProps)(LunchBoxes);

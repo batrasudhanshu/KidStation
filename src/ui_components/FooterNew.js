@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container,Grid,Breadcrumbs } from '@material-ui/core'
+import {Grid,Breadcrumbs } from '@material-ui/core'
 import fulllogo from '../../src/images/Fulllogo_animated.svg';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 class FooterNew extends Component {
     render() {
         return (
-            <div style={{backgroundColor:'#999'}}>
-                <Container >
-                    <Grid container spacing={1}>
+            <div className="footer" >
+                {/* <Container > */}
+                    <Grid style={{backgroundColor:'#dbcda8'}} container>
                         <Grid item xs={4}>
                             <div>
                             <img alt="" src={fulllogo} width="150px" />
@@ -24,7 +24,7 @@ class FooterNew extends Component {
                                     {/* <Grid item xs={6}> */}
                                     <span>
                                         <Link style={{textDecoration:'none'}} to="">
-                                        <FacebookIcon className="footer-social-icons"/>
+                                        <FacebookIcon color={'#000033'} className="footer-social-icons"/>
                                         </Link>
                                         
                                     </span>
@@ -32,7 +32,7 @@ class FooterNew extends Component {
                                     {/* <Grid item xs={6}> */}
                                         <span>
                                             <Link style={{textDecoration:'none'}} to="">
-                                                <InstagramIcon className="footer-social-icons"/>
+                                                <InstagramIcon style={{color:'#ff4081'}}  className="footer-social-icons"/>
                                             </Link>
                                         </span>
                                     {/* </Grid> */}
@@ -60,9 +60,28 @@ class FooterNew extends Component {
                                 </Breadcrumbs>
                             </div>
                         </Grid>
+                        <Grid container justify="center" align="center" item xs={12}>
+                        
+                            <div className="footer-contact">
+                                <ul>
+                                    <li><a href="tel:9999089262">9999089262</a></li>
+                                    <li><a href="mailto:kidstation2020@gmail.com">kidstation2020@gmail.com</a></li>
+                                </ul>
+                            </div>
+                        
+                        </Grid>
+                        
                 
                     </Grid>
-                </Container>
+                    <Grid style={{backgroundColor:'#000000'}} container>
+                        <Grid style={{color:'#BCC6CC'}} container justify="center" align="center" item xs={12}>
+                        
+                            <span style={{fontSize:'0.7rem'}}>Copyright &copy; 2020 KidStation - All Rights Reserved</span>
+                       
+                        
+                        </Grid>
+                        </Grid>
+                {/* </Container> */}
             </div> 
         );
     }
