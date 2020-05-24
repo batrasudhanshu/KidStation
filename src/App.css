@@ -153,7 +153,7 @@ input[type="checkbox"] {
 .category-list-outer .MuiTypography-body1{
     font-size: 1.6rem !important;
 }
-/* MaterialNavbar.js */
+
 
 .NavMenuIcon{
     /* background-color: #eee; */
@@ -169,6 +169,9 @@ input[type="checkbox"] {
 
 .fulllogo {
     float: left;
+}
+.fulllogo a{
+    display: block;
 }
 .fulllogo img{
     max-width: 225px;
@@ -205,9 +208,8 @@ input[type="checkbox"] {
     }
 }
 
+/* MaterialNavbar.js */
 
-
-/* Home.js */
 /* FooterNew.js */
 .footer-social-icons {
     /* width: 4rem !important;
@@ -247,3 +249,127 @@ input[type="checkbox"] {
     }
 }
 /* FooterNew.js */
+
+/* home.js */
+.carouselblock .overlay{
+    /* display: none; */
+}
+.carouselblock{
+    /* padding: 2rem; */
+}
+
+/* home.js */
+
+/* Productcard.js */
+
+.product-card-outer{
+    margin-top: 2rem !important;
+}
+.card-layout{
+    width: 100%;
+    height: 29rem;
+    position: relative;
+    margin: 1rem 0;
+}
+.card-image{
+    width: 100%;
+    height: 22rem;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+.card-price{
+    background-color: black;
+    display: inline-block;
+    padding: 0rem 1rem;
+    color: whitesmoke;
+    display: inline-block;
+}
+.soldout-outer{
+    display: inline-block;
+}
+.card-soldout{
+     margin-left: 1.2rem;
+     padding: 0.8rem;
+     line-height: 3.5rem;
+     background-color: red;
+     color: whitesmoke;
+     font-weight: 700;
+}
+.price-linethrough{
+    text-decoration: line-through;
+}
+.card-image img{
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+
+}   
+.card-overlay{
+    width: 100%;
+    height: 22rem;
+    background-color: gray;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+
+}
+.card-desc{
+    width: 80%;
+    margin: auto;
+    height: 8rem;
+    text-align: center;
+}
+.card-desc div{
+    line-height: 3.5rem;
+    font-size: 2rem;
+    margin: auto;
+    text-align: center;
+}
+.card-icons{
+    text-align: center;
+    /* z-index: 9999; */
+    width:100%;
+    visibility: hidden;
+
+}
+.card-icons span{
+    background-color: whitesmoke;
+    display: inline-block;
+    padding: 2rem;
+    /* width: 50%; */
+    margin: 0rem 1rem;
+}
+.card-bottom{
+    position: relative;
+    height: 7rem;
+}
+.card-icons, .card-desc{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-37%);
+}
+
+.card-layout:hover .card-icons {
+    visibility: visible;
+    transition: ease-in 0.5s;
+    transform: translate(-50%,-300%);
+}
+.card-layout:hover .card-overlay{
+    opacity: 0.1;
+    transition: ease 0.5s;
+}
+@keyframes icons-move{
+    0%{
+        transform: translate(-50%,-50%);
+    }
+    100%{
+        
+    }
+}
+
+
+
+/* Productcard.js */

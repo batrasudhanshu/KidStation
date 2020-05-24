@@ -15,7 +15,7 @@ header_banner .header {
   position:relative;
   text-align:center;
   /* background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%); */
-  background-image:url('https://st2.depositphotos.com/4382933/12349/i/950/depositphotos_123490940-stock-photo-school-stationery-on-a-white.jpg');
+  /* background-image:url('https://st2.depositphotos.com/4382933/12349/i/950/depositphotos_123490940-stock-photo-school-stationery-on-a-white.jpg'); */
   color:black;
   background-size:cover;
 }

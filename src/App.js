@@ -11,10 +11,10 @@ import Home from '../src/ui_components/Home'
 import Contact from '../src/ui_components/Contact'
 
 import Return from '../src/ui_components/Refund'
-import notebook from '../src/ui_components/Notebook'
-import eraser from '../src/ui_components/Erasers'
-import ruler from '../src/ui_components/Rulers'
-import pen from '../src/ui_components/Pens'
+import notebook from '../src/ui_components/CategoryComponents/Notebook'
+import eraser from '../src/ui_components/CategoryComponents/Erasers'
+import ruler from '../src/ui_components/CategoryComponents/Rulers'
+import pen from '../src/ui_components/CategoryComponents/Pens'
 import EraserDetails from './collections/erasers/data/EraserDetails';
 import uploadSuccess from './CMS/uploadSuccess';
 import EraserCrud from './CMS/EraserCrud/EraserCrud';
