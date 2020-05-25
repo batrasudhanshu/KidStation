@@ -16,7 +16,7 @@ class StationeryKits extends React.Component {
         // console.log(rulers);
         return(
         <>
-            <HeaderBanner tag="Sketch Pen & Marker" bannerImg={`url(${marker_banner})`} />
+            <HeaderBanner tag="Stationery Kits" bannerImg={`url(${marker_banner})`} />
             <ProductCard data={stationary_kits}/>
         </>
         )

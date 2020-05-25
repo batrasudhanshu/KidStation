@@ -16,7 +16,7 @@ class WaterBottles extends React.Component {
         // console.log(rulers);
         return(
         <>
-            <HeaderBanner tag="Lunch Boxes" bannerImg={`url(${water_banner})`} />
+            <HeaderBanner tag="Water Bottles" bannerImg={`url(${water_banner})`} />
             <ProductCard data={water_bottles}/>
         </>
         )

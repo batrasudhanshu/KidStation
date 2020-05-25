@@ -270,6 +270,11 @@ input[type="checkbox"] {
 
 /* Productcard.js */
 
+.loaderlayout{
+    width: 100%;
+    height: 29rem;
+}
+
 .product-card-outer{
     margin-top: 2rem !important;
 }
@@ -317,7 +322,7 @@ input[type="checkbox"] {
 .card-overlay{
     width: 100%;
     height: 22rem;
-    background-color: gray;
+    background-color: slategray;
     opacity: 0;
     position: absolute;
     top: 0;
@@ -366,7 +371,7 @@ input[type="checkbox"] {
     transform: translate(-50%,-300%);
 }
 .card-layout:hover .card-overlay{
-    opacity: 0.1;
+    opacity: 0.5;
     transition: ease 0.5s;
 }
 @keyframes icons-move{

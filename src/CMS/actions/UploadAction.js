@@ -61,6 +61,7 @@ export const fetchProduct = () => {
             const itemref = firestore.collection(item);
             let allProduct = itemref.get()
             .then(snapshot => {
+                dispatch({type: 'ALL_PRODUCT' ,data:[] });
                 if(item == allcollection[8]){
                     dispatch({type: 'ALL_PRODUCT' ,data:data });
                     dispatch({type:'SEARCH',data:data});

@@ -12,12 +12,12 @@ class Eraser extends React.Component {
         this.props.fetchProduct();
     }
     render(){
-        const {erasers} = this.props;
-        // console.log(erasers);
+        const {products} = this.props;
+        console.log(products);
         return(
         <>
             <HeaderBanner tag="Erasers & Sharpners" bannerImg={`url(${eraser_banner})`} />
-            <ProductCard data={erasers}/>
+            <ProductCard data={products}/>
         </>
         )
     }
@@ -30,6 +30,7 @@ const mapStateToProps = (state) => {
         product.collection.stringValue === 'erasers' && eraserData.push(product);
     })
     return { 
+        products: state.products,
         erasers: eraserData
     }
 }

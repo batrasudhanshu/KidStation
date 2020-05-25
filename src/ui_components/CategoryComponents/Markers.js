@@ -27,7 +27,7 @@ const mapStateToProps = (state) => {
     console.log(state);
     let markerData = [];
     state.products.length!==0 && state.products.map((product,index)=>{
-        product.collection.stringValue === 'rulers' && markerData.push(product);
+        product.collection.stringValue === 'markers' && markerData.push(product);
     })
     return { 
         markers: markerData
