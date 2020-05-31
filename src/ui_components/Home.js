@@ -1,10 +1,13 @@
 import React from 'react';
 import '../styles/home.css';
 import {Grid, Link, Divider} from '@material-ui/core';
+import SearchFilter from '../CMS/ProductCrud/SearchFilter';
 
-const Home = () => {
+const Home = (props) => {
+    console.log(props);
     return(
         <div>
+            <SearchFilter />
             <div className="carousel carouselblock fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
                 <div className="carousel-inner">
                     <div className="item slides active">

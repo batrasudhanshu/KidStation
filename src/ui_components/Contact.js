@@ -3,6 +3,7 @@ import React from "react";
 import '../styles/contact_page.css';
 // import '../js_files/map.js';
 import MapComponent from './Map';
+import SearchFilter from "../CMS/ProductCrud/SearchFilter";
 // import './js/contact_page';
 // import './js/contact_map';
 
@@ -10,6 +11,7 @@ import MapComponent from './Map';
 const Contact = () => {
   return (
       <contact_page>
+          <SearchFilter />
 		<div className="contact-pageheader">
         <div className="container">
             <div className="row">

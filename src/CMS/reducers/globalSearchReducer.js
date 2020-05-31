@@ -1,11 +1,11 @@
-const searchReducer = (state=[], action) =>{
+const globalSearchReducer = (state=[], action) =>{
     switch (action.type) {
-        case 'SEARCH':
+        case 'GLOBAL_SEARCH':
             state = action.data
             return state;
         default:
             return state;
     }
 }
-export default searchReducer;
+export default globalSearchReducer;
 

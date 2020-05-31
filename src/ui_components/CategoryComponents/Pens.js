@@ -5,17 +5,16 @@ import {fetchProduct} from '../../CMS/actions/UploadAction';
 import {connect} from 'react-redux';
 import pen_banner from '../../images/pen_banner.jpg';
 import ProductCard from '../BaseComponent/ProcuctCard';
+import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
 class Pen extends React.Component {
-    componentWillMount = () =>{
-        this.props.fetchProduct();
-    }
     render(){
         const {pens} = this.props;
         console.log(pens);
         return(
         <>
+            <SearchFilter/>
             <HeaderBanner tag="Pen & Pencil" bannerImg={`url(${pen_banner})`} />
             <ProductCard data={pens}/>
         </>
@@ -33,12 +32,4 @@ const mapStateToProps = (state) => {
         pens: penData
     }
 }
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        fetchProduct: () => {
-            dispatch(fetchProduct())
-        }
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Pen);
+export default connect(mapStateToProps)(Pen);

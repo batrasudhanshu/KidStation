@@ -5,17 +5,16 @@ import {fetchProduct} from '../../CMS/actions/UploadAction';
 import {connect} from 'react-redux';
 import water_banner from '../../images/water_banner.jpg';
 import ProductCard from '../BaseComponent/ProcuctCard';
+import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
 class WaterBottles extends React.Component {
-    componentWillMount = () =>{
-        this.props.fetchProduct();
-    }
     render(){
         const {water_bottles} = this.props;
         // console.log(rulers);
         return(
         <>
+            <SearchFilter/>
             <HeaderBanner tag="Water Bottles" bannerImg={`url(${water_banner})`} />
             <ProductCard data={water_bottles}/>
         </>
@@ -33,12 +32,4 @@ const mapStateToProps = (state) => {
         water_bottles: waterData
     }
 }
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        fetchProduct: () => {
-            dispatch(fetchProduct())
-        }
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(WaterBottles);
+export default connect(mapStateToProps)(WaterBottles);

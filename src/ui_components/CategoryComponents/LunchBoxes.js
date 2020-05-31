@@ -5,17 +5,16 @@ import {fetchProduct} from '../../CMS/actions/UploadAction';
 import {connect} from 'react-redux';
 import lunch_banner from '../../images/lunch_banner.jpg';
 import ProductCard from '../BaseComponent/ProcuctCard';
+import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
 class LunchBoxes extends React.Component {
-    componentWillMount = () =>{
-        this.props.fetchProduct();
-    }
     render(){
         const {lunch_boxes} = this.props;
         // console.log(rulers);
         return(
         <>
+            <SearchFilter/>
             <HeaderBanner tag="Lunch Boxes" bannerImg={`url(${lunch_banner})`} />
             <ProductCard data={lunch_boxes}/>
         </>
@@ -34,15 +33,7 @@ const mapStateToProps = (state) => {
         )
     });
     return { 
-        lunch_boxes: lunchData
+        lunch_boxes: lunchData,
     }
 }
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        fetchProduct: () => {
-            dispatch(fetchProduct())
-        }
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(LunchBoxes);
+export default connect(mapStateToProps)(LunchBoxes);

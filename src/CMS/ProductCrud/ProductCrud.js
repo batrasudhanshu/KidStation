@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchProduct} from '../actions/UploadAction';
 import ProductCrudList from './ProductCrudList'
 import SearchFilter from './SearchFilter';
+import SearchFilterCMS from './SearchFilterCMS';
 
 class ProductCrud extends React.Component {
     constructor(props){
@@ -17,8 +18,8 @@ class ProductCrud extends React.Component {
         return (
             <div>
                 <div className="">
+                    <SearchFilterCMS />
                     <h2 style={{textAlign:'center', margin:'20px'}}>PRODUCTS</h2>
-                    <SearchFilter />
                     <ProductCrudList products={filterProduct} />
                 </div>
             </div>

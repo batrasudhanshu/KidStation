@@ -1,11 +1,11 @@
-const searchReducer = (state=[], action) =>{
+const filtersortReducer = (state=[], action) =>{
     switch (action.type) {
-        case 'SEARCH':
+        case 'FILTER_SORT':
             state = action.data
             return state;
         default:
             return state;
     }
 }
-export default searchReducer;
+export default filtersortReducer;
 

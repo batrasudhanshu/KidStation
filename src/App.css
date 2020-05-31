@@ -270,6 +270,19 @@ input[type="checkbox"] {
 
 /* Productcard.js */
 
+.loader-desc{
+    width:50%;
+    margin: auto;
+}
+.loader-desc > div{
+    margin: 0.5rem;
+}
+.loader-img{
+    width: 100%;
+    padding: 0.5rem;
+    margin: auto;
+}
+
 .loaderlayout{
     width: 100%;
     height: 29rem;
@@ -402,3 +415,79 @@ input[type="checkbox"] {
 }
 
 /* FooterNew.js */
+
+
+/* filtersort.js */
+
+.filter-sort-form{
+    width: 100%;
+}
+.filter-sort-form .MuiFormControl-root{
+    display:inline-block;
+}
+.filter-sort-form-filtercontrol, .filter-sort-form-filtercontrol > div{
+    width: 100%;
+}
+.filter-sort-form-sortby > div{
+    width: 12rem;
+    display: inline-block !important;
+    /* float: left; */
+}
+.filter-sort-form-sortby > div > div{
+    display: inline-block !important;
+    padding-right: 0 !important;
+}
+.filter-sort-form-sortcontrol > div{
+    display: inline-block;
+}
+.filter-sort-dialog > div > div{
+    width: 40rem;
+}
+.filter-sort-dialog-title .MuiTypography-root{
+    font-size: 1.5rem;
+}
+.filter-sort-form-checkbox{
+    line-height: 5rem;
+    float: right;
+    margin: 0 1.5rem !important;
+}
+.filter-sort-btn{
+    float: right;
+    padding: 0.5rem;
+    
+}
+.filter-sort-btn .MuiButton-label{
+    /* font-size: 1.1rem !important; */
+    background-color: olive;
+    color: whitesmoke;
+    padding: 0.5rem;
+}
+
+/* filtersort.js */
+
+/* SearchFilter.js */
+.global-search{
+    text-align: center;
+    width:100%;
+    position: relative;
+}
+.global-search div {
+    width: 100%;
+    padding: 0 0.5rem;
+}
+.global-search nav{
+    /* border : 12px solid black; */
+    padding: 0 0.5rem;
+    border-radius: 3rem;
+    box-shadow: rgb(120, 120, 120);
+    z-index: 999;
+    position: absolute;
+    display: block;
+    width: 100%;
+}
+.global-search nav > div{
+    background-color: whitesmoke;
+}
+
+
+/* SearchFilter.js */

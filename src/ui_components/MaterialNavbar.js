@@ -38,6 +38,13 @@ class MaterialNavbar extends Component {
         this.setState({activeCategoriesIndex:i});
         this.setState({sidebar:false});
     }
+    handleLogoClick = () =>{
+        this.setState({
+            activeNavIndex:0,
+            activeCategoriesIndex:-1,
+            sidebar: false
+        })
+    }
 
     render() {
         const list= [
@@ -81,7 +88,7 @@ class MaterialNavbar extends Component {
                         <MenuIcon className="NavMenuIcon" onClick={this.toggleDrawer(true)} style={{fontSize:'4rem'}} />
                     </Grid>
                     <Grid item xs={8} sm={4} className="fulllogo">
-                        <Link to="/">
+                        <Link to="/" onClick={this.handleLogoClick}>
                             <img alt="" src={fulllogo} width="100%" max-width="225px" />
                         </Link>
                     </Grid>
@@ -102,7 +109,7 @@ class MaterialNavbar extends Component {
                 </Grid>
                 <Drawer className="sidenavbar" anchor="left" open={this.state.sidebar} onClose={this.toggleDrawer(false)}>
                     <div style={{padding:'2rem 2rem 2rem 0', float:'left'}}>
-                        <Link to="/">
+                        <Link to="/" onClick={this.handleLogoClick}>
                             <img alt="" src={fulllogo} width="100%" />
                         </Link>
                     </div>
