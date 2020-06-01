@@ -453,14 +453,12 @@ input[type="checkbox"] {
 }
 .filter-sort-btn{
     float: right;
-    padding: 0.5rem;
     
 }
 .filter-sort-btn .MuiButton-label{
     /* font-size: 1.1rem !important; */
     background-color: olive;
     color: whitesmoke;
-    padding: 0.5rem;
 }
 
 /* filtersort.js */
@@ -471,23 +469,40 @@ input[type="checkbox"] {
     width:100%;
     position: relative;
 }
-.global-search div {
-    width: 100%;
-    padding: 0 0.5rem;
+.global-search-input {
+    width: 98%;
+    margin: 0 1%;
+    /* padding: 0 0.5rem; */
 }
-.global-search nav{
-    /* border : 12px solid black; */
-    padding: 0 0.5rem;
-    border-radius: 3rem;
+.global-search-input .MuiFormControl-root{
+    width: 100%;
+}
+.global-search ul{
+    /* border : 1px solid black; */
+    padding: 0;
+    margin: 0 1%;
+    border-radius: 1rem;
     box-shadow: rgb(120, 120, 120);
     z-index: 999;
     position: absolute;
     display: block;
-    width: 100%;
+    width: 98%;
 }
-.global-search nav > div{
+.global-search ul > div{
     background-color: whitesmoke;
 }
+.global-search ul > div:hover{
+    background-color: rgb(220, 220, 220);
+}
+
 
 
 /* SearchFilter.js */
+
+
+/* home.js */
+ .home-carousel{
+     margin-top: 1rem;
+ }
+
+/* home.js */

@@ -8,7 +8,7 @@ const Home = (props) => {
     return(
         <div>
             <SearchFilter />
-            <div className="carousel carouselblock fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+            <div className="home-carousel carousel carouselblock fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
                 <div className="carousel-inner">
                     <div className="item slides active">
                         <div className="slide-1"></div>

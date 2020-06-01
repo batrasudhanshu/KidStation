@@ -26,6 +26,7 @@ import uploadSuccess from './CMS/uploadSuccess';
 import EraserCrud from './CMS/EraserCrud/EraserCrud';
 import EraserCrudDetails from './CMS/EraserCrud/EraserCrudDetails';
 import Shop from '../src/ui_components/ShopPage';
+import SearchResultPage from '../src/ui_components/SearchResultPage';
 import Test from './CMS/Test';
 import ProductCrud from './CMS/ProductCrud/ProductCrud';
 import TestCrud from './CMS/ProductCrud/TestCrud';
@@ -68,12 +69,13 @@ class App extends Component {
           <Route exact path ='/sketch_pens' render={()=><Marker products={products} />}/>
           <Route exact path ='/stationery_kits' render={()=><Kit products={products} />}/>
           <Route exact path ='/cms/uploadsuccess' render={()=><uploadSuccess products={products} />}/>
-          <Route exact path ='/cms/productcrud' render={()=><ProductCrud products={products} />}/>
-          <Route exact path ='/cms/productcrud/:id' render={()=><ProductCrudDetails products={products} />} />
+          <Route exact path ='/cms/productcrud' component={ProductCrud} />}/>
+          <Route exact path ='/cms/productcrud/:id' component={ProductCrudDetails} />
           <Route exact path ='/cms/testcrud' render={()=><TestCrud products={products} />}/>
           <Route exact path ='/cms/erasercrud' render={()=><EraserCrud products={products} />}/>
           <Route path ='/cms/eraser/update/:id' render={()=><EraserCrudDetails products={products} />}/>
           <Route exact path ='/shop'  render={()=><Shop products={products} />}/>
+          <Route exact path ='/searchresult'  render={()=><SearchResultPage products={products} />}/>
           {/* <Route exact path ='/footer' component={Footer}/> */}
           {/* <Route path ='/cms/eraser/:id' component={EraserCrudDetails}/> */}
           
