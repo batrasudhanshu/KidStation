@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {fetchProduct} from '../actions/UploadAction';
-import {searchFilter} from '../actions/SearchAction';
 import { TextField, InputAdornment,ListItem,List,ListItemText, IconButton } from '@material-ui/core';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import {globalSearchFilter, SearchedProducts} from '../actions/SearchAction';
 import {Link} from 'react-router-dom';
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
 
 class SearchFilter extends Component {
     constructor(props) {
@@ -25,6 +25,7 @@ class SearchFilter extends Component {
     }
     searchProducts = () =>{
         this.props.SearchedProducts();
+        
     }
     render() {
         const {products, globalSearch} = this.props;
@@ -32,9 +33,27 @@ class SearchFilter extends Component {
         return (
             <div className="global-search">
                 <div className="global-search-input">
-                    <form>
+                    {/* <form>
                         <TextField onChange={this.handleChange} InputProps={{endAdornment: <InputAdornment style={{marginRight:'1rem', width:'2rem'}}> <Link to ="/searchresult"> <IconButton onClick={this.searchProducts}><SearchSharpIcon fontSize="large" style={{color:'blue'}} /> </IconButton>  </Link> </InputAdornment>}} placeholder={'Search...'} value={this.state.productname} type="search" variant="outlined" />
-                    </form>
+                    </form> */}
+                    <Paper elevation={5} component="form" onsubmit={this.searchProducts} >
+      
+      <InputBase
+        fullWidth={'true'}
+        onChange={this.handleChange}
+        placeholder="What are you looking for ?"
+        color ={'primary'}
+        endAdornment={<InputAdornment position="end"><Link to ="/searchresult">
+                    <IconButton  type="submit" onClick={this.searchProducts} aria-label="search">
+                        <SearchSharpIcon />
+                    </IconButton>
+                    </Link>
+                    </InputAdornment>}
+        
+      />
+      
+        </Paper>
+
                 </div>
                 {/* <div className="search-list"> */}
                 <List style={hideList?({display:'none'}):({display:'block'})}>

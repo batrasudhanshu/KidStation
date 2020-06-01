@@ -415,8 +415,48 @@ input[type="checkbox"] {
 }
 
 /* FooterNew.js */
+/* FooterLarge.js */
+.footer-large h2{
+    text-align: center;
+}
+.footer-large .logo-image img{
+width: 21rem;
+}
+.footer-large .logo-image{
+    margin: 0 2.5rem;
+}
+.footer-large .nav-list > nav > nav {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-large .nav-list > nav {
+    display: inline-block;
+    text-align: center;
+    padding: 0rem;
+  }
+  .footer-large .MuiBreadcrumbs-ol{
+      display: inline-flex;
+  }
+  .footer-large .MuiBreadcrumbs-ol .MuiListItem-root{
+      display: block;
+      text-align: center !important;
+  }
+  .footer-large .MuiBreadcrumbs-ol .MuiListItemIcon-root{
+      display: block;
+  }
+  .footer-large .MuiBreadcrumbs-ol .MuiBreadcrumbs-li{
+      margin: 0 0.4rem;
+  }
+  .footer-large .MuiBreadcrumbs-ol .MuiSvgIcon-root{
+      font-size: 2rem;
+  }
+  .footer-large .MuiBreadcrumbs-ol .MuiTypography-body1{
+      font-size: 1.7rem;
+  }
+  
 
-
+/* FooterLarge.js */
 /* filtersort.js */
 
 .filter-sort-form{
@@ -476,6 +516,9 @@ input[type="checkbox"] {
 }
 .global-search-input .MuiFormControl-root{
     width: 100%;
+}
+.global-search-input .MuiInputBase-input{
+    margin:0 1rem;
 }
 .global-search ul{
     /* border : 1px solid black; */

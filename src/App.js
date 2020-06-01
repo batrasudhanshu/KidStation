@@ -33,7 +33,7 @@ import TestCrud from './CMS/ProductCrud/TestCrud';
 import ProductCrudDetails from './CMS/ProductCrud/ProductCrudDetails';
 import MaterialNavbar from './ui_components/MaterialNavbar';
 import { Container, } from '@material-ui/core';
-import Footer from './ui_components/FooterNew';
+import Footer from './ui_components/FooterLarge';
 import ProductDetailComponent from './ui_components/BaseComponent/ProductDetailComponent';
 import SearchFilter from './CMS/ProductCrud/SearchFilter';
 
