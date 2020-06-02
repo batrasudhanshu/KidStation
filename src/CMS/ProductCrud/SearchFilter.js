@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {store} from '../../index';
 import { TextField, InputAdornment,ListItem,List,ListItemText, IconButton } from '@material-ui/core';
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import {globalSearchFilter, SearchedProducts} from '../actions/SearchAction';
 import {Link} from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
+
 
 class SearchFilter extends Component {
     constructor(props) {
@@ -16,44 +18,45 @@ class SearchFilter extends Component {
         }
     }
     handleChange = (e) =>{
+        store.dispatch({type:'GLOBAL_SEARCH_INPUT', data:e.target.value})
         this.setState({hideList:false, productname:e.target.value})
 
         if(e.target.value.length==0){
             this.setState({hideList:true})
+            return;
         }
         this.props.globalSearchFilter(e.target.value);
     }
     searchProducts = () =>{
+        let searchValue = store.getState().searchInput;
+        store.dispatch({type:'EMPTY_SEARCH_BAR', data: false})
+        if(searchValue.length==0){
+            store.dispatch({type:'EMPTY_SEARCH_BAR', data: true})
+        }
         this.props.SearchedProducts();
-        
     }
     render() {
-        const {products, globalSearch} = this.props;
+        const {products, globalSearch, searchInput} = this.props;
         const {hideList} = this.state;
         return (
             <div className="global-search">
                 <div className="global-search-input">
-                    {/* <form>
-                        <TextField onChange={this.handleChange} InputProps={{endAdornment: <InputAdornment style={{marginRight:'1rem', width:'2rem'}}> <Link to ="/searchresult"> <IconButton onClick={this.searchProducts}><SearchSharpIcon fontSize="large" style={{color:'blue'}} /> </IconButton>  </Link> </InputAdornment>}} placeholder={'Search...'} value={this.state.productname} type="search" variant="outlined" />
-                    </form> */}
                     <Paper elevation={5} component="form" onsubmit={this.searchProducts} >
-      
-      <InputBase
-        fullWidth={'true'}
-        onChange={this.handleChange}
-        placeholder="What are you looking for ?"
-        color ={'primary'}
-        endAdornment={<InputAdornment position="end"><Link to ="/searchresult">
-                    <IconButton  type="submit" onClick={this.searchProducts} aria-label="search">
-                        <SearchSharpIcon />
-                    </IconButton>
-                    </Link>
-                    </InputAdornment>}
-        
-      />
-      
-        </Paper>
-
+                        <InputBase
+                            autoComplete="off"
+                            fullWidth={'true'}
+                            onChange={this.handleChange}
+                            placeholder="What are you looking for ?"
+                            color ={'primary'}
+                            value={searchInput}
+                            endAdornment={<InputAdornment position="end"><Link to ="/searchresult">
+                                        <IconButton  type="submit" onClick={this.searchProducts} aria-label="search">
+                                            <SearchSharpIcon />
+                                        </IconButton>
+                                        </Link>
+                                        </InputAdornment>}
+                        />
+                    </Paper>
                 </div>
                 {/* <div className="search-list"> */}
                 <List style={hideList?({display:'none'}):({display:'block'})}>
@@ -71,7 +74,6 @@ class SearchFilter extends Component {
                         ))
                     ))}
                 </List>
-                {/* </div> */}
             </div>
         )
     }
@@ -80,7 +82,8 @@ const mapStateToProps = (state) => {
     console.log(state);
     return { 
         products: state.products,
-        globalSearch: state.globalSearch
+        globalSearch: state.globalSearch,
+        searchInput: state.searchInput
     }
 }
 

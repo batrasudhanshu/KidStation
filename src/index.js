@@ -14,17 +14,13 @@ import rootReducer from './CMS/reducers/rootReducer';
 
 
 
-const store = createStore(rootReducer,
+export const store = createStore(rootReducer,
   compose(
   applyMiddleware(thunk.withExtraArgument({getFirestore,getFirebase})),
   reduxFirestore(fbConfig),
   reactReduxFirebase(fbConfig)
   )
   );
-
-
-
-
 
 const rootEl = document.getElementById('root');
 let render = () => {

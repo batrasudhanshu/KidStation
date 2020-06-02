@@ -14,7 +14,8 @@ import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 class ShopPage extends React.Component {
     render(){
-        const {globalSearch, searchedProducts} = this.props;
+        const {globalSearch, searchedProducts,emptySearch, searchInput} = this.props;
+        console.log(emptySearch);
         return(
         <>  
             <SearchFilter />
@@ -26,7 +27,8 @@ class ShopPage extends React.Component {
                         </div>
                     )}
             />
-            <ProductCard data={searchedProducts}/>
+            {emptySearch ? (<div>Oh O result not found</div>):searchedProducts.length==0? (<div>Product not found "{searchInput}" </div>) : <ProductCard data={searchedProducts}/>  }
+            
         </>
         )
     }
@@ -37,7 +39,9 @@ const mapStateToProps = (state) => {
     return { 
         products: state.products,
         globalSearch: state.globalSearch,
-        searchedProducts: state.searchedProducts
+        searchedProducts: state.searchedProducts,
+        emptySearch: state.emptySearch,
+        searchInput: state.searchInput
     }
 }
 export default connect(mapStateToProps)(ShopPage);

@@ -493,7 +493,6 @@ width: 21rem;
 }
 .filter-sort-btn{
     float: right;
-    
 }
 .filter-sort-btn .MuiButton-label{
     /* font-size: 1.1rem !important; */
@@ -521,21 +520,23 @@ width: 21rem;
     margin:0 1rem;
 }
 .global-search ul{
-    /* border : 1px solid black; */
     padding: 0;
     margin: 0 1%;
-    border-radius: 1rem;
     box-shadow: rgb(120, 120, 120);
     z-index: 999;
     position: absolute;
     display: block;
     width: 98%;
 }
-.global-search ul > div{
+.global-search ul > a{
+    border: none !important;
     background-color: whitesmoke;
+    /* color: brown; */
 }
-.global-search ul > div:hover{
+.global-search ul > a:hover{
+    border: none !important;
     background-color: rgb(220, 220, 220);
+    /* color: brown; */
 }
 
 

@@ -8,6 +8,8 @@ import searchReducer from './searchReducer';
 import globalSearchReducer from './globalSearchReducer';
 import filtersortReducer from './filtersortReducer';
 import searchedproductsReducer from './searchedproductsReducer';
+import emptysearchbarReducer from './emptysearchbarReducer';
+import globalsearchinputReducer from './globalsearchinputReducer';
 
 import { combineReducers } from 'redux'
 import {firestoreReducer} from 'redux-firestore'
@@ -15,6 +17,8 @@ import {firebaseReducer} from 'react-redux-firebase'
 
 
 const rootReducer = combineReducers({
+  searchInput: globalsearchinputReducer,
+  emptySearch: emptysearchbarReducer,
   globalSearch: globalSearchReducer,
   searchedProducts:searchedproductsReducer,
   filtersort : filtersortReducer,
