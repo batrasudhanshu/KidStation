@@ -9,6 +9,7 @@ import FilterSort from '../ShopPage/FilterSort';
 import FilterSortMain from '../ShopPage/FilterSortMain';
 import {SizeMe} from 'react-sizeme';
 import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
+import NoResult from './NoResult';
 
 
 
@@ -27,7 +28,7 @@ class ShopPage extends React.Component {
                         </div>
                     )}
             />
-            {emptySearch ? (<div>Oh O result not found</div>):searchedProducts.length==0? (<div>Product not found "{searchInput}" </div>) : <ProductCard data={searchedProducts}/>  }
+            {emptySearch ? (<div>Oh O result not found</div>):searchedProducts.length==0? (<NoResult/>) : <ProductCard data={searchedProducts}/>  }
             
         </>
         )

@@ -80,7 +80,7 @@ class App extends Component {
           {/* <Route path ='/cms/eraser/:id' component={EraserCrudDetails}/> */}
           
         </Switch>
-        <Footer/>
+        {/* <Footer/> */}
         </Container>
       
       

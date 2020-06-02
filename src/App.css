@@ -550,3 +550,253 @@ width: 21rem;
  }
 
 /* home.js */
+
+/* NoREsult.js */
+.no-result-page{
+    box-sizing: border-box;
+    
+}
+ .no-result{
+    margin: auto;
+    
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    width: 250px;
+    height: 380px;
+    z-index: 6;
+  }
+  .no-result h2{
+      text-align: center;
+      color:brown;
+  }
+  .no-result-page{
+    text-align:center;
+    
+  }
+  .no-result-page .no-result-lower{
+      color:brown;
+      
+      bottom:12rem !important;
+      width: 100%;
+      text-align: center;
+      font-size: 2.2rem;
+      display: block;
+      padding: 0rem 1.5rem;
+      
+  }
+  .no-result-page .no-result-lower .no-result-sorry{
+    font-size: 3rem; 
+  }
+  .no-result-buttons{
+      text-align: center;
+  }
+   .trey .top, .trey .bottom .inner{
+    background-color: #322A2A;
+    width: 150px;
+    border: 2px solid #100B0C;
+    border-radius: 15px;
+    margin: 0 auto;
+    position: relative;
+  }
+   .trey .top{
+     height: 95px;
+     z-index: 5;
+     overflow: hidden;
+  }
+   .trey .bottom{
+    background-color: #fff;
+    padding: 0 5px;
+    margin: 0 auto;
+    width: 160px;
+    z-index: 6;
+    position: relative;
+    margin-top: 75px;
+    border-radius: 5px 5px 0 0;
+  }
+   .trey .bottom .inner{
+     height: 110px;
+     border-radius: 0 0 15px 15px;
+     box-shadow: 0 5px 2px #978F8B;
+  }
+   .trey .grey-border{
+    height: 10px;
+    width: 175px;
+    background-color: rgba(150,150,150, .2);
+    margin: -1px -10px;
+    top: 176px;
+    position: absolute;
+    z-index: 7;
+    left: 50px;
+  }
+   .trey .pointer{
+      height: 10px;
+      width: 30px;
+      background-color: #3c3637;
+      margin: 0 15px;
+      border-radius: 0 0 7px 7px;
+      position: absolute;
+      top: 176px;
+      left: 45px;
+      z-index: 7;
+      -webkit-animation-name: pointer;
+      -webkit-animation-duration: 4s; 
+      animation-name: pointer;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+  }
+   .trey .bottom .inner:after{
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    margin: 0 auto;
+    height: 10px;
+    border: 2px solid #100B0C;
+    width: 70px;
+    background-color: #443C3D;
+    border-radius: 8px;
+    left: 37px;
+  }
+   .button-layer{
+    z-index: 3;
+  }
+   .button-layer .top-perspective{
+    perspective: 100px;  
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #422A8F;
+    border-radius: 10px 10px 0 0;
+    border: 2px solid #100B0C;
+    z-index: 4;
+  }
+   .button-layer .bottom{
+    position: absolute;
+    top: 132px;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    background-color: #2E1285;
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #100B0C;
+    z-index: 5;
+  }
+ .buttons-container{
+    background-color: #1F1D36;
+    height: 25px;
+    width: 120px;
+    position: absolute;
+    top: 125px;
+    left: 50px;
+    border-radius: 5px;
+    border: 2px solid #100B0C;
+    z-index: 5;
+  }
+   .button1,  .button2,  .button3{
+    background-color: #fff;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    float: left;
+    z-index: 5;
+  }
+   .button1{
+    margin: 5px 0 0 10px;
+    background-color: #85CCEB;
+  }
+   .button2{
+    margin: 5px 0 0 10px;
+    background-color: #F7D65B;
+  }
+   .button3{
+    margin: 5px 0 0 10px;
+    background-color: #85CCEB;
+    position: absolute;
+    top: 150px;
+    right: 10px;
+  }
+   .paper1{
+    background-color: #FBFBFB;
+    height: 150px;
+    width: 130px;
+    position: absolute;
+    left: 10px;
+    z-index: 5;
+    border-radius: 10px;
+    border: 2px solid #000;
+    -webkit-animation-name: paper1;
+    -webkit-animation-duration: 4s; 
+    animation-name: paper1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes paper1 {
+    0%   { top: -100px}
+    100% {top: 250px; border: 0;}
+  }
+   .paper2{
+    background-color: #FBFBFB;
+    width: 130px;
+    position: absolute;
+    left: 58px;
+    z-index: 6;
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #000;
+    -webkit-animation-name: paper2;
+    -webkit-animation-duration: 4s; 
+    animation-name: paper2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+  }
+  @keyframes paper2 {
+    0%   { top: 175px; height: 0px;}
+    10%   { top: 175px; height: 0px;}
+    80%  { top: 175px; border-radius: 10px; height: 150px;}
+    100% { top: 220px; border-radius: 10px;}
+  }
+  
+  @keyframes pointer{
+    0%  { left: 45px }
+    10%  { left: 145px }
+    20%  { left: 45px }
+    30%  { left: 145px }
+    40%  { left: 45px }
+    50%  { left: 145px }
+    60%  { left: 45px }
+    70%  { left: 145px }
+    80%  { left: 45px }
+  }
+   .e1,  .e2,  .e3,  .e6{
+    background-color: #d8d6d6;
+    height: 10px;
+    width: 90%;
+    margin: 10px auto;
+  }
+   .e4,  .e5{
+    clear: both;
+    display: table;
+  }
+   .e41, .text,  .e42, .e51, .e52{
+    float: left;
+  }
+ .e41,  .e42, .e51, .e52 {
+    background-color: #d8d6d6;
+    height: 10px;
+    margin: 5px 10px;
+    width: 10px;
+  }
+   .e51, .e52{
+    width: 28px;
+  }
+   .text{
+    font-family: arial, verdana;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+/* NoREsult.js */
