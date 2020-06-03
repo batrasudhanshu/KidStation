@@ -36,6 +36,7 @@ import { Container, } from '@material-ui/core';
 import Footer from './ui_components/FooterLarge';
 import ProductDetailComponent from './ui_components/BaseComponent/ProductDetailComponent';
 import SearchFilter from './CMS/ProductCrud/SearchFilter';
+import ProductPage from './ui_components/ProductPage/index';
 
 class App extends Component {
   componentWillMount = () => {
@@ -71,6 +72,18 @@ class App extends Component {
           <Route exact path ='/cms/uploadsuccess' render={()=><uploadSuccess products={products} />}/>
           <Route exact path ='/cms/productcrud' component={ProductCrud} />}/>
           <Route exact path ='/cms/productcrud/:id' component={ProductCrudDetails} />
+
+
+          <Route exact path ='/erasers/:id' component={ProductPage} />
+          <Route exact path ='/pens/:id' component={ProductPage} />
+          <Route exact path ='/lunch_boxes/:id' component={ProductPage} />
+          <Route exact path ='/water_bottles/:id' component={ProductPage} />
+          <Route exact path ='/markers/:id' component={ProductPage} />
+          <Route exact path ='/notebooks/:id' component={ProductPage} />
+          <Route exact path ='/stationery_kits/:id' component={ProductPage} />
+          <Route exact path ='/rulers/:id' component={ProductPage} />
+
+
           <Route exact path ='/cms/testcrud' render={()=><TestCrud products={products} />}/>
           <Route exact path ='/cms/erasercrud' render={()=><EraserCrud products={products} />}/>
           <Route path ='/cms/eraser/update/:id' render={()=><EraserCrudDetails products={products} />}/>

@@ -4,6 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShareIcon from '@material-ui/icons/Share';
 import LazyLoad from 'react-lazyload';
 import Skeleton from '@material-ui/lab/Skeleton';
+import {Link} from 'react-router-dom';
 
 
 const Loading = () => {
@@ -29,8 +30,12 @@ const ProductCardSub = ({product}) => {
                             <div className="card-overlay"></div>
                             <div className="card-bottom">
                                 <div className="card-icons">
-                                    <span className="card-search-icon"><SearchIcon style={{fontsize:'2rem'}} /></span>
-                                    <span className="card-share-icon"><ShareIcon style={{fontsize:'2rem'}}  /></span>
+                                    <Link to={'/'+product.collection.stringValue+'/'+product.productid.stringValue}>
+                                        <span className="card-search-icon"><SearchIcon style={{fontsize:'2rem'}} /></span>
+                                    </Link>
+                                    <Link to="">
+                                        <span className="card-share-icon"><ShareIcon style={{fontsize:'2rem'}}  /></span>
+                                    </Link>
                                 </div>
                                 <div className="card-desc">
                                     <div>{product.productname.stringValue}</div>
