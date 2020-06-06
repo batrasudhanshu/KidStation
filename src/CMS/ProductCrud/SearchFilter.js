@@ -30,6 +30,7 @@ class SearchFilter extends Component {
     searchProducts = () =>{
         let searchValue = store.getState().searchInput;
         store.dispatch({type:'EMPTY_SEARCH_BAR', data: false})
+        this.setState({hideList:true})
         if(searchValue.length==0){
             store.dispatch({type:'EMPTY_SEARCH_BAR', data: true})
         }

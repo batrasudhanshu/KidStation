@@ -2,6 +2,8 @@ import React from 'react';
 import '../styles/home.css';
 import {Grid, Link, Divider} from '@material-ui/core';
 import SearchFilter from '../CMS/ProductCrud/SearchFilter';
+import CategoryButtons from './HomePage/CategoryButtons'
+import BrandSlider from './HomePage/Brands'
 
 const Home = (props) => {
     console.log(props);
@@ -22,6 +24,8 @@ const Home = (props) => {
                     </div>
                 </div> 
             </div>
+            <CategoryButtons/>
+            <BrandSlider/>
         </div>
     )
 }

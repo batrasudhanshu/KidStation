@@ -4,6 +4,17 @@ import { Grid, Container, Button } from '@material-ui/core';
 import {fetchProduct} from '../../CMS/actions/UploadAction';
 
 class ProductPage extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            SelectedImage: this.props.currentProduct_FrontEnd.image_url.arrayValue.values[0].stringValue
+        }
+        this.handleImageSelection = this.handleImageSelection.bind(this);
+    }
+    handleImageSelection = (image) =>{
+        console.log('change image',image.stringValue);
+        this.setState({SelectedImage:image.stringValue})
+    }
     render() {
         const {currentProduct_FrontEnd} = this.props;
         console.log(currentProduct_FrontEnd);
@@ -12,18 +23,30 @@ class ProductPage extends Component {
             <div>
                 {product && <Container>
                 <Grid container spacing={3}>
-                    <Grid item xs={12}>Product Details</Grid>
-                    <Grid item xs={12} sm={6}>
-                        <div style={{textAlign:'center'}}>
-                            <div style={{border:'5px solid black', width:'90%',backgroundColor:'black'}}> 
-                                <img src={product.image_url.arrayValue.values[6].stringValue} width="80%"/>
+                    <Grid item xs={12}>
+                        <div className="shop-title">
+                            Product Details
+                        </div>
+                        </Grid>
+                    <Grid item xs={12} sm={6} alignItems={'center'}>
+                        <div className="product-images" style={{textAlign:'center'}}>
+                            <div className="product-main-image"> 
+                                <img  src={this.state.SelectedImage} width="100%"/>
                             </div>
-                            <div style={{display:'flex',flexWrap:'wrap'}}>
+                            
+                            <div className="slider-outer carousel slide">
+                                <div className="carousel-inner">
                                 {product.image_url.arrayValue.values.map((img,i)=>(
-                                    <div style={{border:'5px solid black',backgroundColor:'black'}}>
-                                        <img src={img.stringValue} width="60vw" />
+                                    
+                                    <div className="image-outer item active">
+                                        <Button onClick={()=>{this.handleImageSelection(img)}}>
+                                        <img src={img.stringValue} width="100%"  />
+                                        </Button>
                                     </div>
+
                                 ))}
+                                <a className="left carousel-control" data-slide="prev">Prev</a><a className="right carousel-control" data-slide="next">Next</a>
+                                </div>
                             </div>
                         </div>
                     </Grid>
@@ -38,8 +61,8 @@ class ProductPage extends Component {
                             <div style={{fontSize:'2rem', color:'#666'}}>
                                 {product.productdescription.stringValue}
                             </div>
-                            <Button color="primary" style={{backgroundColor:'blue', color:'whitesmoke', fontSize:'1.2rem', margin:'0.5rem'}}>Share</Button>
-                            <Button color="primary" style={{backgroundColor:'green', color:'whitesmoke', fontSize:'1.2rem'}} >WhatsApp</Button>
+                            <Button color="primary" className="share-btn">Share</Button>
+                            <Button color="primary" className="whatsapp-btn">WhatsApp</Button>
                         </div>
                     </Grid>
                 </Grid>

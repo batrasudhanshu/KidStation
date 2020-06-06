@@ -38,7 +38,7 @@ const ProcuctCard = (props) => {
             {
                 data.length!=0? data.map((product,i)=>{
                     return(
-                        <LazyLoad once={true} key={product.id}  height={100} offset={[-100, 100]} placeholder={<Loading />} >
+                        <LazyLoad once={true} key={product.id}  height={100} offset={[900,900]} placeholder={<Loading />} >
                             <ProductCardSub key={i} product={product} />
                         </LazyLoad>
                     )

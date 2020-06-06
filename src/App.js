@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css';
 import {connect} from 'react-redux';
 import {fetchProduct} from './CMS/actions/UploadAction';
+import ImageSlider from '../src/ui_components/ProductPage/ImageSlider'
 
 //cms 
 import CMS from './CMS/CMS';
@@ -44,6 +45,7 @@ class App extends Component {
   }
   render(){
     const {products} = this.props;
+    var items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     return (
       <BrowserRouter>
       
@@ -57,7 +59,7 @@ class App extends Component {
           <Route exact path ='/' render={()=><Home products={products} />}/>
           <Route exact path ='/Contact' render={()=><Contact products={products} />}/>
           <Route exact path ='/return' render={()=><Return products={products} />}/>
-
+          <Route exact path ='/slider' render={()=><ImageSlider items={items} active={0} />}/>
 
           <Route exact path = '/productdetail/:id' render={()=><ProductDetailComponent products={products} />} />
           <Route exact path ='/notebooks' render={()=><Notebook products={products} />}/>
