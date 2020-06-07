@@ -1,26 +1,32 @@
 import React, { Component } from "react";
-
+import apsara from '../../images/apsara_logo.jpg'
+import natraj from '../../images/natraj_logo.jpg'
+import doms from '../../images/doms_logo.jpg'
+import classmate from '../../images/classmate_logo.jpg'
+import cello from '../../images/classmate_logo.jpg'
+import reynolds from '../../images/classmate_logo.jpg'
+import faber from '../../images/faber_logo.jpg'
 const images = [
     {
-        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png'
+        src: reynolds
     },
     {
-        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png'
+        src: apsara,
     },
     {
-        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png'
+        src: doms
     },
     {
-        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png'
+        src: classmate
     },
     {
-        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png'
+        src: natraj
     },
     {
-        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png'
+        src: faber
     },
     {
-        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png'
+        src: cello
     },
     {
         src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png'

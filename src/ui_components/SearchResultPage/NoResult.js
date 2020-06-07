@@ -53,15 +53,33 @@ class NoResult extends Component {
         <span>
             <span className="no-result-sorry">Sorry</span>, We couldn't find the product you are looking for. GO to Our other pages..
           </span>
-        <div className="no-result-buttons">
-            <Button variant="contained" color="secondary">
-                Go Back to HomePage
-            </Button>
-        </div>  
+        </div>
+            <div className="no-result-buttons">
+                {/* <Button variant="contained" color="secondary">
+                    Go Back to HomePage
+                </Button> */}
+            
+            <Breadcrumbs maxItems={3} aria-label="breadcrumb">
+                <Link color="inherit" href="#" >
+                    Home
+                </Link>
+                <Link color="inherit" href="#" >
+                    Catalog
+                </Link>
+                <Link color="inherit" href="#" >
+                    Accessories
+                </Link>
+                <Link color="inherit" href="#">
+                    New Collection
+                </Link>
+                
+                </Breadcrumbs>
+                
+            </div>  
         
       
         </div>
-        </div>
+        
       
     );
   }

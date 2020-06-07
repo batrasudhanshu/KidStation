@@ -580,9 +580,29 @@ width: 21rem;
   .no-result-page .no-result-lower .no-result-sorry{
     font-size: 3rem; 
   }
-  .no-result-buttons{
+  /* .no-result-lower{
       text-align: center;
+      
   }
+  .no-result-buttons {
+      text-align: center;
+      width:100%;
+      display: block;
+  } */
+  .no-result-page .no-result-buttons{
+    color:brown;
+    
+    bottom:12rem !important;
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    display: block;
+    padding: 0rem 1.5rem;
+    
+}
+.no-result-buttons .MuiTypography-body1{
+    font-size: 1.6rem;
+}
    .trey .top, .trey .bottom .inner{
     background-color: #322A2A;
     width: 150px;
@@ -788,6 +808,13 @@ width: 21rem;
     font-weight: bold;
     font-size: 18px;
   }
+  .enter-value-right h2{
+      text-align: center;
+      width:100%;
+      padding: 0;
+  }
+
+/* NoREsult.js */
 
 /* NoREsult.js */
 /* Product_page */

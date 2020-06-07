@@ -3,62 +3,72 @@ import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import  imagebanner from '../../images/lunch_banner.jpg';
+import Pens_thumbnail from '../../images/pens_thumbnail.jpg'
+import lunch_thumbnail from '../../images/lunch_thumbnail.jpg'
+import water_thumbnail from '../../images/water_thumbnail.jpg'
+import marker_thumbnail from '../../images/marker_thumbnail.jpg'
+import eraser_thumbnail from '../../images/eraser_thumbnail.jpg'
+import bestselling_thumbnail from '../../images/bestselling_thumbnail.jpg'
+import kits_thumbnail from '../../images/kits_thumbnail.jpg'
+import rulers_thumbnail from '../../images/rulers_thumbnail.jpg'
+import notebooks_thumbnail from '../../images/notebooks_thumbnail.jpg'
+
 import {Link} from 'react-router-dom';
 
 
 
 const images = [
   {
-    url: imagebanner,
+    url: eraser_thumbnail,
     title: 'Erasers & Sharpners',
     width: '33.3%',
     link: '/erasers'
   },
   {
-    url: imagebanner,
+    url: Pens_thumbnail,
     title: 'Pens & Pencils',
     width: '33.3%',
     link: '/pens'
   },
   {
-    url: imagebanner,
-    title: 'Notebooks & Registers',
+    url: notebooks_thumbnail,
+    title: 'Notebooks',
     width: '33.3%',
     link:'/notebooks'
   },
   {
-    url: imagebanner,
+    url: lunch_thumbnail,
     title: 'Lunch Boxes',
     width: '33.3%',
     link:'/lunch_boxes'
   },
   {
-    url: imagebanner,
+    url: marker_thumbnail,
     title: 'Markers',
     width: '33.3%',
     link: '/sketch_pens'
   },
   {
-    url: imagebanner,
+    url: kits_thumbnail,
     title: 'Stationery Kits',
     width: '33.3%',
     link:'/stationery_kits'
   },
   {
-    url: imagebanner,
+    url: water_thumbnail,
     title: 'Water Bottles',
     width: '33.3%',
     link: '/water_bottles'
   },
   {
-    url: imagebanner,
+    url: rulers_thumbnail,
     title: 'Rulers',
     width: '33.3%',
     link: '/rulers'
   },
   {
-    url: imagebanner,
-    title: 'Best Selling',
+    url: bestselling_thumbnail,
+    title: 'Best - Selling',
     width: '33.3%',
     link:'/bestselling'
   }
@@ -110,10 +120,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: theme.palette.common.black,
+    color: '#fafafa',
   },
   imageSrc: {
-    margin:'1rem 0.5rem 0 0.5rem',
+    margin:'1rem 0.5rem 0rem 0.5rem',
     position: 'absolute',
     left: 0,
     right: 0,
@@ -128,13 +138,14 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: 'white',
+    backgroundColor: '#212121',
     opacity: 0.4,
     transition: theme.transitions.create('opacity'),
   },
   imageTitle: {
     position: 'relative',
     fontSize:'1.7rem',
+    fontWeight:'600',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
   },
   imageMarked: {

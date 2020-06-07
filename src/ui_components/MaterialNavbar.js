@@ -61,7 +61,7 @@ class MaterialNavbar extends Component {
             {name:"Water Bottle",link:'/water_bottles'},
             {name:"Pen & Pencil",link:'/pens'},
             {name:"Sketch - Pen & Marker",link:'/sketch_pens'},
-            {name:"Notebook & Register",link:'/notebooks'},
+            {name:"Notebook",link:'/notebooks'},
             {name:"Stationery Kit",link:'/stationery_kits'},
             {name:"Ruler",link:'/rulers'},
         ];
