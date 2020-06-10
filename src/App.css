@@ -1124,4 +1124,25 @@ width: 21rem;
   }
   
 /* Brands.js */
+
+
+/* bestselling.js */
+
+.home-bestselling{
+    height: 9.375rem;
+    overflow: hidden;
+    display: list-item;
+}
+.home-bestselling img{
+    /* display: block; */
+    line-height: 9.375rem;
+}
+.bestselling-component{
+    margin: 1rem 0;
+}
+.bestselling-component .MuiPaper-root{
+    padding: 1rem;
+}
+
+/* bestselling.js */
   

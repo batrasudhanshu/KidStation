@@ -4,6 +4,7 @@ import {Grid, Link, Divider} from '@material-ui/core';
 import SearchFilter from '../CMS/ProductCrud/SearchFilter';
 import CategoryButtons from './HomePage/CategoryButtons'
 import BrandSlider from './HomePage/Brands'
+import BestSelling from './HomePage/BestSelling';
 
 const Home = (props) => {
     console.log(props);
@@ -25,6 +26,7 @@ const Home = (props) => {
                 </div> 
             </div>
             <CategoryButtons/>
+            <BestSelling products={props.products} />
             <BrandSlider/>
         </div>
     )
