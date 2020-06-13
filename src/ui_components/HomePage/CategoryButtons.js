@@ -138,8 +138,8 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: '#212121',
-    opacity: 0.4,
+    backgroundColor: 'white',
+    opacity: 0.3,
     transition: theme.transitions.create('opacity'),
   },
   imageTitle: {

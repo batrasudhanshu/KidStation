@@ -38,6 +38,7 @@ import Footer from './ui_components/FooterLarge';
 import ProductDetailComponent from './ui_components/BaseComponent/ProductDetailComponent';
 import SearchFilter from './CMS/ProductCrud/SearchFilter';
 import ProductPage from './ui_components/ProductPage/index';
+import BestsellingPage from './ui_components/BestsellingPage';
 
 class App extends Component {
   componentWillMount = () => {
@@ -59,6 +60,9 @@ class App extends Component {
           <Route exact path ='/' render={()=><Home products={products} />}/>
           <Route exact path ='/Contact' render={()=><Contact products={products} />}/>
           <Route exact path ='/return' render={()=><Return products={products} />}/>
+
+          <Route exact path ='/bestselling' component={BestsellingPage} />}/>
+
           <Route exact path ='/slider' render={()=><ImageSlider items={items} active={0} />}/>
 
           <Route exact path = '/productdetail/:id' render={()=><ProductDetailComponent products={products} />} />

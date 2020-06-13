@@ -4,7 +4,10 @@ import {Grid, Link, Divider} from '@material-ui/core';
 import SearchFilter from '../CMS/ProductCrud/SearchFilter';
 import CategoryButtons from './HomePage/CategoryButtons'
 import BrandSlider from './HomePage/Brands'
+import BestSellingPhone from './HomePage/BestSellingPhone';
 import BestSelling from './HomePage/BestSelling';
+import {SizeMe} from 'react-sizeme';
+import FilterSort from './ShopPage/FilterSort';
 
 const Home = (props) => {
     console.log(props);
@@ -26,7 +29,15 @@ const Home = (props) => {
                 </div> 
             </div>
             <CategoryButtons/>
-            <BestSelling products={props.products} />
+            <SizeMe 
+                    refreshRate={32}
+                    render = {({size})=>(
+                        <div>
+                             {(size.width<600) ? <BestSellingPhone products={props.products} />:  <BestSelling products={props.products} /> }
+                        </div>
+                    )}
+            />
+            
             <BrandSlider/>
         </div>
     )

@@ -29,11 +29,13 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.4.0",
     "react-sizeme": "^2.6.12",
+    "react-slick": "^0.26.1",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
     "redux-firestore": "^0.5.7",
     "redux-thunk": "^2.3.0",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -122,5 +122,8 @@ Image credits: unsplash.com
     .hero { width: 980px; }    
 }
 @media screen and (max-width: 640px){
-    .hero h1 { font-size: 4em; }    
+    .hero h1 { font-size: 6rem; }    
+}
+@media screen and (max-width: 450px){
+  .hero h1 { font-size: 5.2rem; }    
 }
