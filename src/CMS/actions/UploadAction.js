@@ -55,7 +55,7 @@ export const fetchProduct = () => {
         const firestore = getFirestore();
         const firebase = getFirebase();
         const storage = firebase.storage();
-        let allcollection = ['rulers','markers','lunch_boxes','water_bottles','stationary_kits','pens','notebooks','erasers','end'];
+        let allcollection = ['bags','markers','lunch_boxes','water_bottles','geometry_boxes','pens','notebooks','erasers','end'];
         var data=[];
         allcollection.map(item=>{
             const itemref = firestore.collection(item);

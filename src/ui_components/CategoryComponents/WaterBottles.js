@@ -11,7 +11,7 @@ import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 class WaterBottles extends React.Component {
     render(){
         const {water_bottles} = this.props;
-        // console.log(rulers);
+        
         return(
         <>
             <SearchFilter/>

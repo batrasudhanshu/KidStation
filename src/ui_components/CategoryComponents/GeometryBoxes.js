@@ -8,15 +8,15 @@ import ProductCard from '../BaseComponent/ProcuctCard';
 import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
-class StationeryKits extends React.Component {
+class GeometryBox extends React.Component {
     render(){
-        const {stationary_kits} = this.props;
-        // console.log(rulers);
+        const {geometry_boxes} = this.props;
+        
         return(
         <>
             <SearchFilter/>
-            <HeaderBanner tag="Stationery Kits" bannerImg={`url(${marker_banner})`} />
-            <ProductCard data={stationary_kits}/>
+            <HeaderBanner tag="Geometry Boxes" bannerImg={`url(${marker_banner})`} />
+            <ProductCard data={geometry_boxes}/>
         </>
         )
     }
@@ -24,12 +24,12 @@ class StationeryKits extends React.Component {
 
 const mapStateToProps = (state) => {
     console.log(state);
-    let kitData = [];
+    let geometryData = [];
     state.products.length!==0 && state.products.map((product,index)=>{
-        product.collection.stringValue === 'stationary_kits' && kitData.push(product);
+        product.collection.stringValue === 'geometry_boxes' && geometryData.push(product);
     })
     return { 
-        stationary_kits: kitData
+        geometry_boxes: geometryData
     }
 }
-export default connect(mapStateToProps)(StationeryKits);
+export default connect(mapStateToProps)(GeometryBox);

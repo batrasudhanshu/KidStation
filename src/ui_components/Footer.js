@@ -1,95 +1,136 @@
 import React from 'react'
-import '../styles/Footer.css'
+
+import fulllogo from "../../src/images/Fulllogo_animated.svg";
 import {NavLink} from 'react-router-dom'
-import logo_img from '../images/logo.png'
+
+
+
 
 const Footer = () => {
     return (
-        <div>
-            <footer  className="footer">
-                <div className="footer_content">
-                    <div className="section_container">
-                        <div className="container">
-                            <div className="row">
-
-                                {/* <!-- About --> */}
-                                <div className="col-xxl-3 col-md-4 footer_col">
-                                    <div className="footer_about">
-                                        {/* <!-- Logo --> */}
-                                        <div className="row">
-                                           <img className= " col-4 logo_name_img"src={logo_img}></img>
-                                           <span className="col-8">KidStation</span><br/>
-                                           
-                                        </div>
-                                        <div className="footer_about_text">
-                                            <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam fringilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* <!-- menus --> */}
-                                <div className="col-xxl-3 col-md-4 footer_col">
-                                    <div className="footer_questions">
-                                        <div className="footer_title">questions</div>
-                                        <div className="footer_list">
-                                            <ul>
-                                                <li>
-                                                <NavLink to="">About us</NavLink>
-                                                </li>
-                                                <li>
-                                                <NavLink to="">Track Orders</NavLink>
-                                                </li>
-                                                <li>
-                                                <NavLink to="/return">Return Policy</NavLink>
-                                                </li>
-                                                <li>
-                                                <NavLink to="">Terms of Use</NavLink>
-                                                </li>
-                                                <li>
-                                                <NavLink to="">Contact Us</NavLink>
-                                                </li>
-                                                {/* <li><a href="#">About us</a></li>
-                                                <li><a href="#">Track Orders</a></li>
-                                                <li><a href="#">Return Policy</a></li>
-                                                <li><a href="#">Terms of Use</a></li>
-                                                <li><a href="#">Contact Us</a></li> */}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* <!-- Contact --> */}
-                                <div className="col-xxl-3 col-md-4 footer_col">
-                                    <div className="footer_contact">
-                                        <div className="footer_title">Follow us on:</div>
-                                        <div className="footer_contact_list row">
-                                            <ul>
-                                                <li className="d-flex flex-row align-items-start justify-content-start col-6"> <a href="https://www.instagram.com/step_beyond_ordinary/?igshid=1gk7m954ylauf">
-                                                        <div className="footer_social_item d-flex flex-row align-items-center justify-content-start">
-                                                            <div className="footer_social_icon"><i className="fa fa-instagram" aria-hidden="true"></i></div>
-                                                            <div className="footer_social_title">instagram</div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li className="d-flex flex-row align-items-start justify-content-start col-6"> <a href="https://www.facebook.com/Kidstation-Step_beyond_Ordinary-2223183277758185/">
-                                                        <div className="footer_social_item d-flex flex-row align-items-center justify-content-start">
-                                                            <div className="footer_social_icon"><i className="fa fa-facebook" aria-hidden="true"></i></div>
-                                                            <div className="footer_social_title">facebook</div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+        
+        <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta ">
+                <div class="row">
+                    <div class="col-xl-4 col-sm-4 col-xs-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fa fa-map-marker"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-4 col-xs-4  col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fa fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-sm-4 col-xs-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fa fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                               
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="footer-content ">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src={fulllogo} class="img-fluid" alt="logo"/></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                                elit,Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span >Follow us</span>
+                                <a href="!#" ><i class="fa fa-linkedin-square  linkedin-bg "></i></a>
+                                
+                                <a href="!#"><i class="fa fa-linkedin-square fa-x linkedin-bg"></i></a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                            <li><NavLink to="/">Home</NavLink></li>
+                            <li><NavLink to="/bestselling">Best-Selling</NavLink></li>
+                            <li><NavLink to="/erasers">Erasers</NavLink></li>
+                            <li><NavLink to="/lunch_boxes">Lunch Boxes</NavLink></li>
+                            <li><NavLink to="/water_bottles">Water Bottles</NavLink></li>
+                            <li><NavLink to="/pens">Pens & Pencils</NavLink></li>
+                            <li><NavLink to="/sketch_pens">Sketch Pens</NavLink></li>
+                            <li><NavLink to="/notebooks">Notebooks</NavLink></li>
+                            <li><NavLink to="/geometry_boxes">Geometry Box</NavLink></li>
+                            <li><NavLink to="/bags">Bags</NavLink></li>
 
+                            
 
-            </footer>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Email Address"/>
+                                    <button><i class="fa fa-paper-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                
+                     <div class="col-md-6 col-sm-12 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="!#">Contact</a></li>
+                                <li><a href="!#">Track Order</a></li>
+                                <li><a href="!#">Return </a></li>
+                                <li><a href="!#">Shipping</a></li>
+                                <li><a href="!#">Terms of Use</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="col-md-6 col-sm-12 col-lg-6 text-center text-lg-center">
+                        <div class="copyright-text">
+                            <p>Visit Github link  <a href="https://github.com/batrasudhanshu/KidStation">KidStation</a>  for futher Updates..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+   
+        
     )
 }
 export default Footer

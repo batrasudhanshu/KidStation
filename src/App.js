@@ -16,12 +16,12 @@ import Contact from '../src/ui_components/Contact'
 import Return from '../src/ui_components/Refund'
 import Eraser from '../src/ui_components/CategoryComponents/Erasers'
 import Notebook from '../src/ui_components/CategoryComponents/Notebooks'
-import Ruler from '../src/ui_components/CategoryComponents/Rulers'
+import Bag from './ui_components/CategoryComponents/Bags'
 import Pen from '../src/ui_components/CategoryComponents/Pens'
 import Water from '../src/ui_components/CategoryComponents/WaterBottles'
 import Lunch from '../src/ui_components/CategoryComponents/LunchBoxes'
 import Marker from '../src/ui_components/CategoryComponents/Markers'
-import Kit from '../src/ui_components/CategoryComponents/StationeryKits'
+import Geometry from '../src/ui_components/CategoryComponents/GeometryBoxes'
 // import EraserDetails from './collections/erasers/data/EraserDetails';
 import uploadSuccess from './CMS/uploadSuccess';
 import EraserCrud from './CMS/EraserCrud/EraserCrud';
@@ -34,7 +34,8 @@ import TestCrud from './CMS/ProductCrud/TestCrud';
 import ProductCrudDetails from './CMS/ProductCrud/ProductCrudDetails';
 import MaterialNavbar from './ui_components/MaterialNavbar';
 import { Container, } from '@material-ui/core';
-import Footer from './ui_components/FooterLarge';
+// import Footer from './ui_components/FooterLarge';
+import Footer from './ui_components/Footer';
 import ProductDetailComponent from './ui_components/BaseComponent/ProductDetailComponent';
 import SearchFilter from './CMS/ProductCrud/SearchFilter';
 import ProductPage from './ui_components/ProductPage/index';
@@ -71,10 +72,10 @@ class App extends Component {
           <Route exact path ='/lunch_boxes' render={()=><Lunch products={products} />}/>
           <Route exact path ='/water_bottles' render={()=><Water products={products} />}/>
           {/* <Route path ='/erasers/:id' render={()=><eraser products={products} />}/> */}
-          <Route exact path ='/rulers' render={()=><Ruler products={products} />}/>
+          <Route exact path ='/bags' render={()=><Bag products={products} />}/>
           <Route exact path ='/pens' render={()=><Pen products={products} />}/>
           <Route exact path ='/sketch_pens' render={()=><Marker products={products} />}/>
-          <Route exact path ='/stationery_kits' render={()=><Kit products={products} />}/>
+          <Route exact path ='/geometry_boxes' render={()=><Geometry products={products} />}/>
           <Route exact path ='/cms/uploadsuccess' render={()=><uploadSuccess products={products} />}/>
           <Route exact path ='/cms/productcrud' component={ProductCrud} />}/>
           <Route exact path ='/cms/productcrud/:id' component={ProductCrudDetails} />
@@ -86,8 +87,8 @@ class App extends Component {
           <Route exact path ='/water_bottles/:id' component={ProductPage} />
           <Route exact path ='/markers/:id' component={ProductPage} />
           <Route exact path ='/notebooks/:id' component={ProductPage} />
-          <Route exact path ='/stationery_kits/:id' component={ProductPage} />
-          <Route exact path ='/rulers/:id' component={ProductPage} />
+          <Route exact path ='/geometry_boxes/:id' component={ProductPage} />
+          <Route exact path ='/bags/:id' component={ProductPage} />
 
 
           <Route exact path ='/cms/testcrud' render={()=><TestCrud products={products} />}/>
@@ -95,11 +96,11 @@ class App extends Component {
           <Route path ='/cms/eraser/update/:id' render={()=><EraserCrudDetails products={products} />}/>
           <Route exact path ='/shop'  render={()=><Shop products={products} />}/>
           <Route exact path ='/searchresult'  render={()=><SearchResultPage products={products} />}/>
-          {/* <Route exact path ='/footer' component={Footer}/> */}
+          <Route exact path ='/footer' component={Footer}/>
           {/* <Route path ='/cms/eraser/:id' component={EraserCrudDetails}/> */}
           
         </Switch>
-        {/* <Footer/> */}
+        <Footer/>
         </Container>
       
       

@@ -11,7 +11,7 @@ import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 class LunchBoxes extends React.Component {
     render(){
         const {lunch_boxes} = this.props;
-        // console.log(rulers);
+        
         return(
         <>
             <SearchFilter/>

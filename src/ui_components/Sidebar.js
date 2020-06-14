@@ -68,7 +68,7 @@ class Sidebar extends Component{
                     <li>
                     <NavLink to="/erasers">Erasers, Sharpners</NavLink></li>
 
-                    <li><NavLink to="/rulers">Rulers</NavLink></li>
+                    <li><NavLink to="/bags">Bags</NavLink></li>
                     <li><a href="#">Lunch Boxes</a></li>
                     <li><a href="#">Water Bottles</a></li>
                     

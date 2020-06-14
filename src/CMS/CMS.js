@@ -85,8 +85,8 @@ class CMS extends Component {
                                 >
                                 <MenuItem value={'pens'}>Pen & Pencil</MenuItem>
                                 <MenuItem value={'water_bottles'}>Water Bottle</MenuItem>
-                                <MenuItem value={'rulers'}>Rulers</MenuItem>
-                                <MenuItem value={'stationary_kits'}>Stationery Kits</MenuItem>
+                                <MenuItem value={'bags'}>Bags</MenuItem>
+                                <MenuItem value={'geometry_boxes'}>Geometry Boxes</MenuItem>
                                 <MenuItem value={'notebooks'}>Notebook & Register</MenuItem>
                                 <MenuItem value={'lunch_boxes'}>Lunch Box</MenuItem>
                                 <MenuItem value={'erasers'}>Eraser & Sharpner</MenuItem>

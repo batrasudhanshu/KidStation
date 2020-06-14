@@ -51,7 +51,7 @@ class FilterSort extends Component {
     
     render() {
         const {open, filter, sort, bestselling, isDisabled} = this.state;
-        const filterNames = ['erasers','lunch_boxes','water_bottles','pens','markers','notebooks','stationary_kits','rulers'];
+        const filterNames = ['erasers','lunch_boxes','water_bottles','pens','markers','notebooks','geometry_boxes','bags'];
         return (
             <div>
                 <Button className="filter-sort-btn" onClick={this.handleClickOpen}>Filter & Sort</Button>

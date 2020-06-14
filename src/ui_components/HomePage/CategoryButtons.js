@@ -50,9 +50,9 @@ const images = [
   },
   {
     url: kits_thumbnail,
-    title: 'Stationery Kits',
+    title: 'Geometry Boxes',
     width: '33.3%',
-    link:'/stationery_kits'
+    link:'/geometry_boxes'
   },
   {
     url: water_thumbnail,
@@ -62,9 +62,9 @@ const images = [
   },
   {
     url: rulers_thumbnail,
-    title: 'Rulers',
+    title: 'Bags',
     width: '33.3%',
-    link: '/rulers'
+    link: '/bags'
   },
   {
     url: bestselling_thumbnail,

@@ -8,14 +8,14 @@ import ProductCard from '../BaseComponent/ProcuctCard';
 import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
-class Ruler extends React.Component {
+class Bag extends React.Component {
     render(){
-        const {rulers} = this.props;
+        const {bags} = this.props;
         return(
         <>
             <SearchFilter/>
-            <HeaderBanner tag="Rulers" bannerImg={`url(${ruler_banner})`} />
-            <ProductCard data={rulers}/>
+            <HeaderBanner tag="Bags" bannerImg={`url(${ruler_banner})`} />
+            <ProductCard data={bags}/>
         </>
         )
     }
@@ -23,12 +23,12 @@ class Ruler extends React.Component {
 
 const mapStateToProps = (state) => {
     console.log(state);
-    let rulerData = [];
+    let bagData = [];
     state.products.length!==0 && state.products.map((product,index)=>{
-        product.collection.stringValue === 'rulers' && rulerData.push(product);
+        product.collection.stringValue === 'bags' && bagData.push(product);
     },)
     return { 
-        rulers: rulerData
+        bags: bagData
     }
 }
-export default connect(mapStateToProps)(Ruler);
+export default connect(mapStateToProps)(Bag);

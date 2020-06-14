@@ -62,8 +62,8 @@ class MaterialNavbar extends Component {
             {name:"Pen & Pencil",link:'/pens'},
             {name:"Sketch - Pen & Marker",link:'/sketch_pens'},
             {name:"Notebook",link:'/notebooks'},
-            {name:"Stationery Kit",link:'/stationery_kits'},
-            {name:"Ruler",link:'/rulers'},
+            {name:"Geometry Boxes",link:'/geometry_boxes'},
+            {name:"Bags",link:'/bags'},
         ];
         const categoriesNav = CategoriesList.map((itemname,i)=>{
             return(

@@ -36,7 +36,7 @@ class BestSelling extends Component {
             <div style={{padding:'0.7rem 0.2rem'}}>Best Selling</div>
                 <ChevronLeftIcon onClick={prevFun} style={{position:'absolute',top:'50%', zIndex:'999', fontSize:'4rem', cursor:'pointer'}} fontSize="large" />
                 <Slider ref={c => (this.slider = c)} {...settings}>
-                        {bestselling.length!=0 ? bestselling.map(best=>(
+                        {bestselling.length!==0 ? bestselling.map(best=>(
                             
                             <Grid item>
                                 <Link to={'/'+best.collection.stringValue+'/'+best.productid.stringValue}>
