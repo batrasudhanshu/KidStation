@@ -200,53 +200,6 @@ input[type="checkbox"] {
 }
 /* MaterialNavbar.js */
 
-/* FooterNew.js */
-.footer .MuiContainer-root{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-.footer-social-icons {
-    /* width: 4rem !important;
-    height: 4rem !important; */
-    font-size: 2.6rem !important;
-    line-height: 5.5rem !important;
-    
-    
-}
-.footer-social-icons-outer span{
-    display: inline-block;
-    margin: 1.5rem 1rem;
-    
-    text-align: center;
-}
-
-.MuiBreadcrumbs-separator{
-    margin: 0 0.4rem !important;
-}
-.footer-nav{
-    margin:auto;
-    display:inline-block;
-    width:100%;
-    text-align:center;
-    top: 0;
-    padding: 0;
-}
-.footer-nav nav{
-    display: inline-block;
-}
-.footer-nav a{
-    font-size: 0.7rem;
-    color:black;
-}
-.footer-nav .MuiTypography-body1{
-    text-decoration: none;
-}
-@media only screen and (min-width:400px){
-    .footer-nav a{
-        font-size: 0.94rem !important;
-    }
-}
-/* FooterNew.js */
 
 /* home.js */
 .carouselblock .overlay{
@@ -386,67 +339,6 @@ input[type="checkbox"] {
     }
 }
 
-
-
-/* Productcard.js */
-.footer-contact ul{
-    text-align: center;
-    padding: 0;
-}
-.footer-contact ul li{
-    display:inline;
-    padding: 0 1rem;
-    
-}
-.footer-contact ul li a{
-    font-size: 0.9rem;
-    color:black;
-    text-decoration: none;
-}
-
-/* FooterNew.js */
-/* FooterLarge.js */
-.footer-large h2{
-    text-align: center;
-}
-.footer-large .logo-image img{
-width: 21rem;
-}
-.footer-large .logo-image{
-    margin: 0 2.5rem;
-}
-.footer-large .nav-list > nav > nav {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-  }
-  .footer-large .nav-list > nav {
-    display: inline-block;
-    text-align: center;
-    padding: 0rem;
-  }
-  .footer-large .MuiBreadcrumbs-ol{
-      display: inline-flex;
-  }
-  .footer-large .MuiBreadcrumbs-ol .MuiListItem-root{
-      display: block;
-      text-align: center !important;
-  }
-  .footer-large .MuiBreadcrumbs-ol .MuiListItemIcon-root{
-      display: block;
-  }
-  .footer-large .MuiBreadcrumbs-ol .MuiBreadcrumbs-li{
-      margin: 0 0.4rem;
-  }
-  .footer-large .MuiBreadcrumbs-ol .MuiSvgIcon-root{
-      font-size: 2rem;
-  }
-  .footer-large .MuiBreadcrumbs-ol .MuiTypography-body1{
-      font-size: 1.7rem;
-  }
-  
-
-/* FooterLarge.js */
 /* filtersort.js */
 
 .filter-sort-form{
@@ -1209,7 +1101,7 @@ width: 21rem;
   .footer-section .footer-social-icon span {
   color: #fff;
   display: block;
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   margin-bottom: 1.25rem;
@@ -1359,14 +1251,7 @@ width: 21rem;
       color: #7e7e7e;
   line-height: 1.75rem;
   }
-  .footer-section .footer-social-icon span {
-  color: #fff;
-  display: block;
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 1.25rem;
-  }
+  
   .footer-section .footer-social-icon a {
   color: #fff;
   font-size: 1rem;

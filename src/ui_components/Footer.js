@@ -1,6 +1,8 @@
 import React from 'react'
 
 import fulllogo from "../../src/images/Fulllogo_animated.svg";
+import sud from "../../src/images/sud.jpg";
+import rak from "../../src/images/rak.jpg";
 import {NavLink} from 'react-router-dom'
 
 
@@ -55,9 +57,10 @@ const Footer = () => {
                             </div>
                             <div class="footer-social-icon">
                                 <span >Follow us</span>
-                                <a href="!#" ><i class="fa fa-linkedin-square  linkedin-bg "></i></a>
+                                <a href="https://www.linkedin.com/in/sudhanshu-batra09/" ><img style ={{width:'50px',height:'50px'}} src={sud} alt="Avatar" /></a>
+                                <a href="https://www.linkedin.com/in/rakshit-maini-769883124/" ><img style ={{width:'50px',height:'50px'}} src={rak} alt="Avatar" /></a>
                                 
-                                <a href="!#"><i class="fa fa-linkedin-square fa-x linkedin-bg"></i></a>
+                                {/* <a href="!#"><i class="fa fa-linkedin-square fa-x linkedin-bg"></i></a> */}
                                 
                             </div>
                         </div>
