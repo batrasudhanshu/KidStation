@@ -9,6 +9,9 @@ import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
 class Bag extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render(){
         const {bags} = this.props;
         return(

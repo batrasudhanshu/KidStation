@@ -9,6 +9,9 @@ import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
 class WaterBottles extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render(){
         const {water_bottles} = this.props;
         

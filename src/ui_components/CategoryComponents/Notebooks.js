@@ -9,6 +9,9 @@ import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
 class Notebook extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render(){
         const {notebooks} = this.props;
         return(

@@ -4,10 +4,13 @@ import { Grid, Container, Button } from '@material-ui/core';
 import {fetchProduct} from '../../CMS/actions/UploadAction';
 
 class ProductPage extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     constructor(props){
         super(props);
         this.state = {
-            SelectedImage: this.props.currentProduct_FrontEnd.image_url.arrayValue.values[0].stringValue
+            SelectedImage: this.props.currentProduct_FrontEnd.length!=0 && this.props.currentProduct_FrontEnd.image_url.arrayValue.values[0].stringValue
         }
         this.handleImageSelection = this.handleImageSelection.bind(this);
     }
@@ -18,7 +21,7 @@ class ProductPage extends Component {
     render() {
         const {currentProduct_FrontEnd} = this.props;
         console.log(currentProduct_FrontEnd);
-        let product = currentProduct_FrontEnd;
+        let product = currentProduct_FrontEnd.length!=0 && currentProduct_FrontEnd;
         return (
             <div>
                 {product && <Container>
@@ -76,13 +79,13 @@ const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id;
     let currentProduct;
     console.log(state);
-    state.products && state.products.map(product=>{
+    state.products.length!=0 && state.products.map(product=>{
         if(product.productid && product.productid.stringValue==id){
             currentProduct = product;
         }
     });
     return {
-        currentProduct_FrontEnd:currentProduct,
+        currentProduct_FrontEnd:currentProduct || [],
     }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {

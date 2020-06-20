@@ -8,6 +8,9 @@ import FilterSort from '../ShopPage/FilterSort';
 import FilterSortMain from '../ShopPage/FilterSortMain';
 
 class BestsellingPage extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render() {
         const {bestselling} = this.props;
         return (

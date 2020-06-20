@@ -15,6 +15,9 @@ import EnterValue from './EnterValue'
 
 
 class ShopPage extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render(){
         const {globalSearch, searchedProducts,emptySearch, searchInput} = this.props;
         console.log(emptySearch);

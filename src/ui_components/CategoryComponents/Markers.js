@@ -9,6 +9,9 @@ import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
 class Markers extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render(){
         const {markers} = this.props;
         return(

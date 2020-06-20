@@ -13,6 +13,9 @@ import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
 
 
 class ShopPage extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     componentWillReceiveProps = (prevProps,state) =>{
         if(prevProps!=this.props){
             console.log("change in props");
