@@ -2,33 +2,32 @@ import React, { Component } from 'react';
 import Slider from "react-slick";
 import { Grid } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
-import "slick-carousel/slick/slick.css";
 import {Link} from 'react-router-dom'; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 class BestSelling extends Component {
     render(){
         const {products} = this.props;
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows:false
-      };
-    let bestselling = products && products.filter((product)=>{
-        return product.bestselling.booleanValue
-    });
-    bestselling = bestselling.slice(0,8);
-    const nextFun = () =>{
-        this.slider.slickNext();
-    }
-    console.log("Best Selling:", bestselling);
-    const prevFun = ()=>{
-        this.slider.slickPrev();
-    }
+        const settings = {
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows:false
+        };
+        let bestselling = products && products.filter((product)=>{
+            return product.bestselling.booleanValue
+        });
+        bestselling = bestselling.slice(0,8);
+        const nextFun = () =>{
+            this.slider.slickNext();
+        }
+        const prevFun = ()=>{
+            this.slider.slickPrev();
+        }
 
     return (
         <>
@@ -49,7 +48,7 @@ class BestSelling extends Component {
                         )):(
                             [0,1,2,3].map(skeleton=>(
                                 <Grid item xs={6}>
-                                    <div>
+                                      <div>
                                         <Skeleton variant={'rect'} width="100%" height="15rem" />
                                     </div>
                                 </Grid>    
