@@ -28,6 +28,7 @@
     "react-redux-firebase": "^2.1.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.4.0",
+    "react-share": "^4.2.0",
     "react-sizeme": "^2.6.12",
     "react-slick": "^0.26.1",
     "react-transition-group": "^4.4.1",

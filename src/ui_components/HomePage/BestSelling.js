@@ -31,34 +31,37 @@ class BestSelling extends Component {
 
     return (
         <>
-            <div style={{position:'relative'}}>
-            <div style={{padding:'0.7rem 0.2rem'}}>Best Selling</div>
-                <ChevronLeftIcon onClick={prevFun} style={{position:'absolute',top:'50%', zIndex:'999', fontSize:'4rem', cursor:'pointer'}} fontSize="large" />
-                <Slider ref={c => (this.slider = c)} {...settings}>
-                        {bestselling.length!==0 ? bestselling.map(best=>(
-                            
-                            <Grid item>
-                                <Link to={'/'+best.collection.stringValue+'/'+best.productid.stringValue}>
-                                <div style={{height:'15rem',padding:'0 0.8rem'}}>
-                                    <img src={best.image_url.arrayValue.values[0].stringValue} width="100%" height="100%" />
-                                </div>
-                                </Link>
-                            </Grid>
-                            
-                        )):(
-                            [0,1,2,3].map(skeleton=>(
-                                <Grid item xs={6}>
-                                      <div>
-                                        <Skeleton variant={'rect'} width="100%" height="15rem" />
+            <div style={{position:'relative',overflow:'hidden'}}>
+                <div style={{position:'relative',overflow:'hidden'}}>
+                    <div style={{padding:'0.7rem 0.2rem'}}>Best Selling</div>
+                    <ChevronLeftIcon onClick={prevFun} style={{position:'absolute',top:'50%', zIndex:'999', fontSize:'4rem', cursor:'pointer'}} fontSize="large" />
+                    <Slider ref={c => (this.slider = c)} {...settings}>
+                            {bestselling.length!==0 ? bestselling.map(best=>(
+                                
+                                <Grid item>
+                                    <Link to={'/'+best.collection.stringValue+'/'+best.productid.stringValue}>
+                                    <div style={{height:'15rem',padding:'0 0.8rem'}}>
+                                        <img src={best.image_url.arrayValue.values[0].stringValue} width="100%" height="100%" />
                                     </div>
-                                </Grid>    
-                            ))
-                        )}
-                </Slider>
-                <ChevronRightIcon onClick={nextFun} style={{position:'absolute',top:'50%',right:0, zIndex:'999', fontSize:'4rem', cursor:'pointer'}} fontSize="large" /> 
+                                    </Link>
+                                </Grid>
+                                
+                            )):(
+                                [0,1,2,3].map(skeleton=>(
+                                    <Grid item xs={6}>
+                                        <div>
+                                            <Skeleton variant={'rect'} width="100%" height="15rem" />
+                                        </div>
+                                    </Grid>    
+                                ))
+                            )}
+                    </Slider>
+                    <ChevronRightIcon onClick={nextFun} style={{position:'absolute',top:'50%',right:0, zIndex:'999', fontSize:'4rem', cursor:'pointer'}} fontSize="large" /> 
+                </div>
                 <div  style={{float:'right', display:'inline-block', width:'100%'}}>
                        <Link style={{float:"right",textDecoration:'none',color:'#782844'}} to="/bestselling">View more</Link>
                 </div>  
+            
             </div>
         </>
     )

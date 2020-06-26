@@ -1392,14 +1392,6 @@ input[type="checkbox"] {
         float: left;
         /* margin-top: 8px; */
     }
-    /* .footer-section .footer-cta {
-        border-bottom: 1px solid #373636;
-        text-align: center;
-    }
-    .footer-section .cta-text {
-      padding-left: 8px;
-      display: block;
-      }*/
       .footer-section .copyright-text{
     margin: 0.8rem 0rem 0.8rem 0rem;
     padding-top:0.4rem;
@@ -1421,7 +1413,24 @@ input[type="checkbox"] {
             color: #ff5e14;
             font-size: 1.4rem;
             }
+      
   }
+
+  @media screen and (max-width:600px){
+    .pro-main-image{
+      order:1;
+
+    }
+    .pro-main-details{
+      order:3;
+    }
+    .pro-main-slider{
+      order:2;
+    }
+
+  }
+
+ 
 
 
 /* Footer.js */

@@ -9,6 +9,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Skeleton from '@material-ui/lab/Skeleton';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ShareComponent from './shareComponent';
+import {WhatsappShareButton} from 'react-share';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 
 // const styles = theme => ({
@@ -75,9 +78,9 @@ class ProductPage extends Component {
         console.log(currentProduct_FrontEnd);
         let product = currentProduct_FrontEnd.length!=0 && currentProduct_FrontEnd;
         let character = /#/g;
-        // let description = product.productdescription && product.productdescription.stringValue;
-        // description = description && description.replace(/#/g,`\n`);
-        let x = 'hey hi \r yayy';
+        let descArray = [];
+        let description = product.productdescription && product.productdescription.stringValue;
+        descArray = description!=undefined && description.split('#');
         return (
             <div>
                 <Container>
@@ -89,12 +92,16 @@ class ProductPage extends Component {
                                 Product Details
                             </div>
                         </Grid>
-                        <Grid order={{ xs: 1, sm: 1 }} item xs={12} sm={6}>
+                </Grid>
+                <Grid container spacing={3}>
+
+
+                        <Grid className="pro-main-image"  item xs={12} sm={6}>
                             <div className="product-main-image"> 
                                 <img  src={this.state.SelectedImage} width="100%"/>
                             </div>
                         </Grid>
-                        <Grid order={{ xs: 3, sm: 2 }} item xs={12} sm={6} >
+                        <Grid className="pro-main-details"   item xs={12} sm={6} >
                             <div>
                                 <div style={{fontSize:'4rem', margin:'1rem 0'}}>
                                     {product.productname.stringValue}
@@ -103,15 +110,27 @@ class ProductPage extends Component {
                                     {product.productprice.stringValue}
                                 </div>
                                 <div style={{fontSize:'2rem', color:'#666'}}>
-                                    {/* {description && description} */}
-                                    {x}
+                                    {descArray.map(desc=>(
+                                        <div>
+                                            <li>{desc}</li>
+                                        </div>
+                                    ))}
                                 </div>
-                                <Button color="primary" className="share-btn">Share</Button>
-                                <Button color="primary" className="whatsapp-btn">WhatsApp</Button>
+                                <div>
+                                    <WhatsappShareButton
+                                    url={"www.google.com"}
+                                    title={`${product.productname.stringValue}`}>
+                                        <Button><WhatsAppIcon fontSize="large" color="primary" /></Button>
+                                    </WhatsappShareButton>
+                                </div>
+                                {/* url={`localhost:3000/${product.collection.stringValue}/${product.productid.stringValue}`} */}
+                                <ShareComponent url="www.google.com"  text="Check out this website: www.google.com"/>
+                                {/* <Button color="primary" className="share-btn">Share</Button>
+                                <Button color="primary" className="whatsapp-btn">WhatsApp</Button> */}
                             </div>
                         </Grid>
                         
-                        <Grid order={{ xs: 2, sm: 3 }}  item xs={12} sm={6} alignItems={'center'}>
+                        <Grid className="pro-main-slider" item xs={12} sm={6} alignItems={'center'}>
                             <div className="prod-slick-outer" style={{textAlign:'center',position:'relative'}}>
                                 <div>
                                     <ChevronLeftIcon className="icon-left" onClick={this.prevFun} style={{position:'absolute',top:'50%', transform:'translateY(-50%)', left:'0', zIndex:'999', fontSize:'4rem', cursor:'pointer', backgroundColor:'rgba(255,255,255,0.8)'}} fontSize="large" />
