@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import EmailIcon from '@material-ui/icons/Email';
-
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
   
 
 const ShareComponent = (props) => {
