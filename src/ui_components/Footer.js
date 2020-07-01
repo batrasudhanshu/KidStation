@@ -77,7 +77,7 @@ const Footer = () => {
                             <li><NavLink to="/lunch_boxes">Lunch Boxes</NavLink></li>
                             <li><NavLink to="/water_bottles">Water Bottles</NavLink></li>
                             <li><NavLink to="/pens">Pens & Pencils</NavLink></li>
-                            <li><NavLink to="/sketch_pens">Sketch Pens</NavLink></li>
+                            <li><NavLink to="/markers">Sketch Pens</NavLink></li>
                             <li><NavLink to="/notebooks">Notebooks</NavLink></li>
                             <li><NavLink to="/geometry_boxes">Geometry Box</NavLink></li>
                             <li><NavLink to="/bags">Bags</NavLink></li>

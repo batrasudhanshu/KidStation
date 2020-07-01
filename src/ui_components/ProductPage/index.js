@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Grid, Container, Button, withStyles } from '@material-ui/core';
+import { Grid, Container, Button, Breadcrumbs } from '@material-ui/core';
 import {fetchProduct} from '../../CMS/actions/UploadAction';
 import Slider from "react-slick";
 import {Link} from 'react-router-dom'; 
@@ -12,22 +12,6 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ShareComponent from './shareComponent';
 import {WhatsappShareButton} from 'react-share';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-
-
-// const styles = theme => ({
-//     item2:{
-//         order: 3,
-//         [theme.breakpoints.up("xs")]: {
-//         order: 2
-//         }
-//     },
-//     item3:{
-//         order: 2,
-//         [theme.breakpoints.up("xs")]: {
-//         order: 3
-//         }
-//     }
-// })
 
 class ProductPage extends Component {
     constructor(props){
@@ -81,6 +65,7 @@ class ProductPage extends Component {
         let descArray = [];
         let description = product.productdescription && product.productdescription.stringValue;
         descArray = description!=undefined && description.split('#');
+        let urlVal = product.productname && "https://api.whatsapp.com/send?phone=9999089262&text=I would like to know more about: "+product.productname.stringValue+", localhost:3000/"+product.collection.stringValue+"/"+product.productid.stringValue;
         return (
             <div>
                 <Container>
@@ -103,30 +88,48 @@ class ProductPage extends Component {
                         </Grid>
                         <Grid className="pro-main-details"   item xs={12} sm={6} >
                             <div>
-                                <div style={{fontSize:'4rem', margin:'1rem 0'}}>
-                                    {product.productname.stringValue}
+                                <div className="product-page-breadcrumb">
+                                <Breadcrumbs aria-label="breadcrumb">
+                                    <Link to="/">
+                                        Home
+                                    </Link>
+                                    <Link to={`/${product.collection.stringValue}`} >
+                                        {product.collection.stringValue[0].toUpperCase()+product.collection.stringValue.slice(1)}
+                                    </Link>
+                                    <Link
+                                        color="textPrimary"
+                                        href="/components/breadcrumbs/"
+                                        aria-current="page"
+                                    >
+                                        {product.productname.stringValue[0].toUpperCase()+product.productname.stringValue.slice(1)}
+                                    </Link>
+                                </Breadcrumbs>
                                 </div>
-                                <div style={{fontSize:'2rem', margin:'0.5rem 0', color:'#333'}}>
-                                    {product.productprice.stringValue}
+                                <div style={{fontSize:'4rem', margin:'1rem 0', fontFamily: 'Lobster'}}>
+                                    {product.productname.stringValue[0].toUpperCase()+product.productname.stringValue.slice(1)}
                                 </div>
-                                <div style={{fontSize:'2rem', color:'#666'}}>
+                                <div style={{fontSize:'3rem', fontWeight:'500',margin:'0.5rem 0', color:'#333', fontFamily: 'Piedra'}}>
+                                    &#8377; {product.productprice.stringValue}
+                                </div>
+                                <div style={{fontSize:'2rem', color:'#444'}}>
                                     {descArray.map(desc=>(
                                         <div>
                                             <li>{desc}</li>
                                         </div>
                                     ))}
                                 </div>
+                                <div className="buy-connect-btn">
+                                    <a href={urlVal}>BUY/CONNECT</a>
+                                </div>
                                 <div>
-                                    <WhatsappShareButton
-                                    url={"www.google.com"}
-                                    title={`${product.productname.stringValue}`}>
-                                        <Button><WhatsAppIcon fontSize="large" color="primary" /></Button>
-                                    </WhatsappShareButton>
+                                    <h5 style={{marginTop:'1rem', color:'#777'}}>
+                                        Product color may slightly vary due to photographic lighting sources or your monitor settings**
+                                    </h5>
+                                </div>
+                                <div>
+                                    <ShareComponent url="www.google.com"  text="Check out this website: www.google.com"/>
                                 </div>
                                 {/* url={`localhost:3000/${product.collection.stringValue}/${product.productid.stringValue}`} */}
-                                <ShareComponent url="www.google.com"  text="Check out this website: www.google.com"/>
-                                {/* <Button color="primary" className="share-btn">Share</Button>
-                                <Button color="primary" className="whatsapp-btn">WhatsApp</Button> */}
                             </div>
                         </Grid>
                         

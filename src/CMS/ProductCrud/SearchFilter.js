@@ -59,19 +59,18 @@ class SearchFilter extends Component {
                         />
                     </Paper>
                 </div>
-                {/* <div className="search-list"> */}
                 <List style={hideList?({display:'none'}):({display:'block'})}>
                     {globalSearch.length!=0 && (globalSearch.length<6 ? (
                             globalSearch.map(option=>(
                             <ListItem button component={Link} to="/searchresult">
-                            <ListItemText primary={option.productname.stringValue} />
-                        </ListItem>
+                                <ListItemText style={{color:'#444'}} primary={option.productname.stringValue} />
+                            </ListItem>
                         ))
                     ):(
                         globalSearch.slice(0,6).map(option=>(
                             <ListItem button component={Link} to={option.collection.stringValue+'/'+option.productid.stringValue+'&'+option.productname.stringValue}>
-                            <ListItemText primary={option.productname.stringValue} />
-                        </ListItem>
+                                <ListItemText style={{color:'#444'}} primary={option.productname.stringValue} />
+                            </ListItem>
                         ))
                     ))}
                 </List>

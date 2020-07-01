@@ -38,9 +38,9 @@ const ProductCardSub = ({product}) => {
                                     </Link>
                                 </div>
                                 <div className="card-desc">
-                                    <div>{product.productname.stringValue}</div>
+                                    <div>{product.productname.stringValue[0].toUpperCase()+product.productname.stringValue.slice(1)}</div>
                                     <div className={product.soldout.booleanValue==true ? 'price-linethrough card-price':'card-price'}>
-                                        &#8377;{product.productprice.stringValue}
+                                        &#8377; {product.productprice.stringValue}
                                     </div>
                                     <div className="soldout-outer">
                                         {product.soldout.booleanValue==true && (<span className="card-soldout">Soldout</span>)}

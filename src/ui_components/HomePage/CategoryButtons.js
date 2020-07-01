@@ -46,7 +46,7 @@ const images = [
     url: marker_thumbnail,
     title: 'Markers',
     width: '33.3%',
-    link: '/sketch_pens'
+    link: '/markers'
   },
   {
     url: kits_thumbnail,

@@ -71,7 +71,7 @@ class App extends Component {
           {/* <Route path ='/erasers/:id' render={()=><eraser products={products} />}/> */}
           <Route exact path ='/bags' render={()=><Bag products={products} />}/>
           <Route exact path ='/pens' render={()=><Pen products={products} />}/>
-          <Route exact path ='/sketch_pens' render={()=><Marker products={products} />}/>
+          <Route exact path ='/markers' render={()=><Marker products={products} />}/>
           <Route exact path ='/geometry_boxes' render={()=><Geometry products={products} />}/>
           <Route exact path ='/cms/uploadsuccess' render={()=><uploadSuccess products={products} />}/>
           <Route exact path ='/cms/productcrud' component={ProductCrud} />

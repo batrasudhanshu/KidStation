@@ -60,7 +60,7 @@ class MaterialNavbar extends Component {
             {name:"Lunch Box",link:'/lunch_boxes'},
             {name:"Water Bottle",link:'/water_bottles'},
             {name:"Pen & Pencil",link:'/pens'},
-            {name:"Sketch - Pen & Marker",link:'/sketch_pens'},
+            {name:"Sketch - Pen & Marker",link:'/markers'},
             {name:"Notebook",link:'/notebooks'},
             {name:"Geometry Boxes",link:'/geometry_boxes'},
             {name:"Bags",link:'/bags'},
