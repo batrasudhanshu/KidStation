@@ -57,8 +57,8 @@ const Footer = () => {
                             </div>
                             <div class="footer-social-icon">
                                 <span >Follow us</span>
-                                <a href="https://www.linkedin.com/in/sudhanshu-batra09/" ><img style ={{width:'50px',height:'50px'}} src={sud} alt="Avatar" /></a>
-                                <a href="https://www.linkedin.com/in/rakshit-maini-769883124/" ><img style ={{width:'50px',height:'50px'}} src={rak} alt="Avatar" /></a>
+                                <a target="_blank" href="https://www.linkedin.com/in/sudhanshu-batra09/" ><img style ={{width:'50px',height:'50px'}} src={sud} alt="Avatar" /></a>
+                                <a target="_blank" href="https://www.linkedin.com/in/rakshit-maini-769883124/" ><img style ={{width:'50px',height:'50px'}} src={rak} alt="Avatar" /></a>
                                 
                                 {/* <a href="!#"><i class="fa fa-linkedin-square fa-x linkedin-bg"></i></a> */}
                                 
@@ -114,17 +114,17 @@ const Footer = () => {
                      <div class="col-md-6 col-sm-12 col-lg-6 d-none d-lg-block text-right">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="!#">Contact</a></li>
-                                <li><a href="!#">Track Order</a></li>
-                                <li><a href="!#">Return </a></li>
-                                <li><a href="!#">Shipping</a></li>
-                                <li><a href="!#">Terms of Use</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/track_order">Track Order</a></li>
+                                <li><a href="/return_policy">Return </a></li>
+                                <li><a href="/shipping_policy">Shipping</a></li>
+                                <li><a href="/terms_of_use">Terms of Use</a></li>
                             </ul>
                         </div>
                     </div> 
                     <div class="col-md-6 col-sm-12 col-lg-6 text-center text-lg-center">
                         <div class="copyright-text">
-                            <p>Visit Github link  <a href="https://github.com/batrasudhanshu/KidStation">KidStation</a>  for futher Updates..</p>
+                            <p>Visit Github link  <a target="_blank" href="https://github.com/batrasudhanshu/KidStation">KidStation</a>  for futher Updates..</p>
                         </div>
                     </div>
                 </div>
