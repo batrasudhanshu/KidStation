@@ -65,7 +65,7 @@ class ProductPage extends Component {
         let descArray = [];
         let description = product.productdescription && product.productdescription.stringValue;
         descArray = description!=undefined && description.split('#');
-        let urlVal = product.productname && "https://api.whatsapp.com/send?phone=9999089262&text=I would like to know more about: "+product.productname.stringValue+", localhost:3000/"+product.collection.stringValue+"/"+product.productid.stringValue;
+        let urlVal = product.productname && "https://api.whatsapp.com/send?phone=919999089262&text=I would like to know more about: *"+product.productname.stringValue+"*, localhost:3000/"+product.collection.stringValue+"/"+product.productid.stringValue;
         return (
             <div>
                 <Container>
