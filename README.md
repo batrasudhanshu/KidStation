@@ -1,3 +1,12 @@
+### Project is in alpha state, 
+a lot of side links like support and help page content are not updated. But 90% of main functionalities of project are already ready.
+
+### The main highlight of this project is it comes with its own CMS. Like you can add product image, name description, price and it will show up that product in a predesigned template.
+
+Project backend is totally handled with firebase. Firestore collections are used to store data and firebase storage for storing images. Please check out it below link.
+
+### https://kidstation-version1.firebaseapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
