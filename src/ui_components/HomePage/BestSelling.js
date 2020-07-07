@@ -34,7 +34,7 @@ class BestSelling extends Component {
             <div style={{position:'relative',overflow:'hidden'}}>
                 <div style={{position:'relative',overflow:'hidden'}}>
                     <div style={{padding:'0.7rem 0.2rem'}}>Best Selling</div>
-                    <ChevronLeftIcon onClick={prevFun} style={{position:'absolute',top:'50%', zIndex:'999', fontSize:'4rem', cursor:'pointer'}} fontSize="large" />
+                    <ChevronLeftIcon onClick={prevFun} style={{backgroundColor:'rgba(255,255,255,0.8)' ,position:'absolute',top:'50%', zIndex:'999', fontSize:'4rem', cursor:'pointer'}} fontSize="large" />
                     <Slider ref={c => (this.slider = c)} {...settings}>
                             {bestselling.length!==0 ? bestselling.map(best=>(
                                 
@@ -56,7 +56,7 @@ class BestSelling extends Component {
                                 ))
                             )}
                     </Slider>
-                    <ChevronRightIcon onClick={nextFun} style={{position:'absolute',top:'50%',right:0, zIndex:'999', fontSize:'4rem', cursor:'pointer'}} fontSize="large" /> 
+                    <ChevronRightIcon onClick={nextFun} style={{backgroundColor:'rgba(255,255,255,0.8)',position:'absolute',top:'50%',right:0, zIndex:'999', fontSize:'4rem', cursor:'pointer'}} fontSize="large" /> 
                 </div>
                 <div  style={{float:'right', display:'inline-block', width:'100%'}}>
                        <Link style={{float:"right",textDecoration:'none',color:'#782844'}} to="/bestselling">View more</Link>

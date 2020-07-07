@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css';
 import {connect} from 'react-redux';
 import {fetchProduct} from './CMS/actions/UploadAction';
-import { Container, } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 
 //cms links  
 import CMS from './CMS/CMS';
@@ -70,25 +70,25 @@ class App extends Component {
         <Container maxWidth={"lg"}>
         <MaterialNavbar />
         <Switch>
-          //cms links
+          {/* cms links */}
           <Route exact path ='/cms' render={()=><CMS products={products} />}/>
           <Route exact path ='/cms/uploadsuccess' render={()=><uploadSuccess products={products} />}/>
           <Route exact path ='/cms/productcrud' component={ProductCrud} />
           <Route exact path ='/cms/productcrud/:id' component={ProductCrudDetails} />
 
-          //Contact,shipping,return,track order,terms of use links
+          {/* Contact,shipping,return,track order,terms of use links */}
           <Route exact path ='/shipping_policy' render={()=><Shipping products={products} />}/>
           <Route exact path ='/return_policy' render={()=><Return products={products} />}/>
           <Route exact path ='/track_order' render={()=><TrackOrder products={products} />}/>
           <Route exact path ='/terms_of_use' render={()=><TermsOfUse products={products} />}/>
 
-          //ui components links
+          {/* ui components links */}
           <Route exact path ='/shop'  render={()=><Shop products={products} />}/>
           <Route exact path ='/searchresult'  render={()=><SearchResultPage products={products} />}/>
           <Route exact path ='/footer' component={Footer}/>
           <Route exact path ='/Contact' render={()=><Contact products={products} />}/>
 
-          //ui_components -> CategoryComponents links
+          {/* ui_components -> CategoryComponents links */}
           <Route exact path ='/notebooks' render={()=><Notebook products={products} />}/>
           <Route exact path ='/erasers' render={()=><Eraser products={products} />}/>
           <Route exact path ='/lunch_boxes' render={()=><Lunch products={products} />}/>
@@ -99,7 +99,7 @@ class App extends Component {
           <Route exact path ='/geometry_boxes' render={()=><Geometry products={products} />}/>
           <Route exact path ='/bestselling' component={BestsellingPage}/>
 
-          //ui_components -> ProductPage links
+          {/* ui_components -> ProductPage links */}
           <Route exact path = '/productdetail/:id' render={()=><ProductDetailComponent products={products} />} />
           <Route exact path ='/erasers/:id' component={ProductPage} />
           <Route exact path ='/pens/:id' component={ProductPage} />
@@ -112,13 +112,10 @@ class App extends Component {
           <Route exact path ='/cms/test' component={Test}/>
           <Route exact path ='/' render={()=><Home products={products} />}/>
           
-          //Redundant links
+          {/* Redundant links */}
           <Route exact path ='/cms/testcrud' render={()=><TestCrud products={products} />}/>
           <Route exact path ='/cms/erasercrud' render={()=><EraserCrud products={products} />}/>
           <Route path ='/cms/eraser/update/:id' render={()=><EraserCrudDetails products={products} />}/>
-          {/* <Route path ='/cms/eraser/:id' component={EraserCrudDetails}/> */}
-          {/* <Route exact path ='/return' render={()=><Return products={products} />}/> */}      
-          {/* <Route path ='/erasers/:id' render={()=><eraser products={products} />}/> */}
         
         </Switch>
         <Footer/>

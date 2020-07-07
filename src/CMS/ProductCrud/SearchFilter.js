@@ -39,6 +39,16 @@ class SearchFilter extends Component {
     render() {
         const {products, globalSearch, searchInput} = this.props;
         const {hideList} = this.state;
+        let globalSearchList = globalSearch.length!=0 && globalSearch.map(option=>(
+            <ListItem button component={Link} to={option.collection.stringValue+'/'+option.productid.stringValue}>
+                <ListItemText style={{color:'#444'}} primary={option.productname.stringValue} />
+            </ListItem>
+        ));
+        let globalSlicedSearchList = globalSearch.slice(0,6).map(option=>(
+            <ListItem button component={Link} to={option.collection.stringValue+'/'+option.productid.stringValue}>
+                <ListItemText style={{color:'#444'}} primary={option.productname.stringValue} />
+            </ListItem>
+        ));
         return (
             <div className="global-search">
                 <div className="global-search-input">
@@ -61,18 +71,22 @@ class SearchFilter extends Component {
                 </div>
                 <List style={hideList?({display:'none'}):({display:'block'})}>
                     {globalSearch.length!=0 && (globalSearch.length<6 ? (
-                            globalSearch.map(option=>(
-                            <ListItem button component={Link} to="/searchresult">
-                                <ListItemText style={{color:'#444'}} primary={option.productname.stringValue} />
-                            </ListItem>
-                        ))
+                            <>
+                                {globalSearchList}
+                            </>
                     ):(
-                        globalSearch.slice(0,6).map(option=>(
-                            <ListItem button component={Link} to={option.collection.stringValue+'/'+option.productid.stringValue+'&'+option.productname.stringValue}>
-                                <ListItemText style={{color:'#444'}} primary={option.productname.stringValue} />
-                            </ListItem>
-                        ))
+                        <>
+                                {globalSlicedSearchList}
+                                <ListItem button component={Link} to="/searchresult" onClick={this.searchProducts}>
+                                    <ListItemText style={{color:'#444'}} primary="View more..." />
+                                </ListItem>
+
+                        </>
+                        
                     ))}
+                </List>
+                <List style={hideList?({display:'none'}):({display:'block'})}>
+                    
                 </List>
             </div>
         )

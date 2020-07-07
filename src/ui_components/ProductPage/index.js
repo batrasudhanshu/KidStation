@@ -49,23 +49,25 @@ class ProductPage extends Component {
         this.slider.slickPrev();
     }
     render() {
+        
+        console.log("State value check",this.state);
+        const {currentProduct_FrontEnd} = this.props;
+        console.log(currentProduct_FrontEnd);
+        let product = currentProduct_FrontEnd.length!=0 && currentProduct_FrontEnd;
+        const imageLength = product && product.image && product.image_url.arrayValue.values.length;
         const settings = {
             dots: false,
-            infinite: true,
+            infinite: imageLength>4,
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1,
             arrows:false
         };
-        console.log("State value check",this.state);
-        const {currentProduct_FrontEnd} = this.props;
-        console.log(currentProduct_FrontEnd);
-        let product = currentProduct_FrontEnd.length!=0 && currentProduct_FrontEnd;
         let character = /#/g;
         let descArray = [];
         let description = product.productdescription && product.productdescription.stringValue;
         descArray = description!=undefined && description.split('#');
-        let urlVal = product.productname && "https://api.whatsapp.com/send?phone=919999089262&text=I would like to know more about: *"+product.productname.stringValue+"*, localhost:3000/"+product.collection.stringValue+"/"+product.productid.stringValue;
+        let urlVal = product.productname && "https://api.whatsapp.com/send?phone=919999089262&text=I would like to know more about: *"+product.productname.stringValue+"*, https://kidstation-version1.firebaseapp.com/"+product.collection.stringValue+"/"+product.productid.stringValue;
         return (
             <div>
                 <Container>
@@ -163,7 +165,7 @@ class ProductPage extends Component {
                                         )):(
                                             [0,1,2,3].map(skeleton=>(
                                                 <Grid item>
-                                                    <div>
+                                                    <div key={skeleton}>
                                                         <Skeleton variant={'rect'} width="100%" height="15rem" />
                                                     </div>
                                                 </Grid>    

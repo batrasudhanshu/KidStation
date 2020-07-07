@@ -3,7 +3,7 @@ import React from 'react'
 import fulllogo from "../../src/images/Fulllogo_animated.svg";
 import sud from "../../src/images/sud.jpg";
 import rak from "../../src/images/rak.jpg";
-import {NavLink} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 
 
 
@@ -114,11 +114,11 @@ const Footer = () => {
                      <div class="col-md-6 col-sm-12 col-lg-6 d-none d-lg-block text-right">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="/contact">Contact</a></li>
-                                <li><a href="/track_order">Track Order</a></li>
-                                <li><a href="/return_policy">Return </a></li>
-                                <li><a href="/shipping_policy">Shipping</a></li>
-                                <li><a href="/terms_of_use">Terms of Use</a></li>
+                                <li><Link to="/contact">Contact</Link></li>
+                                <li><Link to="/track_order">Track Order</Link></li>
+                                <li><Link to="/return_policy">Return </Link></li>
+                                <li><Link to="/shipping_policy">Shipping</Link></li>
+                                <li><Link to="/terms_of_use">Terms of Use</Link></li>
                             </ul>
                         </div>
                     </div> 
