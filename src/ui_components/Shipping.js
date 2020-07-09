@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import SearchFilter from "../CMS/ProductCrud/SearchFilter";
 import Grid from '@material-ui/core/Grid';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
@@ -47,6 +47,9 @@ const useStyles = makeStyles({
   },
 });
 const Shipping = () => {
+  useEffect(() => {
+    window.scroll(0,0);
+  }, []);
   const classes = useStyles();
   return (
     <shipping_page className="shipping-page">

@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect} from "react";
 import SearchFilter from "../CMS/ProductCrud/SearchFilter";
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
@@ -51,6 +51,9 @@ const ExpansionPanelDetails = withStyles((theme) => ({
 }))(MuiExpansionPanelDetails);
 
 const Refund = () => {
+  useEffect(() => {
+    window.scroll(0,0);
+  }, []);
   const [expanded, setExpanded] = React.useState('panel1');
 
   const handleChange = (panel) => (event, newExpanded) => {

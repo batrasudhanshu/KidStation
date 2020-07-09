@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import ProductCrudSummary from './ProductCrudSummary'
 import { getFirestore } from 'redux-firestore';
 import {Grid} from '@material-ui/core'
-import { Skeleton } from '@material-ui/lab';
 
 const ProductCrudList = (props) => {
     const {products, isLoaded} = props;

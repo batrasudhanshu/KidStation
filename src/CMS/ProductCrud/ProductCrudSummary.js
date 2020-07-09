@@ -6,16 +6,30 @@ import { getFirestore } from 'redux-firestore';
 import { Link } from 'react-router-dom';
 import {passSelectedProductAction} from '../actions/passSelectedProductAction';
 import {connect} from 'react-redux';
+import { getFirebase } from 'react-redux-firebase';
 
 class ProductCrudSummary extends React.Component {
-    delete(id){
+    delete(product){
+        let imageRef;
         const firestore = getFirestore();
-        firestore.collection(this.props.product.collection.stringValue).doc(id).delete().then(function() {
-            console.log("Document successfully deleted!");
-            window.location.reload(true);
-        }).catch(function(error) {
-            console.error("Error removing document: ", error);
+        const firebase = getFirebase();
+        const storage= firebase.storage();
+        var promises = product.image_url.arrayValue.values.map((imgStr)=>{
+            imageRef = storage.refFromURL(imgStr.stringValue);
+            imageRef.delete().then(function() {
+                console.log('file deleted successfully');
+            }).catch(function(error) {
+                console.log('error in file deletion');
+            });
         });
+        Promise.all(promises).then(()=>{
+            firestore.collection(product.collection.stringValue).doc(product.productid.stringValue).delete().then(function() {
+                console.log("Document successfully deleted!");
+                window.location.reload(true);
+            }).catch(function(error) {
+                console.error("Error removing document: ", error);
+            });
+        })
     }
     selectedProduct = () =>{
         console.log(this.props.product);
@@ -65,7 +79,7 @@ class ProductCrudSummary extends React.Component {
                                 <i class="fa fa-edit fa-2x"/>Edit
                             </Button>
                         </Link>
-                        <Button onClick={()=>this.delete(product.productid.stringValue)} size="large" color="primary">
+                        <Button onClick={()=>this.delete(product)} size="large" color="primary">
                             <i class="fa fa-trash fa-2x"/>Delete
                         </Button>
                         <Button className="soldout-btn" color="primary">

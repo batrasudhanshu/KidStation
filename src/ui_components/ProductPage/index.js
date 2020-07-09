@@ -73,118 +73,160 @@ class ProductPage extends Component {
                 <Container>
                 {product ?(
                     <>
-                <Grid container spacing={3}>
-                        <Grid item xs={12}>
-                            <div className="shop-title">
-                                Product Details
-                            </div>
-                        </Grid>
-                </Grid>
-                <Grid container spacing={3}>
+                    <Grid container spacing={3}>
+                            <Grid item xs={12}>
+                                <div className="shop-title">
+                                    Product Details
+                                </div>
+                            </Grid>
+                    </Grid>
+                    <Grid container spacing={3}>
 
 
-                        <Grid className="pro-main-image"  item xs={12} sm={6}>
-                            <div className="product-main-image"> 
-                                <img  src={this.state.SelectedImage} width="100%"/>
-                            </div>
-                        </Grid>
-                        <Grid className="pro-main-details"   item xs={12} sm={6} >
-                            <div>
-                                <div className="product-page-breadcrumb">
-                                <Breadcrumbs aria-label="breadcrumb">
-                                    <Link to="/">
-                                        Home
-                                    </Link>
-                                    <Link to={`/${product.collection.stringValue}`} >
-                                        {product.collection.stringValue[0].toUpperCase()+product.collection.stringValue.slice(1)}
-                                    </Link>
-                                    <Link
-                                        color="textPrimary"
-                                        href="/components/breadcrumbs/"
-                                        aria-current="page"
-                                    >
+                            <Grid className="pro-main-image"  item xs={12} sm={6}>
+                                <div className="product-main-image"> 
+                                    <img  src={this.state.SelectedImage} width="100%"/>
+                                </div>
+                            </Grid>
+                            <Grid className="pro-main-details"   item xs={12} sm={6} >
+                                <div>
+                                    <div className="product-page-breadcrumb">
+                                    <Breadcrumbs aria-label="breadcrumb">
+                                        <Link to="/">
+                                            Home
+                                        </Link>
+                                        <Link to={`/${product.collection.stringValue}`} >
+                                            {product.collection.stringValue[0].toUpperCase()+product.collection.stringValue.slice(1)}
+                                        </Link>
+                                        <Link
+                                            color="textPrimary"
+                                            href="/components/breadcrumbs/"
+                                            aria-current="page"
+                                        >
+                                            {product.productname.stringValue[0].toUpperCase()+product.productname.stringValue.slice(1)}
+                                        </Link>
+                                    </Breadcrumbs>
+                                    </div>
+                                    <div style={{fontSize:'4rem', margin:'1rem 0', fontFamily: 'Lobster'}}>
                                         {product.productname.stringValue[0].toUpperCase()+product.productname.stringValue.slice(1)}
-                                    </Link>
-                                </Breadcrumbs>
+                                    </div>
+                                    <div style={{fontSize:'3rem', fontWeight:'500',margin:'0.5rem 0', color:'#333', fontFamily: 'Piedra'}}>
+                                        &#8377; {product.productprice.stringValue}
+                                    </div>
+                                    <div style={{fontSize:'2rem', color:'#444'}}>
+                                        {descArray.map(desc=>(
+                                            <div>
+                                                <li>{desc}</li>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="buy-connect-btn">
+                                        <a href={urlVal}>BUY/CONNECT</a>
+                                    </div>
+                                    <div>
+                                        <h5 style={{marginTop:'1rem', color:'#777'}}>
+                                            Product color may slightly vary due to photographic lighting sources or your monitor settings**
+                                        </h5>
+                                    </div>
+                                    <div>
+                                        <ShareComponent url={`https://kidstation-version1.firebaseapp.com/${product.collection.stringValue}/${product.productid.stringValue}`}  text="Check out for more products like this."/>
+                                    </div>
+                                    {/* url={`localhost:3000/${product.collection.stringValue}/${product.productid.stringValue}`} */}
                                 </div>
-                                <div style={{fontSize:'4rem', margin:'1rem 0', fontFamily: 'Lobster'}}>
-                                    {product.productname.stringValue[0].toUpperCase()+product.productname.stringValue.slice(1)}
-                                </div>
-                                <div style={{fontSize:'3rem', fontWeight:'500',margin:'0.5rem 0', color:'#333', fontFamily: 'Piedra'}}>
-                                    &#8377; {product.productprice.stringValue}
-                                </div>
-                                <div style={{fontSize:'2rem', color:'#444'}}>
-                                    {descArray.map(desc=>(
-                                        <div>
-                                            <li>{desc}</li>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="buy-connect-btn">
-                                    <a href={urlVal}>BUY/CONNECT</a>
-                                </div>
-                                <div>
-                                    <h5 style={{marginTop:'1rem', color:'#777'}}>
-                                        Product color may slightly vary due to photographic lighting sources or your monitor settings**
-                                    </h5>
-                                </div>
-                                <div>
-                                    <ShareComponent url="www.google.com"  text="Check out this website: www.google.com"/>
-                                </div>
-                                {/* url={`localhost:3000/${product.collection.stringValue}/${product.productid.stringValue}`} */}
-                            </div>
-                        </Grid>
-                        
-                        <Grid className="pro-main-slider" item xs={12} sm={6} alignItems={'center'}>
-                            <div className="prod-slick-outer" style={{textAlign:'center',position:'relative'}}>
-                                <div>
-                                    <ChevronLeftIcon className="icon-left" onClick={this.prevFun} style={{position:'absolute',top:'50%', transform:'translateY(-50%)', left:'0', zIndex:'999', fontSize:'4rem', cursor:'pointer', backgroundColor:'rgba(255,255,255,0.8)'}} fontSize="large" />
-                                </div>
-                                <Slider className="product-page-slick" ref={c => (this.slider = c)} {...settings}>
-                                    {product.image_url.arrayValue.values.length!==0 ? product.image_url.arrayValue.values.map(img=>(
-                                            <Grid item>
-                                                    <Button onClick={()=>this.handleImageSelection(img)}>
-                                                    <div style={{height: '100%',
-                                                        width:'100%',
-                                                        overflow: 'hidden',
-                                                        alignItems: 'center',
-                                                        justifyContent: 'center'}}>
-                                                    
-                                                        <img style={{height: '100%',
-                                                        width:'100%',
-                                                        
-                                                        objectFit: 'cover',
-                                                        }} 
-                                                        src={img.stringValue} />
-                                                        
-                                                    </div>
-                                                    </Button>
-                                                
-                                             </Grid>
-                                            
-                                        )):(
-                                            [0,1,2,3].map(skeleton=>(
+                            </Grid>
+                            
+                            <Grid className="pro-main-slider" item xs={12} sm={6} alignItems={'center'}>
+                                <div className="prod-slick-outer" style={{textAlign:'center',position:'relative'}}>
+                                    <div>
+                                        <ChevronLeftIcon className="icon-left" onClick={this.prevFun} style={{position:'absolute',top:'50%', transform:'translateY(-50%)', left:'0', zIndex:'999', fontSize:'4rem', cursor:'pointer', backgroundColor:'rgba(255,255,255,0.8)'}} fontSize="large" />
+                                    </div>
+                                    <Slider className="product-page-slick" ref={c => (this.slider = c)} {...settings}>
+                                        {product.image_url.arrayValue.values.length!==0 && product.image_url.arrayValue.values.map(img=>(
                                                 <Grid item>
-                                                    <div key={skeleton}>
-                                                        <Skeleton variant={'rect'} width="100%" height="15rem" />
-                                                    </div>
-                                                </Grid>    
-                                            ))
-                                    )}
-                                </Slider>
-                                <div>
-                                    <ChevronRightIcon onClick={this.nextFun} style={{position:'absolute',top:'50%', transform:'translateY(-50%)' ,right:0, zIndex:'999', fontSize:'4rem', cursor:'pointer', backgroundColor:'rgba(255,255,255,0.8)'}} fontSize="large" /> 
+                                                        <Button onClick={()=>this.handleImageSelection(img)}>
+                                                        <div style={{height: '100%',
+                                                            width:'100%',
+                                                            overflow: 'hidden',
+                                                            alignItems: 'center',
+                                                            justifyContent: 'center'}}>
+                                                            <img style={{height: '100%',
+                                                            width:'100%',
+                                                            objectFit: 'cover',
+                                                            }} 
+                                                            src={img.stringValue} />
+                                                        </div>
+                                                        </Button>
+                                                </Grid>
+                                            ))}
+                                    </Slider>
+                                    <div>
+                                        <ChevronRightIcon onClick={this.nextFun} style={{position:'absolute',top:'50%', transform:'translateY(-50%)' ,right:0, zIndex:'999', fontSize:'4rem', cursor:'pointer', backgroundColor:'rgba(255,255,255,0.8)'}} fontSize="large" /> 
+                                    </div>
                                 </div>
-                            </div>
-                        </Grid>
-                    
-                </Grid>
+                            </Grid>
+                        
+                    </Grid>
                     
                 </>
                 ):(
-                    <Grid container spacing={3}>
-                        Hey
-                    </Grid>
+                    <>
+                        <Grid container spacing={3}>
+                            <Grid item xs={12} sm={4}>
+                                <div className="shop-title">
+                                <Skeleton variant="rect" height={42} animation="pulse" />
+                                </div>
+                            </Grid>
+                        </Grid>
+                        <Grid container spacing={3}>
+                            <Grid className="pro-main-image"  item xs={12} sm={6}>
+                                <div className="product-main-image"> 
+                                    <Skeleton variant="rect" height={500} animation="pulse" />
+                                </div>
+                            </Grid>
+                            <Grid className="pro-main-details"   item xs={12} sm={6} >
+                                <div>
+                                    <div className="product-page-breadcrumb">
+                                    <Skeleton variant="rect" height={24} animation="pulse" />
+                                    </div>
+                                    <div style={{fontSize:'4rem', margin:'1rem 0', fontFamily: 'Lobster'}}>
+                                        <Skeleton variant="rect" height={57} animation="pulse" />
+                                    </div>
+                                    <div style={{fontSize:'3rem', fontWeight:'500',margin:'0.5rem 0', color:'#333', fontFamily: 'Piedra'}}>
+                                        <Skeleton variant="rect" height={42} animation="pulse" />
+                                    </div>
+                                    <div style={{fontSize:'2rem', color:'#444'}}>
+                                        <div>
+                                            <Skeleton variant="rect" animation="pulse" />
+                                        </div>
+                                        <div>
+                                            <Skeleton variant="rect" animation="pulse" />
+                                        </div>
+                                        <div>
+                                            <Skeleton variant="rect" animation="pulse" />
+                                        </div>
+                                    </div>
+                                    <div className="buy-connect-btn">
+                                        <a href={urlVal}>BUY/CONNECT</a>
+                                    </div>
+                                    <div>
+                                        <h5 style={{marginTop:'1rem', color:'#777'}}>
+                                        <Skeleton variant="rect" animation="pulse" />
+                                        <Skeleton variant="rect" animation="pulse" />
+                                        </h5>
+                                    </div>
+                                    <div>
+                                        <ShareComponent url="www.google.com"  text="Check out this website: www.google.com"/>
+                                    </div>
+                                    {/* url={`localhost:3000/${product.collection.stringValue}/${product.productid.stringValue}`} */}
+                                </div>
+                            </Grid>
+                            <Grid className="pro-main-slider" item xs={12} sm={6} alignItems={'center'}>
+                                <div className="prod-slick-outer" style={{textAlign:'center',position:'relative'}}>
+                                    <Skeleton variant="rect" height={100} animation="pulse" />
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </>
                 )}
                 </Container>
             </div>
