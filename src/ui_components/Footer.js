@@ -57,8 +57,8 @@ const Footer = () => {
                             </div>
                             <div class="footer-social-icon">
                                 <span >Follow us</span>
-                                <a target="_blank" href="https://www.linkedin.com/in/sudhanshu-batra09/" ><img style ={{width:'50px',height:'50px'}} src={sud} alt="Avatar" /></a>
-                                <a target="_blank" href="https://www.linkedin.com/in/rakshit-maini-769883124/" ><img style ={{width:'50px',height:'50px'}} src={rak} alt="Avatar" /></a>
+                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/sudhanshu-batra09/" ><img style ={{width:'50px',height:'50px'}} src={sud} alt="Avatar" /></a>
+                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/rakshit-maini-769883124/" ><img style ={{width:'50px',height:'50px'}} src={rak} alt="Avatar" /></a>
                                 
                                 {/* <a href="!#"><i class="fa fa-linkedin-square fa-x linkedin-bg"></i></a> */}
                                 
@@ -116,7 +116,7 @@ const Footer = () => {
                             <ul>
                                 <li><Link to="/contact">Contact</Link></li>
                                 <li><Link to="/track_order">Track Order</Link></li>
-                                <li><Link to="/return_policy">Return </Link></li>
+                                <li><Link to="/refund_policy">Refund</Link></li>
                                 <li><Link to="/shipping_policy">Shipping</Link></li>
                                 <li><Link to="/terms_of_use">Terms of Use</Link></li>
                             </ul>
@@ -124,7 +124,7 @@ const Footer = () => {
                     </div> 
                     <div class="col-md-6 col-sm-12 col-lg-6 text-center text-lg-center">
                         <div class="copyright-text">
-                            <p>Visit Github link  <a target="_blank" href="https://github.com/batrasudhanshu/KidStation">KidStation</a>  for futher Updates..</p>
+                            <p>Visit Github link  <a rel="noopener noreferrer" target="_blank" href="https://github.com/batrasudhanshu/KidStation">KidStation</a>  for futher Updates..</p>
                         </div>
                     </div>
                 </div>

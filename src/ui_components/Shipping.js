@@ -53,7 +53,7 @@ const Shipping = () => {
       <SearchFilter />
       <h2>Shipping Policy</h2>
       {/* <HeaderBanner tag="Shipping Policy" bannerImg={`url(${shipping})`} /> */}
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
 
       <Grid item xs={12}>
         <div>

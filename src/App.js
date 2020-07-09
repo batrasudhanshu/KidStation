@@ -23,7 +23,7 @@ import Footer from './ui_components/Footer';
 //Contact,shipping,return,track order, terms of use links
 import Contact from '../src/ui_components/Contact'
 import Shipping from './ui_components/Shipping';
-import Return from './ui_components/Return';
+import Refund from './ui_components/Refund';
 import TrackOrder from './ui_components/TrackOrder';
 import TermsOfUse from './ui_components/TermsOfUse';
 
@@ -78,7 +78,7 @@ class App extends Component {
 
           {/* Contact,shipping,return,track order,terms of use links */}
           <Route exact path ='/shipping_policy' render={()=><Shipping products={products} />}/>
-          <Route exact path ='/return_policy' render={()=><Return products={products} />}/>
+          <Route exact path ='/refund_policy' render={()=><Refund products={products} />}/>
           <Route exact path ='/track_order' render={()=><TrackOrder products={products} />}/>
           <Route exact path ='/terms_of_use' render={()=><TermsOfUse products={products} />}/>
 

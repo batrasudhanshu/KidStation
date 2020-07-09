@@ -201,17 +201,6 @@ input[type="checkbox"] {
 }
 /* MaterialNavbar.js */
 
-
-/* home.js */
-.carouselblock .overlay{
-    /* display: none; */
-}
-.carouselblock{
-    /* padding: 2rem; */
-}
-
-/* home.js */
-
 /* Productcard.js */
 
 .loader-desc{
@@ -1545,4 +1534,35 @@ input[type="checkbox"] {
   margin: 1rem 0rem 1rem 1.7rem;
 }
 /* Shipping.js */
+
+/* Refund.js */
+.refund-page h2{
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+.refund-ques .ques-text .MuiTypography-root{
+  font-size: 2rem;
+  color: black;
+}
+.return-policy .return-policy-head {
+  margin-bottom: 1rem;
+}
+.return-policy .return-policy-head span{
+  font-size: 2.5rem;
+  
+}
+.return-policy-detail{
+  margin-top: 1rem;
+}
+.return-policy-detail span{
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+.return-policy-detail ul{
+  margin-top: 1rem;
+}
+
+
+/* Refund.js */
   
