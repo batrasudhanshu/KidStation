@@ -284,7 +284,15 @@ input[type="checkbox"] {
     line-height: 3.5rem;
     font-size: 2rem;
     margin: auto;
+    
     text-align: center;
+}
+.card-desc .card-desc-name{
+   width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 .card-icons{
     text-align: center;

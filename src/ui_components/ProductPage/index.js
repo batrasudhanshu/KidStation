@@ -12,6 +12,8 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ShareComponent from './shareComponent';
 import {WhatsappShareButton} from 'react-share';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
+import Tooltip from '@material-ui/core/Tooltip';
 
 class ProductPage extends Component {
     constructor(props){
@@ -70,7 +72,8 @@ class ProductPage extends Component {
         let urlVal = product.productname && "https://api.whatsapp.com/send?phone=919999089262&text=I would like to know more about: *"+product.productname.stringValue+"*, https://kidstation-version1.firebaseapp.com/"+product.collection.stringValue+"/"+product.productid.stringValue;
         return (
             <div>
-                <Container>
+                <SearchFilter />
+                <Container style={{marginTop:'1rem'}}>
                 {product ?(
                     <>
                     <Grid container spacing={3}>
@@ -123,7 +126,9 @@ class ProductPage extends Component {
                                         ))}
                                     </div>
                                     <div className="buy-connect-btn">
+                                        <Tooltip title="Buy">
                                         <a href={urlVal}>BUY/CONNECT</a>
+                                        </Tooltip>
                                     </div>
                                     <div>
                                         <h5 style={{marginTop:'1rem', color:'#777'}}>

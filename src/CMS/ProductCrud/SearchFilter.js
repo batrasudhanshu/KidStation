@@ -40,12 +40,12 @@ class SearchFilter extends Component {
         const {products, globalSearch, searchInput} = this.props;
         const {hideList} = this.state;
         let globalSearchList = globalSearch.length!=0 && globalSearch.map(option=>(
-            <ListItem button component={Link} to={option.collection.stringValue+'/'+option.productid.stringValue}>
+            <ListItem onClick={()=>this.setState({hideList:true})} component={Link} to={'/'+option.collection.stringValue+'/'+option.productid.stringValue}>
                 <ListItemText style={{color:'#444'}} primary={option.productname.stringValue} />
             </ListItem>
         ));
         let globalSlicedSearchList = globalSearch.slice(0,6).map(option=>(
-            <ListItem button component={Link} to={option.collection.stringValue+'/'+option.productid.stringValue}>
+            <ListItem onClick={()=>this.setState({hideList:true})} component={Link} to={'/'+option.collection.stringValue+'/'+option.productid.stringValue}>
                 <ListItemText style={{color:'#444'}} primary={option.productname.stringValue} />
             </ListItem>
         ));

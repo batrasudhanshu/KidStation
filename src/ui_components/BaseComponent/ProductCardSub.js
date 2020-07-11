@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Button } from '@material-ui/core';
+import { Grid, Button, withStyles } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import LazyLoad from 'react-lazyload';
@@ -7,6 +7,8 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import {Link} from 'react-router-dom';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import Snackbar from '@material-ui/core/Snackbar';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 const Loading = () => {
     return(
@@ -17,6 +19,14 @@ const Loading = () => {
         </Grid>
     )
 }
+const OurTooltip = withStyles(theme=>({
+    tooltip: {
+        backgroundColor: theme.palette.common.white,
+        color: "rgba(0, 0, 0, 0.87)",
+        boxShadow: theme.shadows[1],
+        fontSize: 11,
+      }
+}))(Tooltip);
 
 const ProductCardSub = ({product}) => {
     let [copy,setCopy] = useState(false);
@@ -53,7 +63,11 @@ const ProductCardSub = ({product}) => {
                             </CopyToClipboard>
                         </div>
                         <div className="card-desc">
-                            <div>{product.productname.stringValue[0].toUpperCase()+product.productname.stringValue.slice(1)}</div>
+                            <OurTooltip placement="top-end" title={product.productname.stringValue[0].toUpperCase()+product.productname.stringValue.slice(1)}>
+                                <div className="card-desc-name">
+                                    {product.productname.stringValue[0].toUpperCase()+product.productname.stringValue.slice(1)}
+                                </div>
+                            </OurTooltip>
                             <div className={product.soldout.booleanValue==true ? 'price-linethrough card-price':'card-price'}>
                                 &#8377; {product.productprice.stringValue}
                             </div>
