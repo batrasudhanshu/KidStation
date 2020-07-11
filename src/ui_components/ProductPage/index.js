@@ -131,7 +131,7 @@ class ProductPage extends Component {
                                         </Tooltip>
                                     </div>
                                     <div>
-                                        <h5 style={{marginTop:'1rem', color:'#777'}}>
+                                        <h5 style={{marginTop:'1rem', color:'#999'}}>
                                             Product color may slightly vary due to photographic lighting sources or your monitor settings**
                                         </h5>
                                     </div>
