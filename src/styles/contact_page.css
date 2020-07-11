@@ -276,10 +276,11 @@ contact_page .pdt20 {
 }
 
 contact_page .contact-pageheader {
+    margin-top: 1rem;
     position: relative;
     /* background: rgba(145, 238, 226, 1); */
     background-image: url("https://previews.123rf.com/images/olegdudko/olegdudko1802/olegdudko180201544/94904919-back-to-school-and-education-banner-with-colorful-pencils-and-stationery-blank-copy-space-at-center.jpg");
-     margin-bottom: 4.375rem;
+    margin-bottom: 4.375rem;
     width:100%;
     background-size:cover;
     background-repeat: no-repeat;

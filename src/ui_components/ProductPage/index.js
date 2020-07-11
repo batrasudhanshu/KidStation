@@ -85,7 +85,7 @@ class ProductPage extends Component {
 
                             <Grid className="pro-main-image"  item xs={12} sm={6}>
                                 <div className="product-main-image"> 
-                                    <img  src={this.state.SelectedImage} width="100%"/>
+                                    <img src={this.state.SelectedImage}/>
                                 </div>
                             </Grid>
                             <Grid className="pro-main-details"   item xs={12} sm={6} >
@@ -114,9 +114,11 @@ class ProductPage extends Component {
                                         &#8377; {product.productprice.stringValue}
                                     </div>
                                     <div style={{fontSize:'2rem', color:'#444'}}>
-                                        {descArray.map(desc=>(
+                                        {descArray.map((desc,index)=>(
                                             <div>
-                                                <li>{desc}</li>
+                                                {
+                                                    index>0 && <li>{desc}</li>
+                                                }
                                             </div>
                                         ))}
                                     </div>
