@@ -5,14 +5,27 @@ import { ListItemText, ListItem, Drawer, Collapse, Grid } from '@material-ui/cor
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import fulllogo from '../../src/images/Fulllogo_animated.svg';
+import SearchFilterLarge from '../CMS/ProductCrud/SearchFilterLarge';
+import {SizeMe} from 'react-sizeme';
 
 class MaterialNavbar extends Component {
     state={
         sidebar:false,
         categorytoggle: false,
         activeNavIndex:-1,
-        activeCategoriesIndex:-1
+        activeCategoriesIndex:-1,
+        width:window.innerWidth
     }
+
+   
+
+    componentDidMount = () => {
+        window.addEventListener('resize', this.handleResize)
+    }
+    handleResize = () =>{
+        this.setState({width: window.innerWidth});
+    }
+
     toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
           return;
@@ -47,6 +60,8 @@ class MaterialNavbar extends Component {
     }
 
     render() {
+        const { width } = this.state;
+        // console.log(width);
         const list= [
             {name:"Home",link:'/'},
             {name:"Shop",link:'/shop'},
@@ -82,6 +97,7 @@ class MaterialNavbar extends Component {
         });
         return (
             <div>
+                
                 {/* <MenuIcon onClick={this.toggleDrawer(true)} style={{fontSize:'3.5rem', backgroundColor:'#aaa', float:'left'}} /> */}
                 <Grid container alignItems="center" xs={12} className="navigation">
                     <Grid item xs={4} sm={2}>
@@ -92,9 +108,12 @@ class MaterialNavbar extends Component {
                             <img alt="" src={fulllogo} width="100%" max-width="225px" />
                         </Link>
                     </Grid>
-                    <Grid align="center" item xs={12} sm={6} className="RightNavItems">
-                        <div>
-                            <span>
+
+                    <Grid align="center" item xs={12} sm={6} className="RightNavItems">  
+                        <div style={{position:'relative'}}>
+                            {/* search filter for desktop screen */}
+                            {(width>=900) ? <SearchFilterLarge />:  null }    
+                            <span className="NavItem1">
                                 <Link style={{textDecoration:'none'}} to="/track_order">
                                     Track Order 
                                 </Link>

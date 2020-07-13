@@ -41,7 +41,6 @@ class ProductPage extends Component {
         window.scrollTo(0, 0)
     }
     handleImageSelection = (image) =>{
-        console.log('change image',image.stringValue);
         this.setState({SelectedImage:image.stringValue})
     }
     nextFun = () =>{
@@ -51,10 +50,7 @@ class ProductPage extends Component {
         this.slider.slickPrev();
     }
     render() {
-        
-        console.log("State value check",this.state);
         const {currentProduct_FrontEnd} = this.props;
-        console.log(currentProduct_FrontEnd);
         let product = currentProduct_FrontEnd.length!=0 && currentProduct_FrontEnd;
         const imageLength = product && product.image && product.image_url.arrayValue.values.length;
         const settings = {
@@ -244,13 +240,11 @@ class ProductPage extends Component {
 const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id;
     let currentProduct;
-    // console.log(state);
     state.products.length!=0 && state.products.map(product=>{
         if(product.productid && product.productid.stringValue==id){
             currentProduct = product;
         }
     });
-    console.log(currentProduct)
     return {
         currentProduct_FrontEnd:currentProduct || [],
     }

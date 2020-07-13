@@ -113,6 +113,12 @@ input[type="checkbox"] {
 
 /* MaterialNavbar.js */
 
+.nav-searchfilter-lg{
+  position: absolute;
+  right: 180px;
+  top: 28px;
+}
+
 .sidenavbar .MuiPaper-root{
     width: 30rem !important;
     background-image: url('../src/images/sidebar_bg.jpg');
@@ -190,14 +196,14 @@ input[type="checkbox"] {
     /* width: 100%; */
 }
 .RightNavItems div span{
-    padding: 0 3rem;
+    padding: 0 2rem;
 }
 .RightNavItems div span a{
     color: black;
     cursor: pointer;
 }
-.RightNavItems div span:first-child{
-    border-right: 2px solid black;
+.NavItem1{
+    border-right: 3px solid black;
 }
 /* MaterialNavbar.js */
 
@@ -405,7 +411,14 @@ input[type="checkbox"] {
 .global-search ul{
     padding: 0;
     margin: 0 1%;
-    box-shadow: rgb(120, 120, 120);
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+    border-radius: 0.5rem;
     z-index: 999;
     position: absolute;
     display: block;
@@ -422,9 +435,64 @@ input[type="checkbox"] {
     /* color: brown; */
 }
 
-
-
 /* SearchFilter.js */
+
+
+
+
+
+
+/* searchfilterlarge */
+
+.global-search-lg{
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.global-search-input-lg {
+  /* background-color: #d3d3d3; */
+  /*box-shadow: rgb(120, 120, 120) !important; */
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 0.5rem;
+  
+  width: 96%;
+  margin: 0 1%;
+  
+}
+.global-search-input-lg .MuiFormControl-root{
+  /* width: 100%; */
+}
+.global-search-input-lg .MuiInputBase-input{
+  margin:0 1rem;
+  width: 19rem;
+}
+.global-search-lg ul{
+  padding: 0;
+  margin: 0 1%;
+  box-shadow: rgb(120, 120, 120);
+  z-index: 999;
+  display: block;
+  width: 98%;
+}
+.global-search-lg ul > a{
+  border: none !important;
+  background-color: whitesmoke;
+  /* color: brown; */
+}
+.global-search-lg ul > a:hover{
+  border: none !important;
+  background-color: rgb(220, 220, 220);
+  /* color: brown; */
+}
+
+
+/* searchfilterlarge */
 
 
 /* home.js */
@@ -1507,7 +1575,15 @@ input[type="checkbox"] {
             color: #ff5e14;
             font-size: 1.4rem;
             }
+            
       
+  }
+  @media screen and (max-width:400px){
+    .footer-section .footer-menu li a {
+      font-size: 0.95rem;
+      /* text-align: center; */
+      color: white;
+    }
   }
 
   @media screen and (max-width:600px){

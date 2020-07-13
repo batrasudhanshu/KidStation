@@ -13,7 +13,7 @@ import uploadSuccess from "./CMS/uploadSuccess";
 import SearchFilter from "./CMS/ProductCrud/SearchFilter";
 
 //ui components links
-import Home from "../src/ui_components/Home";
+import Home from "../src/ui_components/HomePage/Home";
 import Shop from "../src/ui_components/ShopPage";
 import BestsellingPage from "./ui_components/BestsellingPage";
 import SearchResultPage from "../src/ui_components/SearchResultPage";
@@ -239,7 +239,7 @@ class App extends Component {
   }
 }
 const mapStateToProps = (state, ownProps) => {
-  console.log("APP>JS", state);
+  // console.log("APP>JS", state);
   return {
     products: state.products,
   };

@@ -1,4 +1,4 @@
-const emptysearchbarReducer = (state='', action) =>{
+const globalsearchinputReducer = (state='', action) =>{
     switch (action.type) {
         case 'GLOBAL_SEARCH_INPUT':
             state = action.data;
@@ -7,4 +7,4 @@ const emptysearchbarReducer = (state='', action) =>{
             return state;
     }
 }
-export default emptysearchbarReducer;
+export default globalsearchinputReducer;
