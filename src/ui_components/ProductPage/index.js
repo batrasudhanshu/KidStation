@@ -84,7 +84,7 @@ class ProductPage extends Component {
 
                             <Grid className="pro-main-image"  item xs={12} sm={6}>
                                 <div className="product-main-image"> 
-                                    <img src={this.state.SelectedImage}/>
+                                    <img src={this.state.SelectedImage} alt=""/>
                                 </div>
                             </Grid>
                             <Grid className="pro-main-details"   item xs={12} sm={6} >
@@ -156,7 +156,8 @@ class ProductPage extends Component {
                                                             width:'100%',
                                                             objectFit: 'cover',
                                                             }} 
-                                                            src={img.stringValue} />
+                                                            src={img.stringValue}
+                                                            alt="" />
                                                         </div>
                                                         </Button>
                                                 </Grid>

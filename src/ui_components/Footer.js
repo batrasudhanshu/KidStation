@@ -1,9 +1,14 @@
 import React from 'react'
 
 import fulllogo from "../../src/images/Fulllogo_animated.svg";
-import sud from "../../src/images/sud.jpg";
-import rak from "../../src/images/rak.jpg";
+// import sud from "../../src/images/sud.jpg";
+// import rak from "../../src/images/rak.jpg";
+import insta from "../../src/images/insta.png"
+import fb from "../../src/images/fb.png"
 import {NavLink, Link} from 'react-router-dom'
+// import FacebookIcon from '@material-ui/icons/Facebook';
+// import InstagramIcon from '@material-ui/icons/Instagram';
+
 
 
 
@@ -57,10 +62,11 @@ const Footer = () => {
                             </div>
                             <div class="footer-social-icon">
                                 <span >Follow us</span>
-                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/sudhanshu-batra09/" ><img style ={{width:'50px',height:'50px'}} src={sud} alt="Avatar" /></a>
-                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/rakshit-maini-769883124/" ><img style ={{width:'50px',height:'50px'}} src={rak} alt="Avatar" /></a>
+                                {/* <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/sudhanshu-batra09/" ><img style ={{width:'50px',height:'50px'}} src={sud} alt="Avatar" /></a>
+                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/rakshit-maini-769883124/" ><img style ={{width:'50px',height:'50px'}} src={rak} alt="Avatar" /></a> */}
                                 
-                                {/* <a href="!#"><i class="fa fa-linkedin-square fa-x linkedin-bg"></i></a> */}
+                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/sudhanshu-batra09/" ><img style ={{width:'40px',height:'40px'}} src={fb} alt="Facebook" /></a>
+                                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/sudhanshu-batra09/" ><img style ={{width:'40px',height:'40px'}} src={insta} alt="Instagram" /></a>
                                 
                             </div>
                         </div>
@@ -91,9 +97,10 @@ const Footer = () => {
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
-                                <h3>Subscribe</h3>
+                                {/* <h3>Subscribe</h3> */}
+                                <h3>Our Courier Partners</h3>
                             </div>
-                            <div class="footer-text mb-25">
+                            {/* <div class="footer-text mb-25">
                                 <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
                             </div>
                             <div class="subscribe-form">
@@ -101,7 +108,8 @@ const Footer = () => {
                                     <input type="text" placeholder="Email Address"/>
                                     <button><i class="fa fa-paper-plane"></i></button>
                                 </form>
-                            </div>
+                            </div> */}
+                            <div className="footer-courier partners"></div>
                         </div>
                     </div>
                 </div>
