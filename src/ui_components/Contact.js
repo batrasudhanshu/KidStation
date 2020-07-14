@@ -4,6 +4,7 @@ import '../styles/contact_page.css';
 // import '../js_files/map.js';
 import MapComponent from './Map';
 import SearchFilter from "../CMS/ProductCrud/SearchFilter";
+import { Tooltip } from "@material-ui/core";
 // import './js/contact_page';
 // import './js/contact_map';
 
@@ -94,14 +95,14 @@ const Contact = () => {
                     <div className="contact-section">
                         <div className="contact-icon"><i className="fa fa-map-marker"></i></div>
                         <div className="contact-info">
-                            <p>24/101 West Patel Nagar</p>
-                            <p>New Delhi-8, India</p>
+                            <p>Address XYZ </p>
+                            <p>New Delhi, India</p>
                         </div>
                     </div>
                      <div className="contact-section">
                         <div className="contact-icon"><i className="fa fa-phone"></i></div>
                         <div className="contact-info">
-                            <p>+91 99998 13790</p>
+                            <p>+91 9999089262 | 9540923031</p>
                         </div>
                     </div>
                      <div className="contact-section">
