@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-
-import Link from '@material-ui/core/Link';
-import { Button } from "@material-ui/core";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import Link from "@material-ui/core/Link";
 
 class NoResult extends Component {
   render() {
@@ -47,40 +45,34 @@ class NoResult extends Component {
             </div>
             <div class="button3"></div>
           </div>
-         
         </div>
         <div className="no-result-lower">
-        <span>
-            <span className="no-result-sorry">Sorry</span>, We couldn't find the product you are looking for. GO to Our other pages..
+          <span>
+            <span className="no-result-sorry">Sorry</span>, We couldn't find the
+            product you are looking for. GO to Our other pages..
           </span>
         </div>
-            <div className="no-result-buttons">
-                {/* <Button variant="contained" color="secondary">
+        <div className="no-result-buttons">
+          {/* <Button variant="contained" color="secondary">
                     Go Back to HomePage
                 </Button> */}
-            
-            <Breadcrumbs maxItems={3} aria-label="breadcrumb">
-                <Link color="inherit" href="#" >
-                    Home
-                </Link>
-                <Link color="inherit" href="#" >
-                    Catalog
-                </Link>
-                <Link color="inherit" href="#" >
-                    Accessories
-                </Link>
-                <Link color="inherit" href="#">
-                    New Collection
-                </Link>
-                
-                </Breadcrumbs>
-                
-            </div>  
-        
-      
+
+          <Breadcrumbs maxItems={3} aria-label="breadcrumb">
+            <Link color="inherit" href="#">
+              Home
+            </Link>
+            <Link color="inherit" href="#">
+              Catalog
+            </Link>
+            <Link color="inherit" href="#">
+              Accessories
+            </Link>
+            <Link color="inherit" href="#">
+              New Collection
+            </Link>
+          </Breadcrumbs>
         </div>
-        
-      
+      </div>
     );
   }
 }

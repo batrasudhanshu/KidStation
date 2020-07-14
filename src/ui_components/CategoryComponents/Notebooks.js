@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../styles/header_banner.css';
 import HeaderBanner from '../BaseComponent/HeaderBanner';
-import {fetchProduct} from '../../CMS/actions/UploadAction';
 import {connect} from 'react-redux';
 import notebook_banner from '../../images/notebook_banner.jpg';
 import ProductCard from '../BaseComponent/ProcuctCard';

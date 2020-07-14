@@ -9,8 +9,6 @@ import { Container } from "@material-ui/core";
 import CMS from "./CMS/CMS";
 import ProductCrud from "./CMS/ProductCrud/ProductCrud";
 import ProductCrudDetails from "./CMS/ProductCrud/ProductCrudDetails";
-import uploadSuccess from "./CMS/uploadSuccess";
-import SearchFilter from "./CMS/ProductCrud/SearchFilter";
 
 //ui components links
 import Home from "../src/ui_components/HomePage/Home";
@@ -49,36 +47,30 @@ import ProductPage from "./ui_components/ProductPage/index";
 import Test from "./CMS/Test";
 // import SearchFilter from './CMS/ProductCrud/SearchFilter';
 import TestCrud from "./CMS/ProductCrud/TestCrud";
-// import Return from '../src/ui_components/Refund'
-// import EraserDetails from './collections/erasers/data/EraserDetails';
-import EraserCrud from "./CMS/EraserCrud/EraserCrud";
-import EraserCrudDetails from "./CMS/EraserCrud/EraserCrudDetails";
-// import Footer from './ui_components/FooterLarge';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 class App extends Component {
   componentWillMount = () => {
     this.props.fetchProduct();
   };
-  componentDidMount = () =>{
-    window.addEventListener('scroll', this.checkScrollTop);
-  }
+  componentDidMount = () => {
+    window.addEventListener("scroll", this.checkScrollTop);
+  };
   state = {
-    showScroll:false
-  }
+    showScroll: false,
+  };
   checkScrollTop = () => {
-    if (!this.state.showScroll && window.pageYOffset > 400){
-      this.setState({showScroll:true})
-    } else if (this.state.showScroll && window.pageYOffset <= 400){
-      this.setState({showScroll:false})
+    if (!this.state.showScroll && window.pageYOffset > 400) {
+      this.setState({ showScroll: true });
+    } else if (this.state.showScroll && window.pageYOffset <= 400) {
+      this.setState({ showScroll: false });
     }
   };
 
-  scrollTop = () =>{
-    window.scrollTo({top: 0, behavior: 'smooth'});
+  scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  
   render() {
     const { products } = this.props;
     return (
@@ -217,15 +209,6 @@ class App extends Component {
                 exact
                 path="/cms/testcrud"
                 render={() => <TestCrud products={products} />}
-              />
-              <Route
-                exact
-                path="/cms/erasercrud"
-                render={() => <EraserCrud products={products} />}
-              />
-              <Route
-                path="/cms/eraser/update/:id"
-                render={() => <EraserCrudDetails products={products} />}
               />
             </Switch>
             <div className="scroll-to-top">

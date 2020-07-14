@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { store } from "../../index";
 import {
-  TextField,
   InputAdornment,
   ListItem,
   List,
@@ -34,7 +33,7 @@ class SearchFilter extends Component {
     store.dispatch({ type: "GLOBAL_SEARCH_INPUT", data: e.target.value });
     this.setState({ hideList: false, productname: e.target.value });
 
-    if (e.target.value.length == 0) {
+    if (e.target.value.length === 0) {
       this.setState({ hideList: true });
       return;
     }
@@ -44,7 +43,7 @@ class SearchFilter extends Component {
     let searchValue = store.getState().searchInput;
     store.dispatch({ type: "EMPTY_SEARCH_BAR", data: false });
     this.setState({ hideList: true });
-    if (searchValue.length == 0) {
+    if (searchValue.length === 0) {
       store.dispatch({ type: "EMPTY_SEARCH_BAR", data: true });
     }
     this.props.SearchedProducts();
@@ -54,10 +53,10 @@ class SearchFilter extends Component {
     store.dispatch({ type: "GLOBAL_SEARCH_INPUT", data: productName });
   };
   render() {
-    const { products, globalSearch, searchInput } = this.props;
+    const { globalSearch, searchInput } = this.props;
     const { hideList, width } = this.state;
     let globalSearchList =
-      globalSearch.length != 0 &&
+      globalSearch.length !== 0 &&
       globalSearch.map((option) => (
         <ListItem
           onClick={() => {
@@ -101,10 +100,7 @@ class SearchFilter extends Component {
         {width < 900 && (
           <div className="global-search">
             <div className="global-search-input">
-              <Paper
-                elevation={5}
-                component="form"
-              >
+              <Paper elevation={5} component="form">
                 <InputBase
                   autoComplete="off"
                   fullWidth={"true"}
@@ -129,7 +125,7 @@ class SearchFilter extends Component {
               </Paper>
             </div>
             <List style={hideList ? { display: "none" } : { display: "block" }}>
-              {globalSearch.length != 0 &&
+              {globalSearch.length !== 0 &&
                 (globalSearch.length < 6 ? (
                   <>{globalSearchList}</>
                 ) : (

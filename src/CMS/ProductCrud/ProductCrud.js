@@ -1,43 +1,39 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {fetchProduct} from '../actions/UploadAction';
-import ProductCrudList from './ProductCrudList'
-import SearchFilter from './SearchFilter';
-import SearchFilterCMS from './SearchFilterCMS';
+import React from "react";
+import { connect } from "react-redux";
+import { fetchProduct } from "../actions/UploadAction";
+import ProductCrudList from "./ProductCrudList";
+import SearchFilterCMS from "./SearchFilterCMS";
 
 class ProductCrud extends React.Component {
-    constructor(props){
-        super(props);
-    }
-    componentDidMount = () =>{
-        this.props.fetchProduct();
-    }
-    render(){
-        const {filterProduct} = this.props;
-        
-        return (
-            <div>
-                <div className="">
-                    <SearchFilterCMS />
-                    <h2 style={{textAlign:'center', margin:'20px'}}>PRODUCTS</h2>
-                    <ProductCrudList products={filterProduct} />
-                </div>
-            </div>
-        )
-    }
+  componentDidMount = () => {
+    this.props.fetchProduct();
+  };
+  render() {
+    const { filterProduct } = this.props;
+
+    return (
+      <div>
+        <div className="">
+          <SearchFilterCMS />
+          <h2 style={{ textAlign: "center", margin: "20px" }}>PRODUCTS</h2>
+          <ProductCrudList products={filterProduct} />
+        </div>
+      </div>
+    );
+  }
 }
 const mapStateToProps = (state) => {
-    return { 
-        products: state.products,
-        filterProduct: state.filterProduct
-    }
-}
+  return {
+    products: state.products,
+    filterProduct: state.filterProduct,
+  };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        fetchProduct: () => {
-            dispatch(fetchProduct())
-        }
-    }
-}
+  return {
+    fetchProduct: () => {
+      dispatch(fetchProduct());
+    },
+  };
+};
 export default connect(mapStateToProps, mapDispatchToProps)(ProductCrud);
