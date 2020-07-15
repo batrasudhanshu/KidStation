@@ -54,8 +54,8 @@ export const fetchProductOnFilter = (data) => {
       return comparison;
     }
     function compareTimeStamp(a, b) {
-      const timestampA = a.modifiedat.timestampValue;
-      const timestampB = b.modifiedat.timestampValue;
+      const timestampA = a.createdAt.timestampValue;
+      const timestampB = b.createdAt.timestampValue;
       let comparison = 0;
       if (timestampA > timestampB) {
         comparison = 1;

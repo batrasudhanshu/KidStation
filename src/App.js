@@ -41,12 +41,7 @@ import Geometry from "../src/ui_components/CategoryComponents/GeometryBoxes";
 //ui_components -> ProductPage links
 import ProductPage from "./ui_components/ProductPage/index";
 
-//Redundant links
-// import Return from '../src/ui_components/Refund'
-// import Sidebar from '../src/ui_components/Sidebar'
-import Test from "./CMS/Test";
-// import SearchFilter from './CMS/ProductCrud/SearchFilter';
-import TestCrud from "./CMS/ProductCrud/TestCrud";
+// back to top icon for app
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 class App extends Component {
@@ -183,7 +178,6 @@ class App extends Component {
               />
               <Route exact path="/bestselling" component={BestsellingPage} />
 
-              {/* ui_components -> ProductPage links */}
               <Route
                 exact
                 path="/productdetail/:id"
@@ -197,18 +191,10 @@ class App extends Component {
               <Route exact path="/notebooks/:id" component={ProductPage} />
               <Route exact path="/geometry_boxes/:id" component={ProductPage} />
               <Route exact path="/bags/:id" component={ProductPage} />
-              <Route exact path="/cms/test" component={Test} />
               <Route
                 exact
                 path="/"
                 render={() => <Home products={products} />}
-              />
-
-              {/* Redundant links */}
-              <Route
-                exact
-                path="/cms/testcrud"
-                render={() => <TestCrud products={products} />}
               />
             </Switch>
             <div className="scroll-to-top">
@@ -221,8 +207,7 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (state, ownProps) => {
-  // console.log("APP>JS", state);
+const mapStateToProps = (state) => {
   return {
     products: state.products,
   };

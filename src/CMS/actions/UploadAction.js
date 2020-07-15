@@ -54,6 +54,7 @@ export const uploadAction = (productData) => {
                   .set({
                     ...productData,
                     image_url: imgurl,
+                    createdAt: new Date()
                   })
                   .then(() => {
                     console.log("uploaded");

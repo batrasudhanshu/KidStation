@@ -365,6 +365,10 @@ color: #333 !important;
 .filter-sort-form-sortby > div > div{
   display: inline-block !important;
   padding-right: 0 !important;
+  width: 175px;
+}
+.filter-sort-form-sortby > div > div > div{
+  width: auto;
 }
 .filter-sort-form-sortcontrol > div{
   display: inline-block;
@@ -390,6 +394,23 @@ color: #333 !important;
 }
 
 /* filtersort.js */
+
+
+/* FILTERSORTMAIN */
+
+
+.filter-chip{
+  margin: 0.5rem !important;
+}
+.bestselling-chip{
+  margin: 0.5rem !important;
+}
+
+/* FILTERSORTMAIN */
+
+
+
+
 
 /* SearchFilter.js */
 .global-search{
@@ -1118,7 +1139,7 @@ color: #333 !important;
   padding: 0;
 }
 .footer-section {
-background: lightgray;
+background: #202020;
 position: relative;
 margin-bottom: 0;
 margin-top: 4rem;
@@ -1135,7 +1156,7 @@ padding-left: 1.5rem;
 display: inline-block;
 }
 .footer-section .cta-text h4 {
-color: darkslategrey;
+color: whitesmoke;
 font-size: 3.2rem;
 font-weight: 600;
 
@@ -1172,7 +1193,8 @@ line-height: 1.75rem;
   margin-top:0.5rem;
 }
 .footer-section .footer-social-icon span {
-color: rgb(12, 12, 12);
+color: whitesmoke
+;
 display: block;
 font-size: 1.8rem;
 font-weight: 700;
@@ -1201,7 +1223,7 @@ background: #55ACEE;
 background: saddlebrown;
 }
 .footer-section .footer-widget-heading h3 {
-color: black;
+color: whitesmoke;
 font-size: 1.8rem;
 font-weight: 600;
 margin-bottom: 2.5rem;
@@ -1227,7 +1249,7 @@ margin-bottom: 0.75rem;
 color: saddlebrown;
 }
 .footer-section .footer-widget ul li a {
-color: darkslategrey;
+color: whitesmoke;
 text-transform: capitalize;
 }
 .footer-section .subscribe-form {
@@ -1321,7 +1343,7 @@ margin-bottom: 1.875rem;
 .footer-section .footer-text p {
 margin-bottom: 0.875rem;
 font-size: 0.875rem;
-color: darkslategrey;
+color: whitesmoke;
 line-height: 1.75rem;
 }
 
@@ -1543,7 +1565,7 @@ transition: 0.5s ease-in-out;
   line-height: 50%;
 }
     .footer-section .cta-text h4 {
-      color: darkslategrey;
+      color: whitesmoke;
       font-size: 1.3rem;
       font-weight: 600;
       
