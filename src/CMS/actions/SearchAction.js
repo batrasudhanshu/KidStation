@@ -28,5 +28,6 @@ export const SearchedProducts = () => {
         let globalSearch = getState().globalSearch;
         let searchedProducts= globalSearch;
         dispatch({type:'SEARCHED_PRODUCTS', data:searchedProducts});
+        dispatch({type:'SEARCHED_PRODUCTS_FILTER_SORT', data:searchedProducts});
     }
 }

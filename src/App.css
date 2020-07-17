@@ -389,8 +389,8 @@ color: #333 !important;
 }
 .filter-sort-btn .MuiButton-label{
   /* font-size: 1.1rem !important; */
-  background-color: olive;
-  color: whitesmoke;
+ 
+  color: saddlebrown;
 }
 
 /* filtersort.js */
@@ -1486,7 +1486,12 @@ font-size: 1.6rem;
 
 /* productpage */
 
-/* sharecompnent */
+/* sharecomponent */
+
+/* .react-share__ShareButton .MuiButton-root{
+  width: 0 !important;
+  min-width: 0 !important;
+} */
 
 .shareComp{
 display: flex;
@@ -1548,7 +1553,7 @@ font-weight: 500;
 transition: 0.5s ease-in-out;
 }
 
-/* sharecompnent */
+/* sharecomponent */
 
 /* productpage */
 

@@ -14,14 +14,21 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { connect } from "react-redux";
 import { fetchProductOnFilter } from "../../CMS/actions/fetchProductAction";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 
 class FilterSort extends Component {
-  state = {
-    open: false,
-    filter: [],
-    sort: "",
-    bestselling: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: this.props.page,
+      open: false,
+      filter: [],
+      sort: "",
+      bestselling: false,
+    };
+  }
+
   FilterSortProducts = () => {
     console.log(this.state);
     this.props.fetchProductOnFilter(this.state);
@@ -61,7 +68,12 @@ class FilterSort extends Component {
     return (
       <div>
         <Button className="filter-sort-btn" onClick={this.handleClickOpen}>
-          Filter & Sort
+          Filter  Sort
+          {open ? (
+              <ExpandLessIcon fontSize="large" />
+            ) : (
+              <ExpandMoreIcon fontSize="large" />
+            )}
         </Button>
         <Dialog
           className="filter-sort-dialog"

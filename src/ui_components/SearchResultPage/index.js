@@ -8,13 +8,14 @@ import { SizeMe } from "react-sizeme";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import NoResult from "./NoResult";
 import EnterValue from "./EnterValue";
+import { fetchProductOnFilter } from "../../CMS/actions/fetchProductAction";
 
 class ShopPage extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   render() {
-    const { searchedProducts, emptySearch } = this.props;
+    const { searchedProducts, emptySearch, searchedFilterSort } = this.props;
     console.log(emptySearch);
     return (
       <>
@@ -22,7 +23,7 @@ class ShopPage extends React.Component {
         <SizeMe
           refreshRate={32}
           render={({ size }) => (
-            <div>{size.width < 552 ? <FilterSort /> : <FilterSortMain />}</div>
+            <div>{size.width < 552 ? <FilterSort page="searchResult" /> : <FilterSortMain  page="searchResult" />}</div>
           )}
         />
         {emptySearch ? (
@@ -30,7 +31,7 @@ class ShopPage extends React.Component {
         ) : searchedProducts.length === 0 ? (
           <NoResult />
         ) : (
-          <ProductCard data={searchedProducts} />
+          <ProductCard data={searchedFilterSort} />
         )}
       </>
     );
@@ -43,8 +44,17 @@ const mapStateToProps = (state) => {
     products: state.products,
     globalSearch: state.globalSearch,
     searchedProducts: state.searchedProducts,
+    searchedFilterSort: state.searchedFilterSort,
     emptySearch: state.emptySearch,
     searchInput: state.searchInput,
   };
 };
-export default connect(mapStateToProps)(ShopPage);
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    fetchProductOnFilter: (data) => {
+      dispatch(fetchProductOnFilter(data));
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);

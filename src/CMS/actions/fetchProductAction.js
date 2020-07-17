@@ -1,7 +1,11 @@
 export const fetchProductOnFilter = (data) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    let products = getState().products;
-
+    let products;
+    if (data.type === "shopPage") {
+      products = getState().products;
+    } else {
+      products = getState().searchedProducts;
+    }
     let filteredProducts;
     let bestselling;
     let filtering = [];
@@ -83,8 +87,12 @@ export const fetchProductOnFilter = (data) => {
       default:
         break;
     }
+    // console.log(filteredProducts);
 
-    console.log(filteredProducts);
-    dispatch({ type: "FILTER_SORT", data: [...filteredProducts] });
+    if (data.type === "shopPage") {
+      dispatch({ type: "FILTER_SORT", data: [...filteredProducts] });
+    } else {
+      dispatch({ type: "SEARCHED_PRODUCTS_FILTER_SORT", data: [...filteredProducts] });
+    }
   };
 };
