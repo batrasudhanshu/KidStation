@@ -133,9 +133,12 @@ class ProductPage extends Component {
                       &#8377; {product.productprice.stringValue}
                     </div>
                     <div style={{ fontSize: "2rem", color: "#444" }}>
+                    <ul>
                       {descArray.map((desc, index) => (
-                        <div>{index > 0 && <li>{desc}</li>}</div>
+                        (index > 0 ? <li style={{listStylePosition:'outside !important'}}>{desc}</li> : null)
+                        
                       ))}
+                    </ul>
                     </div>
                     <div className="buy-connect-btn">
                       <a href={urlVal}>BUY/CONNECT</a>
