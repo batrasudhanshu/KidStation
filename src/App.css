@@ -1436,6 +1436,14 @@ color: saddlebrown;
 }
 
 /* productpage */
+
+.product-name-style{
+  font-size: 4rem;
+  margin: 0;
+  font-family: Lobster;
+}
+
+
 .product-page-breadcrumb nav ol li a{
 color: #999999;
 }
@@ -1589,17 +1597,18 @@ transition: 0.5s ease-in-out;
 }
 
 @media screen and (max-width:600px){
-  .pro-main-image{
-    order:1;
-
+  .product-name-style{
+    font-size: 3rem;
+  }
+  /* .pro-main-image{
+    order:2;
   }
   .pro-main-details{
     order:3;
   }
-  .pro-main-slider{
-    order:2;
-  }
-
+  .pro-main-intro{
+    order:1;
+  } */
 }
 
 

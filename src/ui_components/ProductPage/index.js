@@ -81,9 +81,37 @@ class ProductPage extends Component {
         <Container style={{ marginTop: "1rem" }}>
           {product ? (
             <>
-              <Grid container spacing={3}>
-                <Grid item xs={12}>
-                  <div className="shop-title">Product Details</div>
+              <Grid
+                className="pro-main-intro"
+                container
+                spacing={3}
+                xs={12}
+                alignItems={"center"}
+              >
+                <Grid item xs={12} sm={6}>
+                  <div className="product-page-breadcrumb">
+                    <Breadcrumbs aria-label="breadcrumb">
+                      <Link to="/">Home</Link>
+                      <Link to={`/${product.collection.stringValue}`}>
+                        {product.collection.stringValue[0].toUpperCase() +
+                          product.collection.stringValue.slice(1)}
+                      </Link>
+                      <Link
+                        color="textPrimary"
+                        href="/components/breadcrumbs/"
+                        aria-current="page"
+                      >
+                        {product.productname.stringValue[0].toUpperCase() +
+                          product.productname.stringValue.slice(1)}
+                      </Link>
+                    </Breadcrumbs>
+                  </div>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <div className="product-name-style">
+                    {product.productname.stringValue[0].toUpperCase() +
+                      product.productname.stringValue.slice(1)}
+                  </div>
                 </Grid>
               </Grid>
               <Grid container spacing={3}>
@@ -91,84 +119,13 @@ class ProductPage extends Component {
                   <div className="product-main-image">
                     <img src={this.state.SelectedImage} alt="" />
                   </div>
-                </Grid>
-                <Grid className="pro-main-details" item xs={12} sm={6}>
-                  <div>
-                    <div className="product-page-breadcrumb">
-                      <Breadcrumbs aria-label="breadcrumb">
-                        <Link to="/">Home</Link>
-                        <Link to={`/${product.collection.stringValue}`}>
-                          {product.collection.stringValue[0].toUpperCase() +
-                            product.collection.stringValue.slice(1)}
-                        </Link>
-                        <Link
-                          color="textPrimary"
-                          href="/components/breadcrumbs/"
-                          aria-current="page"
-                        >
-                          {product.productname.stringValue[0].toUpperCase() +
-                            product.productname.stringValue.slice(1)}
-                        </Link>
-                      </Breadcrumbs>
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "4rem",
-                        margin: "1rem 0",
-                        fontFamily: "Lobster",
-                      }}
-                    >
-                      {product.productname.stringValue[0].toUpperCase() +
-                        product.productname.stringValue.slice(1)}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "3rem",
-                        fontWeight: "500",
-                        margin: "0.5rem 0",
-                        color: "#333",
-                        fontFamily: "Piedra",
-                      }}
-                    >
-                      &#8377; {product.productprice.stringValue}
-                    </div>
-                    <div style={{ fontSize: "2rem", color: "#444" }}>
-                    <ul>
-                      {descArray.map((desc, index) => (
-                        (index > 0 ? <li style={{listStylePosition:'outside !important'}}>{desc}</li> : null)
-                        
-                      ))}
-                    </ul>
-                    </div>
-                    <div className="buy-connect-btn">
-                      <a href={urlVal}>BUY/CONNECT</a>
-                    </div>
-                    <div>
-                      <h5 style={{ marginTop: "1rem", color: "#999" }}>
-                        Product color may slightly vary due to photographic
-                        lighting sources or your monitor settings**
-                      </h5>
-                    </div>
-                    <div>
-                      <ShareComponent
-                        url={`https://kidstation-version1.firebaseapp.com/${product.collection.stringValue}/${product.productid.stringValue}`}
-                        text="Check out for more products like this."
-                      />
-                    </div>
-                    {/* url={`localhost:3000/${product.collection.stringValue}/${product.productid.stringValue}`} */}
-                  </div>
-                </Grid>
-
-                <Grid
-                  className="pro-main-slider"
-                  item
-                  xs={12}
-                  sm={6}
-                  alignItems={"center"}
-                >
                   <div
                     className="prod-slick-outer"
-                    style={{ textAlign: "center", position: "relative" }}
+                    style={{
+                      textAlign: "center",
+                      position: "relative",
+                      marginTop: "1.5rem",
+                    }}
                   >
                     <div>
                       <ChevronLeftIcon
@@ -239,89 +196,111 @@ class ProductPage extends Component {
                     </div>
                   </div>
                 </Grid>
+                <Grid container xs={12} sm={6} spacing={3}>
+                  <Grid className="pro-main-details" item xs={24} sm={12}>
+                    <div>
+                      <div
+                        style={{
+                          fontSize: "3rem",
+                          fontWeight: "500",
+                          margin: "0.5rem 0",
+                          color: "#333",
+                          fontFamily: "Piedra",
+                        }}
+                      >
+                        &#8377; {product.productprice.stringValue}
+                      </div>
+                      <div style={{ fontSize: "2rem", color: "#444" }}>
+                        <ul style={{padding:'0rem 1.7rem'}}>
+                          {descArray.map((desc, index) =>
+                            index > 0 ? (
+                              <li
+                                style={{
+                                  listStylePosition: "outside !important",
+                                }}
+                              >
+                                {desc}
+                              </li>
+                            ) : null
+                          )}
+                        </ul>
+                      </div>
+                      <div className="buy-connect-btn">
+                        <a href={urlVal}>BUY/CONNECT</a>
+                      </div>
+                      <div>
+                        <h5 style={{ marginTop: "1rem", color: "#999" }}>
+                          Product color may slightly vary due to photographic
+                          lighting sources or your monitor settings**
+                        </h5>
+                      </div>
+                      <div>
+                        <ShareComponent
+                          url={`https://kidstation-version1.firebaseapp.com/${product.collection.stringValue}/${product.productid.stringValue}`}
+                          text="Check out for more products like this."
+                        />
+                      </div>
+                      {/* url={`localhost:3000/${product.collection.stringValue}/${product.productid.stringValue}`} */}
+                    </div>
+                  </Grid>
+                </Grid>
               </Grid>
             </>
           ) : (
             <>
-              <Grid container spacing={3}>
-                <Grid item xs={12} sm={4}>
-                  <div className="shop-title">
-                    <Skeleton variant="rect" height={42} animation="pulse" />
+              <Grid container xs={12} spacing={3}>
+                <Grid item xs={12} sm={6}>
+                  <div>
+                    <Skeleton variant="rect" height={114} animation="pulse" />
+                  </div>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <div>
+                    <Skeleton variant="rect" height={114} animation="pulse" />
                   </div>
                 </Grid>
               </Grid>
-              <Grid container spacing={3}>
+              <Grid container spacing={3} xs={12}>
                 <Grid className="pro-main-image" item xs={12} sm={6}>
                   <div className="product-main-image">
                     <Skeleton variant="rect" height={500} animation="pulse" />
                   </div>
-                </Grid>
-                <Grid className="pro-main-details" item xs={12} sm={6}>
-                  <div>
-                    <div className="product-page-breadcrumb">
-                      <Skeleton variant="rect" height={24} animation="pulse" />
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "4rem",
-                        margin: "1rem 0",
-                        fontFamily: "Lobster",
-                      }}
-                    >
-                      <Skeleton variant="rect" height={57} animation="pulse" />
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "3rem",
-                        fontWeight: "500",
-                        margin: "0.5rem 0",
-                        color: "#333",
-                        fontFamily: "Piedra",
-                      }}
-                    >
-                      <Skeleton variant="rect" height={42} animation="pulse" />
-                    </div>
-                    <div style={{ fontSize: "2rem", color: "#444" }}>
-                      <div>
-                        <Skeleton variant="rect" animation="pulse" />
-                      </div>
-                      <div>
-                        <Skeleton variant="rect" animation="pulse" />
-                      </div>
-                      <div>
-                        <Skeleton variant="rect" animation="pulse" />
-                      </div>
-                    </div>
-                    <div className="buy-connect-btn">
-                      <a href={urlVal}>BUY/CONNECT</a>
-                    </div>
-                    <div>
-                      <h5 style={{ marginTop: "1rem", color: "#777" }}>
-                        <Skeleton variant="rect" animation="pulse" />
-                        <Skeleton variant="rect" animation="pulse" />
-                      </h5>
-                    </div>
-                    <div>
-                      <ShareComponent
-                        url="www.google.com"
-                        text="Check out this website: www.google.com"
-                      />
-                    </div>
-                    {/* url={`localhost:3000/${product.collection.stringValue}/${product.productid.stringValue}`} */}
-                  </div>
-                </Grid>
-                <Grid
-                  className="pro-main-slider"
-                  item
-                  xs={12}
-                  sm={6}
-                  alignItems={"center"}
-                >
                   <div
                     className="prod-slick-outer"
-                    style={{ textAlign: "center", position: "relative" }}
+                    style={{
+                      textAlign: "center",
+                      position: "relative",
+                      marginTop: "1.5rem",
+                    }}
                   >
                     <Skeleton variant="rect" height={100} animation="pulse" />
+                  </div>
+                </Grid>
+                <Grid className="pro-main-details" item xs={12} sm={6}>
+                  <div
+                    style={{
+                      margin: "0.5rem 0",
+                    }}
+                  >
+                    <Skeleton variant="rect" height={42} animation="pulse" />
+                  </div>
+                  <div>
+                    <Skeleton variant="rect" height={150} animation="pulse" />
+                  </div>
+                  <div className="buy-connect-btn">
+                    <a href={urlVal}>BUY/CONNECT</a>
+                  </div>
+                  <div>
+                    <h5 style={{ marginTop: "1rem" }}>
+                      <Skeleton variant="rect" animation="pulse" />
+                      <Skeleton variant="rect" animation="pulse" />
+                    </h5>
+                  </div>
+                  <div>
+                    <ShareComponent
+                      url="www.google.com"
+                      text="Check out this website: www.google.com"
+                    />
                   </div>
                 </Grid>
               </Grid>
