@@ -26,7 +26,6 @@ import TrackOrder from "./ui_components/TrackOrder";
 import TermsOfUse from "./ui_components/TermsOfUse";
 
 //ui_components -> BaseComponent links
-import ProductDetailComponent from "./ui_components/BaseComponent/ProductDetailComponent";
 
 //ui_components -> CategoryComponents links
 import Eraser from "../src/ui_components/CategoryComponents/Erasers";
@@ -178,11 +177,6 @@ class App extends Component {
               />
               <Route exact path="/bestselling" component={BestsellingPage} />
 
-              <Route
-                exact
-                path="/productdetail/:id"
-                render={() => <ProductDetailComponent products={products} />}
-              />
               <Route exact path="/erasers/:id" component={ProductPage} />
               <Route exact path="/pens/:id" component={ProductPage} />
               <Route exact path="/lunch_boxes/:id" component={ProductPage} />

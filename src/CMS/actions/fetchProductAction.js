@@ -3,8 +3,11 @@ export const fetchProductOnFilter = (data) => {
     let products;
     if (data.type === "shopPage") {
       products = getState().products;
-    } else {
+    } else if ( data.type === "searchResult") {
       products = getState().searchedProducts;
+    }
+    else if (data.type === "bestSellingPage"){
+      products = getState().products;
     }
     let filteredProducts;
     let bestselling;
@@ -91,10 +94,13 @@ export const fetchProductOnFilter = (data) => {
     }
     // console.log(filteredProducts);
 
-    if (data.type === "shopPage") {
+    if (data.type === "shopPage" ) {
       dispatch({ type: "FILTER_SORT", data: [...filteredProducts] });
-    } else {
+    } else if (data.type === "searchResult") {
       dispatch({ type: "SEARCHED_PRODUCTS_FILTER_SORT", data: [...filteredProducts] });
+    }
+    else if (data.type === "bestSellingPage" ){
+      dispatch({ type: "FILTER_SORT", data: [...filteredProducts] });
     }
   };
 };

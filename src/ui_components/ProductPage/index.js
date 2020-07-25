@@ -11,6 +11,7 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ShareComponent from "./shareComponent";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
+import bestsellerStamp from "../../images/Best-seller-stamp.png";
 
 class ProductPage extends Component {
   constructor(props) {
@@ -209,9 +210,14 @@ class ProductPage extends Component {
                         }}
                       >
                         &#8377; {product.productprice.stringValue}
+                        {product.bestselling.booleanValue && (
+                          <span style={{ marginLeft: "1rem" }}>
+                            <img src={bestsellerStamp} width="50px" />
+                          </span>
+                        )}
                       </div>
                       <div style={{ fontSize: "2rem", color: "#444" }}>
-                        <ul style={{padding:'0rem 1.7rem'}}>
+                        <ul style={{ padding: "0rem 1.7rem" }}>
                           {descArray.map((desc, index) =>
                             index > 0 ? (
                               <li

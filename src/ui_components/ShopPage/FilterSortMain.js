@@ -37,6 +37,9 @@ class FilterSortMain extends Component {
       showFilSort: false,
     };
   }
+  componentDidMount = () => {
+    this.props.fetchProductOnFilter(this.state);
+  }
   handleChangeFilter = (event) => {
     this.setState({ filter: event.target.value });
   };
@@ -55,7 +58,7 @@ class FilterSortMain extends Component {
     let arr = filter;
     if (arr.includes(name)) {
       arr = arr.filter((item) => item !== name);
-      console.log(arr);
+      // console.log(arr);
     } else {
       arr.push(name);
     }
@@ -69,7 +72,7 @@ class FilterSortMain extends Component {
   };
 
   render() {
-    const { open, filter, sort, bestselling, showFilSort } = this.state;
+    const { type, filter, sort, bestselling, showFilSort } = this.state;
     const filterNames = [
       "erasers",
       "lunch_boxes",
@@ -157,7 +160,7 @@ class FilterSortMain extends Component {
             <Grid item sm={3}>
               <Chip
                 style={
-                  filter.length === 0
+                  filter.length === 0 || type === "bestSellingPage"
                     ? { opacity: "0", cursor: "default" }
                     : bestselling
                     ? { backgroundColor: "#3f51b5", opacity: 1 }

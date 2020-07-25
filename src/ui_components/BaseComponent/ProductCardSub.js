@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Snackbar from "@material-ui/core/Snackbar";
 import Tooltip from "@material-ui/core/Tooltip";
+import LoyaltyIcon from "@material-ui/icons/Loyalty";
 
 const OurTooltip = withStyles((theme) => ({
   tooltip: {
@@ -33,6 +34,9 @@ const ProductCardSub = ({ product }) => {
     <>
       <Grid item xs={12} sm={4} md={4} lg={3}>
         <div className="card-layout">
+          {product.bestselling.booleanValue && <div style={{position:'absolute'}}>
+            <LoyaltyIcon style={{fontSize:'4rem'}} color="secondary" fontSize="large" />
+          </div>}
           <div className="card-image">
             {/* <LazyLoad once={true} key={product.id}  height={100} offset={[-100, 100]} placeholder={<Loading />} > */}
             <img
