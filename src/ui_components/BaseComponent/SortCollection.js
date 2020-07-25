@@ -23,7 +23,7 @@ class SortCollection extends Component {
       <div className="collection-sort"style={{float:'right'}}>
         <div className="filter-sort-form-sortby">
           <FormControl variant="outlined" >
-            <InputLabel id="demo-simple-select-outlined-label">
+            <InputLabel style={{color:'saddleBrown'}} id="demo-simple-select-outlined-label">
               Sort By:
             </InputLabel>
             <Select

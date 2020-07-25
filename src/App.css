@@ -362,6 +362,10 @@ color: #333 !important;
   display: inline-block !important;
   /* float: left; */
 }
+.filter-sort-form-sortby .MuiSelect-icon{
+  font-size: 30px !important;
+  color: saddlebrown;
+}
 .filter-sort-form-sortby > div > div{
   display: inline-block !important;
   padding-right: 0 !important;
