@@ -118,9 +118,7 @@ class FilterSort extends Component {
                     onChange={this.handleChangeSort}
                     input={<Input />}
                   >
-                    <MenuItem value="">
-                      <em>Default</em>
-                    </MenuItem>
+                    <MenuItem value={"default"}>Default</MenuItem>
                     <MenuItem value={"productname"}>Name</MenuItem>
                     <MenuItem value={"lowtohigh"}>Price : Low to High</MenuItem>
                     <MenuItem value={"hightolow"}>Price : High to Low</MenuItem>

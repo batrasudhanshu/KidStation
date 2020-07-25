@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import eraser_banner from "../../images/eraser_banner.jpg";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
+import SortCollection from "../BaseComponent/SortCollection";
 
 class Eraser extends React.Component {
   componentDidMount() {
@@ -19,6 +20,7 @@ class Eraser extends React.Component {
           tag="Erasers & Sharpners"
           bannerImg={`url(${eraser_banner})`}
         />
+        <SortCollection />
         <ProductCard data={erasers} />
       </>
     );

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import water_banner from "../../images/water_banner.jpg";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
+import SortCollection from "../BaseComponent/SortCollection";
 
 class WaterBottles extends React.Component {
   componentDidMount() {
@@ -17,6 +18,7 @@ class WaterBottles extends React.Component {
       <>
         <SearchFilter />
         <HeaderBanner tag="Water Bottles" bannerImg={`url(${water_banner})`} />
+        <SortCollection />
         <ProductCard data={water_bottles} />
       </>
     );

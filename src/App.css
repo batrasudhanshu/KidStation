@@ -358,7 +358,7 @@ color: #333 !important;
   width: 100%;
 }
 .filter-sort-form-sortby > div{
-  width: 12rem;
+  /* width: 12rem; */
   display: inline-block !important;
   /* float: left; */
 }

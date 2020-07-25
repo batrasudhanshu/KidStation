@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import lunch_banner from "../../images/lunch_banner.jpg";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
+import SortCollection from "../BaseComponent/SortCollection";
 
 class LunchBoxes extends React.Component {
   componentDidMount() {
@@ -17,6 +18,7 @@ class LunchBoxes extends React.Component {
       <>
         <SearchFilter />
         <HeaderBanner tag="Lunch Boxes" bannerImg={`url(${lunch_banner})`} />
+        <SortCollection />
         <ProductCard data={lunch_boxes} />
       </>
     );

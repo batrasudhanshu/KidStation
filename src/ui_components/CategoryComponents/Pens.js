@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import pen_banner from "../../images/pen_banner.jpg";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
+import SortCollection from "../BaseComponent/SortCollection";
 
 class Pen extends React.Component {
   componentDidMount() {
@@ -17,6 +18,7 @@ class Pen extends React.Component {
       <>
         <SearchFilter />
         <HeaderBanner tag="Pen & Pencil" bannerImg={`url(${pen_banner})`} />
+        <SortCollection />
         <ProductCard data={pens} />
       </>
     );

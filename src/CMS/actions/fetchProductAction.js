@@ -1,5 +1,5 @@
 export const fetchProductOnFilter = (data) => {
-  return (dispatch, getState, { getFirebase, getFirestore }) => {
+  return (dispatch, getState) => {
     let products;
     if (data.type === "shopPage") {
       products = getState().products;
@@ -84,6 +84,8 @@ export const fetchProductOnFilter = (data) => {
         filteredProducts.sort(compareTimeStamp);
         filteredProducts = filteredProducts.reverse(comparePrice);
         break;
+      case "default":
+        filteredProducts = filteredProducts.sort(compareTimeStamp);
       default:
         break;
     }
@@ -96,3 +98,67 @@ export const fetchProductOnFilter = (data) => {
     }
   };
 };
+
+export const fetchProductOnSort = (data) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    let sortedProducts;
+    // let collectionType = data.collection;
+    const {products} = getState();
+    sortedProducts = products;
+    function compareName(a, b) {
+      const nameA = a.productname.stringValue.toUpperCase();
+      const nameB = b.productname.stringValue.toUpperCase();
+      let comparison = 0;
+      if (nameA > nameB) {
+        comparison = 1;
+      } else if (nameA < nameB) {
+        comparison = -1;
+      }
+      return comparison;
+    }
+    function comparePrice(a, b) {
+      const priceA = parseInt(a.productprice.stringValue);
+      const priceB = parseInt(b.productprice.stringValue);
+      let comparison = 0;
+      if (priceA > priceB) {
+        comparison = 1;
+      } else if (priceA < priceB) {
+        comparison = -1;
+      }
+      return comparison;
+    }
+    function compareTimeStamp(a, b) {
+      const timestampA = a.createdAt.timestampValue;
+      const timestampB = b.createdAt.timestampValue;
+      let comparison = 0;
+      if (timestampA > timestampB) {
+        comparison = 1;
+      } else if (timestampA < timestampB) {
+        comparison = -1;
+      }
+      return comparison;
+    }
+
+    switch (data.sort) {
+      case "productname":
+        sortedProducts = sortedProducts.sort(compareName);
+        break;
+      case "lowtohigh":
+        sortedProducts = sortedProducts.sort(comparePrice);
+        break;
+      case "hightolow":
+        sortedProducts.sort(comparePrice);
+        sortedProducts = sortedProducts.reverse(comparePrice);
+        break;
+      case "timestamp":
+        sortedProducts.sort(compareTimeStamp);
+        sortedProducts = sortedProducts.reverse(comparePrice);
+        break;
+      case "default":
+        sortedProducts = sortedProducts.sort(compareTimeStamp);
+      default:
+        break;
+    }
+    dispatch({ type: "ALL_PRODUCT", data: [...sortedProducts] });
+  }
+}

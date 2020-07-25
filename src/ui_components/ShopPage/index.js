@@ -15,12 +15,12 @@ class ShopPage extends React.Component {
   }
   componentWillReceiveProps = (prevProps, state) => {
     if (prevProps !== this.props) {
-      console.log("change in props");
     }
   };
   render() {
-    const { filtersort } = this.props;
-    console.log(filtersort);
+    let { filtersort } = this.props;
+
+// filtersort -10 bags-3 filtersort-3 eraser - 0
     return (
       <>
         <SearchFilter />
@@ -41,7 +41,6 @@ class ShopPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     products: state.products,
     filtersort: state.filtersort,

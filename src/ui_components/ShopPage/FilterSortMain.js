@@ -184,9 +184,7 @@ class FilterSortMain extends Component {
                     onChange={this.handleChangeSort}
                     //   input={<Input />}
                   >
-                    <MenuItem value="">
-                      <em>Default</em>
-                    </MenuItem>
+                    <MenuItem value={"default"}>Default</MenuItem>
                     <MenuItem value={"productname"}>Name</MenuItem>
                     <MenuItem value={"lowtohigh"}>Price : Low to High</MenuItem>
                     <MenuItem value={"hightolow"}>Price : High to Low</MenuItem>
@@ -201,10 +199,6 @@ class FilterSortMain extends Component {
     );
   }
 }
-const mapStateToProps = (state, ownProps) => {
-  return {};
-};
-
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchProductOnFilter: (data) => {
@@ -212,4 +206,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(FilterSortMain);
+export default connect(null, mapDispatchToProps)(FilterSortMain);

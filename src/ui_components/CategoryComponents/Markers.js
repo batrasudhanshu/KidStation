@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import marker_banner from "../../images/marker_banner.jpg";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
+import SortCollection from "../BaseComponent/SortCollection";
 
 class Markers extends React.Component {
   componentDidMount() {
@@ -19,6 +20,7 @@ class Markers extends React.Component {
           tag="Sketch Pen & Marker"
           bannerImg={`url(${marker_banner})`}
         />
+        <SortCollection />
         <ProductCard data={markers} />
       </>
     );

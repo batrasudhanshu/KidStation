@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import marker_banner from "../../images/marker_banner.jpg";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
+import SortCollection from "../BaseComponent/SortCollection";
 
 class GeometryBox extends React.Component {
   componentDidMount() {
@@ -20,6 +21,7 @@ class GeometryBox extends React.Component {
           tag="Geometry Boxes"
           bannerImg={`url(${marker_banner})`}
         />
+        <SortCollection />
         <ProductCard data={geometry_boxes} />
       </>
     );

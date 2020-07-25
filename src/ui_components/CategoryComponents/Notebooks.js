@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import notebook_banner from '../../images/notebook_banner.jpg';
 import ProductCard from '../BaseComponent/ProcuctCard';
 import SearchFilter from '../../CMS/ProductCrud/SearchFilter';
+import SortCollection from '../BaseComponent/SortCollection';
 
 
 class Notebook extends React.Component {
@@ -17,6 +18,7 @@ class Notebook extends React.Component {
         <>
             <SearchFilter/>
             <HeaderBanner tag="Notebook & Register" bannerImg={`url(${notebook_banner})`} />
+            <SortCollection />
             <ProductCard data={notebooks}/>
         </>
         )
