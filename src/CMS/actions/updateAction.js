@@ -34,7 +34,7 @@ export const updateEraser = (eraserData) => {
               })
               .then(() => {
                 dispatch({ type: "Add_Product", data: eraserData });
-                window.location = "/cms/uploadsuccess";
+                window.location = "/admin/cms/uploadsuccess";
               })
               .catch((err) => {
                 console.log(err);

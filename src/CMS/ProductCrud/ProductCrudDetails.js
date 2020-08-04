@@ -18,7 +18,8 @@ import { updateProductData } from "../actions/updateAction";
 import { addImages } from "../actions/updateAction";
 import { passSelectedProductAction } from "../actions/passSelectedProductAction";
 import LinearProgress from "@material-ui/core/LinearProgress";
-
+import { Redirect } from "react-router-dom";
+import AuthNavbar from "../AuthUI/AuthNavbar";
 class ProductCrudDetails extends React.Component {
   constructor(props) {
     super(props);
@@ -117,6 +118,8 @@ class ProductCrudDetails extends React.Component {
     this.props.updateProductData(this.state);
   };
   render() {
+    let { currentProduct, auth } = this.props;
+    if (!auth.uid) return <Redirect to="/admin" />;
     const {
       productname,
       productprice,
@@ -124,10 +127,11 @@ class ProductCrudDetails extends React.Component {
       bestselling,
       disabled,
     } = this.state;
-    let { currentProduct } = this.props;
+    
     console.log("currentproduct:", currentProduct);
     return (
       <>
+      <AuthNavbar page="view product" />
         {/* <div style={{margin:'auto', textAlign:'center'}}>Hello</div> */}
         {currentProduct && (
           <Grid container spacing={3}>
@@ -271,6 +275,7 @@ const mapStateToProps = (state, ownProps) => {
       }
     });
   return {
+    auth: state.firebase.auth,
     currentProduct: currentProduct,
     files: state.files,
     progress: state.progress.value.progress,

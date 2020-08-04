@@ -55,7 +55,7 @@ class ProductCrudSummary extends React.Component {
   };
   redirectToProduct = (id) => {
     console.log("function redirect");
-    window.location.href = "/cms/productcrud/" + id;
+    window.location.href = "/admin/productcrud/" + id;
   };
   handleChangeSoldOut = () => {
     const firestore = getFirestore();
@@ -80,9 +80,10 @@ class ProductCrudSummary extends React.Component {
       <>
         {product && (
           <Card className="">
-            <Link to={`/cms/productcrud/${product.productid.stringValue}`}>
+            <Link to={`/admin/productcrud/${product.productid.stringValue}`}>
               <CardActionArea>
                 <CardMedia
+                  
                   component="img"
                   alt={product.productname.stringValue}
                   height="140"
@@ -90,14 +91,15 @@ class ProductCrudSummary extends React.Component {
                   title={product.productname.stringValue}
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h3" component="h2">
+                  <Typography gutterBottom variant="h3" component="h2" className="productcrud-productname">
+                  
                     {product.productname.stringValue}
                   </Typography>
                 </CardContent>
               </CardActionArea>
             </Link>
             <CardActions>
-              <Link to={"/cms/productcrud/" + product.productid.stringValue}>
+              <Link to={"/admin/productcrud/" + product.productid.stringValue}>
                 <Button size="large" color="primary">
                   <i class="fa fa-edit fa-2x" />
                   Edit

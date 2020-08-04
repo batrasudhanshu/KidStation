@@ -11,12 +11,16 @@ import searchedproductsReducer from "./searchedproductsReducer";
 import searchFilterSortReducer from "./searchFilterSortReducer";
 import emptysearchbarReducer from "./emptysearchbarReducer";
 import globalsearchinputReducer from "./globalsearchinputReducer";
+import loginReducer from "./loginReducer";
+import loginerrorReducer from "./loginerrorReducer";
 
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
 import { firebaseReducer } from "react-redux-firebase";
 
 const rootReducer = combineReducers({
+  loggedIn: loginReducer,
+  loginError: loginerrorReducer,
   searchedFilterSort: searchFilterSortReducer,
   searchInput: globalsearchinputReducer,
   emptySearch: emptysearchbarReducer,

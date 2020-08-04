@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { uploadAction } from "./actions/UploadAction";
 import Test from "./Test";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import { Redirect } from "react-router-dom";
 import {
   Grid,
   TextField,
@@ -17,6 +18,7 @@ import {
 } from "@material-ui/core";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
+import AuthNavbar from "./AuthUI/AuthNavbar";
 
 class CMS extends Component {
   constructor(props) {
@@ -54,6 +56,8 @@ class CMS extends Component {
     this.props.uploadAction(this.state);
   };
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/admin" />;
     const {
       productid,
       productname,
@@ -65,6 +69,7 @@ class CMS extends Component {
     console.log(bestselling);
     return (
       <>
+      <AuthNavbar page="add product" />
         <Grid container spacing={3}>
           <Grid xs={12}>
             <div className="backendpage-title">
@@ -200,6 +205,7 @@ const mapStateToProps = (state, ownProps) => {
   // console.log(ownProps);
   return {
     progress: state.progress.value.progress,
+    auth: state.firebase.auth,
   };
 };
 const mapDispatchToProps = (dispatch) => {

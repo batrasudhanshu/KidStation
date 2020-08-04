@@ -199,7 +199,7 @@ input[type="checkbox"] {
     padding: 0 2rem;
 }
 .RightNavItems div span a{
-  color: black;
+  color: black !important;
   cursor: pointer;
 }
 .NavItem1{
@@ -1667,3 +1667,39 @@ margin-top: 1rem;
 
 
 /* Refund.js */
+
+
+/* login.js admin page */
+
+
+.login-page{
+  width: 100%;
+  margin: auto;
+}
+.login-outer{
+  width: 400px;
+  height:400px;
+  margin: 4rem auto;
+  text-align: center;
+}
+.login-outer .MuiPaper-root{
+  padding: 6rem 1rem;
+}
+.login-mail .MuiInput-formControl, .login-pass .MuiInput-formControl{
+  width: 300px;
+  margin: 2rem 0 !important;
+}
+
+
+/* login.js admin page */
+
+/* admin buttons */
+
+.admin-buttons {
+  margin:0rem 0.5rem !important;
+}
+.admin-buttons a, a:link, a:visited, a:hover{
+  color:white !important;
+}
+
+/* admin buttons */

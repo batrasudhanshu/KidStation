@@ -59,7 +59,7 @@ export const uploadAction = (productData) => {
                   .then(() => {
                     console.log("uploaded");
                     dispatch({ type: "Add_Product" });
-                    window.location = "/cms/uploadsuccess";
+                    window.location = "/admin/cms/uploadsuccess";
                   })
                   .catch((err) => {
                     console.log(err);

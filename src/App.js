@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { connect } from "react-redux";
+import { checkLogin } from "./CMS/actions/checkLoginAction";
 import { fetchProduct } from "./CMS/actions/UploadAction";
 import { Container } from "@material-ui/core";
 
@@ -39,15 +40,21 @@ import Geometry from "../src/ui_components/CategoryComponents/GeometryBoxes";
 
 //ui_components -> ProductPage links
 import ProductPage from "./ui_components/ProductPage/index";
+import { getFirebase } from "react-redux-firebase";
 
 // back to top icon for app
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import Login from "./CMS/AuthUI/Login";
+import LoginHome from "./CMS/AuthUI/LoginHome";
+import { store } from ".";
 
 class App extends Component {
   componentWillMount = () => {
     this.props.fetchProduct();
   };
   componentDidMount = () => {
+    const firebase = getFirebase();
+    this.props.checkLogin();
     window.addEventListener("scroll", this.checkScrollTop);
   };
   state = {
@@ -77,20 +84,22 @@ class App extends Component {
             <MaterialNavbar />
             <Switch>
               {/* cms links */}
+              <Route exact path="/admin" component={Login} />
+              <Route exact path="/admin/home" component={LoginHome} />
               <Route
                 exact
-                path="/cms"
+                path="/admin/cms"
                 render={() => <CMS products={products} />}
               />
               <Route
                 exact
-                path="/cms/uploadsuccess"
+                path="/admin/cms/uploadsuccess"
                 render={() => <uploadSuccess products={products} />}
               />
-              <Route exact path="/cms/productcrud" component={ProductCrud} />
+              <Route exact path="/admin/productcrud" component={ProductCrud} />
               <Route
                 exact
-                path="/cms/productcrud/:id"
+                path="/admin/productcrud/:id"
                 component={ProductCrudDetails}
               />
 
@@ -210,6 +219,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchProduct: () => {
       dispatch(fetchProduct());
+    },
+    checkLogin: () => {
+      dispatch(checkLogin());
     },
   };
 };
