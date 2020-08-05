@@ -1118,6 +1118,11 @@ color: #333 !important;
 
 /* bestselling.js */
 
+.home-bestselling-img:hover {
+  transition: 0.25s ease-in-out;
+  transform: scale(1.2);
+}
+
 .home-bestselling{
   height: 9.375rem;
   overflow: hidden;

@@ -117,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: "#fafafa",
+    color: 'cornsilk',
   },
   imageSrc: {
     margin: "1rem 0.5rem 0rem 0.5rem",
@@ -135,7 +135,7 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: "white",
+    backgroundColor: "black",
     opacity: 0.3,
     transition: theme.transitions.create("opacity"),
   },

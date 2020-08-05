@@ -49,6 +49,7 @@ class Login extends Component {
           <Paper elevation={1}>
             <form onSubmit={this.login}>
               <TextField
+                autoComplete="off"
                 onChange={this.handleChange}
                 name="email"
                 type="email"
@@ -64,6 +65,7 @@ class Login extends Component {
               />
               <br />
               <TextField
+                autoComplete="off"
                 name="pass"
                 onChange={this.handleChange}
                 type="password"
@@ -78,7 +80,12 @@ class Login extends Component {
                 }}
               />
               <br />
-              <Button type = "submit" onClick={this.login} variant="contained" color="primary">
+              <Button
+                type="submit"
+                onClick={this.login}
+                variant="contained"
+                color="primary"
+              >
                 <SendIcon fontSize="large" style={{ margin: "0 0.8rem 0 0" }} />{" "}
                 Login
               </Button>
