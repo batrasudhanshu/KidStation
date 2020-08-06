@@ -12,8 +12,21 @@ const BestSellingPhone = ({ products }) => {
     <div className="bestselling-component">
       <Grid container spacing={0}>
         <Grid item xs={12}>
+          <hr />
+          <div
+            style={{
+              padding: "0rem 0.2rem",
+              color: "saddlebrown",
+              fontSize: "2rem",
+              textAlign: "center",
+              fontWeight: "600",
+              fontFamily: "helvetica",
+            }}
+          >
+            BEST SELLING
+          </div>
+          <hr />
           <Paper xs={12}>
-            <div>Best Selling</div>
             <Grid style={{ margin: 0 }} container xs={12} spacing={2}>
               {bestselling.length !== 0
                 ? bestselling.map((best) => (
@@ -25,13 +38,17 @@ const BestSellingPhone = ({ products }) => {
                           best.productid.stringValue
                         }
                       >
-                        <div className="home-bestselling">
+                        <div
+                          className="home-bestselling"
+                          style={{ textAlign: "center" }}
+                        >
                           <img
+                            style={{ margin: "auto" }}
                             src={
                               best.image_url.arrayValue.values[0].stringValue
                             }
                             alt="BestSelling"
-                            width="100%"
+                            // width="100%"
                             height="100%"
                           />
                         </div>

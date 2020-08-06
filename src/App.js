@@ -61,11 +61,12 @@ class App extends Component {
     showScroll: false,
   };
   checkScrollTop = () => {
-    if (!this.state.showScroll && window.pageYOffset > 400) {
+    if (window.pageYOffset > 400) {
       this.setState({ showScroll: true });
-    } else if (this.state.showScroll && window.pageYOffset <= 400) {
+    } else if (window.pageYOffset <= 400) {
       this.setState({ showScroll: false });
     }
+    console.log(window.pageYOffset);
   };
 
   scrollTop = () => {
@@ -74,6 +75,7 @@ class App extends Component {
 
   render() {
     const { products } = this.props;
+    const { showScroll } = this.state;
     return (
       <BrowserRouter>
         <div
@@ -200,8 +202,12 @@ class App extends Component {
                 render={() => <Home products={products} />}
               />
             </Switch>
-            <div className="scroll-to-top">
-              <KeyboardArrowUpIcon onClick={this.scrollTop} fontSize="large" />
+            <div
+              onScroll={this.checkScrollTop}
+              style={showScroll ? { display: 'block' } : { display: "none" }}
+              className="scroll-to-top"
+            >
+              <KeyboardArrowUpIcon onClick={this.scrollTop} style={{width:'5rem !important',height:'5rem !important'}} />
             </div>
             <Footer />
           </Container>
