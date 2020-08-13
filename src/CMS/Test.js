@@ -51,7 +51,7 @@ const dropzoneinput = {
 
 function Test() {
   const [files, setFiles] = useState([]);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(null);
 
   const dispatch = useDispatch();
   // const data = useSelector(state=>state.files);
@@ -78,11 +78,11 @@ function Test() {
   };
   const handlechangeCover = (index) => {
     setIndex(index); //1
-    console.log(index)
+    console.log(index);
   };
   useEffect(() => {
-    dispatch({type:'SET_COVER_IMAGE', payload:index});
-  }, [index])
+    dispatch({ type: "SET_COVER_IMAGE", payload: index });
+  }, [index]);
 
   const thumbs = files.map((file, i) => {
     return (

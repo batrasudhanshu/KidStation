@@ -69,7 +69,7 @@ class CMS extends Component {
     console.log(bestselling);
     return (
       <>
-      <AuthNavbar page="add product" />
+        <AuthNavbar page="add product" />
         <Grid container spacing={3}>
           <Grid xs={12}>
             <div className="backendpage-title">
@@ -88,9 +88,6 @@ class CMS extends Component {
             {/* Drag and Drop Image */}
 
             <Test />
-
-
-            
           </Grid>
           <Grid item xs={12} md={6}>
             <form className="cms-form">

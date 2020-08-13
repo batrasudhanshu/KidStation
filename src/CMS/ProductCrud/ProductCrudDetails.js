@@ -61,29 +61,53 @@ class ProductCrudDetails extends React.Component {
   };
   componentDidMount = () => {};
 
-  deleteImage = (img) => {
+  deleteImage = (img, index) => {
     let { currentProduct } = this.props;
     var firestore = getFirestore();
     var firebase = getFirebase();
     var storage = firebase.storage();
     const FieldValue = firebase.firestore.FieldValue;
-    firestore
-      .collection(currentProduct.collection.stringValue)
-      .doc(currentProduct.productid.stringValue)
-      .update({
-        image_url: FieldValue.arrayRemove(img),
-      });
-    var imageRef = storage.refFromURL(img);
-    imageRef
-      .delete()
-      .then(function () {
-        // File deleted successfully
-        console.log("file deleted successfully");
-        window.location.reload();
-      })
-      .catch(function (error) {
-        console.log("error in file deletion");
-      });
+    // debugger;
+    if (index === parseInt(currentProduct.coverIndex.integerValue)) {
+      alert("Please change cover image before deleting. ");
+    } else if (index >= parseInt(currentProduct.coverIndex.integerValue)) {
+      firestore
+        .collection(currentProduct.collection.stringValue)
+        .doc(currentProduct.productid.stringValue)
+        .update({
+          image_url: FieldValue.arrayRemove(img),
+        });
+      var imageRef = storage.refFromURL(img);
+      imageRef
+        .delete()
+        .then(function () {
+          // File deleted successfully
+          console.log("file deleted successfully");
+          window.location.reload();
+        })
+        .catch(function (error) {
+          console.log("error in file deletion");
+        });
+    } else {
+      firestore
+        .collection(currentProduct.collection.stringValue)
+        .doc(currentProduct.productid.stringValue)
+        .update({
+          image_url: FieldValue.arrayRemove(img),
+          coverIndex: currentProduct.coverIndex.integerValue - 1,
+        });
+      var imageRef = storage.refFromURL(img);
+      imageRef
+        .delete()
+        .then(function () {
+          // File deleted successfully
+          console.log("file deleted successfully");
+          window.location.reload();
+        })
+        .catch(function (error) {
+          console.log("error in file deletion");
+        });
+    }
   };
 
   handleChange = (e) => {
@@ -101,14 +125,6 @@ class ProductCrudDetails extends React.Component {
       bestselling: !prevState.bestselling,
     }));
   };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(this.state);
-    this.setState({ disabled: true });
-    this.props.updateEraser(this.state);
-  };
-
   //add images
   uploadImage = () => {
     const { currentProduct } = this.props;
@@ -294,7 +310,7 @@ class ProductCrudDetails extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state.currenIndex);
+  console.log(state);
   const id = ownProps.match.params.id;
   let currentProduct;
   console.log(state);

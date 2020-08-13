@@ -3,12 +3,20 @@ export const updateProductData = (productData) => {
     const firestore = getFirestore();
     // const firebase = getFirebase();
     // const storage = firebase.storage();
-
+    const {
+      productname,
+      productprice,
+      productdescription,
+      bestselling,
+    } = productData;
     firestore
       .collection(productData.collection)
       .doc(productData.productid)
       .update({
-        ...productData,
+        productname,
+        productprice,
+        productdescription,
+        bestselling,
       })
       .then(() => {
         dispatch({ type: "Add_Product", data: productData });
@@ -23,6 +31,7 @@ export const updateProductData = (productData) => {
 export const addImages = (product) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const coverIndex = getState().coverIndex;
+    debugger;
     const firestore = getFirestore();
     const firebase = getFirebase();
     const storage = firebase.storage();
@@ -30,7 +39,7 @@ export const addImages = (product) => {
     let reduxstate = getState();
     let imageArray = reduxstate.files;
     // debugger
-    console.log(imageArray);
+    console.log(getState);
     let imgurl = [];
     imageArray.map((img, index) => {
       const uploadtask = storage
@@ -72,21 +81,37 @@ export const addImages = (product) => {
               imgurl.push(url);
 
               if (imgurl.length === imageArray.length) {
-                firestore
-                  .collection(product.collection.stringValue)
-                  .doc(product.productid.stringValue)
-                  .update({
-                    coverIndex:
-                      product.image_url.arrayValue.values.length + coverIndex,
-                    image_url: FieldValue.arrayUnion.apply(null, imgurl),
-                  })
-                  .then(() => {
-                    console.log("uploaded");
-                    window.location.reload();
-                  })
-                  .catch((err) => {
-                    console.log(err);
-                  });
+                if (coverIndex == null) {
+                  firestore
+                    .collection(product.collection.stringValue)
+                    .doc(product.productid.stringValue)
+                    .update({
+                      image_url: FieldValue.arrayUnion.apply(null, imgurl),
+                    })
+                    .then(() => {
+                      console.log("uploaded");
+                      window.location.reload();
+                    })
+                    .catch((err) => {
+                      console.log(err);
+                    });
+                } else {
+                  firestore
+                    .collection(product.collection.stringValue)
+                    .doc(product.productid.stringValue)
+                    .update({
+                      coverIndex:
+                        product.image_url.arrayValue.values.length + coverIndex,
+                      image_url: FieldValue.arrayUnion.apply(null, imgurl),
+                    })
+                    .then(() => {
+                      console.log("uploaded");
+                      window.location.reload();
+                    })
+                    .catch((err) => {
+                      console.log(err);
+                    });
+                }
               }
             });
         }
