@@ -32,6 +32,7 @@ class ProductCrudDetails extends React.Component {
       image: null,
       bestselling: false,
       disabled: false,
+      coverIndex: null,
     };
   }
   componentWillMount = () => {
@@ -46,12 +47,14 @@ class ProductCrudDetails extends React.Component {
         const name = nextProps.currentProduct.productname.stringValue;
         const price = nextProps.currentProduct.productprice.stringValue;
         const bestselling = nextProps.currentProduct.bestselling.booleanValue;
+        const coverIndex = nextProps.currentProduct.coverIndex.integerValue;
         return this.setState((state) => ({
           productdescription: desc,
           productname: name,
           productprice: price,
           collection,
           bestselling,
+          coverIndex,
         }));
       }
     }
@@ -117,6 +120,24 @@ class ProductCrudDetails extends React.Component {
   updateProduct = () => {
     this.props.updateProductData(this.state);
   };
+
+  handleChangeCover = (index) => {
+    const { currentProduct } = this.props;
+    var firestore = getFirestore();
+    firestore
+      .collection(currentProduct.collection.stringValue)
+      .doc(currentProduct.productid.stringValue)
+      .update({
+        coverIndex: index,
+      })
+      .then(function () {
+        console.log("index updated");
+        window.location.reload();
+      })
+      .catch(function (error) {
+        console.log("error");
+      });
+  };
   render() {
     let { currentProduct, auth } = this.props;
     if (!auth.uid) return <Redirect to="/admin" />;
@@ -126,12 +147,13 @@ class ProductCrudDetails extends React.Component {
       productdescription,
       bestselling,
       disabled,
+      coverIndex,
     } = this.state;
-    
+
     console.log("currentproduct:", currentProduct);
     return (
       <>
-      <AuthNavbar page="view product" />
+        <AuthNavbar page="view product" />
         {/* <div style={{margin:'auto', textAlign:'center'}}>Hello</div> */}
         {currentProduct && (
           <Grid container spacing={3}>
@@ -147,12 +169,19 @@ class ProductCrudDetails extends React.Component {
                       (img, index) => {
                         return (
                           <div className="remove-image-block" key={index}>
+                            <input
+                              type="radio"
+                              name="coverIndex"
+                              onClick={() => this.handleChangeCover(index)}
+                              checked={index == coverIndex ? "checked" : ""}
+                            />
                             <img
                               src={img.stringValue}
                               width="50px"
                               height="50px"
                               alt=""
                             />
+
                             <CancelIcon
                               className={disabled ? "hideIcon" : ""}
                               onClick={() =>
@@ -265,6 +294,7 @@ class ProductCrudDetails extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(state.currenIndex);
   const id = ownProps.match.params.id;
   let currentProduct;
   console.log(state);

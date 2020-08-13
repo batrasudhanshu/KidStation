@@ -13,6 +13,7 @@ import emptysearchbarReducer from "./emptysearchbarReducer";
 import globalsearchinputReducer from "./globalsearchinputReducer";
 import loginReducer from "./loginReducer";
 import loginerrorReducer from "./loginerrorReducer";
+import imagecoverReducer from "./imagecoverReducer";
 
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
@@ -32,6 +33,7 @@ const rootReducer = combineReducers({
   files: fileReducer,
   products: productsReducer,
   upload: uploadReducer,
+  coverIndex: imagecoverReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer,
   progress: progressReducer,

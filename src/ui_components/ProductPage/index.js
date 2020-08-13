@@ -19,7 +19,7 @@ class ProductPage extends Component {
     this.state = {
       SelectedImage:
         this.props.currentProduct_FrontEnd.length !== 0 &&
-        this.props.currentProduct_FrontEnd.image_url.arrayValue.values[0]
+        this.props.currentProduct_FrontEnd.image_url.arrayValue.values[this.props.currentProduct_FrontEnd.coverIndex.integerValue]
           .stringValue,
     };
     this.handleImageSelection = this.handleImageSelection.bind(this);
@@ -30,8 +30,9 @@ class ProductPage extends Component {
   componentWillReceiveProps = (nextProps, prevState) => {
     if (this.props !== nextProps) {
       if (nextProps.currentProduct_FrontEnd.length !== 0) {
+        let coverIndex = nextProps.currentProduct_FrontEnd.coverIndex.integerValue;
         let imgUrl =
-          nextProps.currentProduct_FrontEnd.image_url.arrayValue.values[0]
+          nextProps.currentProduct_FrontEnd.image_url.arrayValue.values[coverIndex]
             .stringValue;
         return this.setState((state) => ({ SelectedImage: imgUrl }));
       }

@@ -85,7 +85,12 @@ class CMS extends Component {
                 value={this.props.progress || 0}
               />
             </div>
+            {/* Drag and Drop Image */}
+
             <Test />
+
+
+            
           </Grid>
           <Grid item xs={12} md={6}>
             <form className="cms-form">

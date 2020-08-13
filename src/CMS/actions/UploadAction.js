@@ -5,6 +5,7 @@ export const uploadAction = (productData) => {
     const storage = firebase.storage();
     let reduxstate = getState();
     let imageArray = reduxstate.files;
+    let coverIndex = reduxstate.coverIndex;
     // debugger
     console.log(imageArray);
     let imgurl = [];
@@ -54,6 +55,7 @@ export const uploadAction = (productData) => {
                   .set({
                     ...productData,
                     image_url: imgurl,
+                    coverIndex,
                     createdAt: new Date()
                   })
                   .then(() => {

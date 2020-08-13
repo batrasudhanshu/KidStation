@@ -68,7 +68,7 @@ class BestSelling extends Component {
                           className="home-bestselling-img"
                           style={{margin:'auto'}}
                             src={
-                              best.image_url.arrayValue.values[0].stringValue
+                              best.image_url.arrayValue.values[best.coverIndex.integerValue].stringValue
                             }
                             alt="Best-selling"
                             // width="100%"

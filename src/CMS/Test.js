@@ -1,8 +1,10 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
+import Switch from "@material-ui/core/Switch";
 import { useDropzone } from "react-dropzone";
 import { useDispatch } from "react-redux";
 import { fileAction } from "./fileAction";
 import CancelIcon from "@material-ui/icons/Cancel";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 const thumbsContainer = {
   display: "flex",
@@ -40,6 +42,7 @@ const img = {
   display: "block",
   width: "auto",
   height: "100%",
+  zIndex: "-1 !important",
 };
 const dropzoneinput = {
   width: "80%",
@@ -48,6 +51,8 @@ const dropzoneinput = {
 
 function Test() {
   const [files, setFiles] = useState([]);
+  const [index, setIndex] = useState(0);
+
   const dispatch = useDispatch();
   // const data = useSelector(state=>state.files);
   const { getRootProps, getInputProps } = useDropzone({
@@ -71,21 +76,48 @@ function Test() {
     setFiles(newFiles);
     dispatch(fileAction(newFiles));
   };
+  const handlechangeCover = (index) => {
+    setIndex(index); //1
+    console.log(index)
+  };
+  useEffect(() => {
+    dispatch({type:'SET_COVER_IMAGE', payload:index});
+  }, [index])
 
-  const thumbs = files.map((file) => (
-    <div>
-      <div style={thumb} key={file.name}>
-        <div style={thumbInner}>
-          <img src={file.preview} alt="preview" style={img} />
+  const thumbs = files.map((file, i) => {
+    return (
+      <div key={file.name} style={{ position: "relative" }}>
+        <div style={thumb} key={file.name}>
+          <div style={thumbInner}>
+            <img src={file.preview} alt="preview" style={img} />
+          </div>
         </div>
+        <div>
+          <span className="radio-cover">
+            <input
+              value={index}
+              onClick={() => handlechangeCover(i)}
+              type="radio"
+              name="Cover"
+            />
+            Cover
+          </span>
+          {/* <span className="img-cancel-icon"> */}
+          <CancelIcon
+            fontSize="large"
+            style={{ position: "absolute", top: 0, left: "10rem" }}
+            onClick={removeFile(file)}
+          />
+          {/* </span> */}
+        </div>
+
+        {/* <FormControlLabel
+        control={<Switch name="cover" checked={checked} onChange={toggleChecked} />}
+        label="Cover"
+      /> */}
       </div>
-      <CancelIcon
-        fontSize="large"
-        style={{ marginBottom: "7.5rem", marginLeft: "-0.8rem" }}
-        onClick={removeFile(file)}
-      />
-    </div>
-  ));
+    );
+  });
 
   return (
     <section className="" style={{ textAlign: "center", margin: "auto" }}>

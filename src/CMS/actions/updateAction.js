@@ -1,50 +1,3 @@
-export const updateEraser = (eraserData) => {
-  return (dispatch, getState, { getFirebase, getFirestore }) => {
-    const firestore = getFirestore();
-    const firebase = getFirebase();
-    const storage = firebase.storage();
-    const uploadtask = storage
-      .ref("erasers/" + eraserData.image.name)
-      .put(eraserData.image);
-    uploadtask.on(
-      "state_changed",
-      (snapshot) => {
-        const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        console.log(progress);
-      },
-      (error) => {
-        console.log(error, "image error");
-      },
-      () => {
-        storage
-          .ref(eraserData.collection)
-          .child(eraserData.image.name)
-          .getDownloadURL()
-          .then((url) => {
-            console.log(url, "image uploaded");
-            firestore
-              .collection("erasers")
-              .doc(eraserData.productid)
-              .update({
-                ...eraserData,
-                image: null,
-                image_url: url,
-              })
-              .then(() => {
-                dispatch({ type: "Add_Product", data: eraserData });
-                window.location = "/admin/cms/uploadsuccess";
-              })
-              .catch((err) => {
-                console.log(err);
-              });
-          });
-      }
-    );
-  };
-};
-
 export const updateProductData = (productData) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
@@ -69,6 +22,7 @@ export const updateProductData = (productData) => {
 
 export const addImages = (product) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const coverIndex = getState().coverIndex;
     const firestore = getFirestore();
     const firebase = getFirebase();
     const storage = firebase.storage();
@@ -122,6 +76,8 @@ export const addImages = (product) => {
                   .collection(product.collection.stringValue)
                   .doc(product.productid.stringValue)
                   .update({
+                    coverIndex:
+                      product.image_url.arrayValue.values.length + coverIndex,
                     image_url: FieldValue.arrayUnion.apply(null, imgurl),
                   })
                   .then(() => {

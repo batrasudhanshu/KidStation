@@ -41,7 +41,7 @@ const ProductCardSub = ({ product }) => {
             {/* <LazyLoad once={true} key={product.id}  height={100} offset={[-100, 100]} placeholder={<Loading />} > */}
             <img
               alt="Product"
-              src={product.image_url.arrayValue.values[0].stringValue}
+              src={product.image_url.arrayValue.values[product.coverIndex.integerValue].stringValue}
             />
             {/* </LazyLoad> */}
           </div>
