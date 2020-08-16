@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   Grid,
   TextField,
@@ -13,17 +15,19 @@ import Test from "../Test";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { getFirebase } from "react-redux-firebase";
 import { getFirestore } from "redux-firestore";
-import { fetchProduct } from "../actions/UploadAction";
+import { fetchCurrentProduct } from "../actions/UploadAction";
 import { updateProductData } from "../actions/updateAction";
 import { addImages } from "../actions/updateAction";
 import { passSelectedProductAction } from "../actions/passSelectedProductAction";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { Redirect } from "react-router-dom";
 import AuthNavbar from "../AuthUI/AuthNavbar";
+import { store } from "../..";
 class ProductCrudDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      update: false,
       productname: "",
       productprice: "",
       productdescription: "",
@@ -34,20 +38,46 @@ class ProductCrudDetails extends React.Component {
       disabled: false,
       coverIndex: null,
     };
+    // this.deleteImage = this.deleteImage.bind(this);
   }
-  componentWillMount = () => {
+  componentDidMount = () => {
     // debugger
-    this.props.fetchProduct();
+    this.props.fetchCurrentProduct(this.props.match);
   };
-  componentWillReceiveProps = (nextProps, prevState) => {
-    if (this.props !== nextProps) {
-      if (nextProps.currentProduct) {
-        const collection = nextProps.currentProduct.collection.stringValue;
-        const desc = nextProps.currentProduct.productdescription.stringValue;
-        const name = nextProps.currentProduct.productname.stringValue;
-        const price = nextProps.currentProduct.productprice.stringValue;
-        const bestselling = nextProps.currentProduct.bestselling.booleanValue;
-        const coverIndex = nextProps.currentProduct.coverIndex.integerValue;
+  componentDidUpdate = (prevProps, prevState) => {
+    if (this.props.uploadSuccess !== prevProps.uploadSuccess) {
+      toast("Updated Succesfully ");
+      // let success = this.props.uploadSuccess;
+      // console.log("success", success);
+
+      // console.log(prevProps, this.props);
+      // console.log("data updated successfully");
+      this.props.fetchCurrentProduct(this.props.match);
+      if (this.props.currentProduct) {
+        const collection = this.props.currentProduct.collection.stringValue;
+        const desc = this.props.currentProduct.productdescription.stringValue;
+        const name = this.props.currentProduct.productname.stringValue;
+        const price = this.props.currentProduct.productprice.stringValue;
+        const bestselling = this.props.currentProduct.bestselling.booleanValue;
+        const coverIndex = this.props.currentProduct.coverIndex.integerValue;
+        return this.setState((state) => ({
+          productdescription: desc,
+          productname: name,
+          productprice: price,
+          collection,
+          bestselling,
+          coverIndex,
+          disabled: false,
+        }));
+      }
+    } else if (this.props !== prevProps) {
+      if (this.props.currentProduct) {
+        const collection = this.props.currentProduct.collection.stringValue;
+        const desc = this.props.currentProduct.productdescription.stringValue;
+        const name = this.props.currentProduct.productname.stringValue;
+        const price = this.props.currentProduct.productprice.stringValue;
+        const bestselling = this.props.currentProduct.bestselling.booleanValue;
+        const coverIndex = this.props.currentProduct.coverIndex.integerValue;
         return this.setState((state) => ({
           productdescription: desc,
           productname: name,
@@ -59,7 +89,6 @@ class ProductCrudDetails extends React.Component {
       }
     }
   };
-  componentDidMount = () => {};
 
   deleteImage = (img, index) => {
     let { currentProduct } = this.props;
@@ -78,16 +107,13 @@ class ProductCrudDetails extends React.Component {
           image_url: FieldValue.arrayRemove(img),
         });
       var imageRef = storage.refFromURL(img);
-      imageRef
-        .delete()
-        .then(function () {
-          // File deleted successfully
-          console.log("file deleted successfully");
-          window.location.reload();
-        })
-        .catch(function (error) {
-          console.log("error in file deletion");
-        });
+      imageRef.delete().then(function () {
+        // File deleted successfully
+        console.log("file deleted successfully");
+        store.dispatch({ type: "UPLOAD_SUCCESS" });
+        // this.setState({ update: true });
+        // window.location.reload();
+      });
     } else {
       firestore
         .collection(currentProduct.collection.stringValue)
@@ -102,7 +128,7 @@ class ProductCrudDetails extends React.Component {
         .then(function () {
           // File deleted successfully
           console.log("file deleted successfully");
-          window.location.reload();
+          store.dispatch({ type: "UPLOAD_SUCCESS" });
         })
         .catch(function (error) {
           console.log("error in file deletion");
@@ -127,7 +153,7 @@ class ProductCrudDetails extends React.Component {
   };
   //add images
   uploadImage = () => {
-    const { currentProduct } = this.props;
+    const { currentProduct, uploadSuccess } = this.props;
     this.setState({ disabled: true });
     this.props.addImages(currentProduct);
   };
@@ -148,7 +174,7 @@ class ProductCrudDetails extends React.Component {
       })
       .then(function () {
         console.log("index updated");
-        window.location.reload();
+        store.dispatch({ type: "UPLOAD_SUCCESS" });
       })
       .catch(function (error) {
         console.log("error");
@@ -169,6 +195,14 @@ class ProductCrudDetails extends React.Component {
     console.log("currentproduct:", currentProduct);
     return (
       <>
+        <ToastContainer
+          autoClose={5000}
+          className="toast-updated"
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          pauseOnHover
+        />
         <AuthNavbar page="view product" />
         {/* <div style={{margin:'auto', textAlign:'center'}}>Hello</div> */}
         {currentProduct && (
@@ -310,19 +344,18 @@ class ProductCrudDetails extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps.match.params);
   console.log(state);
-  const id = ownProps.match.params.id;
-  let currentProduct;
-  console.log(state);
-  state.products &&
-    state.products.map((product) => {
-      if (product.productid && product.productid.stringValue === id) {
-        currentProduct = product;
-      }
-    });
+  // state.products &&
+  //   state.products.map((product) => {
+  //     if (product.productid && product.productid.stringValue === id) {
+  //       currentProduct = product;
+  //     }
+  //   });
   return {
+    uploadSuccess: state.uploadSuccess,
     auth: state.firebase.auth,
-    currentProduct: currentProduct,
+    currentProduct: state.currentProduct,
     files: state.files,
     progress: state.progress.value.progress,
   };
@@ -330,8 +363,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchProduct: () => {
-      dispatch(fetchProduct());
+    fetchCurrentProduct: (urlDetails) => {
+      dispatch(fetchCurrentProduct(urlDetails));
     },
     passSelectedProductAction: (product) => {
       dispatch(passSelectedProductAction(product));

@@ -4,6 +4,8 @@ import { uploadAction } from "./actions/UploadAction";
 import Test from "./Test";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { Redirect } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   Grid,
   TextField,
@@ -55,6 +57,19 @@ class CMS extends Component {
     // alert('Wait for few seconds to upload. You will automatically be redirected to a new page.');
     this.props.uploadAction(this.state);
   };
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.UploadSuccess !== this.props.UploadSuccess) {
+      this.setState({
+        productname: "",
+        productprice: "",
+        productdescription: "",
+        productid: "",
+        collection: "",
+        bestselling: false,
+      });
+      toast("Product Added Successfully");
+    }
+  }
   render() {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to="/admin" />;
@@ -69,6 +84,14 @@ class CMS extends Component {
     console.log(bestselling);
     return (
       <>
+        <ToastContainer
+          autoClose={5000}
+          className="toast-updated"
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          pauseOnHover
+        />
         <AuthNavbar page="add product" />
         <Grid container spacing={3}>
           <Grid xs={12}>
@@ -206,6 +229,7 @@ const mapStateToProps = (state, ownProps) => {
   // debugger
   // console.log(ownProps);
   return {
+    UploadSuccess: state.uploadSuccess,
     progress: state.progress.value.progress,
     auth: state.firebase.auth,
   };

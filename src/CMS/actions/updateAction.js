@@ -20,7 +20,7 @@ export const updateProductData = (productData) => {
       })
       .then(() => {
         dispatch({ type: "Add_Product", data: productData });
-        window.location.reload();
+        dispatch({ type: "UPLOAD_SUCCESS" });
       })
       .catch((err) => {
         console.log(err);
@@ -31,14 +31,12 @@ export const updateProductData = (productData) => {
 export const addImages = (product) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const coverIndex = getState().coverIndex;
-    debugger;
     const firestore = getFirestore();
     const firebase = getFirebase();
     const storage = firebase.storage();
     const FieldValue = firebase.firestore.FieldValue;
     let reduxstate = getState();
     let imageArray = reduxstate.files;
-    // debugger
     console.log(getState);
     let imgurl = [];
     imageArray.map((img, index) => {
@@ -90,7 +88,9 @@ export const addImages = (product) => {
                     })
                     .then(() => {
                       console.log("uploaded");
-                      window.location.reload();
+                      dispatch({ type: "UPLOAD_SUCCESS" });
+                      dispatch({ type: "SET_FILE", payload: 0 });
+                      dispatch({ type: "progress", value: 0 });
                     })
                     .catch((err) => {
                       console.log(err);
@@ -106,7 +106,9 @@ export const addImages = (product) => {
                     })
                     .then(() => {
                       console.log("uploaded");
-                      window.location.reload();
+                      dispatch({ type: "UPLOAD_SUCCESS" });
+                      dispatch({ type: "SET_FILE", payload: 0 });
+                      dispatch({ type: "progress", value: 0 });
                     })
                     .catch((err) => {
                       console.log(err);

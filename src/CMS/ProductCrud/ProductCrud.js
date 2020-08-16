@@ -5,16 +5,36 @@ import ProductCrudList from "./ProductCrudList";
 import SearchFilterCMS from "./SearchFilterCMS";
 import { Redirect } from "react-router-dom";
 import AuthNavbar from "../AuthUI/AuthNavbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class ProductCrud extends React.Component {
   componentDidMount = () => {
     this.props.fetchProduct();
+  };
+  componentDidUpdate = (prevProps, prevState) => {
+    // debugger;
+    if (this.props.deleteProduct !== prevProps.deleteProduct) {
+      this.props.fetchProduct();
+      toast("Product Deleted ");
+    } else if (this.props.uploadSuccess !== prevProps.uploadSuccess) {
+      this.props.fetchProduct();
+      toast("Updated Succesfully ");
+    }
   };
   render() {
     const { filterProduct, auth } = this.props;
     if (!auth.uid) return <Redirect to="/admin" />;
     return (
       <div>
+        <ToastContainer
+          autoClose={5000}
+          className="toast-updated"
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          pauseOnHover
+        />
         <div>
           <AuthNavbar page="view product" />
         </div>
@@ -32,6 +52,8 @@ const mapStateToProps = (state) => {
     products: state.products,
     filterProduct: state.filterProduct,
     auth: state.firebase.auth,
+    uploadSuccess: state.uploadSuccess,
+    deleteProduct: state.deleteReducer,
   };
 };
 

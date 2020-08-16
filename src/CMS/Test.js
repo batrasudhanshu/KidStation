@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useEffect } from "react";
+
 import Switch from "@material-ui/core/Switch";
 import { useDropzone } from "react-dropzone";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fileAction } from "./fileAction";
 import CancelIcon from "@material-ui/icons/Cancel";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -51,6 +52,8 @@ const dropzoneinput = {
 
 function Test() {
   const [files, setFiles] = useState([]);
+  const UploadSuccess = useSelector((state) => state.uploadSuccess);
+
   const [index, setIndex] = useState(null);
 
   const dispatch = useDispatch();
@@ -82,7 +85,9 @@ function Test() {
   };
   useEffect(() => {
     dispatch({ type: "SET_COVER_IMAGE", payload: index });
-  }, [index]);
+    let prevUploadSuccess = UploadSuccess;
+    setFiles([]);
+  }, [index, UploadSuccess]);
 
   const thumbs = files.map((file, i) => {
     return (

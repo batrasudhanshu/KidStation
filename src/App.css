@@ -20,6 +20,14 @@
 }
 
 /* Product Crud Details  */
+.Toastify .Toastify__toast--default{
+  background-color: saddlebrown !important;
+  color: whitesmoke !important;
+  font-weight: 500;
+}
+.Toastify__close-button--default{
+  color:white !important;
+}
 .crud-details-form{
   text-align: center;
   margin: auto;

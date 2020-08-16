@@ -17,6 +17,8 @@ import { Link } from "react-router-dom";
 import { passSelectedProductAction } from "../actions/passSelectedProductAction";
 import { connect } from "react-redux";
 import { getFirebase } from "react-redux-firebase";
+import { store } from "../..";
+import { toast } from "react-toastify";
 
 class ProductCrudSummary extends React.Component {
   delete(product) {
@@ -42,7 +44,8 @@ class ProductCrudSummary extends React.Component {
         .delete()
         .then(function () {
           console.log("Document successfully deleted!");
-          window.location.reload(true);
+          store.dispatch({ type: "DELETE_PRODUCT" });
+          // store.dispatch({ type: "UPLOAD_SUCCESS" });
         })
         .catch(function (error) {
           console.error("Error removing document: ", error);
@@ -53,10 +56,10 @@ class ProductCrudSummary extends React.Component {
     console.log(this.props.product);
     this.props.passSelectedProductAction(this.props.product);
   };
-  redirectToProduct = (id) => {
-    console.log("function redirect");
-    window.location.href = "/admin/productcrud/" + id;
-  };
+  // redirectToProduct = (id) => {
+  //   console.log("function redirect");
+  //   window.location.href = "/admin/productcrud/" + id;
+  // };
   handleChangeSoldOut = () => {
     const firestore = getFirestore();
     firestore
@@ -67,7 +70,7 @@ class ProductCrudSummary extends React.Component {
       })
       .then(function () {
         console.log("Soldout value changed!");
-        window.location.reload(true);
+        store.dispatch({ type: "UPLOAD_SUCCESS" });
       })
       .catch(function (error) {
         console.error("Error: ", error);
@@ -80,10 +83,11 @@ class ProductCrudSummary extends React.Component {
       <>
         {product && (
           <Card className="">
-            <Link to={`/admin/productcrud/${product.productid.stringValue}`}>
+            <Link
+              to={`/admin/productcrud/${product.collection.stringValue}/${product.productid.stringValue}`}
+            >
               <CardActionArea>
                 <CardMedia
-                  
                   component="img"
                   alt={product.productname.stringValue}
                   height="140"
@@ -91,15 +95,26 @@ class ProductCrudSummary extends React.Component {
                   title={product.productname.stringValue}
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h3" component="h2" className="productcrud-productname">
-                  
+                  <Typography
+                    gutterBottom
+                    variant="h3"
+                    component="h2"
+                    className="productcrud-productname"
+                  >
                     {product.productname.stringValue}
                   </Typography>
                 </CardContent>
               </CardActionArea>
             </Link>
             <CardActions>
-              <Link to={"/admin/productcrud/" + product.productid.stringValue}>
+              <Link
+                to={
+                  "/admin/productcrud/" +
+                  product.collection.stringValue +
+                  "/" +
+                  product.productid.stringValue
+                }
+              >
                 <Button size="large" color="primary">
                   <i class="fa fa-edit fa-2x" />
                   Edit

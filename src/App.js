@@ -55,7 +55,7 @@ class App extends Component {
   componentDidMount = () => {
     const firebase = getFirebase();
     this.props.checkLogin();
-    window.addEventListener("scroll", this.checkScrollTop);
+    // window.addEventListener("scroll", this.checkScrollTop);
   };
   state = {
     showScroll: false,
@@ -101,7 +101,7 @@ class App extends Component {
               <Route exact path="/admin/productcrud" component={ProductCrud} />
               <Route
                 exact
-                path="/admin/productcrud/:id"
+                path="/admin/productcrud/:collection/:id"
                 component={ProductCrudDetails}
               />
 
@@ -204,10 +204,13 @@ class App extends Component {
             </Switch>
             <div
               onScroll={this.checkScrollTop}
-              style={showScroll ? { display: 'block' } : { display: "none" }}
+              style={showScroll ? { display: "block" } : { display: "none" }}
               className="scroll-to-top"
             >
-              <KeyboardArrowUpIcon onClick={this.scrollTop} style={{width:'5rem !important',height:'5rem !important'}} />
+              <KeyboardArrowUpIcon
+                onClick={this.scrollTop}
+                style={{ width: "5rem !important", height: "5rem !important" }}
+              />
             </div>
             <Footer />
           </Container>

@@ -56,12 +56,13 @@ export const uploadAction = (productData) => {
                     ...productData,
                     image_url: imgurl,
                     coverIndex,
-                    createdAt: new Date()
+                    createdAt: new Date(),
                   })
                   .then(() => {
                     console.log("uploaded");
                     dispatch({ type: "Add_Product" });
-                    window.location = "/admin/cms/uploadsuccess";
+                    dispatch({ type: "UPLOAD_SUCCESS" });
+                    dispatch({ type: "progress", value: 0 });
                   })
                   .catch((err) => {
                     console.log(err);
@@ -113,6 +114,20 @@ export const fetchProduct = () => {
           console.log("Error getting documents", err);
         });
       //   console.log(data);
+    });
+  };
+};
+
+export const fetchCurrentProduct = (urlDetails) => {
+  return (dispatch, getState, { getFirestore, getFirebase }) => {
+    console.log("URL DETAils", urlDetails);
+    const firestore = getFirestore();
+    const docRef = firestore
+      .collection(urlDetails.params.collection)
+      .doc(urlDetails.params.id);
+    docRef.get().then((snapshot) => {
+      let currentProduct = snapshot._document.proto.fields;
+      dispatch({ type: "CURRENT_PRODUCT", payload: currentProduct });
     });
   };
 };

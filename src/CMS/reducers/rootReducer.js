@@ -7,6 +7,7 @@ import SelectedProductReducer from "./SelectedProductReducer";
 import searchReducer from "./searchReducer";
 import globalSearchReducer from "./globalSearchReducer";
 import filtersortReducer from "./filtersortReducer";
+import deleteProductReducer from "./deleteProductReducer";
 import searchedproductsReducer from "./searchedproductsReducer";
 import searchFilterSortReducer from "./searchFilterSortReducer";
 import emptysearchbarReducer from "./emptysearchbarReducer";
@@ -14,12 +15,17 @@ import globalsearchinputReducer from "./globalsearchinputReducer";
 import loginReducer from "./loginReducer";
 import loginerrorReducer from "./loginerrorReducer";
 import imagecoverReducer from "./imagecoverReducer";
+import uploadedsuccessReducer from "./uploadsuccessReducer";
+import currentproductReducer from "./currentproductReducer";
 
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
 import { firebaseReducer } from "react-redux-firebase";
 
 const rootReducer = combineReducers({
+  deleteReducer: deleteProductReducer,
+  currentProduct: currentproductReducer,
+  uploadSuccess: uploadedsuccessReducer,
   loggedIn: loginReducer,
   loginError: loginerrorReducer,
   searchedFilterSort: searchFilterSortReducer,

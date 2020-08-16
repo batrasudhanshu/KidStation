@@ -32,6 +32,7 @@
     "react-share": "^4.2.0",
     "react-sizeme": "^2.6.12",
     "react-slick": "^0.26.1",
+    "react-toastify": "^6.0.8",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
     "redux-firestore": "^0.5.7",
