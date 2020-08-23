@@ -1,11 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/contact_page.css";
 import MapComponent from "./Map";
 import SearchFilter from "../CMS/ProductCrud/SearchFilter";
+import * as emailjs from "emailjs-com";
+import { toast, ToastContainer } from "react-toastify";
 
 const Contact = () => {
+  const [details, setdetails] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    phone: "",
+    message: "",
+    userType: "Customer",
+  });
+  console.log(details);
+  const handleChange = (e) => {
+    setdetails({ ...details, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, userType, message, subject } = details;
+
+    let templateParams = {
+      from_name: name,
+      to_name: "kidstation2020@gmail.com",
+      subject_html: userType + " : " + subject,
+      message_html: message,
+      reply_to: email,
+    };
+    emailjs.send(
+      "gmail",
+      "template_clbsb9rW",
+      templateParams,
+      "user_1sa03CAEgns46qxvtblwr"
+    );
+    toast("Mail sent successfully.");
+  };
   return (
     <contact_page>
+      <ToastContainer />
       <SearchFilter />
       <div className="contact-pageheader">
         <div className="container">
@@ -24,7 +58,7 @@ const Contact = () => {
               <div className="contact-form">
                 <h3 className="contact-info-title">Contact Me</h3>
                 <div className="row">
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label
@@ -32,11 +66,12 @@ const Contact = () => {
                           for="Name"
                         ></label>
                         <input
-                          id="name"
+                          name="name"
                           type="text"
                           placeholder="Name"
                           className="form-control"
                           required
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -47,11 +82,12 @@ const Contact = () => {
                           for="email"
                         ></label>
                         <input
-                          id="email"
+                          name="email"
                           type="text"
                           placeholder="Email"
                           className="form-control"
                           required
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -62,25 +98,47 @@ const Contact = () => {
                           for="Phone"
                         ></label>
                         <input
-                          id="phone"
+                          name="phone"
                           type="text"
                           placeholder="Phone"
                           className="form-control"
                           required
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
+
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label
                           className="control-label required sr-only"
                           for="select"
                         ></label>
-                        <select className="form-control">
-                          <option value="">Who are you!!</option>
-                          <option value="">Customer</option>
-                          <option value="">Re-Seller</option>
+                        <select
+                          name="userType"
+                          className="form-control"
+                          placeholder="Who are you!!"
+                          onChange={handleChange}
+                        >
+                          <option value="Customer">Customer</option>
+                          <option value="Reseller">Re-Seller</option>
                         </select>
+                      </div>
+                    </div>
+                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div className="form-group">
+                        <label
+                          className="control-label sr-only "
+                          for="Phone"
+                        ></label>
+                        <input
+                          name="subject"
+                          type="text"
+                          placeholder="Subject"
+                          className="form-control"
+                          required
+                          onChange={handleChange}
+                        />
                       </div>
                     </div>
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb20">
@@ -91,10 +149,10 @@ const Contact = () => {
                         ></label>
                         <textarea
                           className="form-control pdt20"
-                          id="textarea"
-                          name="textarea"
+                          name="message"
                           rows="4"
                           placeholder="Message"
+                          onChange={handleChange}
                         ></textarea>
                       </div>
                     </div>
