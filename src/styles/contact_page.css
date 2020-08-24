@@ -279,7 +279,7 @@ contact_page .contact-pageheader {
     margin-top: 1rem;
     position: relative;
     /* background: rgba(145, 238, 226, 1); */
-    background-image: url("https://previews.123rf.com/images/olegdudko/olegdudko1802/olegdudko180201544/94904919-back-to-school-and-education-banner-with-colorful-pencils-and-stationery-blank-copy-space-at-center.jpg");
+    background-image: url('../images/contact_banner.jpg');
     margin-bottom: 4.375rem;
     width:100%;
     background-size:cover;
@@ -290,6 +290,13 @@ contact_page .contact-caption {
     position: relative;
     top: 11.25rem;
 }
+.contact-text{
+    padding: 1rem;
+    background-color: rgba(172, 172, 172, 0.5);
+    color:rgb(41, 40, 40);
+    font-weight: 400;
+    
+}
 
 contact_page .contact-title {
     font-family: 'PT Serif', serif;
@@ -298,6 +305,9 @@ contact_page .contact-title {
     margin-bottom: 2.5rem;
     line-height:5rem;
     font-weight: 300;
+    color:black;
+    font-weight: 700;
+    padding: 1rem;
 }
 
 contact_page .contact-caption-text {

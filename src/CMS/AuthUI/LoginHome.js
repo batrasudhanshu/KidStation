@@ -9,12 +9,12 @@ class LoginHome extends Component {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to="/admin" />;
     return (
-      <div>
+      <div style={{ height: "50vh" }}>
         <AuthNavbar page="admin home" />
-        <div style={{clear:'both'}}></div>
-        <div style={{ textAlign: "center", margin: '3rem' }}>
+        <div style={{ clear: "both" }}></div>
+        <div style={{ textAlign: "center", margin: "3rem" }}>
           <h2>Welcome, you are logged in!</h2>
-            <h1>Hello! Admin</h1>
+          <h1>Hello! Admin</h1>
         </div>
       </div>
     );

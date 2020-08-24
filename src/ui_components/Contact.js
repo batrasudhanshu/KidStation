@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/contact_page.css";
 import MapComponent from "./Map";
 import SearchFilter from "../CMS/ProductCrud/SearchFilter";
@@ -14,6 +14,11 @@ const Contact = () => {
     message: "",
     userType: "Customer",
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   console.log(details);
   const handleChange = (e) => {
     setdetails({ ...details, [e.target.name]: e.target.value });
@@ -36,7 +41,16 @@ const Contact = () => {
       "user_1sa03CAEgns46qxvtblwr"
     );
     toast("Mail sent successfully.");
+    setdetails({
+      name: "",
+      email: "",
+      subject: "",
+      phone: "",
+      message: "",
+      userType: "Customer",
+    });
   };
+  const { name, email, subject, phone, message, userType } = details;
   return (
     <contact_page>
       <ToastContainer />
@@ -48,9 +62,10 @@ const Contact = () => {
               <div className="contact-caption">
                 <h1 className="contact-title">Don’t Be Shy, Talk to Us.</h1>
                 <p className="contact-text">
-                  Here is a few approaches to get in touch with me. It would be
-                  ideal if you send an email, fill the contact form{" "}
-                  <strong>I'm looking forward to speaking with you.</strong>
+                  Here are a few approaches to get in touch with us. It would be
+                  ideal if you send an email, please fill the contact form.{" "}
+                  <br />
+                  <strong>We're looking forward to speaking with you.</strong>
                 </p>
               </div>
             </div>
@@ -67,6 +82,7 @@ const Contact = () => {
                         ></label>
                         <input
                           name="name"
+                          value={name}
                           type="text"
                           placeholder="Name"
                           className="form-control"
@@ -83,6 +99,7 @@ const Contact = () => {
                         ></label>
                         <input
                           name="email"
+                          value={email}
                           type="text"
                           placeholder="Email"
                           className="form-control"
@@ -99,6 +116,7 @@ const Contact = () => {
                         ></label>
                         <input
                           name="phone"
+                          value={phone}
                           type="text"
                           placeholder="Phone"
                           className="form-control"
@@ -133,6 +151,7 @@ const Contact = () => {
                         ></label>
                         <input
                           name="subject"
+                          value={subject}
                           type="text"
                           placeholder="Subject"
                           className="form-control"
@@ -150,6 +169,7 @@ const Contact = () => {
                         <textarea
                           className="form-control pdt20"
                           name="message"
+                          value={message}
                           rows="4"
                           placeholder="Message"
                           onChange={handleChange}

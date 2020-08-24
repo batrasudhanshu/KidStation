@@ -55,7 +55,7 @@ export const uploadAction = (productData) => {
                   .set({
                     ...productData,
                     image_url: imgurl,
-                    coverIndex,
+                    coverIndex: coverIndex || 0,
                     createdAt: new Date(),
                   })
                   .then(() => {

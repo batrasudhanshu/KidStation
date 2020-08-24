@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
@@ -9,6 +9,9 @@ import BestSelling from "./BestSelling";
 import { SizeMe } from "react-sizeme";
 
 const Home = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <SearchFilter />
@@ -27,7 +30,9 @@ const Home = (props) => {
                 <h3>A Step Beyond Ordinary</h3>
               </hgroup>
               <button className="btn btn-hero btn-lg">
-                <Link to="/shop">Shop Here</Link>
+                <Link style={{ color: "#f5f5f5" }} to="/shop">
+                  Shop Here
+                </Link>
               </button>
             </div>
           </div>

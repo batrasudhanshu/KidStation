@@ -16,24 +16,24 @@ const ShareComponent = (props) => {
   const [ShowDiv, setShowDiv] = useState(false);
 
   const showCSS = {
-    zIndex:'999',
+    zIndex: "999",
     opacity: "1",
     width: "260px",
     transform: "translateX(0.7rem)",
   };
   const hideCSS = {
-    zIndex:'1',
-    overflow:'hidden',
+    zIndex: "1",
+    overflow: "hidden",
     opacity: "0",
     width: "0",
-    focus:'none',
+    focus: "none",
     transform: "translateX(0rem)",
     pointer: "default !important",
   };
 
   const showBtn = {
-    pointer:'default',
-    zIndex:'1',
+    pointer: "default",
+    zIndex: "1",
     opacity: "1",
     width: "auto",
   };
@@ -73,7 +73,7 @@ const ShareComponent = (props) => {
               </Button>
             </TwitterShareButton>
           </div>
-          
+
           <div>
             <EmailShareButton
               style={ShowDiv ? showBtn : hideCSS}
@@ -88,7 +88,7 @@ const ShareComponent = (props) => {
           <div>
             <WhatsappShareButton
               style={ShowDiv ? showBtn : hideCSS}
-              disabled={ShowDiv ? false: true}
+              disabled={ShowDiv ? false : true}
               url={props.url}
               title={props.text}
             >

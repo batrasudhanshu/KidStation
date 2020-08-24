@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import fulllogo from "../../src/images/Fulllogo_animated.svg";
+import fulllogo from "../../src/images/Fulllogo.svg";
 import SearchFilterLarge from "../CMS/ProductCrud/SearchFilterLarge";
 
 class MaterialNavbar extends Component {
