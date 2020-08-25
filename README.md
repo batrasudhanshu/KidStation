@@ -8,7 +8,7 @@ a lot of side links like support and help page content are not updated. But 90% 
 
 Project backend is totally handled with firebase. Firestore collections are used to store data and firebase storage for storing images. Please check out it below link.
 
-##To receive email from users, we have used EmailJs com in our project, for further reference visit : https://www.emailjs.com/
+To receive email from users, we have used EmailJs com in our project, for further reference visit : https://www.emailjs.com/
 
 ### https://kidstation-version1.firebaseapp.com/
 
