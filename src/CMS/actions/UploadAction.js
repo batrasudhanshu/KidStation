@@ -118,16 +118,19 @@ export const fetchProduct = () => {
   };
 };
 
-export const fetchCurrentProduct = (urlDetails) => {
+export const fetchCurrentProduct = (url) => {
   return (dispatch, getState, { getFirestore, getFirebase }) => {
-    console.log("URL DETAils", urlDetails);
+    let collection = url.split("/")[1];
+    let productid = url.split("/")[2];
+    console.log("collection", collection);
     const firestore = getFirestore();
-    const docRef = firestore
-      .collection(urlDetails.params.collection)
-      .doc(urlDetails.params.id);
+    const docRef = firestore.collection(collection).doc(productid);
     docRef.get().then((snapshot) => {
-      let currentProduct = snapshot._document.proto.fields;
-      dispatch({ type: "CURRENT_PRODUCT", payload: currentProduct });
+      let currentProduct = snapshot.data();
+      console.log("Snapshot data", !!currentProduct);
+      !!currentProduct
+        ? dispatch({ type: "CURRENT_PRODUCT", payload: currentProduct })
+        : dispatch({ type: "ISPRODUCT", payload: false });
     });
   };
 };

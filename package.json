@@ -39,6 +39,7 @@
     "redux-firestore": "^0.5.7",
     "redux-thunk": "^2.3.0",
     "save": "^2.4.0",
+    "scroll-behavior-polyfill": "^2.0.13",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import { connect } from "react-redux";
 import { checkLogin } from "./CMS/actions/checkLoginAction";
@@ -47,6 +47,9 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Login from "./CMS/AuthUI/Login";
 import LoginHome from "./CMS/AuthUI/LoginHome";
 import { store } from ".";
+import Error404 from "./ui_components/BaseComponent/Error404";
+
+import "scroll-behavior-polyfill";
 
 class App extends Component {
   componentWillMount = () => {
@@ -58,7 +61,7 @@ class App extends Component {
     // window.addEventListener("scroll", this.checkScrollTop);
   };
   state = {
-    showScroll: false,
+    showScroll: true,
   };
   checkScrollTop = () => {
     if (window.pageYOffset > 400) {
@@ -156,6 +159,13 @@ class App extends Component {
                 path="/erasers"
                 render={() => <Eraser products={products} />}
               />
+              {/* <Route
+                path="/erasers"
+                render={() => <Eraser products={products} />}
+              >
+                <Route path="/:id" component={ProductPage} />
+                <Route path="*" component={Error404} />
+              </Route> */}
               <Route
                 exact
                 path="/lunch_boxes"
@@ -188,8 +198,8 @@ class App extends Component {
               />
               <Route exact path="/bestselling" component={BestsellingPage} />
 
-              <Route exact path="/erasers/:id" component={ProductPage} />
               <Route exact path="/pens/:id" component={ProductPage} />
+              <Route exact path="/erasers/:id" component={ProductPage} />
               <Route exact path="/lunch_boxes/:id" component={ProductPage} />
               <Route exact path="/water_bottles/:id" component={ProductPage} />
               <Route exact path="/markers/:id" component={ProductPage} />
@@ -201,6 +211,9 @@ class App extends Component {
                 path="/"
                 render={() => <Home products={products} />}
               />
+              {/* <Route path="/404" component={Error404} />
+              <Redirect path="/404" /> */}
+              <Error404 />
             </Switch>
             <div
               onScroll={this.checkScrollTop}

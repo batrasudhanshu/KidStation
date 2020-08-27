@@ -1,12 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import Container from "@material-ui/core/Container";
 const Error404 = () => {
-    return (
-        <div>
-            <h1>404</h1>
-            Page Not Found !
-        </div>
-    )
-}
+  return (
+    <>
+      <Container maxWidth="sm">
+        <div>You searched for</div>
+      </Container>
+    </>
+  );
+};
 
-export default Error404
+export default Error404;

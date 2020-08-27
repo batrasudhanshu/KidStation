@@ -10,10 +10,16 @@
 
 
 
+# IDE
+/.vscode
+
+
 #firebase
 /.firebaserc
 /firebase.json
 /.firebase
+#FIREBASE CONFIG
+/src/config
 
 # production
 /build

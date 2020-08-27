@@ -17,12 +17,14 @@ import loginerrorReducer from "./loginerrorReducer";
 import imagecoverReducer from "./imagecoverReducer";
 import uploadedsuccessReducer from "./uploadsuccessReducer";
 import currentproductReducer from "./currentproductReducer";
+import isproductReducer from "./isproductReducer";
 
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
 import { firebaseReducer } from "react-redux-firebase";
 
 const rootReducer = combineReducers({
+  isProduct: isproductReducer,
   deleteReducer: deleteProductReducer,
   currentProduct: currentproductReducer,
   uploadSuccess: uploadedsuccessReducer,
