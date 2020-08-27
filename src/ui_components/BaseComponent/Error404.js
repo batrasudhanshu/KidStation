@@ -4,7 +4,7 @@ const Error404 = () => {
   return (
     <>
       <Container maxWidth="sm">
-        <div>You searched for</div>
+        <div>You searched for </div>
       </Container>
     </>
   );
