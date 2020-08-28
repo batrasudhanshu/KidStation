@@ -34,14 +34,24 @@ const ProductCardSub = ({ product }) => {
     <>
       <Grid item xs={12} sm={4} md={4} lg={3}>
         <div className="card-layout">
-          {product.bestselling.booleanValue && <div style={{position:'absolute'}}>
-            <LoyaltyIcon style={{fontSize:'4rem'}} color="secondary" fontSize="large" />
-          </div>}
+          {product.bestselling.booleanValue && (
+            <div style={{ position: "absolute" }}>
+              <LoyaltyIcon
+                style={{ fontSize: "4rem" }}
+                color="secondary"
+                fontSize="large"
+              />
+            </div>
+          )}
           <div className="card-image">
             {/* <LazyLoad once={true} key={product.id}  height={100} offset={[-100, 100]} placeholder={<Loading />} > */}
             <img
               alt="Product"
-              src={product.image_url.arrayValue.values[product.coverIndex.integerValue].stringValue}
+              src={
+                product.image_url.arrayValue.values[
+                  product.coverIndex.integerValue
+                ].stringValue
+              }
             />
             {/* </LazyLoad> */}
           </div>

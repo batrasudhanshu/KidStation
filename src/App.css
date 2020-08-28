@@ -269,6 +269,13 @@ input[type="checkbox"] {
 
 /* MaterialNavbar.js */
 
+/* productcardsub */
+
+.MuiSnackbarContent-message{
+  font-size: 1.5rem !important;
+}
+/* productcardsub */
+
 /* Productcard.js */
 
 .loader-desc {
@@ -487,6 +494,7 @@ input[type="checkbox"] {
 
 .filter-sort-btn {
   float: right;
+  font-size: 1.5rem !important;
 }
 
 .filter-sort-btn .MuiButton-label {

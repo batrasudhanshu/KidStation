@@ -88,7 +88,7 @@ class FilterSortMain extends Component {
       <div>
         <div style={{ float: "right" }}>
           <Button
-            style={{ color: "saddlebrown" }}
+            style={{ color: "saddlebrown", fontSize: "1.5rem" }}
             onClick={this.showFilterSort}
           >
             Filter Sort
@@ -126,8 +126,12 @@ class FilterSortMain extends Component {
                             ? {
                                 backgroundColor: "saddlebrown",
                                 color: "whitesmoke",
+                                fontSize: "1.5rem",
                               }
-                            : { backgroundColor: "lightgray" }
+                            : {
+                                backgroundColor: "lightgray",
+                                fontSize: "1.5rem",
+                              }
                         }
                         key={item}
                         value={item}
@@ -147,10 +151,18 @@ class FilterSortMain extends Component {
               <Chip
                 style={
                   filter.length === 0 || type === "bestSellingPage"
-                    ? { opacity: "0", cursor: "default" }
+                    ? { opacity: "0", cursor: "default", fontSize: "1.5rem" }
                     : bestselling
-                    ? { backgroundColor: "#3f51b5", opacity: 1 }
-                    : { backgroundColor: "#A9CCE3", opacity: 1 }
+                    ? {
+                        backgroundColor: "#3f51b5",
+                        opacity: 1,
+                        fontSize: "1.5rem",
+                      }
+                    : {
+                        backgroundColor: "#A9CCE3",
+                        opacity: 1,
+                        fontSize: "1.5rem",
+                      }
                 }
                 disabled={filter.length === 0 ? true : false}
                 // style={{ backgroundColor: "#555" }}
