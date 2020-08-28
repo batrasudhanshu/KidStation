@@ -288,7 +288,7 @@ contact_page .contact-pageheader {
 
 contact_page .contact-caption {
     position: relative;
-    top: 11.25rem;
+    top: 10rem;
 }
 .contact-text{
     padding: 1rem;
@@ -405,4 +405,10 @@ contact_page .location-icon {
 .leaflet-container {
   height: 25rem;
   width: 100%;
+}
+@media screen and (max-width:991px){
+    contact_page .contact-caption {
+        position: relative;
+        top: 3.29rem;
+    } 
 }

@@ -34,7 +34,8 @@ Image credits: unsplash.com
     top: 50%;
     left: 50%;
     z-index: 3;
-    color: #fff;
+    color: #F9EEE2;
+    font-weight: 900;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 1px 1px 0 rgba(0,0,0,.75);
