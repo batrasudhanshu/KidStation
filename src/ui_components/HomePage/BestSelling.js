@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import LoyaltyIcon from "@material-ui/icons/Loyalty";
 class BestSelling extends Component {
   render() {
     const { products } = this.props;
@@ -35,10 +34,27 @@ class BestSelling extends Component {
     return (
       <>
         <div style={{ position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "relative", overflow: "hidden",marginTop:'1rem'  }}>
-            <hr/>
-            <div style={{ padding: "0rem 0.2rem", color:'saddlebrown', fontSize:'2rem', textAlign:'center', fontWeight:'600', fontFamily:'helvetica' }}>BEST SELLING</div>
-            <hr/>
+          <div
+            style={{
+              position: "relative",
+              overflow: "hidden",
+              marginTop: "1rem",
+            }}
+          >
+            <hr />
+            <div
+              style={{
+                padding: "0rem 0.2rem",
+                color: "saddlebrown",
+                fontSize: "2rem",
+                textAlign: "center",
+                fontWeight: "600",
+                fontFamily: "helvetica",
+              }}
+            >
+              BEST SELLING
+            </div>
+            <hr />
             <ChevronLeftIcon
               onClick={prevFun}
               style={{
@@ -63,12 +79,21 @@ class BestSelling extends Component {
                           best.productid.stringValue
                         }
                       >
-                        <div style={{ overflow:'hidden',height: "15rem", padding: "0 0.8rem", boxShadow:'2px 2px 1px 1px whitesmoke' }}>
+                        <div
+                          style={{
+                            overflow: "hidden",
+                            height: "15rem",
+                            padding: "0 0.8rem",
+                            boxShadow: "2px 2px 1px 1px whitesmoke",
+                          }}
+                        >
                           <img
-                          className="home-bestselling-img"
-                          style={{margin:'auto'}}
+                            className="home-bestselling-img"
+                            style={{ margin: "auto" }}
                             src={
-                              best.image_url.arrayValue.values[best.coverIndex.integerValue].stringValue
+                              best.image_url.arrayValue.values[
+                                best.coverIndex.integerValue
+                              ].stringValue
                             }
                             alt="Best-selling"
                             // width="100%"

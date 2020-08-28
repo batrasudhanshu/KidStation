@@ -16,6 +16,7 @@ import ShareComponent from "./shareComponent";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import bestsellerStamp from "../../images/Best-seller-stamp.png";
 import Error404 from "../BaseComponent/Error404";
+import { store } from "../..";
 
 class ProductPage extends Component {
   constructor(props) {
@@ -45,10 +46,14 @@ class ProductPage extends Component {
       }
     }
   };
+  componentWillUnmount = () => {
+    store.dispatch({ type: "ISPRODUCT", payload: true });
+  };
 
   componentDidMount() {
     console.log("PROPS", this.props);
     this.props.fetchCurrentProduct(this.props.location.pathname);
+    console.log("LOC", this.props.location.pathname);
     window.scrollTo(0, 0);
   }
   handleImageSelection = (image) => {
