@@ -27,21 +27,18 @@ class Login extends Component {
       .auth()
       .signInWithEmailAndPassword(email, pass)
       .then(() => {
-        console.log("User Logged in");
         store.dispatch({ type: "LOGGED_IN", payload: true });
       })
       .catch(function (error) {
         // Handle Errors here.
         // var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorMessage);
         store.dispatch({ type: "LOGIN_ERROR", payload: errorMessage });
         // ...
       });
   };
   render() {
     const { auth, loginError } = this.props;
-    console.log(loginError);
     if (auth.uid) return <Redirect to="/admin/home" />;
     return (
       <div className="login-page">
@@ -102,7 +99,6 @@ class Login extends Component {
   }
 }
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return {
     loggedIn: state.loggedIn,
     loginError: state.loginError,

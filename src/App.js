@@ -18,6 +18,7 @@ import BestsellingPage from "./ui_components/BestsellingPage";
 import SearchResultPage from "../src/ui_components/SearchResultPage";
 import MaterialNavbar from "./ui_components/MaterialNavbar";
 import Footer from "./ui_components/Footer";
+import ScrollToTop from "./ui_components/BaseComponent/ScrollToTop";
 
 //Contact,shipping,return,track order, terms of use links
 import Contact from "../src/ui_components/Contact";
@@ -40,13 +41,10 @@ import Geometry from "../src/ui_components/CategoryComponents/GeometryBoxes";
 
 //ui_components -> ProductPage links
 import ProductPage from "./ui_components/ProductPage/index";
-import { getFirebase } from "react-redux-firebase";
 
 // back to top icon for app
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Login from "./CMS/AuthUI/Login";
 import LoginHome from "./CMS/AuthUI/LoginHome";
-import { store } from ".";
 import Error404 from "./ui_components/BaseComponent/Error404";
 
 import "scroll-behavior-polyfill";
@@ -56,20 +54,8 @@ class App extends Component {
     this.props.fetchProduct();
   };
   componentDidMount = () => {
-    const firebase = getFirebase();
     this.props.checkLogin();
     // window.addEventListener("scroll", this.checkScrollTop);
-  };
-  state = {
-    showScroll: true,
-  };
-  checkScrollTop = () => {
-    if (window.pageYOffset > 400) {
-      this.setState({ showScroll: true });
-    } else if (window.pageYOffset <= 400) {
-      this.setState({ showScroll: false });
-    }
-    console.log(window.pageYOffset);
   };
 
   scrollTop = () => {
@@ -78,7 +64,6 @@ class App extends Component {
 
   render() {
     const { products } = this.props;
-    const { showScroll } = this.state;
     return (
       <BrowserRouter>
         <div
@@ -215,16 +200,12 @@ class App extends Component {
               <Redirect path="/404" /> */}
               <Error404 />
             </Switch>
-            <div
-              onScroll={this.checkScrollTop}
-              style={showScroll ? { display: "block" } : { display: "none" }}
-              className="scroll-to-top"
-            >
-              <KeyboardArrowUpIcon
-                onClick={this.scrollTop}
-                style={{ width: "5rem !important", height: "5rem !important" }}
-              />
-            </div>
+            <ScrollToTop
+              onChange={(val) => {
+                val && this.scrollTop();
+              }}
+            />
+
             <Footer />
           </Container>
         </div>

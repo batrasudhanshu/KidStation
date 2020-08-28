@@ -22,9 +22,7 @@ export const updateProductData = (productData) => {
         dispatch({ type: "Add_Product", data: productData });
         dispatch({ type: "UPLOAD_SUCCESS" });
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 };
 
@@ -37,7 +35,7 @@ export const addImages = (product) => {
     const FieldValue = firebase.firestore.FieldValue;
     let reduxstate = getState();
     let imageArray = reduxstate.files;
-    console.log(getState);
+
     let imgurl = [];
     imageArray.map((img, index) => {
       const uploadtask = storage
@@ -87,7 +85,6 @@ export const addImages = (product) => {
                       image_url: FieldValue.arrayUnion.apply(null, imgurl),
                     })
                     .then(() => {
-                      console.log("uploaded");
                       dispatch({ type: "UPLOAD_SUCCESS" });
                       dispatch({ type: "SET_FILE", payload: 0 });
                       dispatch({ type: "progress", value: 0 });
@@ -105,7 +102,6 @@ export const addImages = (product) => {
                       image_url: FieldValue.arrayUnion.apply(null, imgurl),
                     })
                     .then(() => {
-                      console.log("uploaded");
                       dispatch({ type: "UPLOAD_SUCCESS" });
                       dispatch({ type: "SET_FILE", payload: 0 });
                       dispatch({ type: "progress", value: 0 });

@@ -18,7 +18,6 @@ import { passSelectedProductAction } from "../actions/passSelectedProductAction"
 import { connect } from "react-redux";
 import { getFirebase } from "react-redux-firebase";
 import { store } from "../..";
-import { toast } from "react-toastify";
 
 class ProductCrudSummary extends React.Component {
   delete(product) {
@@ -30,9 +29,7 @@ class ProductCrudSummary extends React.Component {
       imageRef = storage.refFromURL(imgStr.stringValue);
       imageRef
         .delete()
-        .then(function () {
-          console.log("file deleted successfully");
-        })
+        .then(function () {})
         .catch(function (error) {
           console.log("error in file deletion");
         });
@@ -43,7 +40,6 @@ class ProductCrudSummary extends React.Component {
         .doc(product.productid.stringValue)
         .delete()
         .then(function () {
-          console.log("Document successfully deleted!");
           store.dispatch({ type: "DELETE_PRODUCT" });
           // store.dispatch({ type: "UPLOAD_SUCCESS" });
         })
@@ -53,13 +49,8 @@ class ProductCrudSummary extends React.Component {
     });
   }
   selectedProduct = () => {
-    console.log(this.props.product);
     this.props.passSelectedProductAction(this.props.product);
   };
-  // redirectToProduct = (id) => {
-  //   console.log("function redirect");
-  //   window.location.href = "/admin/productcrud/" + id;
-  // };
   handleChangeSoldOut = () => {
     const firestore = getFirestore();
     firestore
@@ -69,7 +60,6 @@ class ProductCrudSummary extends React.Component {
         soldout: !this.props.product.soldout.booleanValue,
       })
       .then(function () {
-        console.log("Soldout value changed!");
         store.dispatch({ type: "UPLOAD_SUCCESS" });
       })
       .catch(function (error) {
@@ -78,7 +68,7 @@ class ProductCrudSummary extends React.Component {
   };
   render() {
     const { product } = this.props;
-    console.log(product);
+
     return (
       <>
         {product && (

@@ -1,11 +1,9 @@
 import React, { useState, useCallback, useEffect } from "react";
-
-import Switch from "@material-ui/core/Switch";
 import { useDropzone } from "react-dropzone";
 import { useDispatch, useSelector } from "react-redux";
 import { fileAction } from "./fileAction";
 import CancelIcon from "@material-ui/icons/Cancel";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { store } from "../";
 
 const thumbsContainer = {
   display: "flex",
@@ -81,11 +79,9 @@ function Test() {
   };
   const handlechangeCover = (index) => {
     setIndex(index); //1
-    console.log(index);
   };
   useEffect(() => {
-    dispatch({ type: "SET_COVER_IMAGE", payload: index });
-    let prevUploadSuccess = UploadSuccess;
+    store.dispatch({ type: "SET_COVER_IMAGE", payload: index });
     setFiles([]);
   }, [index, UploadSuccess]);
 
@@ -136,7 +132,6 @@ function Test() {
         </p>
       </div>
       <aside style={thumbsContainer}>{thumbs}</aside>
-      {/* {console.log(files)} */}
     </section>
   );
 }

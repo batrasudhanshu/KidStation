@@ -5,16 +5,14 @@
 //       {id: '3', title: 'egg hunt with yoshi', content: 'blah blah blah'}
 //     ]
 //   }
-  
-  const projectReducer = (state = [], action) => {
-    switch (action.type) {
-        case 'Add_Product':
-          console.log('Product Added');
-          return state;
-        default:
-          return state;
-        
-    }
-  };
-  
-  export default projectReducer;
+
+const projectReducer = (state = [], action) => {
+  switch (action.type) {
+    case "Add_Product":
+      return state;
+    default:
+      return state;
+  }
+};
+
+export default projectReducer;

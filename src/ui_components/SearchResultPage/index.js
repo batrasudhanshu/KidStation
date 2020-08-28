@@ -16,14 +16,19 @@ class ShopPage extends React.Component {
   }
   render() {
     const { searchedProducts, emptySearch, searchedFilterSort } = this.props;
-    console.log(emptySearch);
     return (
       <>
         <SearchFilter />
         <SizeMe
           refreshRate={32}
           render={({ size }) => (
-            <div>{size.width < 552 ? <FilterSort page="searchResult" /> : <FilterSortMain  page="searchResult" />}</div>
+            <div>
+              {size.width < 552 ? (
+                <FilterSort page="searchResult" />
+              ) : (
+                <FilterSortMain page="searchResult" />
+              )}
+            </div>
           )}
         />
         {emptySearch ? (
@@ -39,7 +44,6 @@ class ShopPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     products: state.products,
     globalSearch: state.globalSearch,

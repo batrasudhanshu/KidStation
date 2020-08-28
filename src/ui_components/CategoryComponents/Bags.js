@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import ruler_banner from "../../images/ruler_banner.png";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
-import FilterSortMain from "../ShopPage/FilterSortMain";
 import SortCollection from "../BaseComponent/SortCollection";
 
 class Bag extends React.Component {
@@ -25,9 +24,7 @@ class Bag extends React.Component {
   }
 }
 
-
 const mapStateToProps = (state) => {
-  console.log(state);
   let bagData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {

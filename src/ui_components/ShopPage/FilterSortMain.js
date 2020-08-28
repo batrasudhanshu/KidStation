@@ -1,20 +1,7 @@
 import React, { Component } from "react";
-import {
-  Checkbox,
-  ListItemText,
-  FormControlLabel,
-  Chip,
-  Grid,
-} from "@material-ui/core";
-import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-import CheckBoxIcon from "@material-ui/icons/CheckBox";
+import { Chip, Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -39,7 +26,7 @@ class FilterSortMain extends Component {
   }
   componentDidMount = () => {
     this.props.fetchProductOnFilter(this.state);
-  }
+  };
   handleChangeFilter = (event) => {
     this.setState({ filter: event.target.value });
   };
@@ -58,7 +45,6 @@ class FilterSortMain extends Component {
     let arr = filter;
     if (arr.includes(name)) {
       arr = arr.filter((item) => item !== name);
-      // console.log(arr);
     } else {
       arr.push(name);
     }

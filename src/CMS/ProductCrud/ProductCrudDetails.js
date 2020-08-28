@@ -48,11 +48,7 @@ class ProductCrudDetails extends React.Component {
   componentDidUpdate = (prevProps, prevState) => {
     if (this.props.uploadSuccess !== prevProps.uploadSuccess) {
       toast("Updated Succesfully ");
-      // let success = this.props.uploadSuccess;
-      // console.log("success", success);
 
-      // console.log(prevProps, this.props);
-      // console.log("data updated successfully");
       this.props.fetchCurrentProduct(this.props.match);
       if (this.props.currentProduct) {
         const collection = this.props.currentProduct.collection.stringValue;
@@ -107,10 +103,8 @@ class ProductCrudDetails extends React.Component {
         .update({
           image_url: FieldValue.arrayRemove(img),
         });
-      var imageRef = storage.refFromURL(img);
+      let imageRef = storage.refFromURL(img);
       imageRef.delete().then(function () {
-        // File deleted successfully
-        console.log("file deleted successfully");
         store.dispatch({ type: "UPLOAD_SUCCESS" });
         // this.setState({ update: true });
         // window.location.reload();
@@ -123,12 +117,10 @@ class ProductCrudDetails extends React.Component {
           image_url: FieldValue.arrayRemove(img),
           coverIndex: currentProduct.coverIndex.integerValue - 1,
         });
-      var imageRef = storage.refFromURL(img);
+      let imageRef = storage.refFromURL(img);
       imageRef
         .delete()
         .then(function () {
-          // File deleted successfully
-          console.log("file deleted successfully");
           store.dispatch({ type: "UPLOAD_SUCCESS" });
         })
         .catch(function (error) {
@@ -154,7 +146,7 @@ class ProductCrudDetails extends React.Component {
   };
   //add images
   uploadImage = () => {
-    const { currentProduct, uploadSuccess } = this.props;
+    const { currentProduct } = this.props;
     this.setState({ disabled: true });
     this.props.addImages(currentProduct);
   };
@@ -174,7 +166,6 @@ class ProductCrudDetails extends React.Component {
         coverIndex: index,
       })
       .then(function () {
-        console.log("index updated");
         store.dispatch({ type: "UPLOAD_SUCCESS" });
       })
       .catch(function (error) {
@@ -193,7 +184,6 @@ class ProductCrudDetails extends React.Component {
       coverIndex,
     } = this.state;
 
-    console.log("currentproduct:", currentProduct);
     return (
       <>
         <ToastContainer
@@ -224,7 +214,7 @@ class ProductCrudDetails extends React.Component {
                               type="radio"
                               name="coverIndex"
                               onClick={() => this.handleChangeCover(index)}
-                              checked={index == coverIndex ? "checked" : ""}
+                              checked={index === coverIndex ? "checked" : ""}
                             />
                             <img
                               src={img.stringValue}
@@ -345,14 +335,6 @@ class ProductCrudDetails extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps.match.params);
-  console.log(state);
-  // state.products &&
-  //   state.products.map((product) => {
-  //     if (product.productid && product.productid.stringValue === id) {
-  //       currentProduct = product;
-  //     }
-  //   });
   return {
     uploadSuccess: state.uploadSuccess,
     auth: state.firebase.auth,

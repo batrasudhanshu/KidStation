@@ -7,7 +7,7 @@ export const uploadAction = (productData) => {
     let imageArray = reduxstate.files;
     let coverIndex = reduxstate.coverIndex;
     // debugger
-    console.log(imageArray);
+
     let imgurl = [];
     imageArray.map((img, index) => {
       const uploadtask = storage
@@ -59,7 +59,6 @@ export const uploadAction = (productData) => {
                     createdAt: new Date(),
                   })
                   .then(() => {
-                    console.log("uploaded");
                     dispatch({ type: "Add_Product" });
                     dispatch({ type: "UPLOAD_SUCCESS" });
                     dispatch({ type: "progress", value: 0 });
@@ -104,16 +103,11 @@ export const fetchProduct = () => {
           snapshot.forEach((doc) => {
             if (item === allcollection[8]) {
             } else data.push(doc._document.proto.fields);
-            // console.log(doc);
-            // console.log(doc._document.proto.fields);
           });
-
-          // dispatch({type: 'ALL_PRODUCT' ,data:data });
         })
         .catch((err) => {
           console.log("Error getting documents", err);
         });
-      //   console.log(data);
     });
   };
 };
@@ -122,12 +116,11 @@ export const fetchCurrentProduct = (url) => {
   return (dispatch, getState, { getFirestore, getFirebase }) => {
     let collection = url.split("/")[1];
     let productid = url.split("/")[2];
-    console.log("collection", collection);
+
     const firestore = getFirestore();
     const docRef = firestore.collection(collection).doc(productid);
     docRef.get().then((snapshot) => {
       let currentProduct = snapshot.data();
-      console.log("Snapshot data", !!currentProduct);
       !!currentProduct
         ? dispatch({ type: "CURRENT_PRODUCT", payload: currentProduct })
         : dispatch({ type: "ISPRODUCT", payload: false });

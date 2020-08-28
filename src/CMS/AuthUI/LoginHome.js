@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import Crud from "./Crud";
 import AuthNavbar from "./AuthNavbar";
 
 class LoginHome extends Component {
@@ -21,7 +20,6 @@ class LoginHome extends Component {
   }
 }
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return {
     loggedIn: state.loggedIn,
     auth: state.firebase.auth,

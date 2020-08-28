@@ -13,7 +13,7 @@ class Pen extends React.Component {
   }
   render() {
     const { pens } = this.props;
-    console.log(pens);
+
     return (
       <>
         <SearchFilter />
@@ -26,7 +26,6 @@ class Pen extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   let penData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {

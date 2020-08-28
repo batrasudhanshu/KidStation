@@ -29,7 +29,6 @@ class GeometryBox extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   let geometryData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {

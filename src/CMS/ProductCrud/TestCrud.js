@@ -9,7 +9,6 @@ class TestCrud extends React.Component {
 
   render() {
     const { products } = this.props;
-    console.log(products);
 
     return (
       <div>
@@ -25,7 +24,6 @@ class TestCrud extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     products: state.products,
   };

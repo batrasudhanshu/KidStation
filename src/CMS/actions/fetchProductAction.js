@@ -3,10 +3,9 @@ export const fetchProductOnFilter = (data) => {
     let products;
     if (data.type === "shopPage") {
       products = getState().products;
-    } else if ( data.type === "searchResult") {
+    } else if (data.type === "searchResult") {
       products = getState().searchedProducts;
-    }
-    else if (data.type === "bestSellingPage"){
+    } else if (data.type === "bestSellingPage") {
       products = getState().products;
     }
     let filteredProducts;
@@ -26,17 +25,12 @@ export const fetchProductOnFilter = (data) => {
       );
       filtering = bestselling;
     }
-    // console.log("Filter/Sort:",filtering);
-    // if(filtering.length!=0)
-    //     filteredProducts = filtering;
-    // else filteredProducts = products || [];
-    // debugger
+
     if (filtering.length === 0) {
       filteredProducts = products || [];
     } else {
       filteredProducts = filtering;
     }
-    // console.log(filteredProducts);
 
     function compareName(a, b) {
       const nameA = a.productname.stringValue.toUpperCase();
@@ -89,17 +83,19 @@ export const fetchProductOnFilter = (data) => {
         break;
       case "default":
         filteredProducts = filteredProducts.sort(compareTimeStamp);
+        break;
       default:
         break;
     }
-    // console.log(filteredProducts);
 
-    if (data.type === "shopPage" ) {
+    if (data.type === "shopPage") {
       dispatch({ type: "FILTER_SORT", data: [...filteredProducts] });
     } else if (data.type === "searchResult") {
-      dispatch({ type: "SEARCHED_PRODUCTS_FILTER_SORT", data: [...filteredProducts] });
-    }
-    else if (data.type === "bestSellingPage" ){
+      dispatch({
+        type: "SEARCHED_PRODUCTS_FILTER_SORT",
+        data: [...filteredProducts],
+      });
+    } else if (data.type === "bestSellingPage") {
       dispatch({ type: "FILTER_SORT", data: [...filteredProducts] });
     }
   };
@@ -109,7 +105,7 @@ export const fetchProductOnSort = (data) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     let sortedProducts;
     // let collectionType = data.collection;
-    const {products} = getState();
+    const { products } = getState();
     sortedProducts = products;
     function compareName(a, b) {
       const nameA = a.productname.stringValue.toUpperCase();
@@ -162,9 +158,10 @@ export const fetchProductOnSort = (data) => {
         break;
       case "default":
         sortedProducts = sortedProducts.sort(compareTimeStamp);
+        break;
       default:
         break;
     }
     dispatch({ type: "ALL_PRODUCT", data: [...sortedProducts] });
-  }
-}
+  };
+};

@@ -69,7 +69,6 @@ class MaterialNavbar extends Component {
 
   render() {
     const { width } = this.state;
-    // console.log(width);
     const list = [
       { name: "Home", link: "/" },
       { name: "Shop", link: "/shop" },

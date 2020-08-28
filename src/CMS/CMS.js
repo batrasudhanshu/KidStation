@@ -52,9 +52,6 @@ class CMS extends Component {
   };
   onSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.state);
-    // console.log(this.props.files);
-    // alert('Wait for few seconds to upload. You will automatically be redirected to a new page.');
     this.props.uploadAction(this.state);
   };
   componentDidUpdate(prevProps, prevState) {
@@ -81,7 +78,7 @@ class CMS extends Component {
       bestselling,
       collection,
     } = this.state;
-    console.log(bestselling);
+
     return (
       <>
         <ToastContainer
@@ -225,9 +222,6 @@ class CMS extends Component {
   }
 }
 const mapStateToProps = (state, ownProps) => {
-  // console.log(state);
-  // debugger
-  // console.log(ownProps);
   return {
     UploadSuccess: state.uploadSuccess,
     progress: state.progress.value.progress,

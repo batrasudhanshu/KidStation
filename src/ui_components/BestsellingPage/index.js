@@ -13,9 +13,7 @@ class BestsellingPage extends Component {
   }
   render() {
     const { bestselling } = this.props;
-    
 
-    console.log("bestselling", bestselling);
     return (
       <div>
         <SearchFilter />
@@ -37,7 +35,6 @@ class BestsellingPage extends Component {
   }
 }
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   let bestselling = [];
   state.filtersort &&
     state.filtersort.map((product) => {
@@ -45,7 +42,7 @@ const mapStateToProps = (state, ownProps) => {
     });
   return {
     filtersort: state.filtersort,
-    bestselling: bestselling
+    bestselling: bestselling,
   };
 };
 

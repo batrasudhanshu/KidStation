@@ -30,7 +30,6 @@ class FilterSort extends Component {
   }
 
   FilterSortProducts = () => {
-    console.log(this.state);
     this.props.fetchProductOnFilter(this.state);
     this.handleClose();
   };
@@ -68,12 +67,12 @@ class FilterSort extends Component {
     return (
       <div>
         <Button className="filter-sort-btn" onClick={this.handleClickOpen}>
-          Filter  Sort
+          Filter Sort
           {open ? (
-              <ExpandLessIcon fontSize="large" />
-            ) : (
-              <ExpandMoreIcon fontSize="large" />
-            )}
+            <ExpandLessIcon fontSize="large" />
+          ) : (
+            <ExpandMoreIcon fontSize="large" />
+          )}
         </Button>
         <Dialog
           className="filter-sort-dialog"

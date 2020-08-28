@@ -4,7 +4,6 @@ import { Grid } from "@material-ui/core";
 
 const ProductCrudList = (props) => {
   const { products } = props;
-  console.log(products);
   return (
     <div className="">
       <Grid

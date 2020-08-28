@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Grid, Container, Button, Breadcrumbs } from "@material-ui/core";
-import {
-  fetchProduct,
-  fetchCurrentProduct,
-} from "../../CMS/actions/UploadAction";
+import { fetchCurrentProduct } from "../../CMS/actions/UploadAction";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
@@ -51,9 +48,8 @@ class ProductPage extends Component {
   };
 
   componentDidMount() {
-    console.log("PROPS", this.props);
     this.props.fetchCurrentProduct(this.props.location.pathname);
-    console.log("LOC", this.props.location.pathname);
+
     window.scrollTo(0, 0);
   }
   handleImageSelection = (image) => {
@@ -67,8 +63,6 @@ class ProductPage extends Component {
   };
   render() {
     const { currentProduct, isProduct } = this.props;
-    // const {  } = this.state;
-    console.log("ispro", isProduct);
     let product = currentProduct.productid && currentProduct;
     const imageLength =
       currentProduct.productid && currentProduct.image_url.length;
@@ -228,7 +222,7 @@ class ProductPage extends Component {
                           &#8377; {product.productprice}
                           {product.bestselling && (
                             <span style={{ marginLeft: "1rem" }}>
-                              <img src={bestsellerStamp} width="50px" />
+                              <img src={bestsellerStamp} width="50px" alt="" />
                             </span>
                           )}
                         </div>
@@ -341,7 +335,7 @@ const mapStateToProps = (state, ownProps) => {
   // 1. isPRoduct true  product exist: 1. product fetched:true dispatch(isPRoduct:true, currentProduct)
   // 2.  isPRoduct true  product!exist  product fetched:false dispatch(isProduct:false, currentProduct:null)
   //isProduct ? (currentProduct ? show product: skeleton ): error404
-  console.log(state);
+
   return {
     currentProduct: state.currentProduct || [],
     isProduct: state.isProduct,

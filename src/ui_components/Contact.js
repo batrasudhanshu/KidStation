@@ -19,7 +19,6 @@ const Contact = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log(details);
   const handleChange = (e) => {
     setdetails({ ...details, [e.target.name]: e.target.value });
   };
@@ -50,7 +49,7 @@ const Contact = () => {
       userType: "Customer",
     });
   };
-  const { name, email, subject, phone, message, userType } = details;
+  const { name, email, subject, phone, message } = details;
   return (
     <contact_page>
       <ToastContainer />
