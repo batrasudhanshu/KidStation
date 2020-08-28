@@ -75,7 +75,7 @@ class MaterialNavbar extends Component {
       { name: "Shop", link: "/shop" },
       { name: "Categories", link: "#" },
       { name: "Best Selling", link: "/bestselling" },
-      { name: "Track your Order", link: "/trackyourorder" },
+      { name: "Track your Order", link: "/track_order" },
       { name: "Contact Us", link: "/contact" },
     ];
     const CategoriesList = [
