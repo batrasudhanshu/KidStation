@@ -3,7 +3,7 @@ App* {
   text-decoration: none;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
+
 }
 
 .scroll-to-top {
@@ -271,9 +271,10 @@ input[type="checkbox"] {
 
 /* productcardsub */
 
-.MuiSnackbarContent-message{
+.MuiSnackbarContent-message {
   font-size: 1.5rem !important;
 }
+
 /* productcardsub */
 
 /* Productcard.js */
@@ -2034,3 +2035,22 @@ background-color: whitesmoke;
 }
 
 /* admin buttons */
+
+/* error 404 */
+.popular-links .MuiBreadcrumbs-separator {
+  margin: 0rem 3px 0rem 3px !important;
+}
+
+.popular-links {
+  margin-top: 1rem;
+  text-align: center;
+  display: flex;
+}
+
+.popular-links nav {
+  margin: auto;
+  text-align: center;
+
+}
+
+/* error 404 */
