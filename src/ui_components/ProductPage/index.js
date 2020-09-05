@@ -45,6 +45,7 @@ class ProductPage extends Component {
   };
   componentWillUnmount = () => {
     store.dispatch({ type: "ISPRODUCT", payload: true });
+    store.dispatch({ type: "CURRENT_PRODUCT", payload: null });
   };
 
   componentDidMount() {

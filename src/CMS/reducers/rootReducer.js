@@ -42,10 +42,10 @@ const rootReducer = combineReducers({
   products: productsReducer,
   upload: uploadReducer,
   coverIndex: imagecoverReducer,
-  firestore: firestoreReducer,
-  firebase: firebaseReducer,
   progress: progressReducer,
   erasercollection: EraserReducer,
+  firestore: firestoreReducer,
+  firebase: firebaseReducer,
 });
 
 export default rootReducer;

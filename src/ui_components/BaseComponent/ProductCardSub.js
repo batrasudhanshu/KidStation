@@ -83,7 +83,7 @@ const ProductCardSub = ({ product }) => {
             </div>
             <div className="card-desc">
               <OurTooltip
-                placement="top-end"
+                placement="top-right"
                 title={
                   product.productname.stringValue[0].toUpperCase() +
                   product.productname.stringValue.slice(1)
