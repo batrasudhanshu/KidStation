@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/header_banner.css";
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
-import ruler_banner from "../../images/ruler_banner.png";
+import bags_banner from "../../images/bags_banner.jpg";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import SortCollection from "../BaseComponent/SortCollection";
@@ -16,7 +16,7 @@ class Bag extends React.Component {
     return (
       <>
         <SearchFilter />
-        <HeaderBanner tag="Bags" bannerImg={`url(${ruler_banner})`} />
+        <HeaderBanner tag="Bags" bannerImg={`url(${bags_banner})`} />
         <SortCollection />
         <ProductCard data={bags} />
       </>

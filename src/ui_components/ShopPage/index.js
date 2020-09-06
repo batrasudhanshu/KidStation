@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/header_banner.css";
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
-import eraser_banner from "../../images/eraser_banner.jpg";
+import eraser_banner from "../../images/eraser_banner.JP2";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import FilterSort from "./FilterSort";
 import FilterSortMain from "./FilterSortMain";
@@ -20,7 +20,7 @@ class ShopPage extends React.Component {
   render() {
     let { filtersort } = this.props;
 
-// filtersort -10 bags-3 filtersort-3 eraser - 0
+    // filtersort -10 bags-3 filtersort-3 eraser - 0
     return (
       <>
         <SearchFilter />

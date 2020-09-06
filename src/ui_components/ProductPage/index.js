@@ -23,7 +23,7 @@ class ProductPage extends Component {
       SelectedImage:
         this.props.currentProduct.length !== 0 &&
         this.props.currentProduct.image_url[
-          this.props.currentProduct.coverIndex
+        this.props.currentProduct.coverIndex
         ],
     };
     this.handleImageSelection = this.handleImageSelection.bind(this);
@@ -63,6 +63,7 @@ class ProductPage extends Component {
     this.slider.slickPrev();
   };
   render() {
+    // const emoji = '\u{1F60E}';
     const { currentProduct, isProduct } = this.props;
     let product = currentProduct.productid && currentProduct;
     const imageLength =
@@ -81,11 +82,11 @@ class ProductPage extends Component {
     let urlVal =
       product &&
       "https://api.whatsapp.com/send?phone=919999089262&text=I would like to know more about: *" +
-        product.productname +
-        "*, https://kidstation-version1.firebaseapp.com/" +
-        product.collection +
-        "/" +
-        product.productid;
+      product.productname +
+      "*, https://kidstation-version1.firebaseapp.com/" +
+      product.collection +
+      "/" +
+      product.productid;
     return (
       <div>
         <SearchFilter />
@@ -254,78 +255,75 @@ class ProductPage extends Component {
                         <div>
                           <ShareComponent
                             url={`https://kidstation-version1.firebaseapp.com/${product.collection}/${product.productid}`}
-                            text="Check out for more products like this."
+                            text={`Check out product: ${product.productname}. \n Click on link to know more about this product. Also checkout more products on KidStation your online stationery store. `}
                           />
                         </div>
-                        {/* url={`localhost:3000/${product.collection}/${product.productid}`} */}
+                        {/* url={`localhost: {product.collection}/${product.productid}`} */}
                       </div>
                     </Grid>
                   </Grid>
                 </Grid>
               </>
             ) : (
-              <>
-                <Grid container xs={12} spacing={3}>
-                  <Grid item xs={12} sm={6}>
-                    <div>
-                      <Skeleton variant="rect" height={114} animation="pulse" />
-                    </div>
+                <>
+                  <Grid container xs={12} spacing={3}>
+                    <Grid item xs={12} sm={6}>
+                      <div>
+                        <Skeleton variant="rect" height={114} animation="pulse" />
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      <div>
+                        <Skeleton variant="rect" height={114} animation="pulse" />
+                      </div>
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <div>
-                      <Skeleton variant="rect" height={114} animation="pulse" />
-                    </div>
+                  <Grid container spacing={3} xs={12}>
+                    <Grid className="pro-main-image" item xs={12} sm={6}>
+                      <div className="product-main-image">
+                        <Skeleton variant="rect" height={500} animation="pulse" />
+                      </div>
+                      <div
+                        className="prod-slick-outer"
+                        style={{
+                          textAlign: "center",
+                          position: "relative",
+                          marginTop: "1.5rem",
+                        }}
+                      >
+                        <Skeleton variant="rect" height={100} animation="pulse" />
+                      </div>
+                    </Grid>
+                    <Grid className="pro-main-details" item xs={12} sm={6}>
+                      <div
+                        style={{
+                          margin: "0.5rem 0",
+                        }}
+                      >
+                        <Skeleton variant="rect" height={42} animation="pulse" />
+                      </div>
+                      <div>
+                        <Skeleton variant="rect" height={150} animation="pulse" />
+                      </div>
+                      <div style={{ marginTop: "1rem" }}>
+                        <Skeleton variant="rect" height={60} width={150} animation="pulse" />
+                      </div>
+                      <div>
+                        <h5 style={{ marginTop: "1rem" }}>
+                          <Skeleton variant="rect" animation="pulse" />
+                          <Skeleton variant="rect" animation="pulse" />
+                        </h5>
+                      </div>
+                      <div style={{ marginTop: "1rem" }}>
+                        <Skeleton height={50} width={50} variant="rect" animation="pulse" />
+                      </div>
+                    </Grid>
                   </Grid>
-                </Grid>
-                <Grid container spacing={3} xs={12}>
-                  <Grid className="pro-main-image" item xs={12} sm={6}>
-                    <div className="product-main-image">
-                      <Skeleton variant="rect" height={500} animation="pulse" />
-                    </div>
-                    <div
-                      className="prod-slick-outer"
-                      style={{
-                        textAlign: "center",
-                        position: "relative",
-                        marginTop: "1.5rem",
-                      }}
-                    >
-                      <Skeleton variant="rect" height={100} animation="pulse" />
-                    </div>
-                  </Grid>
-                  <Grid className="pro-main-details" item xs={12} sm={6}>
-                    <div
-                      style={{
-                        margin: "0.5rem 0",
-                      }}
-                    >
-                      <Skeleton variant="rect" height={42} animation="pulse" />
-                    </div>
-                    <div>
-                      <Skeleton variant="rect" height={150} animation="pulse" />
-                    </div>
-                    <div className="buy-connect-btn">
-                      <a href={urlVal}>BUY/CONNECT</a>
-                    </div>
-                    <div>
-                      <h5 style={{ marginTop: "1rem" }}>
-                        <Skeleton variant="rect" animation="pulse" />
-                        <Skeleton variant="rect" animation="pulse" />
-                      </h5>
-                    </div>
-                    <div>
-                      <ShareComponent
-                        url="www.google.com"
-                        text="Check out this website: www.google.com"
-                      />
-                    </div>
-                  </Grid>
-                </Grid>
-              </>
-            )
+                </>
+              )
           ) : (
-            <Error404 />
-          )}
+              <Error404 />
+            )}
         </Container>
       </div>
     );

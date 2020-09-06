@@ -2,15 +2,15 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Typography from "@material-ui/core/Typography";
-import Pens_thumbnail from "../../images/pens_thumbnail.jpg";
-import lunch_thumbnail from "../../images/lunch_thumbnail.jpg";
-import water_thumbnail from "../../images/water_thumbnail.jpg";
-import marker_thumbnail from "../../images/marker_thumbnail.jpg";
-import eraser_thumbnail from "../../images/eraser_thumbnail.jpg";
-import bestselling_thumbnail from "../../images/bestselling_thumbnail.jpg";
-import kits_thumbnail from "../../images/kits_thumbnail.jpg";
-import rulers_thumbnail from "../../images/rulers_thumbnail.jpg";
-import notebooks_thumbnail from "../../images/notebooks_thumbnail.jpg";
+import Pens_thumbnail from "../../images/pens_thumbnail.JP2";
+import lunch_thumbnail from "../../images/lunch_thumbnail.JP2";
+import water_thumbnail from "../../images/water_thumbnail.JP2";
+import marker_thumbnail from "../../images/marker_thumbnail.JP2";
+import eraser_thumbnail from "../../images/eraser_thumbnail.JP2";
+import bestselling_thumbnail from "../../images/bestselling_thumbnail.JP2";
+import kits_thumbnail from "../../images/kits_thumbnail.JP2";
+import bags_thumbnail from "../../images/bags_thumbnail.JP2";
+import notebooks_thumbnail from "../../images/notebooks_thumbnail.JP2";
 
 import { Link } from "react-router-dom";
 
@@ -58,7 +58,7 @@ const images = [
     link: "/water_bottles",
   },
   {
-    url: rulers_thumbnail,
+    url: bags_thumbnail,
     title: "Bags",
     width: "33.3%",
     link: "/bags",
@@ -145,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
       theme.spacing(1) + 6
-    }px`,
+      }px`,
   },
   imageMarked: {
     height: 3,

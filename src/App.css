@@ -2054,3 +2054,79 @@ background-color: whitesmoke;
 }
 
 /* error 404 */
+/* Track Order */
+.steps-to-follow .container {
+
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.steps-to-follow .card {
+  position: relative;
+  margin: 15px 0px;
+  width: 100%;
+  height: 300px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transition: 1.5s;
+  /* box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5); */
+}
+
+.steps-to-follow .card:hover {
+  transform: perspective(2000px) rotate(-10deg);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.steps-to-follow .card .imageBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid #000; */
+  box-sizing: border-box;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s;
+}
+
+.steps-to-follow .card:hover .imageBox {
+  transform: rotateY(-135deg);
+}
+
+.steps-to-follow .card .imageBox img {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.steps-to-follow .card .datalist {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: justify;
+}
+
+.card-tag {
+  background-color: saddlebrown;
+  position: absolute;
+  color: white;
+  width: 60px;
+  height: 30px;
+  padding-left: 7px;
+  padding-top: 5px;
+  text-align: 'center';
+  border: 1px solid rgb(233, 183, 148);
+  border-radius: 30px;
+  z-index: 20;
+}
+
+/* .steps-to-follow */
+/* Track Order */

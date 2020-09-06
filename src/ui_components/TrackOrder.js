@@ -1,26 +1,105 @@
 import React, { useEffect } from "react";
 import SearchFilter from "../CMS/ProductCrud/SearchFilter";
+import Step1 from '../../src/images/step1.jpg';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
+const stepsData = [
+  {
+    tag: 'Step -1',
+    imageUrl: Step1,
+    content: ''
+  },
+  {
+    tag: 'Step -2',
+    imageUrl: Step1,
+    content: ''
+  },
+  {
+    tag: 'Step -3',
+    imageUrl: Step1,
+    content: ''
+  },
+  {
+    tag: 'Step -4',
+    imageUrl: Step1,
+    content: ''
+  },
+  {
+    tag: 'Step -5',
+    imageUrl: Step1,
+    content: ''
+  },
+  {
+    tag: 'Step -6',
+    imageUrl: Step1,
+    content: ''
+  },
+  {
+    tag: 'Step -7',
+    imageUrl: Step1,
+    content: ''
+  },
+  {
+    tag: 'Step -8',
+    imageUrl: Step1,
+    content: ''
+  },
+  {
+    tag: 'Step -9',
+    imageUrl: Step1,
+    content: ''
+  }
+]
 
 const TrackOrder = () => {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
   return (
-    <div style={{ height: "50vh" }}>
+    <div className="steps-to-follow" >
       <SearchFilter />
-      {/* <h2 style={{textAlign:'center'}}>Track Your Order</h2> */}
-      <div style={{ textAlign: "center", paddingTop: "4rem" }}>
-        <span
-          style={{
-            color: "orangeRed",
-            fontSize: "4.5rem",
-            textAlign: "center",
-          }}
-        >
-          Coming Soon...
-        </span>
+      <div className="container">
+        <Grid container elevation={4} spacing={4}>
+          {stepsData.map((element) => (
+            <Grid item md={4}>
+              <Paper >
+                <div className="card">
+
+                  <div className="imageBox">
+                    <div className="card-tag"><span>{element.tag}</span></div>
+                    <img src={element.imageUrl} alt="Step-1" />
+                  </div>
+                  <div className="datalist">
+                    <h2>hello</h2>
+                    <p>
+                    </p>
+                  </div>
+                </div>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+        {/* {stepsData.map((element) => (
+          <div className="card">
+
+            <div className="imageBox">
+              <div className="card-tag"><span>{element.tag}</span></div>
+              <img src={element.imageUrl} alt="Step-1" />
+            </div>
+            <div className="datalist">
+              <h2>hello</h2>
+              <p>
+              </p>
+            </div>
+          </div>
+        ))} */}
+
+
+
       </div>
-    </div>
+
+    </div >
   );
 };
 

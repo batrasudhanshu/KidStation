@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/header_banner.css";
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
-import marker_banner from "../../images/marker_banner.jpg";
+import geometry_banner from "../../images/geometry_banner.JP2";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import SortCollection from "../BaseComponent/SortCollection";
@@ -19,7 +19,7 @@ class GeometryBox extends React.Component {
         <SearchFilter />
         <HeaderBanner
           tag="Geometry Boxes"
-          bannerImg={`url(${marker_banner})`}
+          bannerImg={`url(${geometry_banner})`}
         />
         <SortCollection />
         <ProductCard data={geometry_boxes} />

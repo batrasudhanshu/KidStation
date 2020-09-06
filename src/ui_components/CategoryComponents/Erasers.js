@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/header_banner.css";
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
-import eraser_banner from "../../images/eraser_banner.jpg";
+import eraser_banner from "../../images/eraser_banner.JP2";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import SortCollection from "../BaseComponent/SortCollection";

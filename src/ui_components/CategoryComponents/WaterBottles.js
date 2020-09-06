@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/header_banner.css";
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
-import water_banner from "../../images/water_banner.jpg";
+import water_banner from "../../images/water_banner.JP2";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import SortCollection from "../BaseComponent/SortCollection";
