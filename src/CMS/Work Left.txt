@@ -1,4 +1,4 @@
-Route gaurding of CMS
+rRoute gaurding of CMS
 Crud folders + update action files
 Sidebanner banner GIF speed -> slow down
 Search
@@ -12,4 +12,24 @@ state.products && state.products.map(product=>{
             currentProduct = product;
         }
     })
+
+How to place an order
+
+Step 1 - Select the product
+Step 2 - connect with us 
+Step 3 - contact through whatsapp
+Step 4 - make payment
+
+1. Search product from searchbar as per your choice and availability.
+ After selecting the product click on the button BUY/CONNECT .
+2. The button will redirect you to whatsapp application on your device where you can connect with us.
+3. Now you can contact us on whatsapp regarding product's  color options and quantity required.
+Place your final order and give us the shipping details.
+4. make the payment through digital payment options as per your convenience (GPay,PayTM, Bank Transfer)
+
+Track Order
+1 after making the final payment your order will be dispatched within 2 days and you'll be provided with the tracking number and the service provider.
+2 to track your order, Visit the website/mobile application of service provider (for example - www.shreemaruticourier.com) .
+3 . Enter the tracking number in Track your shipment bar
+4. You'll get to know when and where your parcel has reached.
 

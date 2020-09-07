@@ -18,12 +18,14 @@ import imagecoverReducer from "./imagecoverReducer";
 import uploadedsuccessReducer from "./uploadsuccessReducer";
 import currentproductReducer from "./currentproductReducer";
 import isproductReducer from "./isproductReducer";
+import collectionsortReducer from "./collectionsortReducer";
 
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
 import { firebaseReducer } from "react-redux-firebase";
 
 const rootReducer = combineReducers({
+  collectionSortType: collectionsortReducer,
   isProduct: isproductReducer,
   deleteReducer: deleteProductReducer,
   currentProduct: currentproductReducer,
