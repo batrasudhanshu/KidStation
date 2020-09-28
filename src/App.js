@@ -24,7 +24,8 @@ import ScrollToTop from "./ui_components/BaseComponent/ScrollToTop";
 import Contact from "../src/ui_components/Contact";
 import Shipping from "./ui_components/Shipping";
 import Refund from "./ui_components/Refund";
-import TrackOrder from "./ui_components/TrackOrder";
+import TrackOrder from "./ui_components/TrackOrder/index";
+import HowToOrder from './ui_components/TrackOrder/HowToOrder'
 import TermsOfUse from "./ui_components/TermsOfUse";
 
 //ui_components -> BaseComponent links
@@ -180,6 +181,11 @@ class App extends Component {
                 exact
                 path="/geometry_boxes"
                 render={() => <Geometry products={products} />}
+              />
+              <Route
+                exact
+                path="/how_to_order"
+                render={() => <HowToOrder products={products} />}
               />
               <Route exact path="/bestselling" component={BestsellingPage} />
 

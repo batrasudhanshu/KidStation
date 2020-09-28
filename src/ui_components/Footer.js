@@ -1,13 +1,13 @@
 import React from "react";
-
 import fulllogo from "../../src/images/Fulllogo.svg";
-import sud from "../../src/images/sud.jpg";
-import rak from "../../src/images/rak.jpg";
-// import insta from "../../src/images/insta.png"
-// import fb from "../../src/images/fb.png"
+import insta from "../../src/images/insta.png"
+import fb from "../../src/images/fb.png";
+import maruti from "../images/maruti.jpg";
+import dtdc from "../images/dtdc.jpeg"
+import trackon from '../images/trackon.png';
+import proffessional from '../images/proffessional.jpg'
 import { NavLink, Link } from "react-router-dom";
-// import FacebookIcon from '@material-ui/icons/Facebook';
-// import InstagramIcon from '@material-ui/icons/Instagram';
+import Grid from '@material-ui/core/Grid';
 
 const Footer = () => {
   return (
@@ -62,7 +62,7 @@ const Footer = () => {
                   </p>
                 </div>
                 <div class="footer-social-icon">
-                  <span>Follow us (DEVELOPERS)</span>
+                  <span>Follow us on</span>
                   <a
                     rel="noopener noreferrer"
                     target="_blank"
@@ -70,8 +70,8 @@ const Footer = () => {
                   >
                     <img
                       style={{ width: "50px", height: "50px" }}
-                      src={sud}
-                      alt="Avatar"
+                      src={fb}
+                      alt="@Step_Beyond_Ordinary"
                     />
                   </a>
                   <a
@@ -81,8 +81,8 @@ const Footer = () => {
                   >
                     <img
                       style={{ width: "50px", height: "50px" }}
-                      src={rak}
-                      alt="Avatar"
+                      src={insta}
+                      alt="@Step_Beyond_Ordinary"
                     />
                   </a>
                 </div>
@@ -133,16 +133,60 @@ const Footer = () => {
                   {/* <h3>Subscribe</h3> */}
                   <h3>Our Courier Partners</h3>
                 </div>
-                {/* <div class="footer-text mb-25">
-                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
-                            </div>
-                            <div class="subscribe-form">
-                                <form action="#">
-                                    <input type="text" placeholder="Email Address"/>
-                                    <button><i class="fa fa-paper-plane"></i></button>
-                                </form>
-                            </div> */}
-                <div className="footer-courier partners"></div>
+
+                <div className="footer-courier-partners">
+                  <Grid container spacing={1}>
+                    <Grid item md={6}>
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/sudhanshu-batra09/"
+                      >
+                        <img
+
+                          src={maruti}
+                          alt="Maruti Courier Services"
+                        />
+                      </a>
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/rakshit-maini-769883124/"
+                      >
+                        <img
+
+                          src={dtdc}
+                          alt="@Step_Beyond_Ordinary"
+                        />
+                      </a>
+                    </Grid>
+                    {/* <br /> */}
+                    <Grid item md={6}>
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/rakshit-maini-769883124/"
+                      >
+                        <img
+
+                          src={trackon}
+                          alt="@Step_Beyond_Ordinary"
+                        />
+                      </a>
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/rakshit-maini-769883124/"
+                      >
+                        <img
+
+                          src={proffessional}
+                          alt="@Step_Beyond_Ordinary"
+                        />
+                      </a>
+                    </Grid>
+                  </Grid>
+                </div>
               </div>
             </div>
           </div>
