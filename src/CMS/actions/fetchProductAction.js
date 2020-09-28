@@ -163,5 +163,6 @@ export const fetchProductOnSort = (data) => {
         break;
     }
     dispatch({ type: "ALL_PRODUCT", data: [...sortedProducts] });
+    dispatch({ type: "COLLECTION_SORT_TYPE", payload: data.sort });
   };
 };
