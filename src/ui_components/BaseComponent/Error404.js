@@ -2,8 +2,8 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Really from "../../images/really.gif";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Typography from "@material-ui/core/Typography";
 import { Link } from 'react-router-dom'
+import './styleComponents/Error404.css'
 let url = window.location.pathname.split("/");
 
 let searchProduct = url[2];
@@ -42,13 +42,12 @@ const Error404 = () => {
     },
   ];
   return (
-    <>
+    <error_404>
       <Container maxWidth="md">
-        <div style={{ paddingTop: "3rem", height: "60vh" }}>
-          <h4 style={{ textAlign: "center" }}>
+        <div className="error404">
+          <h4>
             You Searched for{" "}
             <Link
-              style={{ color: "saddlebrown" }}
               to={`/${searchCollection}`}
 
             >
@@ -56,11 +55,11 @@ const Error404 = () => {
             </Link>{" "}
             / {searchProduct}{" "}
           </h4>
-          <div style={{ textAlign: "center" }}>
+          <div className="error404-img" >
             <img src={Really} />
           </div>
-          <div style={{ textAlign: "center" }}>
-            <span style={{ fontSize: "2rem" }}>
+          <div className="error404-text">
+            <span>
               Sorry, we Couldn't find any matches, checkout some popular searches{" "}
             </span>
           </div>
@@ -68,7 +67,7 @@ const Error404 = () => {
 
             <Breadcrumbs aria-label="breadcrumb" separator="|" >
               {popularSearch.map((p) => (
-                <Link to={p.link} style={{ color: "saddlebrown", fontSize: "1.3rem" }}>
+                <Link to={p.link}>
                   {p.label}
                 </Link>
               ))}
@@ -78,7 +77,7 @@ const Error404 = () => {
           </div>
         </div>
       </Container>
-    </>
+    </error_404>
   );
 };
 

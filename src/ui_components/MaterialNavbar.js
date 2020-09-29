@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { NavLink, Link } from "react-router-dom";
+
 import {
   ListItemText,
   ListItem,
@@ -12,6 +13,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import fulllogo from "../../src/images/Fulllogo.svg";
 import SearchFilterLarge from "../CMS/ProductCrud/SearchFilterLarge";
+import '../styles/MaterialNavbar.css';
 
 class MaterialNavbar extends Component {
   state = {
@@ -90,6 +92,7 @@ class MaterialNavbar extends Component {
     const categoriesNav = CategoriesList.map((itemname, i) => {
       return (
         <>
+
           <Collapse in={this.state.categorytoggle} timeout="auto">
             <div
               className={
@@ -115,106 +118,109 @@ class MaterialNavbar extends Component {
               </ListItem>
             </div>
           </Collapse>
+
         </>
       );
     });
     return (
       <div>
-        {/* <MenuIcon onClick={this.toggleDrawer(true)} style={{fontSize:'3.5rem', backgroundColor:'#aaa', float:'left'}} /> */}
-        <Grid container alignItems="center" xs={12} className="navigation">
-          <Grid item xs={4} sm={2}>
-            <MenuIcon
-              className="NavMenuIcon"
-              onClick={this.toggleDrawer(true)}
-              style={{ fontSize: "4rem" }}
-            />
-          </Grid>
-          <Grid item xs={8} sm={4} className="fulllogo">
-            <Link to="/" onClick={this.handleLogoClick}>
-              <img alt="" src={fulllogo} width="100%" max-width="225px" />
-            </Link>
-          </Grid>
+        <custom_navbar className="custom_navbar">
+          {/* <MenuIcon onClick={this.toggleDrawer(true)} style={{fontSize:'3.5rem', backgroundColor:'#aaa', float:'left'}} /> */}
+          <Grid container alignItems="center" xs={12} className="navigation">
+            <Grid item xs={4} sm={2}>
+              <MenuIcon
+                className="NavMenuIcon"
+                onClick={this.toggleDrawer(true)}
+                style={{ fontSize: "4rem" }}
+              />
+            </Grid>
+            <Grid item xs={8} sm={4} className="fulllogo">
+              <Link to="/" onClick={this.handleLogoClick}>
+                <img alt="" src={fulllogo} width="100%" max-width="225px" />
+              </Link>
+            </Grid>
 
-          <Grid align="center" item xs={12} sm={6} className="RightNavItems">
-            <div style={{ position: "relative" }}>
-              {/* search filter for desktop screen */}
-              {width >= 900 ? <SearchFilterLarge /> : null}
-              <span className="NavItem1">
-                <Link style={{ textDecoration: "none" }} to="/track_order">
-                  Track Order
+            <Grid align="center" item xs={12} sm={6} className="RightNavItems">
+              <div style={{ position: "relative" }}>
+                {/* search filter for desktop screen */}
+                {width >= 900 ? <SearchFilterLarge /> : null}
+                <span className="NavItem1">
+                  <Link style={{ textDecoration: "none" }} to="/track_order">
+                    Track Order
                 </Link>
-              </span>
-              <span>
-                <Link style={{ textDecoration: "none" }} to="/contact">
-                  Help
+                </span>
+                <span>
+                  <Link style={{ textDecoration: "none" }} to="/contact">
+                    Help
                 </Link>
-              </span>
-            </div>
-          </Grid>
-        </Grid>
-        <Drawer
-          className="sidenavbar"
-          anchor="left"
-          open={this.state.sidebar}
-          onClose={this.toggleDrawer(false)}
-        >
-          <div style={{ padding: "2rem 2rem 2rem 0", float: "left" }}>
-            <Link to="/" onClick={this.handleLogoClick}>
-              <img alt="" src={fulllogo} width="100%" />
-            </Link>
-          </div>
-          {list.map((item, index) => {
-            return (
-              <div>
-                <div
-                  className={
-                    index === this.state.activeNavIndex
-                      ? "side-drawer-outer sidedrawerdiv"
-                      : "sidedrawerdiv"
-                  }
-                  onClick={() => {
-                    this.handleSideNavClick(item, index);
-                  }}
-                >
-                  <ListItem button>
-                    <NavLink to={item.link}>
-                      <ListItemText
-                        className={
-                          index === this.state.activeNavIndex
-                            ? "side-drawer-outer"
-                            : "sidedrawer"
-                        }
-                        primary={item.name}
-                      />
-                    </NavLink>
-                    {item.name === "Categories" ? (
-                      this.state.categorytoggle ? (
-                        <ExpandLessIcon
-                          fontSize="large"
-                          className={
-                            index === this.state.activeNavIndex
-                              ? ""
-                              : "sidedrawer"
-                          }
-                        />
-                      ) : (
-                        <ExpandMoreIcon
-                          fontSize="large"
-                          className={
-                            index === this.state.activeNavIndex
-                              ? ""
-                              : "sidedrawer"
-                          }
-                        />
-                      )
-                    ) : null}
-                  </ListItem>
-                </div>
-                {item.name === "Categories" && categoriesNav}
+                </span>
               </div>
-            );
-          })}
-        </Drawer>
+            </Grid>
+          </Grid>
+          <Drawer
+            className="sidenavbar"
+            anchor="left"
+            open={this.state.sidebar}
+            onClose={this.toggleDrawer(false)}
+          >
+            <div style={{ padding: "2rem 2rem 2rem 0", float: "left" }}>
+              <Link to="/" onClick={this.handleLogoClick}>
+                <img alt="" src={fulllogo} width="100%" />
+              </Link>
+            </div>
+            {list.map((item, index) => {
+              return (
+                <div>
+                  <div
+                    className={
+                      index === this.state.activeNavIndex
+                        ? "side-drawer-outer sidedrawerdiv"
+                        : "sidedrawerdiv"
+                    }
+                    onClick={() => {
+                      this.handleSideNavClick(item, index);
+                    }}
+                  >
+                    <ListItem button>
+                      <NavLink to={item.link}>
+                        <ListItemText
+                          className={
+                            index === this.state.activeNavIndex
+                              ? "side-drawer-outer"
+                              : "sidedrawer"
+                          }
+                          primary={item.name}
+                        />
+                      </NavLink>
+                      {item.name === "Categories" ? (
+                        this.state.categorytoggle ? (
+                          <ExpandLessIcon
+                            fontSize="large"
+                            className={
+                              index === this.state.activeNavIndex
+                                ? ""
+                                : "sidedrawer"
+                            }
+                          />
+                        ) : (
+                            <ExpandMoreIcon
+                              fontSize="large"
+                              className={
+                                index === this.state.activeNavIndex
+                                  ? ""
+                                  : "sidedrawer"
+                              }
+                            />
+                          )
+                      ) : null}
+                    </ListItem>
+                  </div>
+                  {item.name === "Categories" && categoriesNav}
+                </div>
+              );
+            })}
+          </Drawer>
+        </custom_navbar>
       </div>
     );
   }

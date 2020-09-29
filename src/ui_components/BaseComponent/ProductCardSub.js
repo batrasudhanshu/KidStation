@@ -7,7 +7,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import Snackbar from "@material-ui/core/Snackbar";
 import Tooltip from "@material-ui/core/Tooltip";
 import LoyaltyIcon from "@material-ui/icons/Loyalty";
-
+import './styleComponents/ProductCard.css'
 const OurTooltip = withStyles((theme) => ({
   tooltip: {
     backgroundColor: theme.palette.common.white,

@@ -8,6 +8,7 @@ import trackon from '../images/trackon.png';
 import proffessional from '../images/proffessional.jpg'
 import { NavLink, Link } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
+import '../styles/Footer.css';
 
 const Footer = () => {
   return (

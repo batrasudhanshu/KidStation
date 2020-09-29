@@ -1,0 +1,122 @@
+.nav-searchfilter-lg {
+    position: absolute;
+    right: 180px;
+    top: 28px;
+}
+
+.sidenavbar .MuiPaper-root {
+    width: 30rem !important;
+    background-image: url("../images/sidebar_bg.jpg");
+}
+
+.category-list .MuiTypography-body1 {
+    padding-left: 3rem;
+    font-size: 1.6rem !important;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.sidedrawer .MuiTypography-body1 {
+    padding: 0.3rem 2rem;
+    font-size: 1.7rem !important;
+    text-decoration: none;
+}
+
+.category-list,
+.sidedrawer {
+    color: #f2f2eb;
+}
+
+.side-drawer-outer {
+    background-color: whitesmoke;
+    color: black !important;
+    text-decoration: none;
+    padding: 0.3rem 1rem;
+}
+
+.sidedrawerdiv div a,
+.categorylistdiv div a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.side-drawer-outer .MuiTypography-body1 {
+    font-size: 1.7rem !important;
+}
+
+.category-list-outer {
+    background-color: whitesmoke;
+    color: black !important;
+    text-decoration: none;
+    padding-left: 1.5rem;
+}
+
+.category-list-outer .MuiTypography-body1 {
+    font-size: 1.6rem !important;
+}
+
+.NavMenuIcon {
+    /* background-color: #eee; */
+    cursor: pointer;
+    line-height: 8.5rem;
+    float: left;
+    width: 70px;
+    height: 70px;
+}
+
+.NavMenuIcon:hover {
+    background-color: #eeeeee;
+}
+
+.fulllogo {
+    float: left;
+}
+
+.fulllogo a {
+    display: block;
+}
+
+.fulllogo img {
+    max-width: 225px;
+}
+
+.navigation {
+    /* height: 12.7rem; */
+    display: block;
+}
+
+.RightNavItems {
+    line-height: 8.5rem;
+}
+
+.RightNavItems div {
+    float: right;
+    /* width: 100%; */
+}
+
+.RightNavItems div span {
+    padding: 0 2rem;
+}
+
+.RightNavItems div span a {
+    color: black !important;
+    cursor: pointer;
+}
+
+.NavItem1 {
+    border-right: 3px solid black;
+}
+
+@media only screen and (max-width: 600px) {
+    .RightNavItems div {
+        float: none;
+        line-height: 5rem;
+    }
+
+    .fulllogo img {
+        float: right;
+        padding-left: 0;
+    }
+
+
+}

@@ -16,6 +16,7 @@ import { connect } from "react-redux";
 import { fetchProductOnFilter } from "../../CMS/actions/fetchProductAction";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import './styleComponents/FilterSort.css';
 
 class FilterSort extends Component {
   constructor(props) {
@@ -71,8 +72,8 @@ class FilterSort extends Component {
           {open ? (
             <ExpandLessIcon fontSize="large" />
           ) : (
-            <ExpandMoreIcon fontSize="large" />
-          )}
+              <ExpandMoreIcon fontSize="large" />
+            )}
         </Button>
         <Dialog
           className="filter-sort-dialog"

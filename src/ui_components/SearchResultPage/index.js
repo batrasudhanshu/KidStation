@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/header_banner.css";
 import { connect } from "react-redux";
 import ProductCard from "../BaseComponent/ProcuctCard";
 import FilterSort from "../ShopPage/FilterSort";
@@ -26,8 +25,8 @@ class ShopPage extends React.Component {
               {size.width < 552 ? (
                 <FilterSort page="searchResult" />
               ) : (
-                <FilterSortMain page="searchResult" />
-              )}
+                  <FilterSortMain page="searchResult" />
+                )}
             </div>
           )}
         />
@@ -36,8 +35,8 @@ class ShopPage extends React.Component {
         ) : searchedProducts.length === 0 ? (
           <NoResult />
         ) : (
-          <ProductCard data={searchedFilterSort} />
-        )}
+              <ProductCard data={searchedFilterSort} />
+            )}
       </>
     );
   }

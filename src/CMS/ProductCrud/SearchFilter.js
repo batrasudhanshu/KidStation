@@ -13,7 +13,7 @@ import { globalSearchFilter, SearchedProducts } from "../actions/SearchAction";
 import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
-
+import './styleComponents/SearchFilter.css'
 class SearchFilter extends Component {
   constructor(props) {
     super(props);
@@ -129,21 +129,22 @@ class SearchFilter extends Component {
                 (globalSearch.length < 6 ? (
                   <>{globalSearchList}</>
                 ) : (
-                  <>
-                    {globalSlicedSearchList}
-                    <ListItem
-                      button
-                      component={Link}
-                      to="/searchresult"
-                      onClick={this.searchProducts}
-                    >
-                      <ListItemText
-                        style={{ color: "#444" }}
-                        primary="View more..."
-                      />
-                    </ListItem>
-                  </>
-                ))}
+                    <>
+                      {globalSlicedSearchList}
+                      <ListItem
+                        button
+                        component={Link}
+                        to="/searchresult"
+                        onClick={this.searchProducts}
+                      >
+                        <ListItemText
+                          className="search-lists-texts"
+                          style={{ color: "#444" }}
+                          primary="View more..."
+                        />
+                      </ListItem>
+                    </>
+                  ))}
             </List>
             <List
               style={hideList ? { display: "none" } : { display: "block" }}

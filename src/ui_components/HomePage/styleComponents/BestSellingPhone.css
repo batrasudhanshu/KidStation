@@ -1,0 +1,45 @@
+.home-bestselling {
+    text-align: center;
+}
+
+.home-bestselling img {
+    /* display: block; */
+    line-height: 9.375rem;
+    margin: auto;
+
+}
+
+.bestselling-component {
+    margin: 1rem 0;
+}
+
+.bestselling-component .best-selling-phone {
+    padding: 0rem 0.2rem;
+    color: saddlebrown;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: helvetica;
+}
+
+.bestselling-component .MuiPaper-root {
+    padding: 1rem;
+}
+
+.home-bestselling {
+    height: 9.375rem;
+    overflow: hidden;
+    display: list-item;
+}
+
+.best-phone-view-more {
+    float: right;
+    display: inline-block;
+    width: 100%;
+}
+
+.best-phone-view-more .best-phone-view-link {
+    float: right;
+    text-decoration: none;
+    color: #782844;
+}
