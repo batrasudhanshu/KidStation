@@ -190,3 +190,18 @@ a:active {
 
 
 }
+
+@media screen and (max-width: 480px) {
+    .product-page-breadcrumb {
+        padding-left: 1.4rem;
+    }
+
+    .product-name-style {
+        padding-left: 1.4rem;
+    }
+
+    .pro-main-details div {
+        margin-left: 1.4rem;
+    }
+
+}

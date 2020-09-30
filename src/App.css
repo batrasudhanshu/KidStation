@@ -206,7 +206,7 @@ input[type="checkbox"] {
   border-radius: 0.5rem;
 
   width: 96%;
-  margin: 0 1%;
+  margin: 0 38%;
 }
 
 .global-search-input-lg .MuiFormControl-root {
@@ -889,6 +889,12 @@ input[type="checkbox"] {
   body .MuiContainer-root {
     padding-left: 0px !important;
     padding-right: 0px !important;
+  }
+
+  .global-search-input {
+    width: 94%;
+    margin: 0px 3%;
+
   }
 }
 

@@ -220,15 +220,16 @@ const Footer = () => {
             <div class="col-md-6 col-sm-12 col-lg-6 text-center text-lg-center">
               <div class="copyright-text">
                 <p>
-                  Visit Github link{" "}
-                  <a
+                  Copyright &copy; 2020 All Rights Reserved by {" "}
+                  <a href="/">KidStation</a>.
+                  {/* <a
                     rel="noopener noreferrer"
                     target="_blank"
                     href="https://github.com/batrasudhanshu/KidStation"
                   >
                     KidStation
-                  </a>{" "}
-                  for futher Updates..
+                  </a>{" "} */}
+
                 </p>
               </div>
             </div>

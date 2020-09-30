@@ -150,9 +150,10 @@ class MaterialNavbar extends Component {
                 </Link>
                 </span>
                 <span>
-                  <Link style={{ textDecoration: "none" }} to="/contact">
-                    Help
-                </Link>
+
+                  <a className="call-us" href="tel:9999089262"><i class="fa fa-phone  fa-2x" aria-hidden="true"></i><span>+91 9999089262</span></a>
+
+
                 </span>
               </div>
             </Grid>

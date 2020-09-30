@@ -43,3 +43,9 @@
     text-decoration: none;
     color: #782844;
 }
+
+@media screen and (max-width: 480px) {
+    .bestselling-component {
+        margin: 1rem 1.4rem;
+    }
+}

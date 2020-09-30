@@ -87,6 +87,7 @@
 
 .RightNavItems {
     line-height: 8.5rem;
+    margin-right: 0px;
 }
 
 .RightNavItems div {
@@ -95,7 +96,44 @@
 }
 
 .RightNavItems div span {
-    padding: 0 2rem;
+    padding: 0 1.2rem;
+}
+
+.call-us {
+    animation: blink 1s linear infinite;
+}
+
+.call-us:hover {
+    animation: none;
+}
+
+.call-us span {
+    padding-left: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: .7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.call-us i {
+    vertical-align: sub;
+    color: orangered
+}
+
+.call-us span {
+    padding-left: 0rem !important;
 }
 
 .RightNavItems div span a {
@@ -107,10 +145,20 @@
     border-right: 3px solid black;
 }
 
+@media only screen and (max-width: 480px) {
+    .fulllogo {
+        padding-right: 1.5rem;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .RightNavItems div {
         float: none;
         line-height: 5rem;
+    }
+
+    .RightNavItems span a {
+        font-size: 1.3rem;
     }
 
     .fulllogo img {

@@ -162,12 +162,12 @@
     100% {}
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 480px) {
 
     .card-layout {
-        margin-left: 1rem;
+        margin: 0rem 1rem 0rem 1rem !important;
         width: 94%;
-        margin-right: 1rem;
+        text-align: center;
         box-shadow: 2px 3px 3px 3px #f3f1f1;
     }
 

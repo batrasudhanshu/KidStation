@@ -56,12 +56,7 @@
 	max-width: 12.5rem;
 }
 
-.footer-section .footer-text p {
-	margin-bottom: 0.875rem;
-	font-size: 0.875rem;
-	color: #7e7e7e;
-	line-height: 1.75rem;
-}
+
 
 .footer-section .footer-social-icon {
 	margin-top: 0.5rem;
@@ -232,7 +227,7 @@
 }
 
 .footer-section .footer-logo {
-	margin-bottom: 1.875rem;
+	margin-bottom: 1.5rem;
 }
 
 .footer-section .footer-logo img {
@@ -240,8 +235,8 @@
 }
 
 .footer-section .footer-text p {
-	margin-bottom: 0.875rem;
-	font-size: 0.875rem;
+	margin-bottom: 1rem;
+	font-size: 1.4rem;
 	color: whitesmoke;
 	line-height: 1.75rem;
 }
