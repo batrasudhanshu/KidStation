@@ -4,7 +4,7 @@
 }
 
 .error404 a {
-    color: saddlebrown;
+    color: orangered;
 }
 
 .error404 h4 {
@@ -25,6 +25,6 @@
 }
 
 .popular-links a {
-    color: saddlebrown;
+    color: orangered;
     font-size: 1.3rem;
 }

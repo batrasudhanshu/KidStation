@@ -19,7 +19,7 @@
 
 .filter-sort-form-sortby .MuiSelect-icon {
     font-size: 30px !important;
-    color: saddlebrown;
+    color: orangered;
 }
 
 .filter-sort-form-sortby>div>div {
@@ -58,5 +58,5 @@
 .filter-sort-btn .MuiButton-label {
     /* font-size: 1.1rem !important; */
 
-    color: saddlebrown;
+    color: orangered;
 }

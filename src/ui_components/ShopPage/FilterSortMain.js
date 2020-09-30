@@ -89,7 +89,7 @@ class FilterSortMain extends Component {
       <div>
         <div style={{ float: "right" }}>
           <Button
-            style={{ color: "saddlebrown", fontSize: "1.7rem" }}
+            style={{ color: "orangered", fontSize: "1.7rem" }}
             onClick={this.showFilterSort}
           >
             Filter Sort
@@ -125,7 +125,7 @@ class FilterSortMain extends Component {
                         style={
                           filter.includes(item)
                             ? {
-                              backgroundColor: "saddlebrown",
+                              backgroundColor: "orangered",
                               color: "whitesmoke",
                               fontSize: "1.5rem",
                             }

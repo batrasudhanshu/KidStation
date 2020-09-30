@@ -99,7 +99,7 @@
 }
 
 .footer-section .google-bg {
-	background: saddlebrown;
+	background: orangered;
 }
 
 .footer-section .footer-widget-heading h3 {
@@ -118,7 +118,7 @@
 	bottom: -0.938rem;
 	height: 0.125rem;
 	width: 3.125rem;
-	background: saddlebrown;
+	background: orangered;
 }
 
 .footer-section .footer-widget ul li {
@@ -129,7 +129,7 @@
 }
 
 .footer-section .footer-widget ul li a:hover {
-	color: saddlebrown;
+	color: orangered;
 }
 
 .footer-section .footer-widget ul li a {
@@ -153,9 +153,9 @@
 .footer-section .subscribe-form button {
 	position: absolute;
 	right: 0;
-	background: saddlebrown;
+	background: orangered;
 	padding: 0.813rem 1.25rem;
-	border: 0.063rem solid saddlebrown;
+	border: 0.063rem solid orangered;
 	top: 0;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .footer-section .footer-menu li:hover a {
-	color: saddlebrown;
+	color: orangered;
 }
 
 .footer-section .footer-menu li a {
@@ -206,7 +206,7 @@
 }
 
 .footer-section .single-cta i {
-	color: saddlebrown;
+	color: orangered;
 	font-size: 5rem;
 	float: left;
 	/* margin-top: 8px; */
@@ -268,7 +268,7 @@
 	bottom: -0.938rem;
 	height: 0.125rem;
 	width: 3.125rem;
-	background: saddlebrown;
+	background: orangered;
 }
 
 .footer-section .footer-widget ul li {
@@ -279,7 +279,7 @@
 }
 
 .footer-section .footer-widget ul li a:hover {
-	color: saddlebrown;
+	color: orangered;
 }
 
 .footer-section .subscribe-form {
@@ -327,7 +327,7 @@
 }
 
 .footer-section .copyright-text p a {
-	color: saddlebrown;
+	color: orangered;
 	font-size: 1.9rem;
 }
 
@@ -341,7 +341,7 @@
 }
 
 .footer-section .footer-menu li:hover a {
-	color: saddlebrown;
+	color: orangered;
 }
 
 .footer-courier-partners {

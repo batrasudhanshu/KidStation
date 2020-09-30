@@ -19,6 +19,7 @@ class Eraser extends React.Component {
         <HeaderBanner
           tag="Erasers & Sharpners"
           bannerImg={`url(${eraser_banner})`}
+          color="#468847"
         />
         <SortCollection />
         <ProductCard data={erasers} />

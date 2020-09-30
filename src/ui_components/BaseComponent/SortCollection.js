@@ -25,7 +25,7 @@ class SortCollection extends Component {
         <div className="filter-sort-form-sortby">
           <FormControl variant="outlined">
             <InputLabel
-              style={{ color: "saddleBrown" }}
+              style={{ color: "orangered" }}
               id="demo-simple-select-outlined-label"
             >
               Sort By:
@@ -36,7 +36,7 @@ class SortCollection extends Component {
               id="demo-simple-select-outlined"
               value={sortType}
               onChange={this.handleChangeSort}
-              //   input={<Input />}
+            //   input={<Input />}
             >
               <MenuItem value={"default"}>Default</MenuItem>
               <MenuItem value={"productname"}>Name</MenuItem>

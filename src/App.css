@@ -26,7 +26,7 @@ App* {
 
 .scroll-to-top {
   padding: 1.2rem;
-  background-color: saddlebrown;
+  background-color: orangered;
   color: whitesmoke;
   position: fixed;
 
@@ -42,7 +42,7 @@ App* {
 
 /* Product Crud Details  */
 .Toastify .Toastify__toast--default {
-  background-color: saddlebrown !important;
+  background-color: orangered !important;
   color: whitesmoke !important;
   font-weight: 500;
 }
@@ -1016,7 +1016,7 @@ input[type="checkbox"] {
 }
 
 .card-tag {
-  background-color: saddlebrown;
+  background-color: orangered;
   position: absolute;
   color: white;
   width: 60px;
@@ -1067,7 +1067,7 @@ input[type="checkbox"] {
 }
 
 .steps .rounded-list a h4 {
-  color: saddlebrown;
+  color: orangered;
   font-weight: 600;
   margin: 0.4rem 0rem 0.4rem 0rem;
   text-emphasis-style: sesame;
