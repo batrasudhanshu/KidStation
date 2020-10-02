@@ -17,7 +17,7 @@ class LunchBoxes extends React.Component {
     return (
       <>
         <SearchFilter />
-        <HeaderBanner tag="Lunch Boxes" bannerImg={`url(${lunch_banner})`} />
+        <HeaderBanner tag="Lunch Boxes" bannerImg={`url(${lunch_banner})`} color='#f9f20c' />
         <SortCollection />
         <ProductCard data={lunch_boxes} />
       </>

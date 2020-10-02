@@ -17,7 +17,7 @@ class WaterBottles extends React.Component {
     return (
       <>
         <SearchFilter />
-        <HeaderBanner tag="Water Bottles" bannerImg={`url(${water_banner})`} />
+        <HeaderBanner tag="Water Bottles" color="#04f9c0" bannerImg={`url(${water_banner})`} />
         <SortCollection />
         <ProductCard data={water_bottles} />
       </>

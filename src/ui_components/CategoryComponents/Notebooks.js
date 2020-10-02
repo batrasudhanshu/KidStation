@@ -19,6 +19,7 @@ class Notebook extends React.Component {
         <HeaderBanner
           tag="Notebook & Register"
           bannerImg={`url(${notebook_banner})`}
+          color="#f3023e"
         />
         <SortCollection />
         <ProductCard data={notebooks} />

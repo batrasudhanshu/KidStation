@@ -17,7 +17,7 @@ class Pen extends React.Component {
     return (
       <>
         <SearchFilter />
-        <HeaderBanner tag="Pen & Pencil" bannerImg={`url(${pen_banner})`} />
+        <HeaderBanner tag="Pen & Pencil" color="#1616ec" bannerImg={`url(${pen_banner})`} />
         <SortCollection />
         <ProductCard data={pens} />
       </>
