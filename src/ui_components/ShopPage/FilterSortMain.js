@@ -26,8 +26,13 @@ class FilterSortMain extends Component {
     };
   }
   componentDidMount = () => {
+    console.log(this.state);
     this.props.fetchProductOnFilter(this.state);
   };
+  // componentWillUnmount = () => {
+  //   store.dispatch({ type: "FILTER_SORT", data: this.props.products });
+  // };
+
   handleChangeFilter = (event) => {
     this.setState({ filter: event.target.value });
   };
@@ -182,7 +187,7 @@ class FilterSortMain extends Component {
                     label="Sort by:"
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
-                    value={sort}
+                    value={sort || "default"}
                     onChange={this.handleChangeSort}
                   //   input={<Input />}
                   >
@@ -201,6 +206,11 @@ class FilterSortMain extends Component {
     );
   }
 }
+const mapStateToProps = (state, ownProps) => {
+  return {
+    products: state.products,
+  };
+};
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchProductOnFilter: (data) => {
@@ -208,4 +218,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
   };
 };
-export default connect(null, mapDispatchToProps)(FilterSortMain);
+export default connect(mapStateToProps, mapDispatchToProps)(FilterSortMain);

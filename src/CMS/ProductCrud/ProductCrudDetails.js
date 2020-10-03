@@ -44,20 +44,20 @@ class ProductCrudDetails extends React.Component {
   componentDidMount = () => {
     // debugger
     window.scrollTo(0, 0);
-    this.props.fetchCurrentProduct(this.props.match);
+    this.props.fetchCurrentProduct(this.props.match.url);
   };
   componentDidUpdate = (prevProps, prevState) => {
     if (this.props.uploadSuccess !== prevProps.uploadSuccess) {
       toast("Updated Succesfully ");
 
-      this.props.fetchCurrentProduct(this.props.match);
+      this.props.fetchCurrentProduct(this.props.match.url);
       if (this.props.currentProduct) {
-        const collection = this.props.currentProduct.collection.stringValue;
-        const desc = this.props.currentProduct.productdescription.stringValue;
-        const name = this.props.currentProduct.productname.stringValue;
-        const price = this.props.currentProduct.productprice.stringValue;
-        const bestselling = this.props.currentProduct.bestselling.booleanValue;
-        const coverIndex = this.props.currentProduct.coverIndex.integerValue;
+        const collection = this.props.currentProduct.collection;
+        const desc = this.props.currentProduct.productdescription;
+        const name = this.props.currentProduct.productname;
+        const price = this.props.currentProduct.productprice;
+        const bestselling = this.props.currentProduct.bestselling;
+        const coverIndex = this.props.currentProduct.coverIndex;
         return this.setState((state) => ({
           productdescription: desc,
           productname: name,
@@ -70,12 +70,12 @@ class ProductCrudDetails extends React.Component {
       }
     } else if (this.props !== prevProps) {
       if (this.props.currentProduct) {
-        const collection = this.props.currentProduct.collection.stringValue;
-        const desc = this.props.currentProduct.productdescription.stringValue;
-        const name = this.props.currentProduct.productname.stringValue;
-        const price = this.props.currentProduct.productprice.stringValue;
-        const bestselling = this.props.currentProduct.bestselling.booleanValue;
-        const coverIndex = this.props.currentProduct.coverIndex.integerValue;
+        const collection = this.props.currentProduct.collection;
+        const desc = this.props.currentProduct.productdescription;
+        const name = this.props.currentProduct.productname;
+        const price = this.props.currentProduct.productprice;
+        const bestselling = this.props.currentProduct.bestselling;
+        const coverIndex = this.props.currentProduct.coverIndex;
         return this.setState((state) => ({
           productdescription: desc,
           productname: name,
@@ -87,6 +87,9 @@ class ProductCrudDetails extends React.Component {
       }
     }
   };
+  componentWillUnmount = () => {
+    store.dispatch({ type: "CURRENT_PRODUCT", payload: null });
+  };
 
   deleteImage = (img, index) => {
     let { currentProduct } = this.props;
@@ -95,12 +98,12 @@ class ProductCrudDetails extends React.Component {
     var storage = firebase.storage();
     const FieldValue = firebase.firestore.FieldValue;
     // debugger;
-    if (index === parseInt(currentProduct.coverIndex.integerValue)) {
+    if (index === parseInt(currentProduct.coverIndex)) {
       alert("Please change cover image before deleting. ");
-    } else if (index >= parseInt(currentProduct.coverIndex.integerValue)) {
+    } else if (index >= parseInt(currentProduct.coverIndex)) {
       firestore
-        .collection(currentProduct.collection.stringValue)
-        .doc(currentProduct.productid.stringValue)
+        .collection(currentProduct.collection)
+        .doc(currentProduct.productid)
         .update({
           image_url: FieldValue.arrayRemove(img),
         });
@@ -112,11 +115,11 @@ class ProductCrudDetails extends React.Component {
       });
     } else {
       firestore
-        .collection(currentProduct.collection.stringValue)
-        .doc(currentProduct.productid.stringValue)
+        .collection(currentProduct.collection)
+        .doc(currentProduct.productid)
         .update({
           image_url: FieldValue.arrayRemove(img),
-          coverIndex: currentProduct.coverIndex.integerValue - 1,
+          coverIndex: currentProduct.coverIndex - 1,
         });
       let imageRef = storage.refFromURL(img);
       imageRef
@@ -161,8 +164,8 @@ class ProductCrudDetails extends React.Component {
     const { currentProduct } = this.props;
     var firestore = getFirestore();
     firestore
-      .collection(currentProduct.collection.stringValue)
-      .doc(currentProduct.productid.stringValue)
+      .collection(currentProduct.collection)
+      .doc(currentProduct.productid)
       .update({
         coverIndex: index,
       })
@@ -184,7 +187,7 @@ class ProductCrudDetails extends React.Component {
       disabled,
       coverIndex,
     } = this.state;
-
+    console.log(currentProduct);
     return (
       <>
         <ToastContainer
@@ -207,33 +210,24 @@ class ProductCrudDetails extends React.Component {
                 <h3>Uploaded Images</h3>
                 <div className="crud-details-uploaded-images">
                   {currentProduct &&
-                    currentProduct.image_url.arrayValue.values.map(
-                      (img, index) => {
-                        return (
-                          <div className="remove-image-block" key={index}>
-                            <input
-                              type="radio"
-                              name="coverIndex"
-                              onClick={() => this.handleChangeCover(index)}
-                              checked={index === coverIndex ? "checked" : ""}
-                            />
-                            <img
-                              src={img.stringValue}
-                              width="50px"
-                              height="50px"
-                              alt=""
-                            />
+                    currentProduct.image_url.map((img, index) => {
+                      return (
+                        <div className="remove-image-block" key={index}>
+                          <input
+                            type="radio"
+                            name="coverIndex"
+                            onClick={() => this.handleChangeCover(index)}
+                            checked={index === coverIndex ? "checked" : ""}
+                          />
+                          <img src={img} width="50px" height="50px" alt="" />
 
-                            <CancelIcon
-                              className={disabled ? "hideIcon" : ""}
-                              onClick={() =>
-                                this.deleteImage(img.stringValue, index)
-                              }
-                            />
-                          </div>
-                        );
-                      }
-                    )}
+                          <CancelIcon
+                            className={disabled ? "hideIcon" : ""}
+                            onClick={() => this.deleteImage(img, index)}
+                          />
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
               <div className="cms-progress-bar">

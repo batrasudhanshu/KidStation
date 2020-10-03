@@ -20,3 +20,18 @@
 .footer-second-points {
     margin: 1rem 0rem 1rem 1.7rem;
 }
+
+@media screen and (max-width: 480px) {
+    .shipping-content {
+        margin-left: 1.4rem !important;
+        margin-right: 1.4rem !important;
+    }
+
+    .shipping-points {
+        margin: 1rem 0rem 1rem 0rem;
+    }
+
+    .footer-second-points {
+        margin: 1rem 0rem 1rem 0rem;
+    }
+}

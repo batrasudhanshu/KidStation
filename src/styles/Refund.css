@@ -33,3 +33,21 @@
 .return-policy-detail ul {
     margin-top: 1rem;
 }
+
+@media screen and (max-width: 480px) {
+    .return-policy .return-policy-head {
+        margin-bottom: 1.2rem;
+        margin-left: 1.4rem;
+    }
+
+    .return-policy-detail {
+        margin-top: 1rem;
+        margin-left: 1.4rem;
+        margin-right: 1.4rem;
+    }
+
+    .refund-ques {
+        margin-left: 1.4rem;
+        margin-right: 1.4rem;
+    }
+}

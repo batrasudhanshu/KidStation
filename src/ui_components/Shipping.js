@@ -57,7 +57,7 @@ const Shipping = () => {
       {/* <HeaderBanner tag="Shipping Policy" bannerImg={`url(${shipping})`} /> */}
       <Grid container spacing={2}>
 
-        <Grid item xs={12}>
+        <Grid className="shipping-content" item xs={12}>
           <div >
             <span>
               We currently offer <strong>FREE DELIVERY</strong> on all orders Above Rs.499/-. You
@@ -123,7 +123,7 @@ const Shipping = () => {
           </div>
           <div>
             <p>
-              <span>*Note :</span>
+              <strong>*Note : </strong>
         In the event we have to cancel any items in your order, if you have paid using a credit card your credit card shall not be charged for the above cancelled item(s). If you have paid using a debit card/netbanking, your bank shall be instructed to refund the amount within 2 working days. However, the actual credit to your account will depend on your banks processing time, which may be 7-15 days. If you do not receive a credit within this time, please check with your bank and let us know if you face any issues with the same.
       </p>
           </div>

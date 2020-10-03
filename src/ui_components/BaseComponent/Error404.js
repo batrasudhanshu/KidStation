@@ -6,11 +6,20 @@ import { Link } from 'react-router-dom'
 import './styleComponents/Error404.css'
 let url = window.location.pathname.split("/");
 
-let searchProduct = url[2];
-const searchCollection = url[1];
+let searchCollection, searchProduct;
+let adminpage = url[1];
+if (adminpage == "admin") {
+  searchCollection = url[3];
+  searchProduct = url[4];
+} else {
+  searchCollection = url[1];
+  searchProduct = url[2];
+}
+
+// let searchProduct = url[2];
+// const searchCollection = url[1];
 console.log(searchCollection, searchProduct);
 const Error404 = () => {
-
   const popularSearch = [
     {
       label: "Erasers",
@@ -64,15 +73,12 @@ const Error404 = () => {
             </span>
           </div>
           <div className="popular-links">
-
-            <Breadcrumbs aria-label="breadcrumb" separator="|" >
+            <Breadcrumbs aria-label="breadcrumb" separator="|">
               {popularSearch.map((p) => (
                 <Link to={p.link}>
                   {p.label}
                 </Link>
               ))}
-
-
             </Breadcrumbs>
           </div>
         </div>
