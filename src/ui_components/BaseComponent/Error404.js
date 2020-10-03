@@ -20,6 +20,7 @@ if (adminpage == "admin") {
 // const searchCollection = url[1];
 console.log(searchCollection, searchProduct);
 const Error404 = () => {
+
   const popularSearch = [
     {
       label: "Erasers",
@@ -73,12 +74,15 @@ const Error404 = () => {
             </span>
           </div>
           <div className="popular-links">
-            <Breadcrumbs aria-label="breadcrumb" separator="|">
+
+            <Breadcrumbs aria-label="breadcrumb" separator="|" >
               {popularSearch.map((p) => (
                 <Link to={p.link}>
                   {p.label}
                 </Link>
               ))}
+
+
             </Breadcrumbs>
           </div>
         </div>

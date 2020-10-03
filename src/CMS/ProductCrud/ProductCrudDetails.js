@@ -23,7 +23,6 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import { Redirect } from "react-router-dom";
 import AuthNavbar from "../AuthUI/AuthNavbar";
 import { store } from "../..";
-import './styleComponents/ProductCrudDetails.css'
 class ProductCrudDetails extends React.Component {
   constructor(props) {
     super(props);
