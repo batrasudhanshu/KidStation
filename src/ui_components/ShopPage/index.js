@@ -31,7 +31,13 @@ class ShopPage extends React.Component {
         <SizeMe
           refreshRate={32}
           render={({ size }) => (
-            <div>{size.width < 552 ? <FilterSort page="shopPage" /> : <FilterSortMain page="shopPage" />}</div>
+            <div>
+              {size.width < 552 ? (
+                <FilterSort page="shopPage" />
+              ) : (
+                <FilterSortMain page="shopPage" />
+              )}
+            </div>
           )}
         />
         <ProductCard data={filtersort} />
@@ -42,7 +48,6 @@ class ShopPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.products,
     filtersort: state.filtersort,
   };
 };

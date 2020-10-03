@@ -114,9 +114,16 @@ export const fetchProduct = () => {
 
 export const fetchCurrentProduct = (url) => {
   return (dispatch, getState, { getFirestore, getFirebase }) => {
-    let collection = url.split("/")[1];
-    let productid = url.split("/")[2];
-
+    let collection, productid;
+    console.log(url);
+    let adminpage = url.split("/")[1];
+    if (adminpage == "admin") {
+      collection = url.split("/")[3];
+      productid = url.split("/")[4];
+    } else {
+      collection = url.split("/")[1];
+      productid = url.split("/")[2];
+    }
     const firestore = getFirestore();
     const docRef = firestore.collection(collection).doc(productid);
     docRef.get().then((snapshot) => {
