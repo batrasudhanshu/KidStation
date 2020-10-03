@@ -3,7 +3,7 @@ import "../../styles/home.css";
 import { Link } from "react-router-dom";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import CategoryButtons from "./CategoryButtons";
-import BrandSlider from "./Brands";
+// import BrandSlider from "./Brands";
 import BestSellingPhone from "./BestSellingPhone";
 import BestSelling from "./BestSelling";
 import { SizeMe } from "react-sizeme";
@@ -46,13 +46,13 @@ const Home = (props) => {
             {size.width < 600 ? (
               <BestSellingPhone products={props.products} />
             ) : (
-              <BestSelling products={props.products} />
-            )}
+                <BestSelling products={props.products} />
+              )}
           </div>
         )}
       />
 
-      <BrandSlider />
+      {/* <BrandSlider /> */}
     </div>
   );
 };
