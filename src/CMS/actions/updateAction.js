@@ -40,11 +40,11 @@ export const addImages = (product) => {
     imageArray.map((img, index) => {
       const uploadtask = storage
         .ref(
-          product.collection.stringValue +
+          product.collection +
             "/" +
-            product.productid.stringValue +
+            product.productid +
             "-" +
-            product.productname.stringValue +
+            product.productname +
             "/" +
             img.name
         )
@@ -65,11 +65,11 @@ export const addImages = (product) => {
         () => {
           storage
             .ref(
-              product.collection.stringValue +
+              product.collection +
                 "/" +
-                product.productid.stringValue +
+                product.productid +
                 "-" +
-                product.productname.stringValue
+                product.productname
             )
             .child(img.name)
             .getDownloadURL()
@@ -79,8 +79,8 @@ export const addImages = (product) => {
               if (imgurl.length === imageArray.length) {
                 if (coverIndex == null) {
                   firestore
-                    .collection(product.collection.stringValue)
-                    .doc(product.productid.stringValue)
+                    .collection(product.collection)
+                    .doc(product.productid)
                     .update({
                       image_url: FieldValue.arrayUnion.apply(null, imgurl),
                     })
@@ -94,11 +94,10 @@ export const addImages = (product) => {
                     });
                 } else {
                   firestore
-                    .collection(product.collection.stringValue)
-                    .doc(product.productid.stringValue)
+                    .collection(product.collection)
+                    .doc(product.productid)
                     .update({
-                      coverIndex:
-                        product.image_url.arrayValue.values.length + coverIndex,
+                      coverIndex: product.image_url.length + coverIndex,
                       image_url: FieldValue.arrayUnion.apply(null, imgurl),
                     })
                     .then(() => {
