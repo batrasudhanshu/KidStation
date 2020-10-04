@@ -15,10 +15,6 @@ if (adminpage == "admin") {
   searchCollection = url[1];
   searchProduct = url[2];
 }
-
-// let searchProduct = url[2];
-// const searchCollection = url[1];
-console.log(searchCollection, searchProduct);
 const Error404 = () => {
   const popularSearch = [
     {

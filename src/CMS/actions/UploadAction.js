@@ -115,7 +115,6 @@ export const fetchProduct = () => {
 export const fetchCurrentProduct = (url) => {
   return (dispatch, getState, { getFirestore, getFirebase }) => {
     let collection, productid;
-    console.log(url);
     let adminpage = url.split("/")[1];
     if (adminpage == "admin") {
       collection = url.split("/")[3];

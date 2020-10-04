@@ -26,12 +26,8 @@ class FilterSortMain extends Component {
     };
   }
   componentDidMount = () => {
-    console.log(this.state);
     this.props.fetchProductOnFilter(this.state);
   };
-  // componentWillUnmount = () => {
-  //   store.dispatch({ type: "FILTER_SORT", data: this.props.products });
-  // };
 
   handleChangeFilter = (event) => {
     this.setState({ filter: event.target.value });

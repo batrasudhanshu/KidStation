@@ -186,7 +186,6 @@ class ProductCrudDetails extends React.Component {
       disabled,
       coverIndex,
     } = this.state;
-    console.log(currentProduct);
     return (
       <>
         <ToastContainer
