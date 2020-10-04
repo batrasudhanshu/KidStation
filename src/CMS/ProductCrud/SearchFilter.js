@@ -97,7 +97,7 @@ class SearchFilter extends Component {
     ));
     return (
       <>
-        {width < 900 && (
+        {width < 1010 && (
           <div className="global-search">
             <div className="global-search-input">
               <Paper elevation={5} component="form">

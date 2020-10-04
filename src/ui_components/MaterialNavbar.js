@@ -143,7 +143,7 @@ class MaterialNavbar extends Component {
             <Grid align="center" item xs={12} sm={6} className="RightNavItems">
               <div style={{ position: "relative" }}>
                 {/* search filter for desktop screen */}
-                {width >= 890 ? <SearchFilterLarge /> : null}
+                {width >= 1010 ? <SearchFilterLarge /> : null}
                 <span className="NavItem1">
                   <Link style={{ textDecoration: "none" }} to="/track_order">
                     Track Order

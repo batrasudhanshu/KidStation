@@ -168,3 +168,18 @@
 
 
 }
+
+@media only screen and (min-width: 601px) and (max-width:621px) {
+    .RightNavItems div span {
+        padding: 0 !important;
+    }
+
+    .RightNavItems div .NavItem1 {
+        padding-right: 1.2rem !important;
+    }
+
+    .call-us {
+        padding-left: 1rem;
+        animation: blink 1s linear infinite;
+    }
+}
