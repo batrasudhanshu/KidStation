@@ -79,13 +79,17 @@ export const fetchProduct = () => {
     const firestore = getFirestore();
     let allcollection = [
       "bags",
-      "markers",
       "lunch_boxes",
       "water_bottles",
       "geometry_boxes",
       "pens",
       "notebooks",
       "erasers",
+      "folders",
+      "book_marks",
+      "giftitems",
+      "collectables",
+      "key_chains",
       "end",
     ];
     var data = [];
@@ -95,7 +99,7 @@ export const fetchProduct = () => {
         .get()
         .then((snapshot) => {
           dispatch({ type: "ALL_PRODUCT", data: [] });
-          if (item === allcollection[8]) {
+          if (item === allcollection[12]) {
             dispatch({ type: "ALL_PRODUCT", data: data });
             dispatch({ type: "SEARCH", data: data });
             dispatch({ type: "FILTER_SORT", data: data });

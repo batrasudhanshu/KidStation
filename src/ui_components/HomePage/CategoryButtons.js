@@ -41,9 +41,9 @@ const images = [
   },
   {
     url: marker_thumbnail,
-    title: "Markers",
+    title: "Folders",
     width: "33.3%",
-    link: "/markers",
+    link: "/folders",
   },
   {
     url: kits_thumbnail,
@@ -65,10 +65,28 @@ const images = [
   },
   {
     url: bestselling_thumbnail,
-    title: "Best - Selling",
+    title: "Key Chains",
     width: "33.3%",
-    link: "/bestselling",
+    link: "/key_chains",
   },
+  {
+    url: bestselling_thumbnail,
+    title: "Collectables",
+    width: "33.3%",
+    link: "/collectables",
+  },
+  {
+    url: bestselling_thumbnail,
+    title: "Sticky Notes, book_marks",
+    width: "33.3%",
+    link: "/book_marks",
+  },
+  {
+    url: bestselling_thumbnail,
+    title: "Gift Items",
+    width: "33.3%",
+    link: "/giftitems",
+  }
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -143,8 +161,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     fontSize: "1.7rem",
     fontWeight: "600",
-    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
-      theme.spacing(1) + 6
+    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6
       }px`,
   },
   imageMarked: {

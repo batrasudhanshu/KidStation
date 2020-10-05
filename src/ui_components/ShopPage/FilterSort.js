@@ -60,10 +60,14 @@ class FilterSort extends Component {
       "lunch_boxes",
       "water_bottles",
       "pens",
-      "markers",
+      "folders",
       "notebooks",
       "geometry_boxes",
       "bags",
+      "key_chains",
+      "giftitems",
+      "collectables",
+      "book_marks"
     ];
     return (
       <div>

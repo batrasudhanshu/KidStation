@@ -35,9 +35,13 @@ import Eraser from "../src/ui_components/CategoryComponents/Erasers";
 import Notebook from "../src/ui_components/CategoryComponents/Notebooks";
 import Bag from "./ui_components/CategoryComponents/Bags";
 import Pen from "../src/ui_components/CategoryComponents/Pens";
+import Folder from "../src/ui_components/CategoryComponents/Folders";
 import Water from "../src/ui_components/CategoryComponents/WaterBottles";
 import Lunch from "../src/ui_components/CategoryComponents/LunchBoxes";
-import Marker from "../src/ui_components/CategoryComponents/Markers";
+import GiftItem from "../src/ui_components/CategoryComponents/GiftItems";
+import KeyChain from "../src/ui_components/CategoryComponents/KeyChains";
+import Collectable from "../src/ui_components/CategoryComponents/Collectables";
+import BookMark from "../src/ui_components/CategoryComponents/BookMarks";
 import Geometry from "../src/ui_components/CategoryComponents/GeometryBoxes";
 
 //ui_components -> ProductPage links
@@ -169,19 +173,40 @@ class App extends Component {
               />
               <Route
                 exact
+                path="/collectables"
+                render={() => <Collectable products={products} />}
+              />
+              <Route
+                exact
+                path="/book_marks"
+                render={() => <BookMark products={products} />}
+              />
+              <Route
+                exact
+                path="/key_chains"
+                render={() => <KeyChain products={products} />}
+              />
+              <Route
+                exact
+                path="/giftitems"
+                render={() => <GiftItem products={products} />}
+              />
+              <Route
+                exact
                 path="/pens"
                 render={() => <Pen products={products} />}
               />
               <Route
                 exact
-                path="/markers"
-                render={() => <Marker products={products} />}
+                path="/folders"
+                render={() => <Folder products={products} />}
               />
               <Route
                 exact
                 path="/geometry_boxes"
                 render={() => <Geometry products={products} />}
               />
+
               <Route
                 exact
                 path="/how_to_order"
@@ -193,10 +218,14 @@ class App extends Component {
               <Route exact path="/erasers/:id" component={ProductPage} />
               <Route exact path="/lunch_boxes/:id" component={ProductPage} />
               <Route exact path="/water_bottles/:id" component={ProductPage} />
-              <Route exact path="/markers/:id" component={ProductPage} />
+              <Route exact path="/folders/:id" component={ProductPage} />
               <Route exact path="/notebooks/:id" component={ProductPage} />
               <Route exact path="/geometry_boxes/:id" component={ProductPage} />
               <Route exact path="/bags/:id" component={ProductPage} />
+              <Route exact path="/key_chains/:id" component={ProductPage} />
+              <Route exact path="/collectables/:id" component={ProductPage} />
+              <Route exact path="/book_marks/:id" component={ProductPage} />
+              <Route exact path="/giftitems/:id" component={ProductPage} />
               <Route
                 exact
                 path="/"

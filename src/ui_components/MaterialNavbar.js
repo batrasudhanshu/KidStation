@@ -80,14 +80,18 @@ class MaterialNavbar extends Component {
       { name: "Contact Us", link: "/contact" },
     ];
     const CategoriesList = [
-      { name: "Eraser & Sharpner", link: "/erasers" },
-      { name: "Lunch Box", link: "/lunch_boxes" },
-      { name: "Water Bottle", link: "/water_bottles" },
-      { name: "Pen & Pencil", link: "/pens" },
-      { name: "Sketch - Pen & Marker", link: "/markers" },
-      { name: "Notebook", link: "/notebooks" },
-      { name: "Geometry Boxes", link: "/geometry_boxes" },
+      { name: "Erasers & Sharpners", link: "/erasers" },
+      { name: "Lunch Boxes", link: "/lunch_boxes" },
+      { name: "Bottles & Sippers", link: "/water_bottles" },
+      { name: "Pen, Pencil & Markers", link: "/pens" },
+      { name: "Folders", link: "/markers" },
+      { name: "Notebook & Diary", link: "/notebooks" },
+      { name: "Key Chains & Luggage Tags", link: "/key_chains" },
+      { name: "Collectables & Storage Boxes", link: "/collectables" },
+      { name: "Stationery Organizers", link: "/geometry_boxes" },
       { name: "Bags", link: "/bags" },
+      { name: "Gift Items", link: "/giftitems" },
+      { name: "Sticky Notes & book_marks", link: "/book_marks" }
     ];
     const categoriesNav = CategoriesList.map((itemname, i) => {
       return (
