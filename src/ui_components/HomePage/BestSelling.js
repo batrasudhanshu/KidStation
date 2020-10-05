@@ -22,8 +22,7 @@ class BestSelling extends Component {
     let bestselling =
       products &&
       products.filter((product) => {
-        // console.log();
-        return product && product.bestselling;
+        return product && product.bestselling.booleanValue;
       });
     bestselling = bestselling.slice(0, 8);
     const nextFun = () => {
