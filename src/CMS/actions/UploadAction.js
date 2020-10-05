@@ -13,12 +13,12 @@ export const uploadAction = (productData) => {
       const uploadtask = storage
         .ref(
           productData.collection +
-          "/" +
-          productData.productid +
-          "-" +
-          productData.productname +
-          "/" +
-          img.name
+            "/" +
+            productData.productid +
+            "-" +
+            productData.productname +
+            "/" +
+            img.name
         )
         .put(img);
       uploadtask.on(
@@ -38,10 +38,10 @@ export const uploadAction = (productData) => {
           storage
             .ref(
               productData.collection +
-              "/" +
-              productData.productid +
-              "-" +
-              productData.productname
+                "/" +
+                productData.productid +
+                "-" +
+                productData.productname
             )
             .child(img.name)
             .getDownloadURL()
@@ -105,7 +105,7 @@ export const fetchProduct = () => {
             dispatch({ type: "FILTER_SORT", data: data });
           }
           snapshot.forEach((doc) => {
-            if (item === allcollection[8]) {
+            if (item === allcollection[12]) {
             } else data.push(doc._document.proto.fields);
           });
         })

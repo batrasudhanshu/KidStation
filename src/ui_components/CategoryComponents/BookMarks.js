@@ -8,30 +8,35 @@ import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import SortCollection from "../BaseComponent/SortCollection";
 
 class BookMark extends React.Component {
-    componentDidMount() {
-        window.scrollTo(0, 0);
-    }
-    render() {
-        const { book_marks } = this.props;
-        return (
-            <>
-                <SearchFilter />
-                <HeaderBanner tag="Sticky Notes & BookMarks" bannerImg={`url(${bags_banner})`} />
-                <SortCollection />
-                <ProductCard data={book_marks} />
-            </>
-        );
-    }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  render() {
+    const { book_marks } = this.props;
+    return (
+      <>
+        <SearchFilter />
+        <HeaderBanner
+          tag="Sticky Notes & BookMarks"
+          bannerImg={`url(${bags_banner})`}
+        />
+        <SortCollection />
+        <ProductCard data={book_marks} />
+      </>
+    );
+  }
 }
 
 const mapStateToProps = (state) => {
-    let bookMarkData = [];
-    state.products.length !== 0 &&
-        state.products.map((product, index) => {
-            product && product.collection.stringValue === "book_marks" && bookMarkData.push(product);
-        });
-    return {
-        book_marks: bookMarkData,
-    };
+  let bookMarkData = [];
+  state.products.length !== 0 &&
+    state.products.map((product, index) => {
+      product &&
+        product.collection.stringValue === "book_marks" &&
+        bookMarkData.push(product);
+    });
+  return {
+    book_marks: bookMarkData,
+  };
 };
 export default connect(mapStateToProps)(BookMark);
