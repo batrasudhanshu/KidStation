@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
     let collectableData = [];
     state.products.length !== 0 &&
         state.products.map((product, index) => {
-            product.collection.stringValue === "collectables" && collectableData.push(product);
+            product && product.collection.stringValue === "collectables" && collectableData.push(product);
         });
     return {
         collectables: collectableData,

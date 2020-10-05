@@ -103,14 +103,15 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     padd: "1rem",
     height: 150,
-    [theme.breakpoints.down("xs")]: {
-      "&:nth-child(9)": {
-        width: "100% !important",
-      },
-      width: "50% !important",
-      //   minWidth: '50% !important', // Overrides inline-style
-      height: 100,
-    },
+    width: "50% !important",
+    // [theme.breakpoints.down("xs")]: {
+    //   "&:nth-child(12)": {
+    //     width: "50% !important",
+    //   },
+    //   width: "50% !important",
+    //   //   minWidth: '50% !important', // Overrides inline-style
+    //   height: 100,
+    // },
     "&:hover, &$focusVisible": {
       zIndex: 1,
       "& $imageBackdrop": {

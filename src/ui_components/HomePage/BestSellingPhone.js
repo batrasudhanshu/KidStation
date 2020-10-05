@@ -6,7 +6,7 @@ import './styleComponents/BestSellingPhone.css'
 
 const BestSellingPhone = ({ products }) => {
   let bestselling = products.filter((product) => {
-    return product.bestselling.booleanValue;
+    return product && product.bestselling.booleanValue;
   });
   bestselling = bestselling.slice(0, 4);
   return (

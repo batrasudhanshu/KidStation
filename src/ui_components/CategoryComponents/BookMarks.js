@@ -16,7 +16,7 @@ class BookMark extends React.Component {
         return (
             <>
                 <SearchFilter />
-                <HeaderBanner tag="Sticky Notes & book_marks" bannerImg={`url(${bags_banner})`} />
+                <HeaderBanner tag="Sticky Notes & BookMarks" bannerImg={`url(${bags_banner})`} />
                 <SortCollection />
                 <ProductCard data={book_marks} />
             </>
@@ -25,13 +25,13 @@ class BookMark extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    let bookmarkData = [];
+    let bookMarkData = [];
     state.products.length !== 0 &&
         state.products.map((product, index) => {
-            product.collection.stringValue === "book_marks" && bookmarkData.push(product);
+            product && product.collection.stringValue === "book_marks" && bookMarkData.push(product);
         });
     return {
-        book_marks: bookmarkData,
+        book_marks: bookMarkData,
     };
 };
 export default connect(mapStateToProps)(BookMark);

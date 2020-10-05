@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
     let giftItemData = [];
     state.products.length !== 0 &&
         state.products.map((product, index) => {
-            product.collection.stringValue === "giftitems" && giftItemData.push(product);
+            product && product.collection.stringValue === "giftitems" && giftItemData.push(product);
         });
     return {
         giftitems: giftItemData,
