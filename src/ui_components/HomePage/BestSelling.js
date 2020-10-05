@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import './styleComponents/BestSelling.css'
+import "./styleComponents/BestSelling.css";
 class BestSelling extends Component {
   render() {
     const { products } = this.props;
@@ -22,7 +22,8 @@ class BestSelling extends Component {
     let bestselling =
       products &&
       products.filter((product) => {
-        return product.bestselling.booleanValue;
+        // console.log();
+        return product && product.bestselling;
       });
     bestselling = bestselling.slice(0, 8);
     const nextFun = () => {
@@ -35,14 +36,9 @@ class BestSelling extends Component {
     return (
       <>
         <div className="best-selling">
-          <div
-
-          >
+          <div>
             <hr />
-            <div className="best-title"
-            >
-              BEST SELLING
-            </div>
+            <div className="best-title">BEST SELLING</div>
             <hr />
             <ChevronLeftIcon
               onClick={prevFun}
@@ -52,45 +48,42 @@ class BestSelling extends Component {
             <Slider ref={(c) => (this.slider = c)} {...settings}>
               {bestselling.length !== 0
                 ? bestselling.map((best) => (
-                  <Grid item>
-                    <Link
-                      to={
-                        "/" +
-                        best.collection.stringValue +
-                        "/" +
-                        best.productid.stringValue
-                      }
-                    >
-                      <div
-                        className="best-img"
-
+                    <Grid item>
+                      <Link
+                        to={
+                          "/" +
+                          best.collection.stringValue +
+                          "/" +
+                          best.productid.stringValue
+                        }
                       >
-                        <img
-                          className="home-bestselling-img"
-                          src={
-                            best.image_url.arrayValue.values[
-                              best.coverIndex.integerValue
-                            ].stringValue
-                          }
-                          alt="Best-selling"
-                          // width="100%"
-                          height="100%"
+                        <div className="best-img">
+                          <img
+                            className="home-bestselling-img"
+                            src={
+                              best.image_url.arrayValue.values[
+                                best.coverIndex.integerValue
+                              ].stringValue
+                            }
+                            alt="Best-selling"
+                            // width="100%"
+                            height="100%"
+                          />
+                        </div>
+                      </Link>
+                    </Grid>
+                  ))
+                : [0, 1, 2, 3].map((skeleton) => (
+                    <Grid item xs={6}>
+                      <div>
+                        <Skeleton
+                          variant={"rect"}
+                          width="100%"
+                          height="15rem"
                         />
                       </div>
-                    </Link>
-                  </Grid>
-                ))
-                : [0, 1, 2, 3].map((skeleton) => (
-                  <Grid item xs={6}>
-                    <div>
-                      <Skeleton
-                        variant={"rect"}
-                        width="100%"
-                        height="15rem"
-                      />
-                    </div>
-                  </Grid>
-                ))}
+                    </Grid>
+                  ))}
             </Slider>
             <ChevronRightIcon
               onClick={nextFun}
@@ -98,15 +91,8 @@ class BestSelling extends Component {
               fontSize="large"
             />
           </div>
-          <div
-            className="best-view-more"
-
-          >
-            <Link
-              className="view-more-link"
-
-              to="/bestselling"
-            >
+          <div className="best-view-more">
+            <Link className="view-more-link" to="/bestselling">
               View more
             </Link>
           </div>
