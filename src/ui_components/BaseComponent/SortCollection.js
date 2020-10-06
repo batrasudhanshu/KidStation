@@ -21,7 +21,7 @@ class SortCollection extends Component {
     const { sort } = this.state;
     const { sortType } = this.props;
     return (
-      <div className="collection-sort" style={{ float: "right" }}>
+      <div className="collection-sort" style={{ float: "right", marginRight: "0.9rem" }}>
         <div className="filter-sort-form-sortby">
           <FormControl variant="outlined">
             <InputLabel

@@ -79,18 +79,19 @@ class MaterialNavbar extends Component {
       { name: "Track your Order", link: "/track_order" },
       { name: "Contact Us", link: "/contact" },
     ];
+
     const CategoriesList = [
-      { name: "Erasers & Sharpners", link: "/erasers" },
-      { name: "Lunch Boxes", link: "/lunch_boxes" },
-      { name: "Bottles & Sippers", link: "/water_bottles" },
-      { name: "Pen, Pencil & Markers", link: "/pens" },
-      { name: "Folders", link: "/markers" },
-      { name: "Notebook & Diary", link: "/notebooks" },
-      { name: "Key Chains & Luggage Tags", link: "/key_chains" },
-      { name: "Collectables & Storage Boxes", link: "/collectables" },
-      { name: "Stationery Organizers", link: "/geometry_boxes" },
       { name: "Bags", link: "/bags" },
+      { name: "Bottles & Sippers", link: "/water_bottles" },
+      { name: "Collectables & Storage Boxes", link: "/collectables" },
+      { name: "Erasers & Sharpners", link: "/erasers" },
+      { name: "Folders", link: "/folders" },
       { name: "Gift Items", link: "/giftitems" },
+      { name: "Key Chains & Luggage Tags", link: "/key_chains" },
+      { name: "Lunch Boxes", link: "/lunch_boxes" },
+      { name: "Notebook & Diary", link: "/notebooks" },
+      { name: "Pen, Pencil & Markers", link: "/pens" },
+      { name: "Stationery Organizers", link: "/geometry_boxes" },
       { name: "Sticky Notes & book_marks", link: "/book_marks" }
     ];
     const categoriesNav = CategoriesList.map((itemname, i) => {

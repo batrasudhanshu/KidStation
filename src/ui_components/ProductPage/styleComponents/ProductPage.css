@@ -60,7 +60,7 @@
     justify-content: center;
     align-items: center;
     height: 53.88px;
-    background-color: #4fce5d;
+    background-color: #c13400eb;
     border-radius: 2rem;
     /* margin-left: 2.5rem; */
 }
@@ -200,8 +200,12 @@ a:active {
         padding-left: 1.4rem;
     }
 
-    .pro-main-details div {
-        margin-left: 1.4rem;
+    .pro-main-details {
+        margin-left: 1.2rem !important;
+    }
+
+    .pro-main-details .pro-main-details-inner {
+        margin-left: 1.6rem;
     }
 
 }

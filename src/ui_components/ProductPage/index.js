@@ -179,7 +179,7 @@ class ProductPage extends Component {
                   </Grid>
                   <Grid container xs={12} sm={6} spacing={3}>
                     <Grid className="pro-main-details" item xs={24} sm={12}>
-                      <div>
+                      <div className="pro-main-details-inner">
                         <div
                           className="prod-main-price"
 

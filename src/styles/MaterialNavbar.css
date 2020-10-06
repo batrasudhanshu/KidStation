@@ -128,8 +128,9 @@
 }
 
 .call-us i {
-    vertical-align: sub;
-    color: orangered
+    vertical-align: middle;
+    color: orangered;
+    padding-bottom: 0.2rem;
 }
 
 .call-us span {
@@ -148,6 +149,16 @@
 @media only screen and (max-width: 480px) {
     .fulllogo {
         padding-right: 1.5rem;
+    }
+
+    .call-us {
+        animation: none;
+    }
+
+    .custom_navbar .MuiGrid-container .MuiGrid-item .NavMenuIcon {
+        padding-left: 1.5rem;
+        width: 1.5em;
+        height: 1.5em;
     }
 }
 

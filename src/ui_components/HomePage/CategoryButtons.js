@@ -5,13 +5,15 @@ import Typography from "@material-ui/core/Typography";
 import Pens_thumbnail from "../../images/pens_thumbnail.JP2";
 import lunch_thumbnail from "../../images/lunch_thumbnail.JP2";
 import water_thumbnail from "../../images/water_thumbnail.JP2";
-import marker_thumbnail from "../../images/marker_thumbnail.JP2";
+import folder_thumbnail from "../../images/folder_thumbnail.png";
 import eraser_thumbnail from "../../images/eraser_thumbnail.JP2";
 import bestselling_thumbnail from "../../images/bestselling_thumbnail.JP2";
 import kits_thumbnail from "../../images/kits_thumbnail.JP2";
-import bags_thumbnail from "../../images/bags_thumbnail.JP2";
+import bags_thumbnail from "../../images/bags_thumbnail.jpg";
 import notebooks_thumbnail from "../../images/notebooks_thumbnail.JP2";
-
+import keychains_thumbnail from "../../images/keychains_thumbnail.jpg";
+import sticky_thumbnail from "../../images/sticky_thumbnail.jpg";
+import collectable_thumbnail from "../../images/collectables_thumbnail.jpg"
 import { Link } from "react-router-dom";
 
 const images = [
@@ -40,7 +42,7 @@ const images = [
     link: "/lunch_boxes",
   },
   {
-    url: marker_thumbnail,
+    url: folder_thumbnail,
     title: "Folders",
     width: "33.3%",
     link: "/folders",
@@ -64,20 +66,20 @@ const images = [
     link: "/bags",
   },
   {
-    url: bestselling_thumbnail,
+    url: keychains_thumbnail,
     title: "Key Chains",
     width: "33.3%",
     link: "/key_chains",
   },
   {
-    url: bestselling_thumbnail,
-    title: "Collectables",
+    url: collectable_thumbnail,
+    title: "Collectables, Storage Boxes",
     width: "33.3%",
     link: "/collectables",
   },
   {
-    url: bestselling_thumbnail,
-    title: "Sticky Notes, book_marks",
+    url: sticky_thumbnail,
+    title: "Sticky Notes, BookMarks",
     width: "33.3%",
     link: "/book_marks",
   },

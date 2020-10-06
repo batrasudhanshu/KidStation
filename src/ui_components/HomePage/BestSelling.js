@@ -18,6 +18,12 @@ class BestSelling extends Component {
       slidesToShow: 4,
       slidesToScroll: 1,
       arrows: false,
+      // responsive: [
+      //   breakpoint: 
+      //   settings: {
+      //     slidesToShow: 4
+      //   }
+      // ],
     };
     let bestselling =
       products &&
@@ -47,42 +53,42 @@ class BestSelling extends Component {
             <Slider ref={(c) => (this.slider = c)} {...settings}>
               {bestselling.length !== 0
                 ? bestselling.map((best) => (
-                    <Grid item>
-                      <Link
-                        to={
-                          "/" +
-                          best.collection.stringValue +
-                          "/" +
-                          best.productid.stringValue
-                        }
-                      >
-                        <div className="best-img">
-                          <img
-                            className="home-bestselling-img"
-                            src={
-                              best.image_url.arrayValue.values[
-                                best.coverIndex.integerValue
-                              ].stringValue
-                            }
-                            alt="Best-selling"
-                            // width="100%"
-                            height="100%"
-                          />
-                        </div>
-                      </Link>
-                    </Grid>
-                  ))
-                : [0, 1, 2, 3].map((skeleton) => (
-                    <Grid item xs={6}>
-                      <div>
-                        <Skeleton
-                          variant={"rect"}
-                          width="100%"
-                          height="15rem"
+                  <Grid item>
+                    <Link
+                      to={
+                        "/" +
+                        best.collection.stringValue +
+                        "/" +
+                        best.productid.stringValue
+                      }
+                    >
+                      <div className="best-img">
+                        <img
+                          className="home-bestselling-img"
+                          src={
+                            best.image_url.arrayValue.values[
+                              best.coverIndex.integerValue
+                            ].stringValue
+                          }
+                          alt="Best-selling"
+                          // width="100%"
+                          height="100%"
                         />
                       </div>
-                    </Grid>
-                  ))}
+                    </Link>
+                  </Grid>
+                ))
+                : [0, 1, 2, 3].map((skeleton) => (
+                  <Grid item xs={6}>
+                    <div>
+                      <Skeleton
+                        variant={"rect"}
+                        width="100%"
+                        height="15rem"
+                      />
+                    </div>
+                  </Grid>
+                ))}
             </Slider>
             <ChevronRightIcon
               onClick={nextFun}
