@@ -105,7 +105,7 @@ class SearchFilter extends Component {
                   autoComplete="off"
                   fullWidth={"true"}
                   onChange={this.handleChange}
-                  placeholder="What are you looking for ?"
+                  placeholder="What are you looking for?"
                   color={"primary"}
                   value={searchInput}
                   endAdornment={
