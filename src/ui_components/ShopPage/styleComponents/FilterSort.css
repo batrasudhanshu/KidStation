@@ -13,6 +13,7 @@
 
 .filter-sort-form-sortby>div {
     /* width: 12rem; */
+    margin-top: 1rem;
     display: inline-block !important;
     /* float: left; */
 }
@@ -62,6 +63,11 @@
 }
 
 @media only screen and (max-width: 480px) {
+    .filter-sort-form-sortby>div {
+        /* width: 12rem; */
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
     .filter-sort-btn {
         float: right;
         font-size: 1.5rem !important;

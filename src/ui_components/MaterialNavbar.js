@@ -13,7 +13,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import fulllogo from "../../src/images/Fulllogo.svg";
 import SearchFilterLarge from "../CMS/ProductCrud/SearchFilterLarge";
-import '../styles/MaterialNavbar.css';
+import "../styles/MaterialNavbar.css";
 
 class MaterialNavbar extends Component {
   state = {
@@ -92,12 +92,11 @@ class MaterialNavbar extends Component {
       { name: "Notebook & Diary", link: "/notebooks" },
       { name: "Pen, Pencil & Markers", link: "/pens" },
       { name: "Stationery Organizers", link: "/geometry_boxes" },
-      { name: "Sticky Notes & book_marks", link: "/book_marks" }
+      { name: "Sticky Notes & book_marks", link: "/book_marks" },
     ];
     const categoriesNav = CategoriesList.map((itemname, i) => {
       return (
         <>
-
           <Collapse in={this.state.categorytoggle} timeout="auto">
             <div
               className={
@@ -123,7 +122,6 @@ class MaterialNavbar extends Component {
               </ListItem>
             </div>
           </Collapse>
-
         </>
       );
     });
@@ -150,15 +148,15 @@ class MaterialNavbar extends Component {
                 {/* search filter for desktop screen */}
                 {width >= 1010 ? <SearchFilterLarge /> : null}
                 <span className="NavItem1">
-                  <Link style={{ textDecoration: "none" }} to="/track_order">
+                  <NavLink style={{ textDecoration: "none" }} to="/track_order">
                     Track Order
-                </Link>
+                  </NavLink>
                 </span>
                 <span>
-
-                  <a className="call-us" href="tel:9999089262"><i class="fa fa-phone  fa-2x" aria-hidden="true"></i><span>+91 9999089262</span></a>
-
-
+                  <a className="call-us" href="tel:9999089262">
+                    <i class="fa fa-phone  fa-2x" aria-hidden="true"></i>
+                    <span>+91 9999089262</span>
+                  </a>
                 </span>
               </div>
             </Grid>
@@ -209,15 +207,15 @@ class MaterialNavbar extends Component {
                             }
                           />
                         ) : (
-                            <ExpandMoreIcon
-                              fontSize="large"
-                              className={
-                                index === this.state.activeNavIndex
-                                  ? ""
-                                  : "sidedrawer"
-                              }
-                            />
-                          )
+                          <ExpandMoreIcon
+                            fontSize="large"
+                            className={
+                              index === this.state.activeNavIndex
+                                ? ""
+                                : "sidedrawer"
+                            }
+                          />
+                        )
                       ) : null}
                     </ListItem>
                   </div>

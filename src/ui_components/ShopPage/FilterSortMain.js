@@ -10,7 +10,7 @@ import { fetchProductOnFilter } from "../../CMS/actions/fetchProductAction";
 import DoneIcon from "@material-ui/icons/Done";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import './styleComponents/FilterSort.css';
+import "./styleComponents/FilterSort.css";
 
 class FilterSortMain extends Component {
   constructor(props) {
@@ -77,7 +77,7 @@ class FilterSortMain extends Component {
       "key_chains",
       "giftitems",
       "collectables",
-      "book_marks"
+      "book_marks",
     ];
     const showCSS = {
       opacity: "1",
@@ -105,8 +105,8 @@ class FilterSortMain extends Component {
             {showFilSort ? (
               <ExpandLessIcon fontSize="large" />
             ) : (
-                <ExpandMoreIcon fontSize="large" />
-              )}
+              <ExpandMoreIcon fontSize="large" />
+            )}
           </Button>
         </div>
         <div style={{ clear: "both" }}></div>
@@ -134,14 +134,14 @@ class FilterSortMain extends Component {
                         style={
                           filter.includes(item)
                             ? {
-                              backgroundColor: "orangered",
-                              color: "whitesmoke",
-                              fontSize: "1.5rem",
-                            }
+                                backgroundColor: "orangered",
+                                color: "whitesmoke",
+                                fontSize: "1.5rem",
+                              }
                             : {
-                              backgroundColor: "lightgray",
-                              fontSize: "1.5rem",
-                            }
+                                backgroundColor: "lightgray",
+                                fontSize: "1.5rem",
+                              }
                         }
                         key={item}
                         value={item}
@@ -163,12 +163,12 @@ class FilterSortMain extends Component {
                   filter.length === 0 || type === "bestSellingPage"
                     ? { opacity: "0", cursor: "default", fontSize: "1.5rem" }
                     : bestselling
-                      ? {
+                    ? {
                         backgroundColor: "#3f51b5",
                         opacity: 1,
                         fontSize: "1.5rem",
                       }
-                      : {
+                    : {
                         backgroundColor: "#A9CCE3",
                         opacity: 1,
                         fontSize: "1.5rem",
@@ -193,7 +193,7 @@ class FilterSortMain extends Component {
                     id="demo-simple-select-outlined"
                     value={sort || "default"}
                     onChange={this.handleChangeSort}
-                  //   input={<Input />}
+                    //   input={<Input />}
                   >
                     <MenuItem value={"default"}>Default</MenuItem>
                     <MenuItem value={"productname"}>Name</MenuItem>
