@@ -143,6 +143,7 @@
 }
 
 .NavItem1 {
+    position: relative;
     border-right: 3px solid black;
 }
 
