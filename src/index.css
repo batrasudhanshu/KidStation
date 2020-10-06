@@ -11,7 +11,7 @@ body {
 
 ::selection {
   color: rgb(255, 255, 255);
-  background: rgba(253, 69, 0, 0.7);
+  background: rgba(245, 153, 78, 0.9);
 }
 
 html {

@@ -97,8 +97,8 @@ Image credits: unsplash.com
 .btn.btn-hero:hover,
 .btn.btn-hero:focus {
   color: #f5f5f5;
-  background-color: #c13400eb;
-  border-color: #c13300f6;
+  background-color: orangered;
+  border-color: #f58f6af6;
   outline: none;
   margin: 20px auto;
 }

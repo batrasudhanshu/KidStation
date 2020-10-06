@@ -1102,3 +1102,26 @@ input[type="checkbox"] {
 }
 
 /* how to order */
+/* .sidenavbar .MuiPaper-root div:nth-child(5) span {
+  -webkit-animation: neon5 1.5s ease-in-out infinite alternate;
+  animation: neon5 1.5s ease-in-out infinite alternate;
+}
+
+.sidenavbar .MuiPaper-root div:nth-child(5) span:hover {
+  color: #FF9900;
+  font-family: Audiowide;
+}
+
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+  }
+
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  }
+} */
+
+category_buttons div button a span:nth-child(3):hover .MuiTypography-root {
+  background-color: #ff450096 !important;
+}

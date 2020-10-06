@@ -138,7 +138,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: 'cornsilk',
+    color: 'whitesmoke',
+    fontWeight: 700,
+
+
   },
   imageSrc: {
     margin: "1rem 0.5rem 0rem 0.5rem",
@@ -164,6 +167,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     fontSize: "1.7rem",
     fontWeight: "600",
+    Color: "whitesmoke",
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6
       }px`,
   },
@@ -182,40 +186,42 @@ export default function CategoryButtons() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      {images.map((image) => (
-        <ButtonBase
-          focusRipple
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width,
-          }}
-        >
-          <Link to={image.link}>
-            <span
-              className={classes.imageSrc}
-              style={{
-                backgroundImage: `url(${image.url})`,
-              }}
-            />
+    <category_buttons>
+      <div className={classes.root}>
+        {images.map((image) => (
+          <ButtonBase
+            focusRipple
+            key={image.title}
+            className={classes.image}
+            focusVisibleClassName={classes.focusVisible}
+            style={{
+              width: image.width,
+            }}
+          >
+            <Link to={image.link}>
+              <span
+                className={classes.imageSrc}
+                style={{
+                  backgroundImage: `url(${image.url})`,
+                }}
+              />
 
-            <span className={classes.imageBackdrop} />
-            <span className={classes.imageButton}>
-              <Typography
-                component="span"
-                variant="subtitle1"
-                color="inherit"
-                className={classes.imageTitle}
-              >
-                {image.title}
-                <span className={classes.imageMarked} />
-              </Typography>
-            </span>
-          </Link>
-        </ButtonBase>
-      ))}
-    </div>
+              <span className={classes.imageBackdrop} />
+              <span className={classes.imageButton}>
+                <Typography
+                  component="span"
+                  variant="subtitle1"
+                  color="inherit"
+                  className={classes.imageTitle}
+                >
+                  {image.title}
+                  <span className={classes.imageMarked} />
+                </Typography>
+              </span>
+            </Link>
+          </ButtonBase>
+        ))}
+      </div>
+    </category_buttons>
   );
 }

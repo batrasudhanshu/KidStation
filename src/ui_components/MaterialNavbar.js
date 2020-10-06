@@ -207,15 +207,15 @@ class MaterialNavbar extends Component {
                             }
                           />
                         ) : (
-                          <ExpandMoreIcon
-                            fontSize="large"
-                            className={
-                              index === this.state.activeNavIndex
-                                ? ""
-                                : "sidedrawer"
-                            }
-                          />
-                        )
+                            <ExpandMoreIcon
+                              fontSize="large"
+                              className={
+                                index === this.state.activeNavIndex
+                                  ? ""
+                                  : "sidedrawer"
+                              }
+                            />
+                          )
                       ) : null}
                     </ListItem>
                   </div>
