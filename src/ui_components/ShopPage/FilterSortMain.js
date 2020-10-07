@@ -66,18 +66,18 @@ class FilterSortMain extends Component {
   render() {
     const { type, filter, sort, bestselling, showFilSort } = this.state;
     const filterNames = [
-      "erasers",
-      "lunch_boxes",
-      "water_bottles",
-      "pens",
-      "folders",
-      "notebooks",
-      "geometry_boxes",
-      "bags",
-      "key_chains",
-      "giftitems",
-      "collectables",
-      "book_marks",
+      { label: "Key Chains", value: "key_chains" },
+      { label: "", value: "erasers" },
+      { label: "", value: "lunch_boxes" },
+      { label: "", value: "water_bottles" },
+      { label: "", value: "pens" },
+      { label: "", value: "folders" },
+      { label: "", value: "notebooks" },
+      { label: "", value: "geometry_boxes" },
+      { label: "", value: "giftitems" },
+      { label: "", value: "bags" },
+      { label: "", value: "collectables" },
+      { label: "", value: "book_marks" },
     ];
     const showCSS = {
       opacity: "1",
@@ -105,8 +105,8 @@ class FilterSortMain extends Component {
             {showFilSort ? (
               <ExpandLessIcon fontSize="large" />
             ) : (
-                <ExpandMoreIcon fontSize="large" />
-              )}
+              <ExpandMoreIcon fontSize="large" />
+            )}
           </Button>
         </div>
         <div style={{ clear: "both" }}></div>
@@ -121,7 +121,7 @@ class FilterSortMain extends Component {
                   {filterNames.map((item, i) => (
                     <Grid
                       style={
-                        (i === 4) | (i === 12)
+                        (i === 3) | ((i === 11) | (i === 7))
                           ? { borderRight: "0px solid black" }
                           : { borderRight: "1px solid black" }
                       }
@@ -130,24 +130,24 @@ class FilterSortMain extends Component {
                     >
                       <Chip
                         className="filter-chip"
-                        label={item}
+                        label={item.value}
                         style={
-                          filter.includes(item)
+                          filter.includes(item.value)
                             ? {
-                              backgroundColor: "orangered",
-                              color: "whitesmoke",
-                              fontSize: "1.5rem",
-                            }
+                                backgroundColor: "orangered",
+                                color: "whitesmoke",
+                                fontSize: "1.5rem",
+                              }
                             : {
-                              backgroundColor: "lightgray",
-                              fontSize: "1.5rem",
-                            }
+                                backgroundColor: "lightgray",
+                                fontSize: "1.5rem",
+                              }
                         }
-                        key={item}
-                        value={item}
-                        onClick={() => this.handleChip(item)}
+                        key={item.value}
+                        value={item.value}
+                        onClick={() => this.handleChip(item.value)}
                         deleteIcon={
-                          filter.includes(item) ? (
+                          filter.includes(item.value) ? (
                             <DoneIcon style={{ color: "white" }} />
                           ) : null
                         }
@@ -163,12 +163,12 @@ class FilterSortMain extends Component {
                   filter.length === 0 || type === "bestSellingPage"
                     ? { opacity: "0", cursor: "default", fontSize: "1.5rem" }
                     : bestselling
-                      ? {
+                    ? {
                         backgroundColor: "#3f51b5",
                         opacity: 1,
                         fontSize: "1.5rem",
                       }
-                      : {
+                    : {
                         backgroundColor: "#A9CCE3",
                         opacity: 1,
                         fontSize: "1.5rem",
@@ -193,7 +193,7 @@ class FilterSortMain extends Component {
                     id="demo-simple-select-outlined"
                     value={sort || "default"}
                     onChange={this.handleChangeSort}
-                  //   input={<Input />}
+                    //   input={<Input />}
                   >
                     <MenuItem value={"default"}>Default</MenuItem>
                     <MenuItem value={"productname"}>Name</MenuItem>

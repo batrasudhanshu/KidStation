@@ -1121,7 +1121,8 @@ input[type="checkbox"] {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
   }
 } */
-
+/* 
 category_buttons div button a span:nth-child(3):hover .MuiTypography-root {
-  background-color: #ff450096 !important;
-}
+  border: 5px solid rgba(255,69,0,0.7) !important;
+  /* background-color: #ff450096 !important; */
+/* } */

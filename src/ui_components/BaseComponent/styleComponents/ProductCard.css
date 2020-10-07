@@ -141,7 +141,7 @@
 
 .card-layout:hover .card-icons {
     visibility: visible;
-    transition: ease-in 0.5s;
+    transition: ease-in 0.4s;
     transform: translate(-50%, -300%);
 }
 
@@ -152,6 +152,10 @@
 
 .MuiSnackbarContent-message {
     font-size: 1.5rem !important;
+    font-weight: 600;
+}
+.MuiSnackbarContent-root{
+    background-color: rgb(245, 97, 43) !important;
 }
 
 @keyframes icons-move {

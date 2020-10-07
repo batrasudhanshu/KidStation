@@ -13,7 +13,7 @@ import bags_thumbnail from "../../images/bags_thumbnail.jpg";
 import notebooks_thumbnail from "../../images/notebooks_thumbnail.JP2";
 import keychains_thumbnail from "../../images/keychains_thumbnail.jpg";
 import sticky_thumbnail from "../../images/sticky_thumbnail.jpg";
-import collectable_thumbnail from "../../images/collectables_thumbnail.jpg"
+import collectable_thumbnail from "../../images/collectables_thumbnail.jpg";
 import { Link } from "react-router-dom";
 
 const images = [
@@ -88,7 +88,7 @@ const images = [
     title: "Gift Items",
     width: "33.3%",
     link: "/giftitems",
-  }
+  },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: 0,
       },
       "& $imageTitle": {
-        border: "4px solid currentColor",
+        border: "4px solid orangered",
       },
     },
   },
@@ -138,10 +138,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: 'whitesmoke',
+    color: "whitesmoke",
+    // opacity: 0.5,
     fontWeight: 700,
-
-
   },
   imageSrc: {
     margin: "1rem 0.5rem 0rem 0.5rem",
@@ -159,17 +158,19 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: "black",
-    opacity: 0.3,
+    // backgroundColor: "black",
+    // opacity: 1,
     transition: theme.transitions.create("opacity"),
   },
   imageTitle: {
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
     position: "relative",
     fontSize: "1.7rem",
     fontWeight: "600",
-    Color: "whitesmoke",
-    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6
-      }px`,
+    color: "black",
+    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
+      theme.spacing(1) + 6
+    }px`,
   },
   imageMarked: {
     height: 3,

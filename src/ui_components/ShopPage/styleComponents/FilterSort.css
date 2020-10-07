@@ -62,6 +62,16 @@
     color: orangered;
 }
 
+
+@media only screen and (max-width: 768px) {
+
+    .filter-sort-form-sortby>div>div {
+        width: 160px !important;
+    }
+    .filter-sort-form-sortby>div{
+        margin-left: 1.4rem;
+    }
+}
 @media only screen and (max-width: 480px) {
     .filter-sort-form-sortby>div {
         /* width: 12rem; */
