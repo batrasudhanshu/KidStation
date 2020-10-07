@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/header_banner.css";
+
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import water_banner from "../../images/water_banner.JP2";
@@ -17,7 +17,7 @@ class WaterBottles extends React.Component {
     return (
       <>
         <SearchFilter />
-        <HeaderBanner tag="Water Bottles" bannerImg={`url(${water_banner})`} />
+        <HeaderBanner tag="Water Bottles" color="#04f9c0" bannerImg={`url(${water_banner})`} />
         <SortCollection />
         <ProductCard data={water_bottles} />
       </>
@@ -29,7 +29,7 @@ const mapStateToProps = (state) => {
   let waterData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {
-      product.collection.stringValue === "water_bottles" &&
+      product && product.collection.stringValue === "water_bottles" &&
         waterData.push(product);
     });
   return {

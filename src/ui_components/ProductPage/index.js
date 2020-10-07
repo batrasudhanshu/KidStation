@@ -14,7 +14,7 @@ import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import bestsellerStamp from "../../images/Best-seller-stamp.png";
 import Error404 from "../BaseComponent/Error404";
 import { store } from "../..";
-
+import './styleComponents/ProductPage.css'
 class ProductPage extends Component {
   constructor(props) {
     super(props);
@@ -134,26 +134,13 @@ class ProductPage extends Component {
                     </div>
                     <div
                       className="prod-slick-outer"
-                      style={{
-                        textAlign: "center",
-                        position: "relative",
-                        marginTop: "1.5rem",
-                      }}
+
                     >
                       <div>
                         <ChevronLeftIcon
                           className="icon-left"
                           onClick={this.prevFun}
-                          style={{
-                            position: "absolute",
-                            top: "50%",
-                            transform: "translateY(-50%)",
-                            left: "0",
-                            zIndex: "999",
-                            fontSize: "4rem",
-                            cursor: "pointer",
-                            backgroundColor: "rgba(255,255,255,0.8)",
-                          }}
+
                           fontSize="large"
                         />
                       </div>
@@ -169,20 +156,9 @@ class ProductPage extends Component {
                                 onClick={() => this.handleImageSelection(img)}
                               >
                                 <div
-                                  style={{
-                                    height: "100%",
-                                    width: "100%",
-                                    overflow: "hidden",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                  }}
+                                  className="prod-slider-imgs"
                                 >
                                   <img
-                                    style={{
-                                      height: "100%",
-                                      width: "100%",
-                                      objectFit: "cover",
-                                    }}
                                     src={img}
                                     alt=""
                                   />
@@ -193,17 +169,9 @@ class ProductPage extends Component {
                       </Slider>
                       <div>
                         <ChevronRightIcon
+                          className="icon-right"
                           onClick={this.nextFun}
-                          style={{
-                            position: "absolute",
-                            top: "50%",
-                            transform: "translateY(-50%)",
-                            right: 0,
-                            zIndex: "999",
-                            fontSize: "4rem",
-                            cursor: "pointer",
-                            backgroundColor: "rgba(255,255,255,0.8)",
-                          }}
+
                           fontSize="large"
                         />
                       </div>
@@ -211,31 +179,25 @@ class ProductPage extends Component {
                   </Grid>
                   <Grid container xs={12} sm={6} spacing={3}>
                     <Grid className="pro-main-details" item xs={24} sm={12}>
-                      <div>
+                      <div className="pro-main-details-inner">
                         <div
-                          style={{
-                            fontSize: "3rem",
-                            fontWeight: "500",
-                            margin: "0.5rem 0",
-                            color: "#333",
-                            fontFamily: "Piedra",
-                          }}
+                          className="prod-main-price"
+
                         >
                           &#8377; {product.productprice}
                           {product.bestselling && (
-                            <span style={{ marginLeft: "1rem" }}>
-                              <img src={bestsellerStamp} width="50px" alt="" />
+                            <span >
+                              <img src={bestsellerStamp} alt="" />
                             </span>
                           )}
                         </div>
-                        <div style={{ fontSize: "2rem", color: "#444" }}>
-                          <ul style={{ padding: "0rem 1.7rem" }}>
+                        <div
+                          className="prod-desc-lists"
+                        >
+                          <ul >
                             {descArray.map((desc, index) =>
                               index > 0 ? (
                                 <li
-                                  style={{
-                                    listStylePosition: "outside !important",
-                                  }}
                                 >
                                   {desc}
                                 </li>
@@ -246,8 +208,8 @@ class ProductPage extends Component {
                         <div className="buy-connect-btn">
                           <a href={urlVal}>BUY/CONNECT</a>
                         </div>
-                        <div>
-                          <h5 style={{ marginTop: "1rem", color: "#999" }}>
+                        <div className="prod-disclaimer">
+                          <h5 >
                             Product color may slightly vary due to photographic
                             lighting sources or your monitor settings**
                           </h5>
@@ -285,11 +247,6 @@ class ProductPage extends Component {
                       </div>
                       <div
                         className="prod-slick-outer"
-                        style={{
-                          textAlign: "center",
-                          position: "relative",
-                          marginTop: "1.5rem",
-                        }}
                       >
                         <Skeleton variant="rect" height={100} animation="pulse" />
                       </div>

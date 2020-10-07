@@ -21,11 +21,11 @@ class SortCollection extends Component {
     const { sort } = this.state;
     const { sortType } = this.props;
     return (
-      <div className="collection-sort" style={{ float: "right" }}>
+      <div className="collection-sort" style={{ float: "right", marginRight: "0.9rem" }}>
         <div className="filter-sort-form-sortby">
           <FormControl variant="outlined">
             <InputLabel
-              style={{ color: "saddleBrown" }}
+              style={{ color: "orangered" }}
               id="demo-simple-select-outlined-label"
             >
               Sort By:
@@ -36,7 +36,7 @@ class SortCollection extends Component {
               id="demo-simple-select-outlined"
               value={sortType}
               onChange={this.handleChangeSort}
-              //   input={<Input />}
+            //   input={<Input />}
             >
               <MenuItem value={"default"}>Default</MenuItem>
               <MenuItem value={"productname"}>Name</MenuItem>

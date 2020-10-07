@@ -1,0 +1,37 @@
+.shipping-page {
+    padding-left: 0.346rem;
+    padding-right: 0.346rem;
+}
+
+.shipping-page h2 {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.shipping-para-one {
+    margin: 2rem 0rem 1rem 0rem;
+    padding-top: 0.7rem;
+}
+
+.shipping-points {
+    margin: 1rem 0rem 1rem 1.7rem;
+}
+
+.footer-second-points {
+    margin: 1rem 0rem 1rem 1.7rem;
+}
+
+@media screen and (max-width: 480px) {
+    .shipping-content {
+        margin-left: 1.4rem !important;
+        margin-right: 1.4rem !important;
+    }
+
+    .shipping-points {
+        margin: 1rem 0rem 1rem 0rem;
+    }
+
+    .footer-second-points {
+        margin: 1rem 0rem 1rem 0rem;
+    }
+}

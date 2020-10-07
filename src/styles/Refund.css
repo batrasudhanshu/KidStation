@@ -1,81 +1,58 @@
-.breadcrumb-image {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 6.5rem 0 6.875rem;
-    position: relative;
-    width:100%;
+/* refund_page {
+    margin: 0rem 1rem 0rem 1rem;
+} */
+
+.refund-page h2 {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-weight: 500;
 }
-.breadcrumb-image::before {
-    background: rgba(0, 0, 0, 0.70) none repeat scroll 0 0;
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 0;
+
+.refund-ques .ques-text .MuiTypography-root {
+    font-size: 2rem;
+    color: black;
 }
-.breadcrumb-image h1 {
-    color: #ffffff;
-    font-size: 2.063rem;
-    font-weight: 600;
-    line-height: 2.5rem;
-    position: relative;
-    text-transform: uppercase;
+
+.return-policy .return-policy-head {
+    margin-bottom: 1rem;
 }
-.breadcrumbs_path {
-    color: #fff;
-    margin-top: 0.5rem;
-    position: relative;
-    z-index: 9;
+
+.return-policy .return-policy-head span {
+    font-size: 2.5rem;
 }
-.breadcrumbs_path > a {
-    color: #fff;
-    transition: all 0.3s ease 0s;
+
+.return-policy-detail {
+    margin-top: 1rem;
 }
-.black{
-    color:black;
+
+.return-policy-detail span {
+    font-size: 2rem;
+    margin-bottom: 3rem;
 }
-#gradient_text
-{
-    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-style:bold;
+
+.return-policy-detail ul {
+    margin-top: 1rem;
 }
-.brown_gradient
-{
-    background: linear-gradient(to right, #f4775d 0%, #601808 100%);
-    background-clip:text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-}
-.refund{
-    width:90%;
-    margin-left:2.188rem;
-}
-.refund p{
-    margin-top:0.938rem;
-}
-.return_section{
-    margin-top:1.25rem;
-}
-.return_section strong{
-    font-size:1.25rem;
-}
-.return_section ul{
-    list-style-type:circle;
-    margin-left:1.875rem;
-}
-.contact_section{
-    margin-top:1.25rem;
-    margin-bottom:0.625rem;
-}
-.contact_section strong{
-    font-size:0.938rem;
-}
-.contact_section p{
-    margin-left:0.625rem;
+
+@media screen and (max-width: 480px) {
+    .return-policy .return-policy-head {
+        margin-bottom: 1.2rem;
+        margin-left: 1.4rem;
+    }
+
+    .return-policy-detail span {
+        font-size: 1.7rem;
+        margin-bottom: 3rem;
+    }
+
+    .return-policy-detail {
+        margin-top: 1rem;
+        margin-left: 1.4rem;
+        margin-right: 1.4rem;
+    }
+
+    .refund-ques {
+        margin-left: 1.4rem;
+        margin-right: 1.4rem;
+    }
 }

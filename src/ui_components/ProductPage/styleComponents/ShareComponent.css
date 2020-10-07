@@ -1,0 +1,56 @@
+.shareComp {
+    display: flex;
+    position: relative;
+    height: 53.88px;
+    width: auto;
+    margin-top: 2rem;
+}
+
+.shareText {
+    overflow: hidden;
+    border-radius: 3rem;
+    display: flex;
+    height: 53.88px;
+    width: 55px;
+    background-color: rgb(36, 88, 255);
+    justify-content: center;
+    align-items: center;
+}
+
+.shareText .MuiButton-label {
+    color: whitesmoke;
+}
+
+.shareBtn-outer {
+    position: relative;
+    height: 53.88px;
+    display: flex;
+    border-radius: 3rem;
+    background-color: rgb(36, 88, 255);
+    width: 260px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+
+.share-buttons .MuiButton-label {
+    width: auto;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: whitesmoke;
+}
+
+.shareAll {
+    display: flex;
+    /* display: none; */
+    /* opacity: 0; */
+    transition: 0.5s ease-in-out;
+}
+
+.shareText {
+    z-index: 999;
+    color: whitesmoke;
+    font-size: 2.5rem;
+    font-weight: 500;
+    transition: 0.5s ease-in-out;
+}

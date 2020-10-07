@@ -10,7 +10,7 @@ import { fetchProductOnFilter } from "../../CMS/actions/fetchProductAction";
 import DoneIcon from "@material-ui/icons/Done";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import { store } from "../..";
+import "./styleComponents/FilterSort.css";
 
 class FilterSortMain extends Component {
   constructor(props) {
@@ -61,16 +61,36 @@ class FilterSortMain extends Component {
 
   render() {
     const { type, filter, sort, bestselling, showFilSort } = this.state;
+    // const filterNames = [
+    //   { label: "Key Chains", value: "key_chains" },
+    //   { label: "", value: "erasers" },
+    //   { label: "", value: "lunch_boxes" },
+    //   { label: "", value: "water_bottles" },
+    //   { label: "", value: "pens" },
+    //   { label: "", value: "folders" },
+    //   { label: "", value: "notebooks" },
+    //   { label: "", value: "geometry_boxes" },
+    //   { label: "", value: "giftitems" },
+    //   { label: "", value: "bags" },
+    //   { label: "", value: "collectables" },
+    //   { label: "", value: "book_marks" },
+    // ];
     const filterNames = [
-      "erasers",
-      "lunch_boxes",
-      "water_bottles",
-      "pens",
-      "markers",
-      "notebooks",
-      "geometry_boxes",
-      "bags",
+      { label: "Bags", value: "bags" },
+      { label: "Bottles/Sippers", value: "water_bottles" },
+      { label: "Collectables", value: "collectables" },
+      { label: "Erasers/Sharpner", value: "erasers" },
+      { label: "Folders", value: "folders" },
+      { label: "Gift Items", value: "giftitems" },
+      { label: "Key Chains", value: "key_chains" },
+
+      { label: "Lunch Box", value: "lunch_boxes" },
+      { label: "Notebooks", value: "notebooks" },
+      { label: "Pen Pencil", value: "pens" },
+      { label: "Stationery", value: "geometry_boxes" },
+      { label: "Sticky Notes", value: "book_marks" },
     ];
+
     const showCSS = {
       opacity: "1",
       width: "100%",
@@ -90,7 +110,7 @@ class FilterSortMain extends Component {
       <div>
         <div style={{ float: "right" }}>
           <Button
-            style={{ color: "saddlebrown", fontSize: "1.7rem" }}
+            style={{ color: "orangered", fontSize: "1.7rem" }}
             onClick={this.showFilterSort}
           >
             Filter Sort
@@ -113,7 +133,7 @@ class FilterSortMain extends Component {
                   {filterNames.map((item, i) => (
                     <Grid
                       style={
-                        (i === 3) | (i === 7)
+                        (i === 3) | ((i === 11) | (i === 7))
                           ? { borderRight: "0px solid black" }
                           : { borderRight: "1px solid black" }
                       }
@@ -122,11 +142,11 @@ class FilterSortMain extends Component {
                     >
                       <Chip
                         className="filter-chip"
-                        label={item}
+                        label={item.label}
                         style={
-                          filter.includes(item)
+                          filter.includes(item.value)
                             ? {
-                                backgroundColor: "saddlebrown",
+                                backgroundColor: "orangered",
                                 color: "whitesmoke",
                                 fontSize: "1.5rem",
                               }
@@ -135,11 +155,11 @@ class FilterSortMain extends Component {
                                 fontSize: "1.5rem",
                               }
                         }
-                        key={item}
-                        value={item}
-                        onClick={() => this.handleChip(item)}
+                        key={item.value}
+                        value={item.value}
+                        onClick={() => this.handleChip(item.value)}
                         deleteIcon={
-                          filter.includes(item) ? (
+                          filter.includes(item.value) ? (
                             <DoneIcon style={{ color: "white" }} />
                           ) : null
                         }
@@ -168,7 +188,7 @@ class FilterSortMain extends Component {
                 }
                 disabled={filter.length === 0 ? true : false}
                 // style={{ backgroundColor: "#555" }}
-                className={`bestselling-chip `}
+                className={`bestselling-chip`}
                 label="Best Selling"
                 onClick={this.handleChangeBestSelling}
                 value="bestselling"

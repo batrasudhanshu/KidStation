@@ -170,14 +170,18 @@ class CMS extends Component {
                   onChange={this.handleChange}
                   label="Collection"
                 >
-                  <MenuItem value={"pens"}>Pen & Pencil</MenuItem>
-                  <MenuItem value={"water_bottles"}>Water Bottle</MenuItem>
+                  <MenuItem value={"pens"}>Pen, Pencil & Markers</MenuItem>
+                  <MenuItem value={"water_bottles"}>Bottles & Sippers</MenuItem>
                   <MenuItem value={"bags"}>Bags</MenuItem>
-                  <MenuItem value={"geometry_boxes"}>Geometry Boxes</MenuItem>
-                  <MenuItem value={"notebooks"}>Notebook & Register</MenuItem>
-                  <MenuItem value={"lunch_boxes"}>Lunch Box</MenuItem>
-                  <MenuItem value={"erasers"}>Eraser & Sharpner</MenuItem>
-                  <MenuItem value={"markers"}>Marker</MenuItem>
+                  <MenuItem value={"geometry_boxes"}>Stationery Organizers</MenuItem>
+                  <MenuItem value={"notebooks"}>Notebook & Diary</MenuItem>
+                  <MenuItem value={"lunch_boxes"}>Lunch Boxes</MenuItem>
+                  <MenuItem value={"erasers"}>Erasers & Sharpners</MenuItem>
+                  <MenuItem value={"folders"}>Folders</MenuItem>
+                  <MenuItem value={"key_chains"}>Key Chains & Luggage Tags</MenuItem>
+                  <MenuItem value={"giftitems"}>Gift Items</MenuItem>
+                  <MenuItem value={"collectables"}>Collectables & Storage Boxes</MenuItem>
+                  <MenuItem value={"book_marks"}>Sticky Notes & BookMarks</MenuItem>
                 </Select>
               </FormControl>
 

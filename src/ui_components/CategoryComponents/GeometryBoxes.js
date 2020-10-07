@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/header_banner.css";
+
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import geometry_banner from "../../images/geometry_banner.JP2";
@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
   let geometryData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {
-      product.collection.stringValue === "geometry_boxes" &&
+      product && product.collection.stringValue === "geometry_boxes" &&
         geometryData.push(product);
     });
   return {

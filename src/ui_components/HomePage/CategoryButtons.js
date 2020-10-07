@@ -5,13 +5,15 @@ import Typography from "@material-ui/core/Typography";
 import Pens_thumbnail from "../../images/pens_thumbnail.JP2";
 import lunch_thumbnail from "../../images/lunch_thumbnail.JP2";
 import water_thumbnail from "../../images/water_thumbnail.JP2";
-import marker_thumbnail from "../../images/marker_thumbnail.JP2";
+import folder_thumbnail from "../../images/folder_thumbnail.png";
 import eraser_thumbnail from "../../images/eraser_thumbnail.JP2";
 import bestselling_thumbnail from "../../images/bestselling_thumbnail.JP2";
 import kits_thumbnail from "../../images/kits_thumbnail.JP2";
-import bags_thumbnail from "../../images/bags_thumbnail.JP2";
+import bags_thumbnail from "../../images/bags_thumbnail.jpg";
 import notebooks_thumbnail from "../../images/notebooks_thumbnail.JP2";
-
+import keychains_thumbnail from "../../images/keychains_thumbnail.jpg";
+import sticky_thumbnail from "../../images/sticky_thumbnail.jpg";
+import collectable_thumbnail from "../../images/collectables_thumbnail.jpg";
 import { Link } from "react-router-dom";
 
 const images = [
@@ -40,10 +42,10 @@ const images = [
     link: "/lunch_boxes",
   },
   {
-    url: marker_thumbnail,
-    title: "Markers",
+    url: folder_thumbnail,
+    title: "Folders",
     width: "33.3%",
-    link: "/markers",
+    link: "/folders",
   },
   {
     url: kits_thumbnail,
@@ -64,10 +66,28 @@ const images = [
     link: "/bags",
   },
   {
-    url: bestselling_thumbnail,
-    title: "Best - Selling",
+    url: keychains_thumbnail,
+    title: "Key Chains",
     width: "33.3%",
-    link: "/bestselling",
+    link: "/key_chains",
+  },
+  {
+    url: collectable_thumbnail,
+    title: "Collectables, Storage Boxes",
+    width: "33.3%",
+    link: "/collectables",
+  },
+  {
+    url: sticky_thumbnail,
+    title: "Sticky Notes, BookMarks",
+    width: "33.3%",
+    link: "/book_marks",
+  },
+  {
+    url: bestselling_thumbnail,
+    title: "Gift Items",
+    width: "33.3%",
+    link: "/giftitems",
   },
 ];
 
@@ -85,9 +105,10 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     padd: "1rem",
     height: 150,
+
     [theme.breakpoints.down("xs")]: {
-      "&:nth-child(9)": {
-        width: "100% !important",
+      "&:nth-child(12)": {
+        width: "50% !important",
       },
       width: "50% !important",
       //   minWidth: '50% !important', // Overrides inline-style
@@ -102,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: 0,
       },
       "& $imageTitle": {
-        border: "4px solid currentColor",
+        border: "4px solid orangered",
       },
     },
   },
@@ -117,7 +138,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    color: 'cornsilk',
+    color: "whitesmoke",
+    // opacity: 0.5,
+    fontWeight: 700,
   },
   imageSrc: {
     margin: "1rem 0.5rem 0rem 0.5rem",
@@ -135,17 +158,19 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: "black",
-    opacity: 0.3,
+    // backgroundColor: "black",
+    // opacity: 1,
     transition: theme.transitions.create("opacity"),
   },
   imageTitle: {
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
     position: "relative",
     fontSize: "1.7rem",
     fontWeight: "600",
+    color: "black",
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
       theme.spacing(1) + 6
-      }px`,
+    }px`,
   },
   imageMarked: {
     height: 3,
@@ -162,40 +187,42 @@ export default function CategoryButtons() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      {images.map((image) => (
-        <ButtonBase
-          focusRipple
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width,
-          }}
-        >
-          <Link to={image.link}>
-            <span
-              className={classes.imageSrc}
-              style={{
-                backgroundImage: `url(${image.url})`,
-              }}
-            />
+    <category_buttons>
+      <div className={classes.root}>
+        {images.map((image) => (
+          <ButtonBase
+            focusRipple
+            key={image.title}
+            className={classes.image}
+            focusVisibleClassName={classes.focusVisible}
+            style={{
+              width: image.width,
+            }}
+          >
+            <Link to={image.link}>
+              <span
+                className={classes.imageSrc}
+                style={{
+                  backgroundImage: `url(${image.url})`,
+                }}
+              />
 
-            <span className={classes.imageBackdrop} />
-            <span className={classes.imageButton}>
-              <Typography
-                component="span"
-                variant="subtitle1"
-                color="inherit"
-                className={classes.imageTitle}
-              >
-                {image.title}
-                <span className={classes.imageMarked} />
-              </Typography>
-            </span>
-          </Link>
-        </ButtonBase>
-      ))}
-    </div>
+              <span className={classes.imageBackdrop} />
+              <span className={classes.imageButton}>
+                <Typography
+                  component="span"
+                  variant="subtitle1"
+                  color="inherit"
+                  className={classes.imageTitle}
+                >
+                  {image.title}
+                  <span className={classes.imageMarked} />
+                </Typography>
+              </span>
+            </Link>
+          </ButtonBase>
+        ))}
+      </div>
+    </category_buttons>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/header_banner.css";
+
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import pen_banner from "../../images/pen_banner.JP2";
@@ -17,7 +17,7 @@ class Pen extends React.Component {
     return (
       <>
         <SearchFilter />
-        <HeaderBanner tag="Pen & Pencil" bannerImg={`url(${pen_banner})`} />
+        <HeaderBanner tag="Pen & Pencil" color="#1616ec" bannerImg={`url(${pen_banner})`} />
         <SortCollection />
         <ProductCard data={pens} />
       </>
@@ -29,7 +29,7 @@ const mapStateToProps = (state) => {
   let penData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {
-      product.collection.stringValue === "pens" && penData.push(product);
+      product && product.collection.stringValue === "pens" && penData.push(product);
     });
   return {
     pens: penData,

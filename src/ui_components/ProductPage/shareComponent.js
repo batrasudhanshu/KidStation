@@ -11,7 +11,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import EmailIcon from "@material-ui/icons/Email";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import ShareIcon from "@material-ui/icons/Share";
-
+import './styleComponents/ShareComponent.css'
 const ShareComponent = (props) => {
   const [ShowDiv, setShowDiv] = useState(false);
 

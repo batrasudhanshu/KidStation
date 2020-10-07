@@ -23,8 +23,8 @@ class AuthNavbar extends Component {
     return (
       <div style={{ float: "right" }}>
         {page === "add product" && (
-          <Button  className="admin-buttons"  variant="contained" color="primary">
-            <Link style={{textDecoration:'none'}} to="/admin/productcrud">View Product</Link>
+          <Button className="admin-buttons" variant="contained" color="primary">
+            <Link style={{ textDecoration: 'none' }} to="/admin/productcrud">View Product</Link>
           </Button>
         )}
         {page === "view product" && (
@@ -42,7 +42,7 @@ class AuthNavbar extends Component {
             </Button>
           </>
         )}
-        <Button className="admin-buttons" style={{backgroundColor:'saddlebrown', color:'white'}} onClick={this.logout} variant="contained" >
+        <Button className="admin-buttons" style={{ backgroundColor: 'orangered', color: 'white' }} onClick={this.logout} variant="contained" >
           Logout
         </Button>
       </div>

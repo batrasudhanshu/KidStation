@@ -232,7 +232,11 @@ contact_page hr {
     margin-bottom: 2.5rem;
     margin-top: 2.5rem;
 }
-contact_page .mb60{margin-bottom:3.75rem;}
+
+contact_page .mb60 {
+    margin-bottom: 3.75rem;
+}
+
 contact_page .btn {
     font-family: 'PT Sans', sans-serif;
     font-size: 1.125rem;
@@ -267,10 +271,12 @@ contact_page .btn-primary.focus,
     color: #fff;
     border: 0.063rem solid #e64c10;
 }
+
 contact_page .space-medium {
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
+
 contact_page .pdt20 {
     padding-top: 1.25rem;
 }
@@ -281,8 +287,8 @@ contact_page .contact-pageheader {
     /* background: rgba(145, 238, 226, 1); */
     background-image: url('../images/contact_banner.jpg');
     margin-bottom: 4.375rem;
-    width:100%;
-    background-size:cover;
+    width: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -290,10 +296,11 @@ contact_page .contact-caption {
     position: relative;
     top: 10rem;
 }
-.contact-text{
+
+.contact-text {
     padding: 1rem;
     background-color: rgba(80, 79, 79, 0.75);
-    color:white;
+    color: white;
     font-weight: 400;
     font-size: 1.5rem;
 }
@@ -303,9 +310,9 @@ contact_page .contact-title {
     font-size: 3.125rem;
     font-style: italic;
     margin-bottom: 2.5rem;
-    line-height:5rem;
+    line-height: 5rem;
     font-weight: 300;
-    color:black;
+    color: black;
     font-weight: 700;
     padding: 1rem;
 }
@@ -387,28 +394,40 @@ contact_page .location-icon {
     padding-right: 0.625rem;
     font-size: 0.938rem;
 }
-#contact-map iframe{
+
+#contact-map iframe {
     width: 100%;
     height: 600%;
-    
+
 }
-#contact-map div{
+
+#contact-map div {
     width: 100%;
 }
+
 .multicolortext {
-      background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   
-      -webkit-background-clip: text;
-      -moz-background-clip: text; 
-      background-clip: text;
-      color: transparent;
-      } 
-.leaflet-container {
-  height: 25rem;
-  width: 100%;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
-@media screen and (max-width:991px){
+
+.leaflet-container {
+    height: 25rem;
+    width: 100%;
+}
+
+@media screen and (max-width:480px) {
+    contact_page .space-medium .container {
+        margin-left: 1.4rem;
+        margin-right: 1.4rem;
+    }
+}
+
+@media screen and (max-width:991px) {
     contact_page .contact-caption {
         position: relative;
         top: 3.29rem;
-    } 
+    }
 }

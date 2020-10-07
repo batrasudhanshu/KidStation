@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/header_banner.css";
+
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import lunch_banner from "../../images/lunch_banner.JP2";
@@ -17,7 +17,7 @@ class LunchBoxes extends React.Component {
     return (
       <>
         <SearchFilter />
-        <HeaderBanner tag="Lunch Boxes" bannerImg={`url(${lunch_banner})`} />
+        <HeaderBanner tag="Lunch Boxes" bannerImg={`url(${lunch_banner})`} color='#f9f20c' />
         <SortCollection />
         <ProductCard data={lunch_boxes} />
       </>
@@ -29,7 +29,7 @@ const mapStateToProps = (state) => {
   let lunchData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {
-      product.collection.stringValue === "lunch_boxes" &&
+      product && product.collection.stringValue === "lunch_boxes" &&
         lunchData.push(product);
       return <></>;
     });

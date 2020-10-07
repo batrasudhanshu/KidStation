@@ -1,0 +1,30 @@
+.error404 {
+    padding-top: 3rem;
+    height: 60vh;
+}
+
+.error404 a {
+    color: orangered;
+}
+
+.error404 h4 {
+    text-align: center;
+}
+
+.error404-img {
+    text-align: center;
+}
+
+.error404-text {
+    text-align: center;
+}
+
+.error404-text span {
+    font-size: 2rem;
+
+}
+
+.popular-links a {
+    color: orangered;
+    font-size: 1.3rem;
+}

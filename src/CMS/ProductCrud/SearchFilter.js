@@ -13,7 +13,7 @@ import { globalSearchFilter, SearchedProducts } from "../actions/SearchAction";
 import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
-
+import "./styleComponents/SearchFilter.css";
 class SearchFilter extends Component {
   constructor(props) {
     super(props);
@@ -97,7 +97,7 @@ class SearchFilter extends Component {
     ));
     return (
       <>
-        {width < 900 && (
+        {width < 1010 && (
           <div className="global-search">
             <div className="global-search-input">
               <Paper elevation={5} component="form">
@@ -105,7 +105,7 @@ class SearchFilter extends Component {
                   autoComplete="off"
                   fullWidth={"true"}
                   onChange={this.handleChange}
-                  placeholder="What are you looking for ?"
+                  placeholder="What are you looking for?"
                   color={"primary"}
                   value={searchInput}
                   endAdornment={
@@ -138,6 +138,7 @@ class SearchFilter extends Component {
                       onClick={this.searchProducts}
                     >
                       <ListItemText
+                        className="search-lists-texts"
                         style={{ color: "#444" }}
                         primary="View more..."
                       />

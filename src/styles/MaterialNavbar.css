@@ -1,0 +1,197 @@
+.nav-searchfilter-lg {
+    position: absolute;
+    right: 180px;
+    top: 28px;
+}
+
+.sidenavbar .MuiPaper-root {
+    width: 30rem !important;
+    background-image: url("../images/sidebar_bg.jpg");
+}
+
+.category-list .MuiTypography-body1 {
+    padding-left: 3rem;
+    font-size: 1.6rem !important;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.sidedrawer .MuiTypography-body1 {
+    padding: 0.3rem 2rem;
+    font-size: 1.7rem !important;
+    text-decoration: none;
+}
+
+.category-list,
+.sidedrawer {
+    color: #f2f2eb;
+}
+
+.side-drawer-outer {
+    background-color: whitesmoke;
+    color: black !important;
+    text-decoration: none;
+    padding: 0.3rem 1rem;
+}
+
+.sidedrawerdiv div a,
+.categorylistdiv div a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.side-drawer-outer .MuiTypography-body1 {
+    font-size: 1.7rem !important;
+}
+
+.category-list-outer {
+    background-color: whitesmoke;
+    color: black !important;
+    text-decoration: none;
+    padding-left: 1.5rem;
+}
+
+.category-list-outer .MuiTypography-body1 {
+    font-size: 1.6rem !important;
+}
+
+.NavMenuIcon {
+    /* background-color: #eee; */
+    cursor: pointer;
+    line-height: 8.5rem;
+    float: left;
+    width: 70px;
+    height: 70px;
+}
+
+.NavMenuIcon:hover {
+    background-color: #eeeeee;
+}
+
+.fulllogo {
+    float: left;
+}
+
+.fulllogo a {
+    display: block;
+}
+
+.fulllogo img {
+    max-width: 225px;
+}
+
+.navigation {
+    /* height: 12.7rem; */
+    display: block;
+}
+
+.RightNavItems {
+    line-height: 8.5rem;
+    margin-right: 0px;
+}
+
+.RightNavItems div {
+    float: right;
+    /* width: 100%; */
+}
+
+.RightNavItems div span {
+    padding: 0 1.2rem;
+}
+
+.call-us {
+    animation: blink 1s linear infinite;
+}
+
+.call-us:hover {
+    animation: none;
+}
+
+.call-us span {
+    padding-left: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: .7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.call-us i {
+    vertical-align: middle;
+    color: orangered;
+    padding-bottom: 0.2rem;
+}
+
+.call-us span {
+    padding-left: 0rem !important;
+}
+
+.RightNavItems div span a {
+    color: black !important;
+    cursor: pointer;
+}
+
+.NavItem1 {
+    position: relative;
+    border-right: 3px solid black;
+}
+
+@media only screen and (max-width: 480px) {
+    .fulllogo {
+        padding-right: 1.5rem;
+    }
+
+    .call-us {
+        animation: none;
+    }
+
+    .custom_navbar .MuiGrid-container .MuiGrid-item .NavMenuIcon {
+        padding-left: 1.5rem;
+        width: 1.5em;
+        height: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .RightNavItems div {
+        float: none;
+        line-height: 5rem;
+    }
+
+    .RightNavItems span a {
+        font-size: 1.3rem;
+    }
+
+    .fulllogo img {
+        float: right;
+        padding-left: 0;
+    }
+
+
+}
+
+@media only screen and (min-width: 601px) and (max-width:621px) {
+    .RightNavItems div span {
+        padding: 0 !important;
+    }
+
+    .RightNavItems div .NavItem1 {
+        padding-right: 1.2rem !important;
+    }
+
+    .call-us {
+        padding-left: 1rem;
+        animation: blink 1s linear infinite;
+    }
+}

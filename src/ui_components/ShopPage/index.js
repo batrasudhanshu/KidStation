@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/header_banner.css";
+
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import eraser_banner from "../../images/eraser_banner.JP2";
@@ -32,7 +32,7 @@ class ShopPage extends React.Component {
           refreshRate={32}
           render={({ size }) => (
             <div>
-              {size.width < 552 ? (
+              {size.width < 768 ? (
                 <FilterSort page="shopPage" />
               ) : (
                 <FilterSortMain page="shopPage" />

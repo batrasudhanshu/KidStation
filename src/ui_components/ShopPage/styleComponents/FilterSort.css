@@ -1,0 +1,93 @@
+.bestselling-chip {
+    margin: 0.5rem !important;
+}
+
+.filter-sort-form {
+    width: 100%;
+}
+
+.filter-sort-form .MuiFormControl-root {
+    display: inline-block;
+}
+
+.filter-sort-form-filtercontrol,
+.filter-sort-form-filtercontrol>div {
+    width: 100%;
+}
+
+.filter-sort-form-sortby>div {
+    /* width: 12rem; */
+    margin-top: 1rem;
+    display: inline-block !important;
+    /* float: left; */
+}
+
+.filter-sort-form-sortby .MuiSelect-icon {
+    font-size: 30px !important;
+    color: orangered;
+}
+
+.filter-sort-form-sortby>div>div {
+    display: inline-block !important;
+    padding-right: 0 !important;
+    width: 175px;
+}
+
+.filter-sort-form-sortby>div>div>div {
+    width: auto;
+}
+
+.filter-sort-form-sortcontrol>div {
+    display: inline-block;
+}
+
+.filter-sort-dialog>div>div {
+    width: 40rem;
+}
+
+.filter-sort-dialog-title .MuiTypography-root {
+    font-size: 1.5rem;
+}
+
+.filter-sort-form-checkbox {
+    line-height: 5rem;
+    float: right;
+    margin: 0 1.5rem !important;
+}
+
+.filter-sort-btn {
+    float: right;
+    font-size: 1.5rem !important;
+}
+
+.filter-sort-btn .MuiButton-label {
+    /* font-size: 1.1rem !important; */
+
+    color: orangered;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .filter-sort-form-sortby>div>div {
+        width: 160px !important;
+    }
+    .filter-sort-form-sortby>div{
+        margin-left: 1.4rem;
+    }
+    .bestselling-chip {
+        margin-left: 1.3rem !important;
+      }
+}
+@media only screen and (max-width: 480px) {
+    .filter-sort-form-sortby>div {
+        /* width: 12rem; */
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+    .filter-sort-btn {
+        float: right;
+        font-size: 1.5rem !important;
+        margin-right: 0.9rem !important;
+    }
+}

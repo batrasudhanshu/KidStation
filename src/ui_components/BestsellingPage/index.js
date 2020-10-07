@@ -38,7 +38,7 @@ const mapStateToProps = (state, ownProps) => {
   let bestselling = [];
   state.filtersort &&
     state.filtersort.map((product) => {
-      product.bestselling.booleanValue && bestselling.push(product);
+      product && product.bestselling.booleanValue && bestselling.push(product);
     });
   return {
     filtersort: state.filtersort,

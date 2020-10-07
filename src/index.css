@@ -9,6 +9,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  color: rgb(255, 255, 255);
+  background: rgba(245, 153, 78, 0.9);
+}
+
 html {
   overflow-x: hidden;
 }

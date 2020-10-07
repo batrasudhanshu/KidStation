@@ -1,0 +1,73 @@
+.Toastify .Toastify__toast--default {
+    background-color: orangered !important;
+    color: whitesmoke !important;
+    font-weight: 500;
+}
+
+.Toastify__close-button--default {
+    color: white !important;
+}
+
+.crud-details-form {
+    text-align: center;
+    margin: auto;
+    margin-top: 4rem !important;
+}
+
+.crud-details-field {
+    width: 60%;
+    margin: 4rem 2rem !important;
+}
+
+.crud-details-field label {
+    font-size: 1.2rem;
+}
+
+.crud-details-checkbox {
+    display: block !important;
+    margin: 0 !important;
+    width: 9.5rem;
+    /* position: relative;
+  left: 10rem; */
+}
+
+.crud-details-checkbox span {
+    padding: 0 !important;
+}
+
+.crud-details-checkbox-outer {
+    display: inline-flex;
+    margin-top: 0 !important;
+}
+
+/* .MuiTypography-body1{
+  font-size: 2rem !important;
+} */
+
+.crud-details-dropzone {
+    margin-top: 3rem;
+}
+
+.crud-details-upload-container {
+    width: 80%;
+    margin: 4rem auto 2rem auto;
+}
+
+.crud-details-uploaded-images {
+    height: 200px;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+}
+
+.backendpage-title {
+    text-align: center;
+    margin: 2rem auto 1rem auto;
+}
+
+.remove-image-block {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    float: left;
+}

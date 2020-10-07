@@ -1,0 +1,271 @@
+.header {
+  margin-top: 1rem;
+}
+
+header_banner p {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #333333;
+}
+
+header_banner .header {
+  position: relative;
+  text-align: center;
+  /* background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%); */
+  /* background-image:url('https://st2.depositphotos.com/4382933/12349/i/950/depositphotos_123490940-stock-photo-school-stationery-on-a-white.jpg'); */
+
+  background-size: cover;
+}
+
+header_banner .logo {
+  width: 50px;
+  fill: white;
+  padding-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+header_banner .inner-header {
+  height: 20vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header_banner .inner-header .notebook_icon {
+  font-size: 40px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+header_banner .flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+header_banner .waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+header_banner .content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+.tag-content {
+  font-family: 'Pacifico';
+  /* text-shadow: 0.140rem 0.140rem 0.3rem #000000; */
+  color: purple;
+  font-size: 5rem;
+  font-weight: 1000;
+  /* 
+-webkit-animation: tag-content 5s infinite; 
+
+-ms-animation: tag-content 5s infinite;
+
+animation: tag-content 5s infinite;  */
+}
+
+/* Animation */
+
+header_banner .parallax>use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+header_banner .parallax>use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+header_banner .parallax>use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+header_banner .parallax>use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+header_banner .parallax>use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  header_banner .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  header_banner .content {
+    height: 30vh;
+  }
+
+  .tag-content {
+    font-size: 3rem;
+  }
+}
+
+@-webkit-keyframes tag-content {
+  0% {
+    color: orange;
+  }
+
+  10% {
+    color: purple;
+  }
+
+  20% {
+    color: red;
+  }
+
+  30% {
+    color: CadetBlue;
+  }
+
+  40% {
+    color: yellow;
+  }
+
+  50% {
+    color: coral;
+  }
+
+  60% {
+    color: green;
+  }
+
+  70% {
+    color: cyan;
+  }
+
+  80% {
+    color: DeepPink;
+  }
+
+  90% {
+    color: DodgerBlue;
+  }
+
+  100% {
+    color: orange;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes tag-content {
+  0% {
+    color: orange;
+  }
+
+  10% {
+    color: purple;
+  }
+
+  20% {
+    color: red;
+  }
+
+  30% {
+    color: CadetBlue;
+  }
+
+  40% {
+    color: yellow;
+  }
+
+  50% {
+    color: coral;
+  }
+
+  60% {
+    color: green;
+  }
+
+  70% {
+    color: cyan;
+  }
+
+  80% {
+    color: DeepPink;
+  }
+
+  90% {
+    color: DodgerBlue;
+  }
+
+  100% {
+    color: orange;
+  }
+}
+
+/* Standar Syntax */
+@keyframes tag-content {
+  0% {
+    color: orange;
+  }
+
+  10% {
+    color: purple;
+  }
+
+  20% {
+    color: red;
+  }
+
+  30% {
+    color: CadetBlue;
+  }
+
+  40% {
+    color: yellow;
+  }
+
+  50% {
+    color: coral;
+  }
+
+  60% {
+    color: green;
+  }
+
+  70% {
+    color: cyan;
+  }
+
+  80% {
+    color: DeepPink;
+  }
+
+  90% {
+    color: DodgerBlue;
+  }
+
+  100% {
+    color: orange;
+  }
+}
