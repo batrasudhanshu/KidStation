@@ -206,7 +206,7 @@ class ProductPage extends Component {
                           </ul>
                         </div>
                         <div className="buy-connect-btn">
-                          <a href={urlVal}>BUY/CONNECT</a>
+                          <a target="blank" href={urlVal}>BUY/CONNECT</a>
                         </div>
                         <div className="prod-disclaimer">
                           <h5 >
