@@ -29,7 +29,7 @@ class ProductCrudSummary extends React.Component {
       imageRef = storage.refFromURL(imgStr.stringValue);
       imageRef
         .delete()
-        .then(function () {})
+        .then(function () { })
         .catch(function (error) {
           console.log("error in file deletion");
         });

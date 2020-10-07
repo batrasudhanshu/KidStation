@@ -29,7 +29,7 @@ const mapStateToProps = (state) => {
   let penData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {
-      product.collection.stringValue === "pens" && penData.push(product);
+      product && product.collection.stringValue === "pens" && penData.push(product);
     });
   return {
     pens: penData,

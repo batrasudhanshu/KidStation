@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
   let geometryData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {
-      product.collection.stringValue === "geometry_boxes" &&
+      product && product.collection.stringValue === "geometry_boxes" &&
         geometryData.push(product);
     });
   return {

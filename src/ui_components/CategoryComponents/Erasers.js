@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
   let eraserData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {
-      product.collection.stringValue === "erasers" && eraserData.push(product);
+      product && product.collection.stringValue === "erasers" && eraserData.push(product);
     });
   return {
     erasers: eraserData,

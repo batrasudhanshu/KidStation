@@ -29,7 +29,7 @@ const mapStateToProps = (state) => {
   let lunchData = [];
   state.products.length !== 0 &&
     state.products.map((product, index) => {
-      product.collection.stringValue === "lunch_boxes" &&
+      product && product.collection.stringValue === "lunch_boxes" &&
         lunchData.push(product);
       return <></>;
     });

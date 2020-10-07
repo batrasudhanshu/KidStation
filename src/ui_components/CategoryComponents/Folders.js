@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
     let folderData = [];
     state.products.length !== 0 &&
         state.products.map((product, index) => {
-            product.collection.stringValue === "folders" && folderData.push(product);
+            product && product.collection.stringValue === "folders" && folderData.push(product);
         });
     return {
         folders: folderData,
