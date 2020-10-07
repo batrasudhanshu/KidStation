@@ -1,5 +1,4 @@
 import uploadReducer from "./uploadReducer";
-import EraserReducer from "../../collections/erasers/reducers/EraserReducer";
 import productsReducer from "./productsReducer";
 import progressReducer from "./progressReducer";
 import fileReducer from "./fileReducer";
@@ -45,7 +44,6 @@ const rootReducer = combineReducers({
   upload: uploadReducer,
   coverIndex: imagecoverReducer,
   progress: progressReducer,
-  erasercollection: EraserReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer,
 });
