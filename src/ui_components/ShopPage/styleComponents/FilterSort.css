@@ -1,3 +1,7 @@
+.bestselling-chip {
+    margin: 0.5rem !important;
+}
+
 .filter-sort-form {
     width: 100%;
 }
@@ -71,6 +75,9 @@
     .filter-sort-form-sortby>div{
         margin-left: 1.4rem;
     }
+    .bestselling-chip {
+        margin-left: 1.3rem !important;
+      }
 }
 @media only screen and (max-width: 480px) {
     .filter-sort-form-sortby>div {

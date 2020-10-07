@@ -32,7 +32,7 @@ class ShopPage extends React.Component {
           refreshRate={32}
           render={({ size }) => (
             <div>
-              {size.width < 552 ? (
+              {size.width < 768 ? (
                 <FilterSort page="shopPage" />
               ) : (
                 <FilterSortMain page="shopPage" />
