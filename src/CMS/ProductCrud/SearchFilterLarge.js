@@ -124,7 +124,14 @@ class SearchFilter extends Component {
                 />
               </Paper>
             </div>
-            <div style={{ position: "absolute", top: 30 }}>
+            <div
+              style={{
+                position: "absolute",
+                top: 28,
+                right: 115,
+                width: "275.75px",
+              }}
+            >
               <List
                 style={hideList ? { display: "none" } : { display: "block" }}
               >

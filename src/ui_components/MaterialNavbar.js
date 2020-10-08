@@ -143,21 +143,26 @@ class MaterialNavbar extends Component {
               </Link>
             </Grid>
 
-            <Grid align="center" item xs={12} sm={6} className="RightNavItems">
+            <Grid item xs={12} sm={6} className="RightNavItems">
               <div style={{ position: "relative" }}>
                 {/* search filter for desktop screen */}
                 {width >= 1010 ? <SearchFilterLarge /> : null}
-                <span className="NavItem1">
-                  <NavLink style={{ textDecoration: "none" }} to="/track_order">
-                    Track Order
-                  </NavLink>
-                </span>
-                <span>
-                  <a className="call-us" href="tel:9999089262">
-                    <i class="fa fa-phone  fa-2x" aria-hidden="true"></i>
-                    <span>+91 9999089262</span>
-                  </a>
-                </span>
+                <div>
+                  <span className="NavItem1">
+                    <NavLink
+                      style={{ textDecoration: "none" }}
+                      to="/track_order"
+                    >
+                      Track Order
+                    </NavLink>
+                  </span>
+                  <span>
+                    <a className="call-us" href="tel:9999089262">
+                      <i class="fa fa-phone  fa-2x" aria-hidden="true"></i>
+                      <span>+91 9999089262</span>
+                    </a>
+                  </span>
+                </div>
               </div>
             </Grid>
           </Grid>
@@ -207,15 +212,15 @@ class MaterialNavbar extends Component {
                             }
                           />
                         ) : (
-                            <ExpandMoreIcon
-                              fontSize="large"
-                              className={
-                                index === this.state.activeNavIndex
-                                  ? ""
-                                  : "sidedrawer"
-                              }
-                            />
-                          )
+                          <ExpandMoreIcon
+                            fontSize="large"
+                            className={
+                              index === this.state.activeNavIndex
+                                ? ""
+                                : "sidedrawer"
+                            }
+                          />
+                        )
                       ) : null}
                     </ListItem>
                   </div>

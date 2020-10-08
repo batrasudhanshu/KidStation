@@ -188,7 +188,7 @@ input[type="checkbox"] {
 /* searchfilterlarge */
 
 .global-search-lg {
-  text-align: center;
+  /* text-align: center; */
   padding: 0 1rem;
 }
 
@@ -880,20 +880,6 @@ input[type="checkbox"] {
 
 
 
-@media screen and (max-width: 480px) {
-
-
-  body .MuiContainer-root {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-
-  .global-search-input {
-    width: 94%;
-    margin: 0px 3%;
-
-  }
-}
 
 
 
@@ -1098,28 +1084,18 @@ input[type="checkbox"] {
   transition: all 0.3s ease-out;
 }
 
-/* how to order */
-/* .sidenavbar .MuiPaper-root div:nth-child(5) span {
-  -webkit-animation: neon5 1.5s ease-in-out infinite alternate;
-  animation: neon5 1.5s ease-in-out infinite alternate;
-}
 
-.sidenavbar .MuiPaper-root div:nth-child(5) span:hover {
-  color: #FF9900;
-  font-family: Audiowide;
-}
+@media screen and (max-width: 480px) {
 
-@keyframes neon5 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+
+  body .MuiContainer-root {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+  .global-search-input {
+    width: 94%;
+    margin: 0px 3%;
+
   }
-} */
-/* 
-category_buttons div button a span:nth-child(3):hover .MuiTypography-root {
-  border: 5px solid rgba(255,69,0,0.7) !important;
-  /* background-color: #ff450096 !important; */
-/* } */
+}
