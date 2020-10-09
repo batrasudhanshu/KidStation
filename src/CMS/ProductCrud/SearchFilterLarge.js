@@ -116,7 +116,7 @@ class SearchFilter extends Component {
                           onClick={this.searchProducts}
                           aria-label="search"
                         >
-                          <SearchSharpIcon />
+                          <SearchSharpIcon style={{color:'orangered'}} />
                         </IconButton>
                       </Link>
                     </InputAdornment>
@@ -127,7 +127,7 @@ class SearchFilter extends Component {
             <div
               style={{
                 position: "absolute",
-                top: 28,
+                top: 35,
                 right: 115,
                 width: "275.75px",
               }}

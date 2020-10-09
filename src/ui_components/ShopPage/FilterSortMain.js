@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Chip, Grid } from "@material-ui/core";
+import { Chip, Grid, withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -10,6 +10,7 @@ import { fetchProductOnFilter } from "../../CMS/actions/fetchProductAction";
 import DoneIcon from "@material-ui/icons/Done";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import Tooltip from "@material-ui/core/Tooltip";
 import "./styleComponents/FilterSort.css";
 
 class FilterSortMain extends Component {
@@ -61,34 +62,28 @@ class FilterSortMain extends Component {
 
   render() {
     const { type, filter, sort, bestselling, showFilSort } = this.state;
-    // const filterNames = [
-    //   { label: "Key Chains", value: "key_chains" },
-    //   { label: "", value: "erasers" },
-    //   { label: "", value: "lunch_boxes" },
-    //   { label: "", value: "water_bottles" },
-    //   { label: "", value: "pens" },
-    //   { label: "", value: "folders" },
-    //   { label: "", value: "notebooks" },
-    //   { label: "", value: "geometry_boxes" },
-    //   { label: "", value: "giftitems" },
-    //   { label: "", value: "bags" },
-    //   { label: "", value: "collectables" },
-    //   { label: "", value: "book_marks" },
-    // ];
+    const OurTooltip = withStyles((theme) => ({
+      tooltip: {
+        backgroundColor: theme.palette.common.white,
+        color: "rgba(0, 0, 0, 0.87)",
+        boxShadow: theme.shadows[1],
+        fontSize: 11,
+      },
+    }))(Tooltip);
+    
     const filterNames = [
       { label: "Bags", value: "bags" },
-      { label: "Bottles/Sippers", value: "water_bottles" },
-      { label: "Collectables", value: "collectables" },
-      { label: "Erasers/Sharpner", value: "erasers" },
+      { label: "Bottles & Sippers", value: "water_bottles" },
+      { label: "Collectables & Storage Boxes", value: "collectables" },
+      { label: "Erasers & Sharpner", value: "erasers" },
       { label: "Folders", value: "folders" },
       { label: "Gift Items", value: "giftitems" },
-      { label: "Key Chains", value: "key_chains" },
-
+      { label: "Key Chains & Luggage Tags", value: "key_chains" },
       { label: "Lunch Box", value: "lunch_boxes" },
-      { label: "Notebooks", value: "notebooks" },
-      { label: "Pen Pencil", value: "pens" },
-      { label: "Stationery", value: "geometry_boxes" },
-      { label: "Sticky Notes", value: "book_marks" },
+      { label: "Notebooks & Diaries", value: "notebooks" },
+      { label: "Pen Pencil & Markers", value: "pens" },
+      { label: "Stationery Organizers", value: "geometry_boxes" },
+      { label: "Sticky Notes & BookMarks", value: "book_marks" },
     ];
 
     const showCSS = {
@@ -132,14 +127,20 @@ class FilterSortMain extends Component {
                 <Grid container spacing={0}>
                   {filterNames.map((item, i) => (
                     <Grid
-                      style={
-                        (i === 3) | ((i === 11) | (i === 7))
-                          ? { borderRight: "0px solid black" }
-                          : { borderRight: "1px solid black" }
-                      }
+                      // style={
+                      //   (i === 3) | ((i === 11) | (i === 7))
+                      //     ? { borderRight: "0px solid black" }
+                      //     : { borderRight: "1px solid black" }
+                      // }
                       item
                       sm={3}
                     >
+                      <OurTooltip
+                        placement="top-end"
+                        title={
+                          item.label
+                        }
+                      > 
                       <Chip
                         className="filter-chip"
                         label={item.label}
@@ -164,6 +165,7 @@ class FilterSortMain extends Component {
                           ) : null
                         }
                       />
+                      </OurTooltip>
                     </Grid>
                   ))}
                 </Grid>

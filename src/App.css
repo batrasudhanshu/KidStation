@@ -175,6 +175,8 @@ input[type="checkbox"] {
 
 .filter-chip {
   margin: 0.5rem !important;
+  height:40px !important;
+  width:75% !important;
 }
 
 
@@ -213,6 +215,11 @@ input[type="checkbox"] {
 .global-search-input-lg .MuiInputBase-input {
   margin: 0 1rem;
   width: 19rem;
+}
+
+.global-search-input-lg .MuiPaper-root div:nth-child(1):hover {
+  border: 1px solid orangered;
+  border-radius:5px;
 }
 
 .global-search-lg ul {

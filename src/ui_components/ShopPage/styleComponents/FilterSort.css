@@ -1,5 +1,8 @@
 .bestselling-chip {
     margin: 0.5rem !important;
+    width:75% !important;
+    max-width:150px ;
+    height:40px !important;
 }
 
 .filter-sort-form {
@@ -14,7 +17,9 @@
 .filter-sort-form-filtercontrol>div {
     width: 100%;
 }
-
+.filter-sort-form-sortby{
+    margin:32px 0px 0px 15px;
+}
 .filter-sort-form-sortby>div {
     /* width: 12rem; */
     margin-top: 1rem;
