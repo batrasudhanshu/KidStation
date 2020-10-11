@@ -5,7 +5,7 @@ class TrackOrder extends Component {
     return (
       <>
         <h1 style={{ margin: "20rem 0", textAlign: "center" }}>
-          Coming Soon..
+          Coming Soon....
         </h1>
       </>
     );
