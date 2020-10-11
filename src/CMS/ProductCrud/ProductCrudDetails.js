@@ -91,6 +91,7 @@ class ProductCrudDetails extends React.Component {
   };
 
   deleteImage = (img, index) => {
+    this.setState({ disabled: true });
     let { currentProduct } = this.props;
     var firestore = getFirestore();
     var firebase = getFirebase();
