@@ -113,7 +113,7 @@ a:active {
 }
 
 .prod-desc-lists {
-    font-size: 2rem;
+    font-size: 1.95rem;
     color: #444;
 }
 
@@ -207,5 +207,9 @@ a:active {
     .pro-main-details .pro-main-details-inner {
         margin-left: 1.6rem;
     }
+    .prod-desc-lists {
+    font-size: 1.75rem;
+    color: #444;
+}
 
 }
