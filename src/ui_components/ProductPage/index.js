@@ -132,9 +132,11 @@ class ProductPage extends Component {
                     <div className="product-main-image">
                       <img src={this.state.SelectedImage} alt="" />
                     </div>
+                    {
+                      (product.image_url.length>1) ? 
+                        
                     <div
-                      className="prod-slick-outer"
-
+                    className="prod-slick-outer"
                     >
                       <div>
                         <ChevronLeftIcon
@@ -175,7 +177,10 @@ class ProductPage extends Component {
                           fontSize="large"
                         />
                       </div>
-                    </div>
+                    </div> :null
+                      
+                    }
+                    
                   </Grid>
                   <Grid container xs={12} sm={6} spacing={3}>
                     <Grid className="pro-main-details" item xs={24} sm={12}>
