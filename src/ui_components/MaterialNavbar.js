@@ -92,7 +92,7 @@ class MaterialNavbar extends Component {
       { name: "Notebook & Diary", link: "/notebooks" },
       { name: "Pen, Pencil & Markers", link: "/pens" },
       { name: "Stationery Organizers", link: "/geometry_boxes" },
-      { name: "Sticky Notes & book_marks", link: "/book_marks" },
+      { name: "Sticky Notes & BookMarks", link: "/book_marks" },
     ];
     const categoriesNav = CategoriesList.map((itemname, i) => {
       return (
