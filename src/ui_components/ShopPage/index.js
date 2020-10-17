@@ -8,6 +8,7 @@ import FilterSort from "./FilterSort";
 import FilterSortMain from "./FilterSortMain";
 import { SizeMe } from "react-sizeme";
 import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
+import "./styleComponents/shop-page.css";
 
 class ShopPage extends React.Component {
   componentDidMount() {
@@ -22,7 +23,7 @@ class ShopPage extends React.Component {
 
     // filtersort -10 bags-3 filtersort-3 eraser - 0
     return (
-      <>
+      <div className="shop-page-animate">
         <SearchFilter />
         <HeaderBanner
           tag="Shop our Latest Collection"
@@ -41,7 +42,7 @@ class ShopPage extends React.Component {
           )}
         />
         <ProductCard data={filtersort} />
-      </>
+      </div>
     );
   }
 }

@@ -14,7 +14,7 @@ import SearchFilter from "../../CMS/ProductCrud/SearchFilter";
 import bestsellerStamp from "../../images/Best-seller-stamp.png";
 import Error404 from "../BaseComponent/Error404";
 import { store } from "../..";
-import './styleComponents/ProductPage.css'
+import "./styleComponents/ProductPage.css";
 class ProductPage extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ class ProductPage extends Component {
       SelectedImage:
         this.props.currentProduct.length !== 0 &&
         this.props.currentProduct.image_url[
-        this.props.currentProduct.coverIndex
+          this.props.currentProduct.coverIndex
         ],
     };
     this.handleImageSelection = this.handleImageSelection.bind(this);
@@ -82,13 +82,13 @@ class ProductPage extends Component {
     let urlVal =
       product &&
       "https://api.whatsapp.com/send?phone=919999089262&text=I would like to know more about: *" +
-      product.productname +
-      "*, https://kidstation-version1.firebaseapp.com/" +
-      product.collection +
-      "/" +
-      product.productid;
+        product.productname +
+        "*, https://kidstation-version1.firebaseapp.com/" +
+        product.collection +
+        "/" +
+        product.productid;
     return (
-      <div>
+      <div className="product-page-animate">
         <SearchFilter />
         <Container style={{ marginTop: "1rem" }}>
           {isProduct ? (
@@ -132,89 +132,68 @@ class ProductPage extends Component {
                     <div className="product-main-image">
                       <img src={this.state.SelectedImage} alt="" />
                     </div>
-                    {
-                      (product.image_url.length>1) ? 
-                        
-                    <div
-                    className="prod-slick-outer"
-                    >
-                      <div>
-                        <ChevronLeftIcon
-                          className="icon-left"
-                          onClick={this.prevFun}
-
-                          fontSize="large"
-                        />
-                      </div>
-                      <Slider
-                        className="product-page-slick"
-                        ref={(c) => (this.slider = c)}
-                        {...settings}
-                      >
-                        {product.image_url.length !== 0 &&
-                          product.image_url.map((img) => (
-                            <Grid item>
-                              <Button
-                                onClick={() => this.handleImageSelection(img)}
-                              >
-                                <div
-                                  className="prod-slider-imgs"
+                    {product.image_url.length > 1 ? (
+                      <div className="prod-slick-outer">
+                        <div>
+                          <ChevronLeftIcon
+                            className="icon-left"
+                            onClick={this.prevFun}
+                            fontSize="large"
+                          />
+                        </div>
+                        <Slider
+                          className="product-page-slick"
+                          ref={(c) => (this.slider = c)}
+                          {...settings}
+                        >
+                          {product.image_url.length !== 0 &&
+                            product.image_url.map((img) => (
+                              <Grid item>
+                                <Button
+                                  onClick={() => this.handleImageSelection(img)}
                                 >
-                                  <img
-                                    src={img}
-                                    alt=""
-                                  />
-                                </div>
-                              </Button>
-                            </Grid>
-                          ))}
-                      </Slider>
-                      <div>
-                        <ChevronRightIcon
-                          className="icon-right"
-                          onClick={this.nextFun}
-
-                          fontSize="large"
-                        />
+                                  <div className="prod-slider-imgs">
+                                    <img src={img} alt="" />
+                                  </div>
+                                </Button>
+                              </Grid>
+                            ))}
+                        </Slider>
+                        <div>
+                          <ChevronRightIcon
+                            className="icon-right"
+                            onClick={this.nextFun}
+                            fontSize="large"
+                          />
+                        </div>
                       </div>
-                    </div> :null
-                      
-                    }
-                    
+                    ) : null}
                   </Grid>
                   <Grid container xs={12} sm={6} spacing={3}>
                     <Grid className="pro-main-details" item xs={24} sm={12}>
                       <div className="pro-main-details-inner">
-                        <div
-                          className="prod-main-price"
-
-                        >
+                        <div className="prod-main-price">
                           &#8377; {product.productprice}
                           {product.bestselling && (
-                            <span >
+                            <span>
                               <img src={bestsellerStamp} alt="" />
                             </span>
                           )}
                         </div>
-                        <div
-                          className="prod-desc-lists"
-                        >
-                          <ul >
+                        <div className="prod-desc-lists">
+                          <ul>
                             {descArray.map((desc, index) =>
-                              index > 0 ? (
-                                <li
-                                >
-                                  {desc}
-                                </li>
-                              ) : null
+                              index > 0 ? <li>{desc}</li> : null
                             )}
                           </ul>
                         </div>
                         <div className="buy-connect-btn">
-                          <a target="blank" href={urlVal}>BUY/CONNECT</a>
+                          <a target="blank" href={urlVal}>
+                            BUY/CONNECT
+                          </a>
                         </div>
                         <div className="prod-disclaimer">
-                          <h5 >
+                          <h5>
                             Product color may slightly vary due to photographic
                             lighting sources or your monitor settings**
                           </h5>
@@ -232,60 +211,68 @@ class ProductPage extends Component {
                 </Grid>
               </>
             ) : (
-                <>
-                  <Grid container xs={12} spacing={3}>
-                    <Grid item xs={12} sm={6}>
-                      <div>
-                        <Skeleton variant="rect" height={114} animation="pulse" />
-                      </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <div>
-                        <Skeleton variant="rect" height={114} animation="pulse" />
-                      </div>
-                    </Grid>
+              <>
+                <Grid container xs={12} spacing={3}>
+                  <Grid item xs={12} sm={6}>
+                    <div>
+                      <Skeleton variant="rect" height={114} animation="pulse" />
+                    </div>
                   </Grid>
-                  <Grid container spacing={3} xs={12}>
-                    <Grid className="pro-main-image" item xs={12} sm={6}>
-                      <div className="product-main-image">
-                        <Skeleton variant="rect" height={500} animation="pulse" />
-                      </div>
-                      <div
-                        className="prod-slick-outer"
-                      >
-                        <Skeleton variant="rect" height={100} animation="pulse" />
-                      </div>
-                    </Grid>
-                    <Grid className="pro-main-details" item xs={12} sm={6}>
-                      <div
-                        style={{
-                          margin: "0.5rem 0",
-                        }}
-                      >
-                        <Skeleton variant="rect" height={42} animation="pulse" />
-                      </div>
-                      <div>
-                        <Skeleton variant="rect" height={150} animation="pulse" />
-                      </div>
-                      <div style={{ marginTop: "1rem" }}>
-                        <Skeleton variant="rect" height={60} width={150} animation="pulse" />
-                      </div>
-                      <div>
-                        <h5 style={{ marginTop: "1rem" }}>
-                          <Skeleton variant="rect" animation="pulse" />
-                          <Skeleton variant="rect" animation="pulse" />
-                        </h5>
-                      </div>
-                      <div style={{ marginTop: "1rem" }}>
-                        <Skeleton height={50} width={50} variant="rect" animation="pulse" />
-                      </div>
-                    </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <div>
+                      <Skeleton variant="rect" height={114} animation="pulse" />
+                    </div>
                   </Grid>
-                </>
-              )
+                </Grid>
+                <Grid container spacing={3} xs={12}>
+                  <Grid className="pro-main-image" item xs={12} sm={6}>
+                    <div className="product-main-image">
+                      <Skeleton variant="rect" height={500} animation="pulse" />
+                    </div>
+                    <div className="prod-slick-outer">
+                      <Skeleton variant="rect" height={100} animation="pulse" />
+                    </div>
+                  </Grid>
+                  <Grid className="pro-main-details" item xs={12} sm={6}>
+                    <div
+                      style={{
+                        margin: "0.5rem 0",
+                      }}
+                    >
+                      <Skeleton variant="rect" height={42} animation="pulse" />
+                    </div>
+                    <div>
+                      <Skeleton variant="rect" height={150} animation="pulse" />
+                    </div>
+                    <div style={{ marginTop: "1rem" }}>
+                      <Skeleton
+                        variant="rect"
+                        height={60}
+                        width={150}
+                        animation="pulse"
+                      />
+                    </div>
+                    <div>
+                      <h5 style={{ marginTop: "1rem" }}>
+                        <Skeleton variant="rect" animation="pulse" />
+                        <Skeleton variant="rect" animation="pulse" />
+                      </h5>
+                    </div>
+                    <div style={{ marginTop: "1rem" }}>
+                      <Skeleton
+                        height={50}
+                        width={50}
+                        variant="rect"
+                        animation="pulse"
+                      />
+                    </div>
+                  </Grid>
+                </Grid>
+              </>
+            )
           ) : (
-              <Error404 />
-            )}
+            <Error404 />
+          )}
         </Container>
       </div>
     );
