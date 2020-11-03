@@ -1,0 +1,117 @@
+
+combo_page .header {
+  position: relative;
+  text-align: center;
+  /* background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%); */
+   background-image:url('../../../images/review_banner.png');
+   background-size: cover;
+}
+
+combo_page .logo {
+  width: 50px;
+  fill: white;
+  padding-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+combo_page .inner-header {
+  background-color: rgba(49, 38, 16, 0.6);  
+  height: 351px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+combo_page .inner-header  {
+  font-size: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+combo_page .combo-connect-btn {
+    margin-top: 0.35rem;
+    
+    width: 111px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42.88px;
+    background-color: orangered;
+    border-radius: 2rem;
+    /* margin-left: 2.5rem; */
+}
+combo_page .combo-connect-btn a,
+combo_page a:link,
+combo_page a:visited,
+combo_page a:active {
+    color: whitesmoke;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: 0.2s ease-in-out;
+}
+combo_page .flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+combo_page .tag-content span{
+    font-size:2.5rem;
+    font-weight: 700;
+    color:white;
+    text-align: justify;
+}
+combo_page .tag-content{
+  text-align: -webkit-center;
+}
+combo_page .tag-content h2 {
+    font-family: cursive;
+    font-size: 3.8rem;
+    font-weight: bolder;
+    color: darkorange;
+}
+
+@media (max-width: 480px) {
+
+  combo_page .tag-content h2 {
+    font-family: cursive;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: darkorange;
+}
+ combo_page .inner-header  {
+  font-size: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+combo_page .tag-content span{
+    font-size:2rem;
+    font-weight: 600;
+}
+}
+@media only screen and (min-width: 481px) and (max-width: 785px) {
+
+  combo_page .tag-content h2 {
+    font-family: cursive;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: darkorange;
+}
+ combo_page .inner-header  {
+  font-size: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+combo_page .tag-content span{
+    font-size:2rem;
+    font-weight: 600;
+}
+}

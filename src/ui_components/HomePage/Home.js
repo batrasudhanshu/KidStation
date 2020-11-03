@@ -6,6 +6,7 @@ import CategoryButtons from "./CategoryButtons";
 // import BrandSlider from "./Brands";
 import BestSellingPhone from "./BestSellingPhone";
 import BestSelling from "./BestSelling";
+import Combo from "./Combo"
 import { SizeMe } from "react-sizeme";
 
 const Home = (props) => {
@@ -51,7 +52,7 @@ const Home = (props) => {
           </div>
         )}
       />
-
+      <Combo/>
       {/* <BrandSlider /> */}
     </div>
   );

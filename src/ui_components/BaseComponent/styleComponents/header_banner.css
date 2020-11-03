@@ -64,7 +64,7 @@ header_banner .content {
   background-color: white;
 }
 
-.tag-content {
+header_banner .tag-content {
   font-family: 'Pacifico';
   /* text-shadow: 0.140rem 0.140rem 0.3rem #000000; */
   color: purple;
@@ -125,7 +125,7 @@ header_banner .parallax>use:nth-child(4) {
     height: 30vh;
   }
 
-  .tag-content {
+  header_banner .tag-content {
     font-size: 3rem;
   }
 }
