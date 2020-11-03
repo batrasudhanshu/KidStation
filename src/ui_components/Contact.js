@@ -51,7 +51,7 @@ const Contact = () => {
   };
   const { name, email, subject, phone, message } = details;
   return (
-    <contact_page>
+    <contact_page className="contact-page-animate">
       <ToastContainer />
       <SearchFilter />
       <div className="contact-pageheader">

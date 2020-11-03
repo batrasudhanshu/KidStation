@@ -60,7 +60,7 @@ const Refund = () => {
     setExpanded(newExpanded ? panel : false);
   };
   return (
-    <refund_page className="refund-page">
+    <refund_page className="refund-page refund-page-animate">
       <SearchFilter />
       <h2 >Refund Policy</h2>
       <Grid container spacing={3}>
