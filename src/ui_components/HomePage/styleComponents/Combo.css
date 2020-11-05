@@ -16,7 +16,7 @@ combo_page .logo {
 }
 
 combo_page .inner-header {
-  background-color: rgba(49, 38, 16, 0.6);  
+  background-color: rgba(49, 38, 16, 0.75);  
   height: 351px;
   width: 100%;
   margin: 0;
@@ -64,7 +64,7 @@ combo_page .flex {
 combo_page .tag-content span{
     font-size:2.5rem;
     font-weight: 700;
-    color:white;
+    color:whitesmoke;
     text-align: justify;
 }
 combo_page .tag-content{
@@ -82,7 +82,7 @@ combo_page .tag-content h2 {
   combo_page .tag-content h2 {
     font-family: cursive;
     font-size: 3rem;
-    font-weight: bolder;
+    font-weight: 700;
     color: darkorange;
 }
  combo_page .inner-header  {
