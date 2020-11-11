@@ -71,7 +71,7 @@ combo_page .tag-content{
   text-align: -webkit-center;
 }
 combo_page .tag-content h2 {
-    font-family: cursive;
+    font-family:helvetica;
     font-size: 3.8rem;
     font-weight: bolder;
     color: darkorange;
@@ -80,7 +80,6 @@ combo_page .tag-content h2 {
 @media (max-width: 480px) {
 
   combo_page .tag-content h2 {
-    font-family: cursive;
     font-size: 3rem;
     font-weight: 700;
     color: darkorange;
@@ -99,7 +98,6 @@ combo_page .tag-content span{
 @media only screen and (min-width: 481px) and (max-width: 785px) {
 
   combo_page .tag-content h2 {
-    font-family: cursive;
     font-size: 3rem;
     font-weight: bolder;
     color: darkorange;
