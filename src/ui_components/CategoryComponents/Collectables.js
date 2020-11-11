@@ -1,5 +1,5 @@
 import React from "react";
-
+import './styleComponents/categoryPage.css';
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import bags_banner from "../../images/bags_banner.jpg";
@@ -14,12 +14,12 @@ class Collectable extends React.Component {
     render() {
         const { collectables } = this.props;
         return (
-            <>
+            <collectables_page className="category-page-animate">
                 <SearchFilter />
                 <HeaderBanner tag="Collectables & Storage Boxes" bannerImg={`url(${bags_banner})`} />
                 <SortCollection />
                 <ProductCard data={collectables} />
-            </>
+            </collectables_page>
         );
     }
 }

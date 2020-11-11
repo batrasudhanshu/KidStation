@@ -1,5 +1,5 @@
 import React from "react";
-
+import './styleComponents/categoryPage.css';
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import pen_banner from "../../images/pen_banner.JP2";
@@ -15,12 +15,12 @@ class Pen extends React.Component {
     const { pens } = this.props;
 
     return (
-      <>
+      <pens_page className="category-page-animate">
         <SearchFilter />
         <HeaderBanner tag="Pen & Pencil" color="#1616ec" bannerImg={`url(${pen_banner})`} />
         <SortCollection />
         <ProductCard data={pens} />
-      </>
+      </pens_page>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-
+import './styleComponents/categoryPage.css';
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import bags_banner from "../../images/bags_banner.jpg";
@@ -14,12 +14,12 @@ class KeyChain extends React.Component {
     render() {
         const { key_chains } = this.props;
         return (
-            <>
+            <keychains_page className="category-page-animate">
                 <SearchFilter />
                 <HeaderBanner tag="Key Chains & Luggage Tags" bannerImg={`url(${bags_banner})`} />
                 <SortCollection />
                 <ProductCard data={key_chains} />
-            </>
+            </keychains_page>
         );
     }
 }

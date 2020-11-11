@@ -15,7 +15,7 @@ class BestsellingPage extends Component {
     const { bestselling } = this.props;
 
     return (
-      <div>
+      <>
         <SearchFilter />
         <SizeMe
           refreshRate={32}
@@ -30,7 +30,7 @@ class BestsellingPage extends Component {
           )}
         />
         <ProductCard data={bestselling} />
-      </div>
+      </>
     );
   }
 }

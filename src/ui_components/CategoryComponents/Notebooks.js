@@ -1,5 +1,5 @@
 import React from "react";
-
+import './styleComponents/categoryPage.css';
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import notebook_banner from "../../images/notebooks_banner.jpg";
@@ -14,7 +14,7 @@ class Notebook extends React.Component {
   render() {
     const { notebooks } = this.props;
     return (
-      <>
+      <notebooks_page className="category-page-animate">
         <SearchFilter />
         <HeaderBanner
           tag="Notebook & Register"
@@ -23,7 +23,7 @@ class Notebook extends React.Component {
         />
         <SortCollection />
         <ProductCard data={notebooks} />
-      </>
+      </notebooks_page>
     );
   }
 }

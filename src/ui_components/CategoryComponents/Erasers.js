@@ -1,5 +1,5 @@
 import React from "react";
-
+import './styleComponents/categoryPage.css';
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import eraser_banner from "../../images/eraser_banner.JP2";
@@ -14,7 +14,7 @@ class Eraser extends React.Component {
   render() {
     const { erasers } = this.props;
     return (
-      <>
+      <erasers_page className="category-page-animate">
         <SearchFilter />
         <HeaderBanner
           tag="Erasers & Sharpners"
@@ -23,7 +23,7 @@ class Eraser extends React.Component {
         />
         <SortCollection />
         <ProductCard data={erasers} />
-      </>
+      </erasers_page>
     );
   }
 }

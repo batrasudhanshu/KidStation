@@ -1,5 +1,5 @@
 import React from "react";
-
+import './styleComponents/categoryPage.css';
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import sticky_banner from "../../images/sticky_banner.jpg";
@@ -14,7 +14,7 @@ class BookMark extends React.Component {
     render() {
         const { book_marks } = this.props;
         return (
-            <>
+            <bookmarks_page className="category-page-animate">
                 <SearchFilter />
                 <HeaderBanner
                     tag="Sticky Notes & BookMarks"
@@ -22,7 +22,7 @@ class BookMark extends React.Component {
                 />
                 <SortCollection />
                 <ProductCard data={book_marks} />
-            </>
+            </bookmarks_page>
         );
     }
 }

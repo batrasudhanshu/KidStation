@@ -1,5 +1,5 @@
 import React from "react";
-
+import './styleComponents/categoryPage.css';
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import lunch_banner from "../../images/lunch_banner.JP2";
@@ -15,12 +15,12 @@ class LunchBoxes extends React.Component {
     const { lunch_boxes } = this.props;
 
     return (
-      <>
+      <lunchboxes_page className="category-page-animate">
         <SearchFilter />
         <HeaderBanner tag="Lunch Boxes" bannerImg={`url(${lunch_banner})`} color='#f9f20c' />
         <SortCollection />
         <ProductCard data={lunch_boxes} />
-      </>
+      </lunchboxes_page>
     );
   }
 }

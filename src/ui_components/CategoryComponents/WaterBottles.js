@@ -1,5 +1,5 @@
 import React from "react";
-
+import './styleComponents/categoryPage.css';
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import water_banner from "../../images/water_banner.JP2";
@@ -15,12 +15,12 @@ class WaterBottles extends React.Component {
     const { water_bottles } = this.props;
 
     return (
-      <>
+      <waterbottles_page className="category-page-animate">
         <SearchFilter />
         <HeaderBanner tag="Water Bottles" color="#04f9c0" bannerImg={`url(${water_banner})`} />
         <SortCollection />
         <ProductCard data={water_bottles} />
-      </>
+      </waterbottles_page>
     );
   }
 }

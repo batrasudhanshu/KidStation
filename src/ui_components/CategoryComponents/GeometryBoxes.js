@@ -1,5 +1,5 @@
 import React from "react";
-
+import './styleComponents/categoryPage.css';
 import HeaderBanner from "../BaseComponent/HeaderBanner";
 import { connect } from "react-redux";
 import geometry_banner from "../../images/geometry_banner.JP2";
@@ -15,7 +15,7 @@ class GeometryBox extends React.Component {
     const { geometry_boxes } = this.props;
 
     return (
-      <>
+      <stationery_organizers_page className="category-page-animate">
         <SearchFilter />
         <HeaderBanner
           tag="Geometry Boxes"
@@ -23,7 +23,7 @@ class GeometryBox extends React.Component {
         />
         <SortCollection />
         <ProductCard data={geometry_boxes} />
-      </>
+      </stationery_organizers_page>
     );
   }
 }
