@@ -14,7 +14,7 @@ const Home = (props) => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div>
+    <div className="home-page-animate">
       <SearchFilter />
       <div
         className="home-carousel carousel carouselblock fade-carousel slide"
@@ -47,8 +47,8 @@ const Home = (props) => {
             {size.width < 600 ? (
               <BestSellingPhone products={props.products} />
             ) : (
-                <BestSelling products={props.products} />
-              )}
+              <BestSelling products={props.products} />
+            )}
           </div>
         )}
       />

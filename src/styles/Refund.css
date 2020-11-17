@@ -1,7 +1,18 @@
 /* refund_page {
     margin: 0rem 1rem 0rem 1rem;
 } */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
+.refund-page-animate{
+    animation: fadeIn 0.3s ease-in;
+}
 .refund-page h2 {
     text-align: center;
     margin-top: 1.5rem;

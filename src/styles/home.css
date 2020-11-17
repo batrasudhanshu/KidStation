@@ -7,6 +7,19 @@ Image credits: unsplash.com
 /********************************/
 /*       Fade Bs-carousel       */
 /********************************/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.home-page-animate{
+  animation: fadeIn 0.5s ease-in;
+}
+
 .fade-carousel {
   position: relative;
   height: 100vh;

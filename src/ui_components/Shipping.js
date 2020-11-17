@@ -51,7 +51,7 @@ const Shipping = () => {
   }, []);
   const classes = useStyles();
   return (
-    <shipping_page className="shipping-page">
+    <shipping_page className="shipping-page shipping-page-animate">
       <SearchFilter />
       <h2>Shipping Policy</h2>
       {/* <HeaderBanner tag="Shipping Policy" bannerImg={`url(${shipping})`} /> */}
